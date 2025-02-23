@@ -1,0 +1,10 @@
+.my-text{
+    color:green;
+    font-weight: bold;
+    font-style: italic;
+
+}
+*{
+    margin:0;
+    padding:0;
+}

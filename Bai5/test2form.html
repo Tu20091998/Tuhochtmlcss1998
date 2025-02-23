@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test2form</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+    }
+    form div{
+        margin-bottom: 1em;
+    }
+    label{
+        display: inline-block;
+        width: 120px;
+    }
+    fieldset{
+        margin-bottom: 1em;
+        padding: 1em;
+    }
+    legend{
+        font-weight: bold;
+    }
+</style>
+<body>
+    <form action="/submit" method="post">
+        <fieldset>
+            <legend> Thông tin cá nhân</legend>
+            <div>
+                <label>Text</label>
+                <input 
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                />
+            </div>
+            <div>
+                <label>Age: </label>
+                <input 
+                    list="ageOptions"
+                    id="age"
+                    name="age"
+                    placeholder="Select your age"
+                />
+                <datalist id="ageOptions">
+                    <option value="18"></option>
+                    <option value="25"></option>
+                    <option value="30"></option>
+                    <option value="35"></option>
+                    <option value="40"></option>
+                </datalist>
+            </div>
+        </fieldset>
+            <div>
+                <label>Commments</label>
+                <textarea
+                    id="comments"
+                    name="comments"
+                    rows="4"
+                    cols="50"
+                    placeholder="Enter your comments here"                
+                ></textarea>
+            </div>
+            <div>
+                <label>Country</label>
+                <select id="Country" name="Country">
+                    <optgroup label="North America">
+                        <option value="usa">USA</option>
+                        <option value="canada">CANADA</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                        <option value="uk">United Kingdom</option>
+                        <option value="germany">Germany</option>
+                        <option value="france">France</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div>
+                <label>Select a number: </label>
+                <input 
+                type="range"
+                id="rangeinput"
+                name="rangeinput"
+                min="0"
+                max="100"
+                value="50"
+            />
+            <output id="rangeoutput">50</output>
+            </div>
+            <div>
+                <button type="button" onclick="alert('button clicked')">
+                    Click Me !
+                </button>
+            </div>
+            <div>
+                <button type="submit">Submit Form</button>
+            </div>
+    </form>
+
+</body>
+</html>

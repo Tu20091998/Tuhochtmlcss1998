@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Video</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .LEFTCOLUM{
+            flex: 5;
+            flex-direction: column;
+        }
+        .RIGHTCOLUM{
+            flex: 5;
+            flex-direction: column;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 150px); 
+            grid-template-rows: repeat(3, 150px); 
+            gap: 10px; 
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .RIGHTCOLUM iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="LEFTCOLUM">
+        <h1>GALLERY</h1>
+        <h2>Một số ảnh về tôi và những người tôi quen biết</h2>
+        <div class="gallery">
+            <img src="/Tuhochtmlcss/7fbe7c8cd32e6870313f.jpg" alt="Hình 1">
+            <img src="/Tuhochtmlcss/FB_IMG_1725610209175.jpg" alt="Hình 2">
+            <img src="/Tuhochtmlcss/đi bảo tàng 2.jpg" alt="Hình 3">
+            <img src="/Tuhochtmlcss/ảnh đại diện.jpg" alt="Hình 4">
+            <img src="/Tuhochtmlcss/IMG_20201212_201612.jpg" alt="Hình 5">
+            <img src="/Tuhochtmlcss/IMG_20231231_123046.jpg" alt="Hình 6">
+            <img src="/Tuhochtmlcss/người dẫn dắt.jpg" alt="Hình 7">
+            <img src="/Tuhochtmlcss/đi nghĩa vụ 2.jpg" alt="Hình 8">
+            <img src="/Tuhochtmlcss/IMG_20231231_122402.jpg" alt="Hình 9">
+        </div>
+    </div>
+
+    <div class="RIGHTCOLUM">
+        <h1>VIDEO CỦA TÔI</h1>
+        <h2>VIDEO 1</h2>
+        <iframe src="https://www.youtube.com/embed/abPmZCZZrFA?si=LSOeRiv5VUfayteY&autoplay=1"
+            allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+
+        <h2>VIDEO 2</h2>
+        <iframe src="https://www.youtube.com/embed/fjUTAYvRC1k?si=3y_m2fLCAsl4Pie_&autoplay=1"
+            allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>

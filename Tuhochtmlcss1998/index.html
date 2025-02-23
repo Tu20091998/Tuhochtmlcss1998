@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_GD2_NguyenDinhTu_PD11491</title>
+</head>
+<style>
+    .phanthan{
+        font-family: Arial, sans-serif;
+    }
+    .header{
+        text-align: center;
+        background-color: lightblue;
+        padding: 20px;
+        width: 1290px;
+    }
+    .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: 0px solid black;
+            display: flex;
+        }
+        .menutong{
+            background-color: black;
+            display: flex;
+            width: 1330px;
+        }
+    .phancuoi{
+        display: flex;
+    }
+    .left-column{
+        justify-content: left;
+        flex-direction: column;
+        flex: 3;
+        padding: 10px;
+    }
+    .gioithieu{
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    .gioithieu:hover{
+        transform: scale(1.1);
+    }
+    .right-column{
+        background-color: white;
+        justify-content: right;
+        flex-direction: column;
+        flex: 7;
+        padding: 10px;
+    }
+    .mota{
+        width: 830px;
+        height: 500px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    .mota:hover{
+        transform: scale(1.1);
+    }
+    @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(55%); }
+    }
+    .marquee-text {
+        display: flex;
+        white-space: nowrap;
+        animation: marquee 10s linear infinite;
+        font-size: 30px;
+        color: #333;
+    }
+    .bg-container {
+        position: relative;
+        width: 1330px;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        animation: fadeBg 10s infinite alternate;
+    }
+
+    .bg1 { background-image: url('/Tuhochtmlcss/7fbe7c8cd32e6870313f.jpg'); animation-delay: 0s; }
+    .bg2 { background-image: url('/Tuhochtmlcss/FB_IMG_1725610209175.jpg'); animation-delay: 3.3s; }
+    .bg3 { background-image: url('/Tuhochtmlcss/đi\ bảo\ tàng\ 2.jpg'); animation-delay: 6.6s; }
+
+    @keyframes fadeBg {
+        0% { opacity: 0; }
+        33% { opacity: 1; }
+        66% { opacity: 0; }
+    }
+    .anhcuoi{
+        width: 830px;
+        height: 180px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    .anhcuoi:hover{
+        transform: scale(1.1);
+    }
+    .footer{
+        text-align: center;
+        background-color: lightgray;
+        padding: 20px;
+        height: 200px;
+    }
+    details {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        details[open] {
+            background-color: #f9f9f9;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 150px); 
+            grid-template-rows: repeat(3, 150px); 
+            gap: 10px; 
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+</style>
+<body class="phanthan">
+    <div class="header">
+        <b><p class="marquee-text">Chào mừng bạn đến với trang web của tôi</p></b>
+    </div>
+    <div class="bg-container">
+        <div class="bg bg1"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+    </div>
+    <div class="menutong">
+        <div class="dropdown">
+            <a href="/Tuhochtmlcss/index.html">
+                <button class="dropbtn">Trang chủ</button>
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="/Tuhochtmlcss/thongtin.html">
+                <button class="dropbtn">Thông tin</button>
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="/Tuhochtmlcss/blogs.html">
+                <button class="dropbtn">Blogs</button>
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="/Tuhochtmlcss/ketquahoctap.html">
+                <button class="dropbtn">Kết Quả Học Tập</button>
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="/Tuhochtmlcss/blogs.html">
+                <button class="dropbtn">Gallery</button>
+            </a>
+        </div>
+    </div>
+    <div class="phancuoi">
+        <div class="left-column">
+            <h2>GIỚI THIỆU VỀ TÔI</h2>
+            <p>Dưới đây là ảnh đại diện và thông tin của tôi</p>
+            <img class="gioithieu" src="/Tuhochtmlcss/ảnh đại diện.jpg">
+            <p>Tôi là Nguyễn Đình Tú, tôi sinh năm 1998 và ảnh trên bên cạnh là em trai của tôi tên là Nguyễn Đình Tài</p>
+
+            <h3>ẢNH CỦA TÔI</h3>
+            <p>Một số ảnh về tôi và những người tôi quen biết</p>
+            <div class="gallery">
+                <img src="/Tuhochtmlcss/7fbe7c8cd32e6870313f.jpg" alt="Hình 1">
+                <img src="/Tuhochtmlcss/FB_IMG_1725610209175.jpg" alt="Hình 2">
+                <img src="/Tuhochtmlcss/đi bảo tàng 2.jpg" alt="Hình 3">
+                <img src="/Tuhochtmlcss/ảnh đại diện.jpg" alt="Hình 4">
+                <img src="/Tuhochtmlcss/IMG_20201212_201612.jpg" alt="Hình 5">
+                <img src="/Tuhochtmlcss/IMG_20231231_123046.jpg" alt="Hình 6">
+                <img src="/Tuhochtmlcss/người dẫn dắt.jpg" alt="Hình 7">
+                <img src="/Tuhochtmlcss/đi nghĩa vụ 2.jpg" alt="Hình 8">
+                <img src="/Tuhochtmlcss/IMG_20231231_122402.jpg" alt="Hình 9">
+            </div>
+        </div>
+    
+        <div class="right-column">
+            <div class="article">
+                <h2>BÀI VIẾT</h2>
+                <p>Mô tả bài viết, Ngày 30 tháng 2 năm 2025</p>
+                <p><a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_gi%E1%BA%A3_kim_(ti%E1%BB%83u_thuy%E1%BA%BFt)"><b>BÀI VIẾT</b></a></p>
+                <img class="mota" src="/Tuhochtmlcss/anh-tieu-thuyet-nha-gia-kim-1.webp" alt="Hình 1">
+                <br>
+                <details>
+                    <summary>Bài viết: Giới thiệu về sách Nhà Giả Kim</summary>
+                    <p>Nhà giả kim (tựa gốc tiếng Bồ Đào Nha: O Alquimista) là tiểu thuyết được xuất bản lần đầu ở Brasil năm 1988, và là cuốn sách nổi tiếng nhất của nhà văn Paulo Coelho. Tác phẩm đã được dịch ra 67 ngôn ngữ và bán ra tới 95 triệu bản (theo thống kê ngày 19 tháng 5 năm 2008), trở thành một trong những cuốn sách bán chạy nhất mọi thời đại.[1]</p>
+                </details>
+            </div>
+            <hr>
+            <div class="article">
+                <h2>NỘI DUNG CHÍNH CỦA TRANG</h2>
+                <p>Mô tả nội dung chính của trang, Ngày 30 tháng 2 năm 2025</p>
+                <img class="anhcuoi" src="/Tuhochtmlcss/frame-co-4-la5955c0e08ed41_6d9166ec71b9fd312ab5d78951d5e066.jpg">
+                <p style="text-indent: 50px;">Trang web này giới thiệu về bản thân của tôi cũng như những hình ảnh của bản thân và những người tôi đã từng quen biết , những người đồng hành cùng tôi trong 
+                    cuộc sống, và tôi hy vọng khi tôi đăng những dòng trạng thái cũng như những thông tin về tôi thì mọi người sẽ biết đến tôi nhiều hơn cũng như tìm kiếm tôi 
+                    một cách dễ dàng và nhanh chóng, tôi cảm thấy rất vui khi được hoà đồng cũng như được mọi người yêu mến, một lần nữa tôi xin gửi một lời chúc sức khoẻ đến những
+                    ai đang sống xung quanh cũng như biết đến tôi. Mọi thông tin thắc mắc xin vui lòng để lại lời nhắn hoặc liên hệ với tôi theo thông tin ở cuối trang Web.<br>
+                    <p  style="text-indent: 50px;"><b>Xin chân thành cảm ơn!</b></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>MỌI CHI TIẾT XIN LIÊN HỆ</h2>
+        <p><b>Họ và Tên: </b>Nguyễn Đình Tú</p>
+        <p><b> Hiện đang là: </b> Sinh viên tại trường Cao Đẳng FPT Polytechnic Đà Nẵng</p>
+        <p><b>Địa Chỉ: </b>30 Doãn Uẩn, Phường Khuê Mỹ, Quận Ngũ Hành Sơn, Thành Phố Đà Nẵng</p>
+        <p><b>Số Điện Thoại: </b>0336620118</p>
+    </div>
+</body>
+</html>
+

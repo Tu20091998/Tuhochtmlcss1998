@@ -9,12 +9,6 @@
     .phanthan{
         font-family: Arial, sans-serif;
     }
-    .header{
-        text-align: center;
-        background-color: yellow;
-        font-weight: bold;
-        padding: 20px;
-    }
     .banner{
         text-align: center;
         background-color: lightgreen;
@@ -68,11 +62,31 @@
         text-align: center;
         background-color: lightgray;
         padding: 20px;
-
+        transition: 0.3s;
+    }
+    .footer:hover{
+        transform: scale(1.1);
+    }
+    
+    .phandau{
+        background-color: yellow;
+    }
+    @keyframes headr {
+        0%{transform: translateX(0%);}
+        100%{transform: translateX(55%);}
+    }
+    .header{
+        display: flex;
+        white-space: nowrap;
+        animation: headr 10s linear infinite;
+        color: #333;
     }
 </style>
 <body class="phanthan">
-    <div class="header">Thay đổi kích thước trình duyệt để xem hiệu ứng đáp ứng</div>
+    <div class="phandau">
+        <div class="header">Tôi không thể dừng được</div>
+    </div>
+    
 
     <div class="banner">
         <h1>Trang web của tôi</h1>

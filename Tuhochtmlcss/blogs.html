@@ -11,10 +11,12 @@
         font-family: Arial, Helvetica, sans-serif;
     }
     .left{
+        font-family: Arial, Helvetica, sans-serif;
         display: flex;
         flex: 5;
     }
     .right{
+        font-family: Arial, Helvetica, sans-serif;
         display: flex;
         flex: 5;
     }
@@ -30,16 +32,43 @@
             outline: none;
         }
         details[open] {
-            background-color: #f9f9f9;
+            background-color: lightblue;
         }
     .mota{
         width: 200px;
         height: 200px;
+        transition: 0.3s;
+    }
+    .mota:hover{
+        transform: scale(1.2);
+    }
+    body{
+        background-color: lightgrey;
+    }
+    .header{
+        text-align: center;
+        font-family:Arial, Helvetica, sans-serif;
+        transition: 0.3s;
+    }
+    .header:hover{
+        transform: scale(1.2);
+    }
+    .phancuoi{
+        font-size: 30px;
+        text-align: center;
+        text-decoration-color: gray;
+        transition: 0.3s;
+    }
+    .phancuoi:hover{
+        color: red;
+        transform: scale(1.2);
     }
 </style>
 <body>
-    <h1>Danh sách các bài viết của tôi</h1>
-    <p>Mô tả bài viết, Ngày 30 tháng 2 năm 2025</p>
+    <div class="header">
+        <h1>Danh sách các bài viết của tôi</h1>
+        <p>Mô tả bài viết, Ngày 30 tháng 2 năm 2025</p>
+    </div>
     <div class="left">
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_gi%E1%BA%A3_kim_(ti%E1%BB%83u_thuy%E1%BA%BFt)"><b>BÀI VIẾT 1</b></a></p>
@@ -137,6 +166,9 @@
                 <p>Đà Nẵng là một trong sáu thành phố trực thuộc trung ương của Việt Nam, nằm tại khu vực Duyên hải Nam Trung Bộ. Đây là thành phố lớn nhất của miền Trung, đóng vai trò là trung tâm chính trị, kinh tế - xã hội lớn của miền Trung và là hạt nhân quan trọng trong Vùng kinh tế trọng điểm miền Trung. Thành phố Đà Nẵng hiện là đô thị loại I, là thành phố trung tâm cấp vùng và cấp quốc gia.</p>
             </details>
         </div>
+    </div>
+    <div class="phancuoi">
+        <a href="index.html">Quay về trang chủ</a>
     </div>
 </body>
 </html>

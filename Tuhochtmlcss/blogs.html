@@ -4,66 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs - Danh sách bài viết</title>
+    <link rel="stylesheet" href="./stylecss/style_blogs.css"
 </head>
-<style>
-    .body{
-        display: flex;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .left{
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-        flex: 5;
-    }
-    .right{
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-        flex: 5;
-    }
-    details {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            outline: none;
-        }
-        details[open] {
-            background-color: lightblue;
-        }
-    .mota{
-        width: 200px;
-        height: 200px;
-        transition: 0.3s;
-    }
-    .mota:hover{
-        transform: scale(1.2);
-    }
-    body{
-        background-color: lightgrey;
-    }
-    .header{
-        text-align: center;
-        font-family:Arial, Helvetica, sans-serif;
-        transition: 0.3s;
-    }
-    .header:hover{
-        transform: scale(1.2);
-    }
-    .phancuoi{
-        font-size: 30px;
-        text-align: center;
-        text-decoration-color: gray;
-        transition: 0.3s;
-    }
-    .phancuoi:hover{
-        color: red;
-        transform: scale(1.2);
-    }
-</style>
 <body>
     <div class="header">
         <h1>Danh sách các bài viết của tôi</h1>
@@ -72,7 +14,7 @@
     <div class="left">
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_gi%E1%BA%A3_kim_(ti%E1%BB%83u_thuy%E1%BA%BFt)"><b>BÀI VIẾT 1</b></a></p>
-            <img class="mota" src="anh-tieu-thuyet-nha-gia-kim-1.webp" alt="Hình 1">
+            <img class="mota" src="images/anh-tieu-thuyet-nha-gia-kim-1.webp" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu về sách Nhà Giả Kim</summary>
@@ -81,7 +23,7 @@
         </div>
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/%C4%90%E1%BA%AFc_nh%C3%A2n_t%C3%A2m"><b>BÀI VIẾT 2</b></a></p>
-            <img class="mota" src="dacnhantam86.jpg" alt="Hình 1">
+            <img class="mota" src="images/dacnhantam86.jpg" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu về sách Đắc nhân tâm</summary>
@@ -90,7 +32,7 @@
         </div>
         <div>
             <p><a href="https://spiderum.com/bai-dang/Review-sach-Ngay-xua-co-mot-con-bo-Camilo-Cruz-PhD-NasEotT5i7ID"><b>BÀI VIẾT 3</b></a></p>
-            <img class="mota" src="con bò.png" alt="Hình 1">
+            <img class="mota" src="images/con bò.png" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu về sách Ngày xưa có 1 con bò</summary>
@@ -99,7 +41,7 @@
         </div>
         <div>
             <p><a href="https://vnexpress.net/sach-ven-man-tam-linh-huyen-bi-cua-phuong-dong-3020921.html"><b>BÀI VIẾT 4</b></a></p>
-            <img class="mota" src="body-Hanh-trinh-9957-1405997576.jpg" alt="Hình 1">
+            <img class="mota" src="images/sách htvpd.jpg" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu về sách Hành trình về phương đông</summary>
@@ -108,7 +50,7 @@
         </div>
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/Ngh%C3%ACn_l%E1%BA%BB_m%E1%BB%99t_%C4%91%C3%AAm"><b>BÀI VIẾT 5</b></a></p>
-            <img class="mota" src="ngìn lẻ một đêm.jpg" alt="Hình 1">
+            <img class="mota" src="images/ngìn lẻ một đêm.jpg" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu về tiểu thuyết Ngìn Lẻ Một Đêm</summary>
@@ -119,7 +61,7 @@
     <div class="right">
         <div>
             <p><a href="https://luatminhkhue.vn/truyen-ngan-vo-nhat.aspx"><b>BÀI VIẾT 6</b></a></p>
-            <img class="mota" src="vợ nhặt.jpg" alt="Hình 1">
+            <img class="mota" src="images/vợ nhặt.jpg" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Tóm tắt tác phẩm Vợ Nhặt</summary>
@@ -128,7 +70,7 @@
         </div>
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/V%E1%BB%A3_ch%E1%BB%93ng_A_Ph%E1%BB%A7"><b>BÀI VIẾT 7</b></a></p>
-            <img class="mota" src="Vo_chong_A_Phu.jpeg" alt="Hình 1">
+            <img class="mota" src="images/Vo_chong_A_Phu.jpeg" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu phim Vợ Chồng A Phủ</summary>
@@ -139,7 +81,7 @@
         </div>
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/D%E1%BA%BF_M%C3%A8n_phi%C3%AAu_l%C6%B0u_k%C3%BD"><b>BÀI VIẾT 8</b></a></p>
-            <img class="mota" src="dế mèn.jpg" alt="Hình 1">
+            <img class="mota" src="images/dế mèn.jpg" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu tác phẩm Dế Mèn Phiêu Lưu Ký</summary>
@@ -148,7 +90,7 @@
         </div>
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/Gia_Lai"><b>BÀI VIẾT 9</b></a></p>
-            <img class="mota" src="Logo_tỉnh_Gia_Lai.svg.png" alt="Hình 1">
+            <img class="mota" src="images/Logo_tỉnh_Gia_Lai.svg.png" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu về Tỉnh Gia Lai</summary>
@@ -159,7 +101,7 @@
         </div>
         <div>
             <p><a href="https://vi.wikipedia.org/wiki/%C4%90%C3%A0_N%E1%BA%B5ng"><b>BÀI VIẾT 10</b></a></p>
-            <img class="mota" src="Bờ_đông_cầu_Rồng.jpg" alt="Hình 1">
+            <img class="mota" src="images/Bờ_đông_cầu_Rồng.jpg" alt="Hình 1">
             <br>
             <details>
                 <summary>Bài viết: Giới thiệu về Thành Phố Đà Nẵng</summary>

@@ -4,75 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Thông Tin Cá Nhân</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-        }
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
-        h2, h3 {
-            text-align: center;
-            color: #333;
-        }
-        fieldset {
-            border: none;
-            margin-bottom: 15px;
-        }
-        legend {
-            font-weight: bold;
-            color: #007bff;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .color-input {
-            height: 40px;
-        }
-        .buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        button:disabled {
-            background-color: gray;
-            cursor: not-allowed;
-        }
-        form:invalid .submit {
-            pointer-events: none;
-            opacity: 0.5;
-        }
-    </style>
+    <link rel="stylesheet" href="./stylecss/style_thongtin.css"
 </head>
 <body>
     <form>
@@ -81,8 +13,10 @@
             <legend>Thông tin cá nhân</legend>
             <label>Họ:</label>
             <input type="text" placeholder="Nhập họ của bạn" required>
+
             <label>Tên:</label>
             <input type="text" placeholder="Nhập tên của bạn" required>
+
             <label>Giới tính:</label>
             <select required>
                 <option value="">Chọn giới tính</option>
@@ -90,29 +24,40 @@
                 <option value="female">Nữ</option>
                 <option value="other">Khác</option>
             </select>
+
             <label>Trường đang học:</label>
             <input type="text" placeholder="Nhập tên trường" required>
+
             <label>Mã sinh viên:</label>
             <input type="text" placeholder="Nhập mã sinh viên" required>
+
             <label>Email:</label>
             <input type="email" placeholder="example@domain.com" required>
+
             <label>Số điện thoại:</label>
             <input type="number" placeholder="Nhập số điện thoại" required>
+
             <label>Sở thích:</label>
             <input type="text" placeholder="Nhập sở thích" required>
+
             <label>Màu sắc yêu thích:</label>
             <input type="color" class="color-input">
+
             <label>Hình đại diện:</label>
             <input type="file" required>
+
             <label>Quê quán:</label>
             <input type="text" placeholder="Nhập quê quán" required>
         </fieldset>
         <fieldset>
             <legend>Thông tin bổ sung</legend>
+
             <label>Chuyên ngành:</label>
             <input type="text" placeholder="Nhập chuyên ngành" required>
+
             <label>Ngôn ngữ đã biết:</label>
             <input type="text" placeholder="Nhập ngôn ngữ đã biết" required>
+
             <label>Kinh nghiệm chuyên ngành:</label>
             <textarea placeholder="Viết về kinh nghiệm của bạn" required></textarea>
         </fieldset>

@@ -1,0 +1,187 @@
+
+    .phanthan{
+        font-family: Arial, sans-serif;
+    }
+
+    .header{
+        text-align: center;
+        background-color: lightblue;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: 0px solid black;
+            display: flex;
+    }
+
+    .menutong{
+        background-color: black;
+        display: flex;
+    }
+
+    .phancuoi{
+        display: flex;
+    }
+
+    .left-column{
+        justify-content: left;
+        flex-direction: column;
+        flex: 3;
+        padding: 10px;
+    }
+
+    .gioithieu{
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .gioithieu:hover{
+        transform: scale(1.1);
+    }
+
+    .right-column{
+        background-color: white;
+        justify-content: right;
+        flex-direction: column;
+        flex: 7;
+        padding: 10px;
+    }
+
+    .mota{
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .mota:hover{
+        transform: scale(1.1);
+    }
+/* di chuyển chữ qua lại trong phần header và marquee text*/
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%); 
+        }
+        100% {
+            transform: translateX(55%); 
+        }
+    }
+
+    .marquee-text {
+        display: flex;
+        white-space: nowrap;
+        animation: marquee 10s linear infinite;
+        font-size: 30px;
+        color: #333;
+    }
+/*ảnh thay đổi trong nền*/
+    .bg-container {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+    }
+/*tạo thuộc tính cho phần con bg*/
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        animation: fadeBg 10s infinite alternate;
+    }
+/* định dạng thay đổi trong nền và đường dẫn ảnh*/
+    .bg1 {
+        background-image: url('../images/ảnh\ team\ clb\ itc.jpg'); animation-delay: 0s; 
+    }
+    .bg2 {
+        background-image: url('../images/ảnh\ 4\ người\ bạn\ của\ tôi.jpg'); animation-delay: 3.3s; 
+    }
+    .bg3 {
+        background-image: url('../images/đi\ bảo\ tàng\ 2.jpg'); animation-delay: 6.6s; 
+    }
+/* định dạng thời gian làm mờ của ảnh*/ 
+    @keyframes fadeBg {
+        0% {
+            opacity: 0; 
+        }
+        33% {
+            opacity: 1; 
+        }
+        66% {
+            opacity: 0; 
+        }
+    }
+
+    .anhcuoi{
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .anhcuoi:hover{
+        transform: scale(1.1);
+    }
+
+    .footer{
+        text-align: center;
+        background-color: lightgray;
+        padding: 20px;
+        height: 200px;
+    }
+
+    details {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    summary {
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+    }
+
+    details[open] {
+        background-color: #f9f9f9;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 150px); 
+        grid-template-rows: repeat(3, 150px); 
+        gap: 10px; 
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.1);
+    }
+
+    .header {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .menutong {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .mota, .anhcuoi {
+        width: 100%;
+        flex-wrap: wrap;
+    }

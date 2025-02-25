@@ -4,68 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery & Video</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-
-        .LEFTCOLUM{
-            flex: 5;
-            flex-direction: column;
-            flex-wrap: wrap;
-        }
-        .RIGHTCOLUM{
-            flex: 5;
-            flex-direction: column;
-            flex-wrap: wrap;
-        }
-
-        .gallery {
-            flex-wrap: wrap;
-            text-align: center;
-            display: grid;
-            grid-template-columns: repeat(3, 150px); 
-            grid-template-rows: repeat(3, 150px); 
-            gap: 10px; 
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-
-        .RIGHTCOLUM iframe {
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./stylecss/style_gallery.css"
 </head>
 <body>
     <div class="LEFTCOLUM">
-        <h1>GALLERY</h1>
-        <h2>Một số ảnh về tôi và những người tôi quen biết</h2>
+        <h3>ẢNH CỦA TÔI</h3>
+        <p>Một số ảnh về tôi và những người tôi quen biết</p>
         <div class="gallery">
-            <img src="7fbe7c8cd32e6870313f.jpg" alt="Hình 1">
-            <img src="FB_IMG_1725610209175.jpg" alt="Hình 2">
-            <img src="đi bảo tàng 2.jpg" alt="Hình 3">
-            <img src="ảnh đại diện.jpg" alt="Hình 4">
-            <img src="IMG_20201212_201612.jpg" alt="Hình 5">
-            <img src="IMG_20231231_123046.jpg" alt="Hình 6">
-            <img src="người dẫn dắt.jpg" alt="Hình 7">
-            <img src="đi nghĩa vụ 2.jpg" alt="Hình 8">
-            <img src="IMG_20231231_122402.jpg" alt="Hình 9">
+            <img src="images/ảnh đại diện.jpg" alt="Hình 1">
+            <img src="images/ảnh team clb itc.jpg" alt="Hình 2">
+            <img src="images/ảnh mùa đông của tôi.jpg" alt="Hình 3">
+            <img src="images/ảnh của tôi.jpg" alt="Hình 4">
+            <img src="images/ảnh 4 người bạn của tôi.jpg" alt="Hình 5">
+            <img src="images/đi nghĩa vụ 2.jpg" alt="Hình 6">
+            <img src="images/người dẫn dắt.jpg" alt="Hình 7">
+            <img src="images/túltv.jpg" alt="Hình 8">
+            <img src="images/đi bảo tàng 2.jpg" alt="Hình 9">
         </div>
     </div>
 

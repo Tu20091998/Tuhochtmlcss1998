@@ -8,6 +8,8 @@
         background-color: lightgray;
         padding: 20px;
         width: 100%;
+        flex-wrap: wrap;
+        width: 100%;
     }
     .dropbtn {
         display: inline-block;
@@ -25,6 +27,8 @@
         background-color: lightgray;
         display: flex;
         border: 1px solid gray;
+        width: 100%;
+        flex-wrap: wrap;
     }
 
     .phancuoi{
@@ -190,17 +194,6 @@
     .gallery img:hover {
         transform: scale(1.1);
     }
-
-    .header {
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .menutong {
-        width: 100%;
-        flex-wrap: wrap;
-    }
-
     .mota, .anhcuoi {
         width: 100%;
         flex-wrap: wrap;

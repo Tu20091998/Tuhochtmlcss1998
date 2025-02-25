@@ -9,6 +9,7 @@ body {
     flex: 5;
     flex-direction: column;
     flex-wrap: wrap;
+    font-weight: bold;
 }
 .RIGHTCOLUM{
     flex: 5;

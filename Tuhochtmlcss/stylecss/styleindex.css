@@ -9,18 +9,20 @@
         padding: 20px;
         width: 100%;
     }
-
     .dropbtn {
-            background-color: black;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: 0px solid black;
-            display: flex;
+        display: inline-block;
+        padding: 30px;
+        font-size: 20px;
+        background-color: lightblue;
+        text-decoration: none;
+        border: 0px solid lightblue;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
     }
 
     .menutong{
-        background-color: black;
+        background-color: lightblue;
         display: flex;
     }
 
@@ -62,12 +64,14 @@
     .mota:hover{
         transform: scale(1.1);
     }
-/* di chuyển chữ qua lại trong phần header và marquee text*/
+    /* di chuyển chữ qua lại trong phần header và marquee text*/
     @keyframes marquee {
         0% {
+            /*di chuyển bắt đầu từ bên trái*/
             transform: translateX(0%); 
         }
         100% {
+            /*điểm đến bên phải*/
             transform: translateX(55%); 
         }
     }
@@ -79,41 +83,54 @@
         font-size: 30px;
         color: #333;
     }
-/*ảnh thay đổi trong nền*/
+    /*ảnh thay đổi trong phần bg container*/
     .bg-container {
+        /* tạo vị trí tương đối cho phần tử*/
         position: relative;
         width: 100%;
         height: 80vh;
+        /*ngăn không cho ảnh tràn ra ngoài phần chưa bg container*/
         overflow: hidden;
     }
-/*tạo thuộc tính cho phần con bg*/
+    /*tạo thuộc tính cho phần con bg*/
     .bg {
+        /*tạo vị trí tuyệt đối không thay đổi cho ảnh gốc thay đổi trong nền*/
         position: absolute;
         width: 100%;
         height: 100%;
+        /*kéo dãn ảnh để bao phủ phần nền của bg contaner*/
         background-size: cover;
+        /*vị trí nền căn giữa*/
         background-position: center;
+        /*làm mờ nền để thay đổi các ảnh*/
         opacity: 0;
+        /*tạo thuộc tính động thay đổi vô hạn trong nền và thời gian 10s mỗi ảnh*/
         animation: fadeBg 10s infinite alternate;
     }
 /* định dạng thay đổi trong nền và đường dẫn ảnh*/
     .bg1 {
+        /*tạo đường dẫn ảnh cho nền bg1 trong bg container và thời gian hiển thị ngay từ đầu*/
         background-image: url('../images/ảnh\ team\ clb\ itc.jpg'); animation-delay: 0s; 
     }
     .bg2 {
+        /*tạo đường dẫn ảnh cho nền bg1 trong bg container và thời gian hiển thị sau 3,3 s*/
         background-image: url('../images/ảnh\ 4\ người\ bạn\ của\ tôi.jpg'); animation-delay: 3.3s; 
     }
     .bg3 {
+        /*tạo đường dẫn ảnh cho nền bg1 trong bg container và thời gian hiển thị sau 6.6 s*/
         background-image: url('../images/đi\ bảo\ tàng\ 2.jpg'); animation-delay: 6.6s; 
     }
 /* định dạng thời gian làm mờ của ảnh*/ 
     @keyframes fadeBg {
+        /*đang không hiển thị nội dung*/
         0% {
             opacity: 0; 
         }
+        /*hiển thị nội dung đầy đủ*/
         33% {
             opacity: 1; 
         }
+        /*nội dung mờ dần đến khi hiển thị lại*/
         66% {
             opacity: 0; 
         }
@@ -146,6 +163,7 @@
         font-weight: bold;
         cursor: pointer;
         outline: none;
+        list-style-type:circle;
     }
 
     details[open] {

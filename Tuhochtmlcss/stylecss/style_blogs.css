@@ -24,6 +24,7 @@ summary {
     font-weight: bold;
     cursor: pointer;
     outline: none;
+    list-style-type: circle;
 }
 
 details[open] {

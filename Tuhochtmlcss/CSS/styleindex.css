@@ -7,8 +7,28 @@
         text-align: center;
         background-color: lightgray;
         padding: 20px;
-        width: 100%;
+        max-width: 100%;
         flex-wrap: wrap;
+        border: 1px solid black;
+    }
+    /* di chuyển chữ qua lại trong phần header và marquee text*/
+    @keyframes marquee {
+        0% {
+            /*di chuyển bắt đầu từ bên trái*/
+            transform: translateX(0%); 
+        }
+        100% {
+            /*điểm đến bên phải*/
+            transform: translateX(55%); 
+        }
+    }
+
+    .marquee-text {
+        display: flex;
+        white-space: nowrap;
+        animation: marquee 10s linear infinite;
+        font-size: 30px;
+        color: #333;
     }
     .dropbtn {
         display: inline-block;
@@ -26,12 +46,13 @@
         background-color: lightgray;
         display: flex;
         border: 1px solid gray;
-        width: 100%;
+        max-width: 100%;
         flex-wrap: wrap;
     }
 
     .phancuoi{
         display: flex;
+        border: 1px solid black;
     }
 
     .left-column{
@@ -43,7 +64,7 @@
     }
 
     .gioithieu{
-        width: 100%;
+        max-width: 100%;
         height: auto;
         border-radius: 10px;
         transition: 0.3s;
@@ -69,25 +90,6 @@
     .mota:hover{
         transform: scale(1.1);
     }
-    /* di chuyển chữ qua lại trong phần header và marquee text*/
-    @keyframes marquee {
-        0% {
-            /*di chuyển bắt đầu từ bên trái*/
-            transform: translateX(0%); 
-        }
-        100% {
-            /*điểm đến bên phải*/
-            transform: translateX(47%); 
-        }
-    }
-
-    .marquee-text {
-        display: flex;
-        white-space: nowrap;
-        animation: marquee 10s linear infinite;
-        font-size: 30px;
-        color: #333;
-    }
     /*ảnh thay đổi trong phần bg container*/
     .bg-container {
         /* tạo vị trí tương đối cho phần tử*/
@@ -96,6 +98,7 @@
         height: 80vh;
         /*ngăn không cho ảnh tràn ra ngoài phần chưa bg container*/
         overflow: hidden;
+        border: 1px solid black;
     }
     /*tạo thuộc tính cho phần con bg*/
     .bg {
@@ -151,10 +154,12 @@
     }
 
     .footer{
+        max-width: 100%;
         text-align: center;
         background-color: lightgray;
         padding: 20px;
         height: 200px;
+        border: 1px solid black;
     }
 
     details {
@@ -168,11 +173,15 @@
         font-weight: bold;
         cursor: pointer;
         outline: none;
-        list-style-type:circle;
+        list-style-type: '▲';
     }
 
+    details[open] summary {
+        list-style-type: '▼';
+    }
     details[open] {
         background-color: #f9f9f9;
+        overflow: auto;
     }
 
     .gallery {
@@ -183,7 +192,7 @@
     }
 
     .gallery img {
-        width: 100%;
+        max-width: 100%;
         height: 150px;
         object-fit: cover;
         border-radius: 8px;
@@ -194,6 +203,6 @@
         transform: scale(1.1);
     }
     .mota, .anhcuoi {
-        width: 100%;
+        max-width: 100%;
         flex-wrap: wrap;
     }

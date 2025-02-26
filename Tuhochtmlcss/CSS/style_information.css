@@ -14,7 +14,8 @@ form {
     width: 400px;
 }
 
-h2, h3 {
+h1 {
+    font-size: 50px;
     text-align: center;
     color: #333;
 }
@@ -25,6 +26,8 @@ fieldset {
 }
 
 legend {
+    text-align: center;
+    font-size: 30px;
     font-weight: bold;
     color: #007bff;
 }
@@ -49,15 +52,14 @@ input, select, textarea {
 }
 
 .buttons {
-    display: flex;
-    justify-content: space-between;
     margin-top: 20px;
+    text-align: center;
 }
 
 button {
     background-color: #007bff;
     color: white;
-    padding: 10px;
+    padding: 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -71,3 +73,5 @@ form:invalid .submit {
     pointer-events: none;
     opacity: 0.5;
 }
+
+

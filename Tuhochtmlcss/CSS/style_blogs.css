@@ -16,19 +16,23 @@
 details {
     border: 1px solid #ddd;
     padding: 10px;
-    margin-bottom: 10px;
     border-radius: 5px;
 }
 
 summary {
     font-weight: bold;
     cursor: pointer;
-    outline: none;
-    list-style-type: circle;
+    list-style-type: '▲';
 }
-
-details[open] {
+details[open] summary {
+    list-style-type: '▼';
+}
+details[open]{
+    position: absolute;
+    max-width: 200px;
     background-color: lightgray;
+    max-height: 200px;
+    overflow: auto;
 }
 
 .mota{
@@ -48,21 +52,13 @@ body{
 .header{
     text-align: center;
     font-family:Arial, Helvetica, sans-serif;
-    transition: 0.3s;
-}
-
-.header:hover{
-    transform: scale(1.2);
 }
 
 .phancuoi{
     font-size: 30px;
-    text-align: center;
     text-decoration-color: gray;
-    transition: 0.3s;
+    text-align: left;
 }
-
-.phancuoi:hover{
-    color: red;
-    transform: scale(1.2);
+.content{
+    margin: 23px;
 }

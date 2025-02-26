@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Thông Tin Cá Nhân</title>
-    <link rel="stylesheet" href="./CSS/style_information.css"
+    <link rel="stylesheet" href="./css/style_information.css"
 </head>
 <body>
     <form>
-        <h2>Form Thông Tin Cá Nhân</h2>
+        <h1>Form Thông Tin Cá Nhân</h1>
         <fieldset>
             <legend>Thông tin cá nhân</legend>
             <label>Họ:</label>
@@ -18,7 +18,7 @@
             <input type="text" placeholder="Nhập tên của bạn" required>
 
             <label>Giới tính:</label>
-            <select>
+            <select class="debug">
                 <option value="">Chọn giới tính</option>
                 <option value="male">Nam</option>
                 <option value="female">Nữ</option>
@@ -41,7 +41,7 @@
             <input type="text" placeholder="Nhập sở thích">
 
             <label>Màu sắc yêu thích:</label>
-            <input type="color" class="color-input">
+            <input type="color" class="debug">
 
             <label>Hình đại diện:</label>
             <input type="file">
@@ -49,6 +49,7 @@
             <label>Quê quán:</label>
             <input type="text" placeholder="Nhập quê quán">
         </fieldset>
+        <br>
         <fieldset>
             <legend>Thông tin bổ sung</legend>
 
@@ -62,8 +63,7 @@
             <textarea placeholder="Viết về kinh nghiệm của bạn"></textarea>
         </fieldset>
         <div class="buttons">
-            <button type="submit" class="submit">Gửi Thông Tin</button>
-            <button type="button">Xem Trước</button>
+            <button type="submit" class="submits">Gửi Thông Tin</button>
         </div>
     </form>
 </body>

@@ -1,8 +1,8 @@
+
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: lightgray;
     display: flex;
+    background-color: lightgray;
     justify-content: center;
 }
 
@@ -17,7 +17,7 @@ form {
 h1 {
     font-size: 50px;
     text-align: center;
-    color: #333;
+    color: black;
 }
 
 fieldset {
@@ -29,7 +29,7 @@ legend {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    color: #007bff;
+    color: gray;
 }
 
 label {
@@ -57,20 +57,25 @@ input, select, textarea {
 }
 
 button {
-    background-color: #007bff;
+    background-color: gray;
     color: white;
-    padding: 30px;
+    padding: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: gray;
 }
+
 form:invalid .submit {
     pointer-events: none;
     opacity: 0.5;
 }
 
+.debug{
+    width: 105%;
+}

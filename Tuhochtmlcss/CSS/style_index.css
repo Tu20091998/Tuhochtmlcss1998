@@ -5,11 +5,9 @@
 
     .header{
         text-align: center;
-        background-color: lightgray;
-        padding: 20px;
-        max-width: 100%;
+        width: 100%;
         flex-wrap: wrap;
-        border: 1px solid black;
+        border: 0px solid black;
     }
     /* di chuyển chữ qua lại trong phần header và marquee text*/
     @keyframes marquee {
@@ -19,21 +17,20 @@
         }
         100% {
             /*điểm đến bên phải*/
-            transform: translateX(55%); 
+            transform: translateX(60%); 
         }
     }
 
     .marquee-text {
         display: flex;
-        white-space: nowrap;
         animation: marquee 10s linear infinite;
-        font-size: 30px;
+        font-size: 20px;
         color: #333;
     }
     .dropbtn {
         display: inline-block;
-        padding: 30px;
-        font-size: 20px;
+        padding: 20px;
+        font-size: 15px;
         background-color: lightgray;
         text-decoration: none;
         border: 0px solid lightgray;
@@ -43,16 +40,18 @@
     }
 
     .menutong{
+        position: sticky;
         background-color: lightgray;
         display: flex;
-        border: 1px solid gray;
+        border: 0px solid gray;
         max-width: 100%;
         flex-wrap: wrap;
+        z-index: 98;
     }
 
     .phancuoi{
         display: flex;
-        border: 1px solid black;
+        border: 0px solid black;
     }
 
     .left-column{
@@ -60,7 +59,6 @@
         flex-direction: column;
         flex: 3;
         padding: 10px;
-        background-color: lightgray;
     }
 
     .gioithieu{
@@ -75,7 +73,6 @@
     }
 
     .right-column{
-        background-color: lightgray;
         justify-content: right;
         flex-direction: column;
         flex: 7;
@@ -95,10 +92,10 @@
         /* tạo vị trí tương đối cho phần tử*/
         position: relative;
         width: 100%;
-        height: 80vh;
+        height: 30vh;
         /*ngăn không cho ảnh tràn ra ngoài phần chưa bg container*/
         overflow: hidden;
-        border: 1px solid black;
+        border: 0px solid black;
     }
     /*tạo thuộc tính cho phần con bg*/
     .bg {
@@ -154,16 +151,16 @@
     }
 
     .footer{
+        background-color: lightgray;
         max-width: 100%;
         text-align: center;
-        background-color: lightgray;
         padding: 20px;
         height: 200px;
-        border: 1px solid black;
+        border: 0px solid black;
     }
 
     details {
-        border: 1px solid lightgray;
+        border: 0px solid lightgray;
         padding: 10px;
         margin-bottom: 10px;
         border-radius: 5px;
@@ -185,14 +182,17 @@
     }
 
     .gallery {
+        flex-wrap: wrap;
+        text-align: center;
         display: grid;
         grid-template-columns: repeat(3, 150px); 
         grid-template-rows: repeat(3, 150px); 
         gap: 10px; 
+        margin: 10px;
     }
-
+    
     .gallery img {
-        max-width: 100%;
+        width: 100%;
         height: 150px;
         object-fit: cover;
         border-radius: 8px;
@@ -205,4 +205,7 @@
     .mota, .anhcuoi {
         max-width: 100%;
         flex-wrap: wrap;
+    }
+    iframe{
+        border: 0px solid white;
     }

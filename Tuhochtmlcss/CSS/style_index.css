@@ -92,7 +92,7 @@
         /* tạo vị trí tương đối cho phần tử*/
         position: relative;
         width: 100%;
-        height: 30vh;
+        height: 25vh;
         /*ngăn không cho ảnh tràn ra ngoài phần chưa bg container*/
         overflow: hidden;
         border: 0px solid black;

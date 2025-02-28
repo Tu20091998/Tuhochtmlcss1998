@@ -14,8 +14,7 @@ form {
     width: 400px;
 }
 
-h1 {
-    font-size: 50px;
+h3 {
     text-align: center;
     color: black;
 }
@@ -27,7 +26,7 @@ fieldset {
 
 legend {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: gray;
 }

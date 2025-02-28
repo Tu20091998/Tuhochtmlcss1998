@@ -24,12 +24,13 @@ table {
 th, td {
     padding: 12px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid lightgray;
 }
 
 thead {
-    background-color: #007BFF;
+    background-color: gray;
     color: white;
+    font-size: 14px;
 }
 
 tbody tr:nth-child(even) {

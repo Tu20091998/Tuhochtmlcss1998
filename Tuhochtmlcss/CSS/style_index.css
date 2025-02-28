@@ -4,30 +4,31 @@
     }
 
     .header{
-        text-align: center;
         width: 100%;
-        flex-wrap: wrap;
         border: 0px solid black;
     }
     /* di chuyển chữ qua lại trong phần header và marquee text*/
     @keyframes marquee {
         0% {
             /*di chuyển bắt đầu từ bên trái*/
-            transform: translateX(0%); 
+            transform: translateX(0vw); 
         }
         100% {
             /*điểm đến bên phải*/
-            transform: translateX(60%); 
+            transform: translateX(70vw); 
         }
     }
 
     .marquee-text {
-        display: flex;
+        width: 30vw;
+        text-align: center;
         animation: marquee 10s linear infinite;
         font-size: 20px;
         color: #333;
     }
+
     .dropbtn {
+        width: 100%;
         display: inline-block;
         padding: 20px;
         font-size: 15px;
@@ -37,6 +38,7 @@
         color: black;
         cursor: pointer;
         font-weight: bold;
+        border-radius: 10px;
     }
 
     .menutong{
@@ -46,7 +48,6 @@
         border: 0px solid gray;
         max-width: 100%;
         flex-wrap: wrap;
-        z-index: 98;
     }
 
     .phancuoi{
@@ -62,8 +63,7 @@
     }
 
     .gioithieu{
-        max-width: 100%;
-        height: auto;
+        width: 100%;
         border-radius: 10px;
         transition: 0.3s;
     }
@@ -159,30 +159,7 @@
         border: 0px solid black;
     }
 
-    details {
-        border: 0px solid lightgray;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-    }
-
-    summary {
-        font-weight: bold;
-        cursor: pointer;
-        outline: none;
-        list-style-type: '▲';
-    }
-
-    details[open] summary {
-        list-style-type: '▼';
-    }
-    details[open] {
-        background-color: #f9f9f9;
-        overflow: auto;
-    }
-
     .gallery {
-        flex-wrap: wrap;
         text-align: center;
         display: grid;
         grid-template-columns: repeat(3, 150px); 
@@ -203,7 +180,7 @@
         transform: scale(1.1);
     }
     .mota, .anhcuoi {
-        max-width: 100%;
+        width: 100%;
         flex-wrap: wrap;
     }
     iframe{

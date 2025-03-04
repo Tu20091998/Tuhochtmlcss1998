@@ -101,6 +101,7 @@
     }
     /*tạo thuộc tính cho phần con bg*/
     .bg {
+
         /*tạo vị trí tuyệt đối không thay đổi cho ảnh gốc thay đổi trong nền*/
         position: absolute;
         width: 100%;

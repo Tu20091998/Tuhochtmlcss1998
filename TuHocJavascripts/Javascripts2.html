@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var XinChao = function(){
+            var Ten = document.getElementById("input").value
+            var LoiChao = "Xin Chào " + Ten
+            document.getElementById("LoiChao").innerHTML = LoiChao
+        }
+    </script>
+</head>
+<body>
+    <h1>Nhập Tên: </h1>
+    <input id="input" value="">
+    <button onclick="XinChao()">OK</button>
+    <div id="LoiChao"></div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku.NDTu</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .btn{
+            height: 50px;
+            width: 50px;
+            border: 1px solid lightgray;
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!--hang 0-->
+    <button class="btn" id="b00">1</button>
+    <button class="btn" id="b01">2</button>
+    <button class="btn" id="b02">3</button>
+    <button class="btn" id="b03">4</button>
+    <button class="btn" id="b04">5</button>
+    <button class="btn" id="b05">6</button>
+    <button class="btn" id="b06">7</button>
+    <button class="btn" id="b07">8</button>
+    <button class="btn" id="b08">9</button>
+    <br>
+    <!--hang 1-->
+    <button class="btn" id="b10">1</button>
+    <button class="btn" id="b11">2</button>
+    <button class="btn" id="b12">3</button>
+    <button class="btn" id="b13">4</button>
+    <button class="btn" id="b14">5</button>
+    <button class="btn" id="b15">6</button>
+    <button class="btn" id="b16">7</button>
+    <button class="btn" id="b17">8</button>
+    <button class="btn" id="b18">9</button>
+    <br>
+    <!--hang 2-->
+    <button class="btn" id="b20">1</button>
+    <button class="btn" id="b21">2</button>
+    <button class="btn" id="b22">3</button>
+    <button class="btn" id="b23">4</button>
+    <button class="btn" id="b24">5</button>
+    <button class="btn" id="b25">6</button>
+    <button class="btn" id="b26">7</button>
+    <button class="btn" id="b27">8</button>
+    <button class="btn" id="b28">9</button>
+    <br>
+    <!--hang 3-->
+    <button class="btn" id="b30">1</button>
+    <button class="btn" id="b31">2</button>
+    <button class="btn" id="b32">3</button>
+    <button class="btn" id="b33">4</button>
+    <button class="btn" id="b34">5</button>
+    <button class="btn" id="b35">6</button>
+    <button class="btn" id="b36">7</button>
+    <button class="btn" id="b37">8</button>
+    <button class="btn" id="b38">9</button>
+    <br>
+    <!--hang 4-->
+    <button class="btn" id="b40">1</button>
+    <button class="btn" id="b41">2</button>
+    <button class="btn" id="b42">3</button>
+    <button class="btn" id="b43">4</button>
+    <button class="btn" id="b44">5</button>
+    <button class="btn" id="b45">6</button>
+    <button class="btn" id="b46">7</button>
+    <button class="btn" id="b47">8</button>
+    <button class="btn" id="b48">9</button>
+    <br>
+    <!--hang 5-->
+    <button class="btn" id="b50">1</button>
+    <button class="btn" id="b51">2</button>
+    <button class="btn" id="b52">3</button>
+    <button class="btn" id="b53">4</button>
+    <button class="btn" id="b54">5</button>
+    <button class="btn" id="b55">6</button>
+    <button class="btn" id="b56">7</button>
+    <button class="btn" id="b57">8</button>
+    <button class="btn" id="b58">9</button>
+    <br>
+    <!--hang 6-->
+    <button class="btn" id="b60">1</button>
+    <button class="btn" id="b61">2</button>
+    <button class="btn" id="b62">3</button>
+    <button class="btn" id="b63">4</button>
+    <button class="btn" id="b64">5</button>
+    <button class="btn" id="b65">6</button>
+    <button class="btn" id="b66">7</button>
+    <button class="btn" id="b67">8</button>
+    <button class="btn" id="b68">9</button>
+    <br>
+    <!--hang 7-->
+    <button class="btn" id="b70">1</button>
+    <button class="btn" id="b71">2</button>
+    <button class="btn" id="b72">3</button>
+    <button class="btn" id="b73">4</button>
+    <button class="btn" id="b74">5</button>
+    <button class="btn" id="b75">6</button>
+    <button class="btn" id="b76">7</button>
+    <button class="btn" id="b77">8</button>
+    <button class="btn" id="b78">9</button>
+    <br>
+    <!--hang 8-->
+    <button class="btn" id="b80">1</button>
+    <button class="btn" id="b81">2</button>
+    <button class="btn" id="b82">3</button>
+    <button class="btn" id="b83">4</button>
+    <button class="btn" id="b84">5</button>
+    <button class="btn" id="b85">6</button>
+    <button class="btn" id="b86">7</button>
+    <button class="btn" id="b87">8</button>
+    <button class="btn" id="b88">9</button>
+    <br>
+    
+    <script>
+        //gắn các nút vào mảng
+        //tạo 1 mảng 9*9 các button
+        let aBtn = [
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+            [0,1,2,3,4,5,6,7,8],
+        ]
+        for(let i = 0 ; i < 9 ; i++){
+            for(let j = 0 ; j < 9 ; j++){
+                aBtn[i][j] = document.getElementById("b" + i + j); //gắn 81 nút vào mảng
+            }
+        }
+        //thay số trên các nút để kiểm tra
+        for(let i = 0 ; i < 9 ; i++){
+            for(let j = 0 ; j < 9 ; j++){
+                aBtn[i][j].innerHTML = "" + i + j;
+            }
+        }
+        // tô màu các khối ô
+        for(let i = 0 ; i < 9 ; i++){
+            for(let j = 0 ; j < 9 ; j++){
+                if((Math.floor(i/3)*3 + Math.floor(j/3)*3) % 2 ==0){
+                    aBtn[i][j].style.background = "lightgreen"
+                }else{
+                    aBtn[i][j].style.background = "green"
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

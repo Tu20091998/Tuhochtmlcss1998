@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //bài 3 : kiểm tra chỉ số bmi
+        var kg = parseFloat(prompt("Nhập vào cân nặng của bạn(kg): "));
+        var chieucao = parseFloat(prompt("Nhập vào chiều cao của bạn(m): "));
+        if(isNaN(kg)||isNaN(chieucao)||kg<=0||chieucao<=0){
+            document.writeln("Vui lòng nhập cân nặng và chiều cao hợp lệ!!!");
+        }else{
+            var bmi = (kg/(chieucao**2));
+            document.writeln("Chỉ số bmi của bạn là : " + bmi.toPrecision(2));
+            if(bmi<18.5){
+                document.writeln("<br>Bạn bị thiếu cân !!!");
+            }else if(bmi>=18.5 && bmi <=24.99){
+                document.writeln("<br>Bạn có chỉ số bmi bình thường !!!");
+            }else if(bmi >= 25 && bmi <= 29.99){
+                document.writeln("<br>Bạn bị thừa cân !!!")
+            }else{
+                document.writeln("<br>Bạn bị béo phì!!!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var theList = [
+            "Lauren", 
+            "Kenvin", 
+            true, 35, 
+            null, 
+            undefined, 
+            ["one","two"]
+        ]
+        //xoá phần tử đầu tiên
+        theList.splice(0,1);
+
+        //xoá phần tử cuối cùng
+        theList.pop();
+
+        // thêm FIRST vào đầu mảng
+        theList[0] = "FIRST";
+
+        //Thêm hello world và vị trí thứ 4 của mảng
+        theList[4] = "hello world";
+
+        // thêm middle vào vị trí thứ 3 của mảng
+        theList[3] = "middle";
+
+        //thêm LAST vào cuối mảng
+        theList.push("LAST");
+        
+        //Xuất kết quả
+        document.writeln(theList);
+    </script>
+</body>
+</html>

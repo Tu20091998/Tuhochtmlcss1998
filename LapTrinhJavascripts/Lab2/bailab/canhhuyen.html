@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Bài 1: tính cạnh huyền của tam giác bằng định lý pitago
+        var a = parseFloat(prompt("Nhập vào giá trị cạnh a :"));
+        var b = parseFloat(prompt("Nhập vào giá trị cạnh b :"));
+        if(isNaN(a)||isNaN(b)||a<=0||b<=0){
+            document.writeln("Vui lòng nhập số hợp lệ lớn hơn 0!!!");
+        }else{
+            var c = Math.sqrt((a**2)+(b**2));
+            document.writeln("Giá trị của cạnh huyền là: " + c.toPrecision(2));
+        }
+    </script>
+</body>
+</html>

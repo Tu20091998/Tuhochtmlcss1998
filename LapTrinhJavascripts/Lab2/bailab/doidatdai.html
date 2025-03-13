@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Bài 2 : Đổi đơn vị đất đai
+        var dvdat = parseFloat(prompt("Nhập vào đơn vị đất đai cần đổi(m2): "));
+        if(isNaN(dvdat)||dvdat<0){
+            document.writeln("Đơn vị đất nhập vào phải là số và lớn hơn 0");
+        }else{
+            var sao = dvdat*(10/3600);
+            var ha = sao/10;
+            document.writeln("Đổi ra đơn vị sào : " + sao);
+            document.writeln("<br>Đổi ra đơn vị héc ta : " + ha);
+        }
+    </script>
+</body>
+</html>

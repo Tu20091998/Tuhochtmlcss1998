@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = Number(prompt("Cho số a : "));//nhập xong đổi ra số
+        let b = Number(prompt("Cho số b : "));//nhập xong đổi ra số
+        let c = Number(prompt("Cho số c : "));//nhập xong đổi ra số
+
+        let denta = b*b -4*a*c;
+        document.writeln("<h2> Delta = " + denta);
+        if(denta > 0){
+            // phương trình có 2 nghiệm phân biệt
+            document.writeln("<br> Phương trình có 2 nghiệm phân biệt!");
+            document.writeln("<br> x1 = "+ ((-b + Math.sqrt(denta))/2*a));
+            document.writeln("<br> x2 = "+ ((-b - Math.sqrt(denta))/2*a));
+        }
+        else if(denta==0){
+            //phương trình có nghiệm kép
+            document.writeln("<br> Phương trình có nghiệm kép!");
+            document.writeln("<br> x1 = x2"+ (-b/2*a));
+        }
+        else{
+            //phương trình vô nghiệm
+            document.writeln("<br> Phương trình vô nghiệm!");
+        }
+        
+    </script>
+</body>
+</html>

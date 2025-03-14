@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 3;
+        var b = 4;
+        const c = 5;
+        console.log("a = " + a);
+        console.log("b = " + b);
+        console.log("c = " + c);
+
+        a = 6;
+        b = 7;
+        //c = 8; lỗi hằng số không khai báo 2 lần
+        console.log("a = " + a);
+        console.log("b = " + b);
+        console.log("c = " + c);
+
+        //let a = 9; lỗi vì let chỉ khai báo 1 lần
+        var b = 10;
+        //const c = 11; lỗi vì hằng số
+        console.log("a = " + a);
+        console.log("b = " + b);
+        console.log("c = " + c);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quy định chơi Kéo Bao Búa: 1 là Búa, 2 là Bao, 3 là Kéo</h1>
+    <h3>Hệ thống chọn:</h3>
+    <h4 id="Hethong"></h4>
+    <h3>Người chơi chọn : </h3>
+    <h4 id="Nguoichoi"></h4>
+    <script>
+        // tạo hàm để xét các trường hợp trả về của số từ 1 đến 3 tương ứng với búa , bao , kéo
+        var Xetso = function(Quydinh){
+            switch(Quydinh){
+            case 1 : return 'Búa'; break;
+            case 2 : return 'Bao'; break;
+            case 3 : return 'Kéo'; break;
+            }
+        }
+        var H = Math.floor((Math.random()*3)+1);
+         // xét các lựa chọn của hệ thống và hiển thị kết quả là chữ tương ứng với lựa chọn của hệ thống
+        document.getElementById("Hethong").innerHTML = Xetso(H);
+
+        // Đây là lựa chọn của người chơi
+        var LuaChon = Number(prompt("Bạn chọn 1(Búa), 2(Bao), 3(Kéo) : "));
+        document.getElementById("Nguoichoi").innerHTML = Xetso(LuaChon);
+
+        // xét trường hợp máy và người cùng ra 1 lựa chọn
+        if(LuaChon == H){
+            document.writeln('<br>Máy và bạn hoà nhau !');
+        }
+        // 1 là búa ,  2 là bao , 3 là kéo
+        else if((LuaChon == 1 && H == 3) || (LuaChon == 2 && H == 1) || (LuaChon == 3 && H == 2)){
+            document.writeln('<br>Bạn đã thắng hệ thống !');
+        }
+        else{
+            document.writeln('<br>Bạn thua hệ thống rồi nhé ! . Chúc bạn may mắn lần sau !');
+        }
+    </script>
+</body>
+</html>

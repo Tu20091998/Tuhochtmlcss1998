@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thông tin của sinh viên</h1>
+    <button onclick="sv.hienThi()">Nhấn vào đây để xem chi tiết về Sinh Viên</button>
+    <div id="output"></div>
+    <script>
+        //tạo đối tượng sinh viên là object để lưu trữ các thông tin sinh viên
+        var sv = new Object();
+
+        // nhập họ và tên kèm điểm của sinh viên từ bàn phím
+        sv.hoTen = prompt("Nhập vào họ và tên của sinh viên : ");
+        sv.Diem = parseFloat(prompt("Nhập vào điểm của sinh viên : "));//dùng float vì là điểm
+        if(this.Diem > 10 || this.Diem < 0){
+            alert("Vui lòng nhập điểm hợp lệ!!!");
+        }
+        else{
+            //Tạo hàm sv.hienthi để lưu và xét các trường hợp điểm của sinh viên là thuộc xếp loại nào
+            sv.hienThi = function(){
+                if(this.Diem >= 8){
+                    this.hocLuc = "Giỏi";
+                }
+                else if(this.Diem >= 7){
+                    this.hocLuc = "Khá";
+                }
+                else if(this.Diem >= 5){
+                    this.hocLuc = "Trung bình";
+                }
+                else{
+                    this.hocLuc = "Yếu";
+                }
+
+                //hiển thị thông tin đầy đủ của sinh viên
+                document.getElementById("output").innerHTML = `
+                    <h3>Họ và tên của sinh viên: ${this.hoTen}</h3>
+                    <h3>Điểm của sinh viên: ${this.Diem}</h3>
+                    <h3>Học lực của sinh viên: ${this.hocLuc}</h3>
+                `;
+            };
+        }
+
+        //các lỗi cần tránh: lỗi cú pháp , khai báo this nếu dùng object
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //tạo mảng chính
+        var inventory = [];
+
+        // Tạo 3 items (gợi ý: sử dụng object), mỗi item có các thuộc tính như name, model, cost và quantity. 
+        var item1 = {
+            name : "Clothes",
+            model: "Usa",
+            cost : 1200,
+            quantity: 10
+        };
+
+        var item2 = {
+            name : "Shoes",
+            model: "Thailand",
+            cost : 1500,
+            quantity: 20
+        };
+
+        var item3 = {
+            name : "Bags",
+            model: "England",
+            cost : 1400,
+            quantity: 30
+        };
+
+        //Đưa 3 đối tượng này vào một mảng chính (main array/inventory array) bằng các phương thức mảng (học ở bài 2) 
+        inventory.push(item1);
+        inventory.push(item2);
+        inventory.push(item3);
+
+        //sau đó xuất inventory array bằng console 
+        console.log(inventory);
+
+        //4. Truy xuất quantity element của item thứ 3 bằng console.
+        console.log("Quantity of item3 : "+ inventory[2].quantity);
+
+        //5. Thêm và truy xuất thêm các elements khác từ main array/inventory array 
+        // Khai báo sản phẩm mới 
+        var item4 = {
+            name : "Glasses",
+            model: "Germany",
+            cost : 1400,
+            quantity: 30
+        };
+        //thêm sản phẩm vào inventory
+        inventory.push(item4);
+
+        //Truy xuất lại inventory mới được thêm sản phẩm
+        console.log(inventory);
+
+        //Truy xuất thông tin sản phẩm mới
+        console.log(inventory[3])
+    </script>
+</body>
+</html>

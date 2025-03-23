@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini game Rock - Paper - Scissor</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    p{
+        font-size: 30px;
+    }
+    button{
+        padding: 20px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <script>
+        //tạo hàm để đưa ra nút theo kết quả của người chơi
+        function getValue(userChoice){
+            // tạo mảng chứa 3 phần tử là lựa chọn của máy và người chơi
+            var choices = ['Rock','Paper','Scissor'] ;
+
+            // tạo biến ngẫu nhiên là lựa chọn của máy
+            var computerChoice = Math.floor(Math.random()*3);
+
+            //lấy ra giá trị kết quả trong mảng
+            var userPick = choices[userChoice];
+            var computerPick = choices[computerChoice];
+
+            //khai báo biến kết quả để lưu kết quả của máy và người chơi
+            var result = "";
+
+            // xét các trường hợp máy và người chọn để thắng hoặc thua
+            if(userChoice === computerChoice){
+                result = "Equal";
+            }
+            else{
+                switch(userChoice){
+                    case 0: result = (computerChoice==2)?"You Win!":"Computer Win!";break;
+                    case 1: result = (computerChoice==0)?"You Win!":"Computer Win!";break;
+                    case 2: result = (computerChoice==1)?"You Win":"Computer Win!";break;
+                }
+            }
+            //gọi id của kết quả và đưa ra màn hình
+            document.getElementById("result").innerHTML = `
+            Your choice : <b>${userPick}</b><br>
+            Computer choice : <b>${computerPick}</b><br>
+            Result : <b> ${result} </b><br>
+            `;
+        }
+    </script>
+    <!--Tạo tiêu đề và các nút ấn tương ứng và gọi kết quả trong js-->
+    <h2>Mini game Paper - Scissor - Rock</h2>
+    <img src="https://www.shutterstock.com/image-illustration/rock-paper-scissors-hand-signs-260nw-2310341353.jpg" height="200px" width="400px">
+
+    <h2>Please enter your choice !</h2>
+    <br><button onclick="getValue(1)">Paper</button>
+    <button onclick="getValue(2)">Scissor</button>
+    <button onclick="getValue(0)">Rock</button>
+
+    <p id="result"></p>
+</body>
+</html>

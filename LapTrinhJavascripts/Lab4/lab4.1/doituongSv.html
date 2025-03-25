@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //đây là đối tượng sinh viên
+        let sinhVien = {
+            ten : "Tú",
+            namSinh : 1998,
+            tuoi : function(){
+                return 2025 - this.namSinh
+            }
+        };
+        document.writeln('<h2> Tên : '+ sinhVien.ten + ", Tuổi: " + sinhVien.tuoi());
+
+        //đây là đối tượng khách sạn
+        let khachSan = {
+            tenKs : "Tuấn Tú",
+            soBuong : 12,
+            diaChi : "30 Doãn Uẩn - Phường Ngũ Hành - Tp Đà Nẵng",
+            sucChua : 2,
+            soKhach : function(){
+                return this.soBuong * this.sucChua
+            }
+        };
+        document.writeln('<h2> Số khách ở tối đa: '+ khachSan.soKhach());
+    </script>
+</body>
+</html>

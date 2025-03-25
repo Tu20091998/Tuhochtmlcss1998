@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //tạo lớp (class)
+        function SinhVien(ten,namSinh){
+            this.ten = ten;
+            this.namSinh = namSinh;
+            this.tuoi = function(){
+                return 2025 - this.namSinh;
+            }
+        }
+        //tạo đối tượng (object)
+        let sv1 = new SinhVien("Tú",1998);
+        let sv2 = new SinhVien("Hùng",2001);
+        document.writeln('<h2> Tên : '+ sv1.ten + ", Tuổi: "+ sv1.tuoi());
+        document.writeln('<h2> Tên : '+ sv2.ten + ", Tuổi: "+ sv2.tuoi());
+
+        // Hàm khởi tạo đối tượng khách sạn
+        function KhachSan(tenks, soPhong, diaChi, khachMoiPhong) {
+            this.tenks = tenks;
+            this.soPhong = soPhong;
+            this.diaChi = diaChi;
+            this.khachMoiPhong = khachMoiPhong;
+            this.soKhach = function() {
+                return this.soPhong * this.khachMoiPhong;
+            };
+        }
+
+        // Tạo 2 đối tượng khách sạn
+        let ks1 = new KhachSan("Tuấn Tú", 12, "30 Doãn Uẩn, Đà Nẵng", 2);
+        let ks2 = new KhachSan("Sơn Trà", 20, "Nguyễn Văn Thoại, Đà Nẵng", 3);
+
+        // Hiển thị thông tin khách sạn
+        document.writeln('<h2>Khách sạn: ' + ks1.tenks + '</h2>');
+        document.writeln('<p>Địa chỉ: ' + ks1.diaChi + '</p>');
+        document.writeln('<p>Số khách tối đa: ' + ks1.soKhach() + '</p>');
+
+        document.writeln('<hr>');
+
+        document.writeln('<h2>Khách sạn: ' + ks2.tenks + '</h2>');
+        document.writeln('<p>Địa chỉ: ' + ks2.diaChi + '</p>');
+        document.writeln('<p>Số khách tối đa: ' + ks2.soKhach() + '</p>');
+
+        // Tạo mảng sinh vien
+        let danhSach = [
+            new SinhVien ("Hau",1999),
+            new SinhVien ("Tu",1998),
+            new SinhVien ("Tinh",1996),
+            new SinhVien ("Tuan",1992),
+            new SinhVien ("Ý",1995),
+            new SinhVien ("Ha",1994),
+            new SinhVien ("Huan",2007),
+            new SinhVien ("Rung",2002),
+            new SinhVien ("Trung",1991),
+            new SinhVien ("Tuan",1991),
+        ];
+        //duyệt mảng bằng for i
+        for(let i = 0;i<danhSach.length;i++){
+            document.writeln('<br> Sinh vien thu : '+ (i+1) + "Ten "+ danhSach[i].ten, ",Tuoi"+ danhSach[i].tuoi()+"<br>");
+        }
+
+        //duyệt mảng bằng for of
+        document.write('<br>Danh sach sinh vien<br>'); 
+        for(let sv of danhSach){
+            document.write('<br>' + sv.ten + ' ' + sv.tuoi()); 
+        }
+
+        // duyệt mảng bằng for in
+        for(let x in danhSach){
+            document.writeln('ten '+ danhSach[x].ten+ " Tuoi"+ danhSach[x].tuoi()+ "<br>");
+        }
+        
+        // dùng mảng in 6 khách sạn
+        let dskhachSan =[
+            new KhachSan ("Tuấn",4),
+            new KhachSan ("Tuấn",4),
+            new KhachSan ("Tuấn",1),
+            new KhachSan ("Tùng Chi",12),
+            new KhachSan ("Hân hải",12),
+            new KhachSan ("Tình yêu",12),
+            new KhachSan ("Tình Tú",12),
+            new KhachSan ("Tình 1 đêm",12),
+            new KhachSan ("Tình của tôi",12),
+            new KhachSan ("Tình toán",12),
+        ];
+        for(let i = 0;i<dskhachSan.length;i++){
+            document.writeln('<br> khach san thu '+ (i+1) + "Ten khach san:"+ dskhachSan[i].tenks, ", Số phòng"+ dskhachSan[i].soPhong);
+        }
+        
+        //in co dieu kien danh sach sinh vien
+        for(let sv of danhSach){
+            document.writeln('<br>'+ sv.ten+ ","+ sv.tuoi());
+        }
+
+        //in ra co dieu kien danh sach khach san
+        for(let ks of dskhachSan){
+            if(ks.soPhong > 5){
+                document.writeln('<br>'+ ks.tenks+ ","+ ks.soPhong);
+            }
+            
+        }
+
+        ////tìm kiếm trong danh sách sinh viên
+        //document.writeln('<br><br>danh sách sinh viên trên 24:');
+        //let tenCanTim = prompt("Nhập tên sinh viên cần tìm: ");
+        //let dem = 0;
+        //for(let sv of danhSach){
+        //    if(sv.ten == tenCanTim){
+        //        document.writeln('<br>'+ sv.ten+ ","+ sv.tuoi());
+        //        dem++;
+        //    }
+        //    
+        //}
+        //if(dem==0){
+        //    document.writeln('<br>Không tìm thấy sinh viên tên đó!!!');
+        //}else{
+        //    document.writeln('<br>Đã tìm thấy '+ dem + " sinh vien ten : "+ tenCanTim);
+        //}
+//
+        // tìm khách sạn theo tên
+        document.writeln('<br><br>danh sách khách sạn trên 2 phòng trên 24:');
+        let tenksCanTim = prompt("Nhập tên khách sạn cần tìm: ");
+        let count = 0;
+        for(let ks of dskhachSan){
+            if(ks.tenks == tenksCanTim){
+                document.writeln('<br>'+ ks.tenks+ ","+ ks.soPhong);
+                count++;
+            }
+            
+        }
+        if(dem==0){
+            document.writeln('<br>Không tìm thấy khách sạn tên đó!!!');
+        }else{
+            document.writeln('<br>Đã tìm thấy '+ count + " khách sạn tên : "+ ks.tenks);
+        }
+    </script>
+</body>
+</html>

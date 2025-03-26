@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Mô hình Bomm
+    <br>
+    <!--hiển thị kết quả output-->
+    <h2 id="output">outputt</h2>
+
+    <!--Đóng trang hiện tại-->
+    <button onclick="window.close()">Đóng trang</button>
+
+    <!--Mở trang mới trong trình duyệt-->
+    <button onclick="window.open()">Mở trang mới</button>
+
+    <!--truy cập đến trang báo-->
+    <button onclick="window.open('http://vnexpress.net')">Mở trang vn express</button>
+
+    <!--Tạo 1 nút cho biết kích thước cửa sổ trang web-->
+    <button onclick="cuaSo()">Xem kích thước cửa sổ</button>
+
+    <!--Tạo 1 nút cho biết kích thước của màn hình-->
+    <button onclick="manHinh()">Xem kích thước màn hình</button>
+
+    <!--Tạo nút kiểm tra độ phân giải của màn hình-->
+    <button onclick="doPhanGiai()">Độ phân giải màn hình</button>
+
+    <!--Tạo nút đóng cửa sổ sau 9 giây-->
+    <button onclick="setTimeout('dongCuaSo()',9000)">Đóng cửa sổ sau 9 giây</button>
+
+    <!--Tạo đồng hồ số -->
+    <button onclick="setTimeout('dongHoSo()',10)">Đồng hồ số</button>
+
+    <!--Tạo đồng hồ số -->
+    <button onclick="setInterval('dongHoSo()',10)">Đồng hồ số</button>
+    <script>
+        // khai báo biến trả kết quả các hàm
+        let output = document.getElementById("output");
+
+        //gọi các biến tương ứng với giá trị của đồng hồ
+        let h = 0 , m = 0 , s = 0;
+
+
+        //hàm kiểm tra kích thước cửa sổ
+        function cuaSo(){
+            output.innerHTML = "Cửa sổ web Cao : "+ window.innerHeight+ " Rộng: "+ window.innerWidth;
+        }
+
+        // hàm kiểm tra kích thước màn hình
+        function manHinh(){
+            output.innerHTML = "Màn hình cao : "+ screen.height + "Rộng: "+ screen.width;
+        }
+
+        // hàm kiểm tra độ phân giải của màn hình
+        function doPhanGiai(){
+            output.innerHTML = "Độ phân giải : "+ screen.pixelDepth ;
+        }
+
+        //hàm đóng cửa sổ
+        function dongCuaSo(){
+            window.close();
+        }
+
+        //hàm đồng hồ số
+        function dongHoSo(){
+            s++;
+            if(s>59){
+                s = 0;
+                m++;
+                if(m>59){
+                    m = 0;
+                    h++;
+                    if(h>23) h = 0;
+                }
+            }
+            //hiển thị đồng hồ
+            output.innerHTML = h +":"+ m +":"+ s;
+        }
+    </script>
+</body>
+</html>

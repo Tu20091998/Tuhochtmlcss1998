@@ -183,6 +183,37 @@
         ];
         let num = 1;//số sẽ điền vào
         //khai báo các hàm -----------------------------------------------------------------
+        //kiểm tra trùng khối
+        function trungKhoi(i,j,num){
+            let dem = 0;
+            let idk = Math.floor(i/3)*3;
+            let jdk = Math.floor(j/3)*3;// toạ độ của ô đầu mỗi khối(idk,jdk)
+
+            for (let ii = idk; ii < idk + 3; ii++) {
+                for(let jj = jdk ; jj < jdk + 3; jj++)
+                if(data[ii][jj] == num){
+                    dem++;
+
+                }
+            }
+            if(dem == 0) return false;// chưa trùng
+            else return true;//bị trùng
+        }
+
+
+
+        //Kiểm tra xem cột j đã có số num chưa?
+        function trungCot(j,num){
+            let dem = 0;
+            for (let i = 0; i < 9; i++) {
+                if(data[i][j]==num){
+                    dem++;
+                }
+            }
+            if(dem == 0) return false;// chưa trùng
+            else return true;//bị trùng
+        }
+
         //điền số num vào hàng i thì bị trùng , không cho điền
         function trungHang(i,num){
             let dem = 0;
@@ -195,6 +226,8 @@
             else return true;//bị trùng 
             
         }
+
+
         //điền số đã chọn vào nút này(obj)
         function dienSo(obj){
             let i = obj.id.charAt(1);//hàngb78
@@ -203,6 +236,19 @@
                 alert("Bị trùng hàng "+ i);
                 return;//kết thúc hàng nếu bị trùng
             }
+            
+            // hàm trùng khối 3x3
+            if(trungKhoi(i,j,num)){
+                alert("Bị trùng khối!!!");
+                return;// kết thúc hàm trùng khối
+            }
+
+            //nếu bị trùng trong cột thì không cho điền số
+            if(trungCot(j,num)){
+                alert("Bị trùng cột!!");
+                return;
+            }
+
             if(data[i][j]==0){
                 data[i][j] = num;//điền số vào mảng, chỉ được điền vào khi là số 0
                 obj.style.color = "orange";//số mới điền vào có màu vàng
@@ -214,8 +260,7 @@
             toMauCacNutSo();//xoá màu cũ
             obj.style.background = "gray";//đặt màu mới
             num = obj.innerHTML;
-            console.log("Bạn chọn số : "+ num);
-            
+            //console.log("Bạn chọn số : "+ num);
         }
         //-----------------------------------------------
         //gắn các nút số vào mảng
@@ -347,7 +392,7 @@
         duaSoVaoCacNut();
         toMau();
         hoanVi();
-        xoaBotSo(20);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
+        xoaBotSo(1);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
         ganCacNutSoVaoMang();
         toMauCacNutSo();
     </script>

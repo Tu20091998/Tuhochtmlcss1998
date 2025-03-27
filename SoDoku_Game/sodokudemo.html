@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku.NDTu</title>
+    <!--Định dạng các đối tượng trên trang web-->
+    <style>
+        /* định dạng các nút (button)*/
+        .btn{
+            height: 50px;
+            width: 50px;
+            border: 1px solid gray;
+            font-weight: bolder;
+            font-size: 25px;
+            color: black;
+        }
+        /*định dạng các nút */
+        .khung9x9{
+            height: 450px;
+            width: 450px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /*Định dạng khung số*/
+        .khung9x1{
+            height: 50px;
+            width: 450px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>SuDoKu Nguyễn Đình Tú</h2>
+    <!--Khung hình vuông chứa 81 nút sát nhau-->
+    <div class="khung9x9">
+        <!--hàng 0-->
+        <button class="btn" onclick="dienSo(this)" id="b00">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b01">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b02">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b03">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b04">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b05">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b06">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b07">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b08">9</button>
+        <br>
+        <!--hàng 1-->
+        <button class="btn" onclick="dienSo(this)" id="b10">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b11">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b12">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b13">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b14">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b15">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b16">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b17">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b18">9</button>
+        <br>
+        <!--hàng 2-->
+        <button class="btn" onclick="dienSo(this)" id="b20">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b21">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b22">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b23">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b24">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b25">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b26">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b27">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b28">9</button>
+        <br>
+        <!--hàng 3-->
+        <button class="btn" onclick="dienSo(this)" id="b30">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b31">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b32">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b33">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b34">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b35">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b36">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b37">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b38">9</button>
+        <br>
+        <!--hàng 4-->
+        <button class="btn" onclick="dienSo(this)" id="b40">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b41">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b42">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b43">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b44">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b45">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b46">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b47">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b48">9</button>
+        <br>
+        <!--hàng 5-->
+        <button class="btn" onclick="dienSo(this)" id="b50">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b51">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b52">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b53">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b54">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b55">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b56">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b57">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b58">9</button>
+        <br>
+        <!--hàng 6-->
+        <button class="btn" onclick="dienSo(this)" id="b60">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b61">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b62">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b63">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b64">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b65">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b66">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b67">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b68">9</button>
+        <br>
+        <!--hàng 7-->
+        <button class="btn" onclick="dienSo(this)" id="b70">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b71">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b72">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b73">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b74">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b75">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b76">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b77">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b78">9</button>
+        <br>
+        <!--hàng 8-->
+        <button class="btn" onclick="dienSo(this)" id="b80">1</button>
+        <button class="btn" onclick="dienSo(this)" id="b81">2</button>
+        <button class="btn" onclick="dienSo(this)" id="b82">3</button>
+        <button class="btn" onclick="dienSo(this)" id="b83">4</button>
+        <button class="btn" onclick="dienSo(this)" id="b84">5</button>
+        <button class="btn" onclick="dienSo(this)" id="b85">6</button>
+        <button class="btn" onclick="dienSo(this)" id="b86">7</button>
+        <button class="btn" onclick="dienSo(this)" id="b87">8</button>
+        <button class="btn" onclick="dienSo(this)" id="b88">9</button>
+        <br>
+    </div>
+    <h2>Sudoku</h2>
+    <div class="khung9x1">
+        <!--Khung chứa 9 số để chọn rồi điền vào-->
+        <!--Khi bấm nút thì gọi hàm chọn số, this là nút này-->
+        <button class="btn" onclick="chonSo(this)" id="b0">1</button>
+        <button class="btn" onclick="chonSo(this)" id="b1">2</button>
+        <button class="btn" onclick="chonSo(this)" id="b2">3</button>
+        <button class="btn" onclick="chonSo(this)" id="b3">4</button>
+        <button class="btn" onclick="chonSo(this)" id="b4">5</button>
+        <button class="btn" onclick="chonSo(this)" id="b5">6</button>
+        <button class="btn" onclick="chonSo(this)" id="b6">7</button>
+        <button class="btn" onclick="chonSo(this)" id="b7">8</button>
+        <button class="btn" onclick="chonSo(this)" id="b8">9</button>
+    </div>
+    <!--Phần lập trình javascript-->
+    <script>
+        //khai báo các biến--------------------------------------------------------------
+        //gắn các nút vào mảng
+        //tạo 1 mảng 9*9 các button
+        let aBtn = [
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0],
+        ];
+        // mảng 9 nút dùng để điền vào
+        let aCacso = [0,1,2,3,4,5,6,7,8];
+        //mảng số liệu sodoku-------------------------------------------------------------
+        let data = [
+            [6, 1, 3, 5, 4, 9, 8, 2, 7],
+            [9, 8, 4, 6, 7, 2, 5, 3, 1],
+            [2, 5, 7, 8, 3, 1, 6, 4, 9],
+
+            [8, 3, 2, 1, 5, 7, 4, 9, 6],
+            [7, 4, 5, 3, 9, 6, 2, 1, 8],
+            [1, 9, 6, 2, 8, 4, 7, 5, 3],
+
+            [3, 7, 8, 4, 1, 5, 9, 6, 2],
+            [4, 2, 9, 7, 6, 3, 1, 8, 5],
+            [5, 6, 1, 9, 2, 8, 3, 7, 4],
+        ];
+        let num = 1;//số sẽ điền vào
+        //khai báo các hàm -----------------------------------------------------------------
+        //kiểm tra trùng khối
+        function trungKhoi(i,j,num){
+            let dem = 0;
+            let idk = Math.floor(i/3)*3;
+            let jdk = Math.floor(j/3)*3;// toạ độ của ô đầu mỗi khối(idk,jdk)
+
+            for (let ii = idk; ii < idk + 3; ii++) {
+                for(let jj = jdk ; jj < jdk + 3; jj++)
+                if(data[ii][jj] == num){
+                    dem++;
+
+                }
+            }
+            if(dem == 0) return false;// chưa trùng
+            else return true;//bị trùng
+        }
+
+        //Kiểm tra xem cột j đã có số num chưa?
+        function trungCot(j,num){
+            let dem = 0;
+            for (let i = 0; i < 9; i++) {
+                if(data[i][j]==num){
+                    dem++;
+                }
+            }
+            if(dem == 0) return false;// chưa trùng
+            else return true;//bị trùng
+        }
+
+        //điền số num vào hàng i thì bị trùng , không cho điền
+        function trungHang(i,num){
+            let dem = 0;
+            for (let j = 0; j < 10; j++) {
+                if(data[i][j]==num){
+                    dem++;
+                }
+            }
+            if(dem == 0) return false;// chưa trùng
+            else return true;//bị trùng 
+            
+        }
+
+
+        //điền số đã chọn vào nút này(obj)
+        function dienSo(obj){
+            let i = obj.id.charAt(1);//hàngb78
+            let j = obj.id.charAt(2);//hàng
+            if(trungHang(i,num)){
+                alert("Bị trùng hàng "+ i);
+                return;//kết thúc hàng nếu bị trùng
+            }
+            
+            // hàm trùng khối 3x3
+            if(trungKhoi(i,j,num)){
+                alert("Bị trùng khối!!!");
+                return;// kết thúc hàm trùng khối
+            }
+
+            //nếu bị trùng trong cột thì không cho điền số
+            if(trungCot(j,num)){
+                alert("Bị trùng cột!!");
+                return;
+            }
+
+            if(data[i][j]==0){
+                data[i][j] = num;//điền số vào mảng, chỉ được điền vào khi là số 0
+                obj.style.color = "orange";//số mới điền vào có màu vàng
+            }
+            duaSoVaoCacNut();
+            //obj.innerHTML = num;
+        }
+        function chonSo(obj){
+            toMauCacNutSo();//xoá màu cũ
+            obj.style.background = "gray";//đặt màu mới
+            num = obj.innerHTML;
+            //console.log("Bạn chọn số : "+ num);
+        }
+        //-----------------------------------------------
+        //gắn các nút số vào mảng
+        function ganCacNutSoVaoMang(){
+            for (let i = 0; i < 9; i++) {
+                aCacso[i] = document.getElementById("b" + i);//các nút từ b0 đến b8
+            }
+        }
+        //------------------------------------------------------
+        function ganCacNutVaoMang(){
+             //gắn 81 nút vào mảng
+            for(let i = 0 ; i < 9 ; i++){
+                for(let j = 0 ; j < 9 ; j++){
+                    aBtn[i][j] = document.getElementById("b" + i + j);
+                }
+            }
+        };
+        //--------------------------------------------------------------------
+        function duaSoVaoCacNut(){
+            //thay số trên các nút để kiểm tra
+            for(let i = 0 ; i < 9 ; i++){
+                for(let j = 0 ; j < 9 ; j++){
+                    aBtn[i][j].innerHTML = ""+ (data[i][j] != 0 ? data[i][j] : "  ");
+                }
+            }
+        };
+        //--------------------------------------------------------------------------
+        // Tô màu cho 9 nút số
+        function toMauCacNutSo(){
+            for (let i = 0; i < 9; i++) {
+                aCacso[i].style.background = "lightgreen";
+            }
+        }
+        // mỗi khối có 3x3 nút
+        function toMau(){
+            // tô màu các khối ô
+            for(let i = 0 ; i < 9 ; i++){
+                for(let j = 0 ; j < 9 ; j++){
+                    if((Math.floor(i/3) + Math.floor(j/3)) % 2 ==0){
+                        aBtn[i][j].style.background = "lightgray";
+                    }else{
+                        aBtn[i][j].style.background = "lightblue";
+                    }
+                }
+            }
+        };
+        //--------------------------------------------------------------------------------
+        //hàm hoán vị 
+        function hoanVi(){
+            //hoán vị ngẫu nhiên 2 trong 3 hàng đầu 0-1-2
+            let a  = Math.floor(Math.random()*3);// a sẽ là 0/1/2
+            let b  = Math.floor(Math.random()*3);// b sẽ là 0/1/2
+            let tam;
+            //hoán vị hàng thì chạy theo cột
+            for (let j = 0; j < 9; j++) {
+                tam = data[a][j];
+                data[a][j] = data[b][j];
+                data[b][j] = tam;
+            }
+
+            //hoán vị 3 hàng giữa 3-4-5
+            a  = Math.floor(Math.random()*3)+3;// a sẽ là 3/4/5
+            b  = Math.floor(Math.random()*3)+3;// b sẽ là 3/4/5
+            for (let j = 0; j < 9; j++) {
+                tam = data[a][j];
+                data[a][j] = data[b][j];
+                data[b][j] = tam;
+            }
+
+            //hoán vị 3 hàng cuối 
+            a  = Math.floor(Math.random()*3)+6;// a sẽ là 6/7/8
+            b  = Math.floor(Math.random()*3)+6;// b sẽ là 6/7/8
+            for (let j = 0; j < 9; j++) {
+                tam = data[a][j];
+                data[a][j] = data[b][j];
+                data[b][j] = tam;
+            }
+
+            //hoán vị 2 trong 3 cột đầu
+
+            //hoán vị cột thì chạy theo hàng
+            a  = Math.floor(Math.random()*3);// a sẽ là 0/1/2
+            b  = Math.floor(Math.random()*3);// b sẽ là 0/1/2
+            for (let i = 0; i < 9; i++) {
+                tam = data[i][a];
+                data[i][a] = data[i][b];
+                data[i][b] = tam;
+            }
+
+            //hoán vị 3 cột giữa
+            a  = Math.floor(Math.random()*3)+3;// a sẽ là 3/4/5
+            b  = Math.floor(Math.random()*3)+3;// b sẽ là 3/4/5
+            for (let i = 0; i < 9; i++) {
+                tam = data[i][a];
+                data[i][a] = data[i][b];
+                data[i][b] = tam;
+            }
+
+            //hoán vị 3 cột cuối
+            a  = Math.floor(Math.random()*3)+6;// a sẽ là 6/7/8
+            b  = Math.floor(Math.random()*3)+6;// b sẽ là 6/7/8
+            for (let i = 0; i < 9; i++) {
+                tam = data[i][a];
+                data[i][a] = data[i][b];
+                data[i][b] = tam;
+            }
+            duaSoVaoCacNut();
+        }
+        //------------------------------------------------------------------
+
+        //xoá bớt n số ngẫu nhiên
+        function xoaBotSo(n){
+            let dem = 0;
+            let a  = Math.floor(Math.random()*9);// a sẽ là 0 đến 8
+            let b  = Math.floor(Math.random()*9);// b sẽ là 0 đến 8
+            while(dem < n){
+                a  = Math.floor(Math.random()*9);// a sẽ là 0 đến 8
+                b  = Math.floor(Math.random()*9);// b sẽ là 0 đến 8
+                if(data[a][b] != 0){
+                    data[a][b] = 0;//xoá 
+                    dem++;
+                }
+            }
+            duaSoVaoCacNut();
+        }
+
+        //main : chương trình chính sẽ chạy bắt đầu từ đây-----------------------------------------------
+        ganCacNutVaoMang();//lời gọi hàm
+        duaSoVaoCacNut();
+        toMau();
+        hoanVi();
+        xoaBotSo(1);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
+        ganCacNutSoVaoMang();
+        toMauCacNutSo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--demo lấy theo thẻ-->
+    <p>Đây là đoạn 1</p>
+    <p>Đây là đoạn 2</p>
+    <button onclick="getByTag()">Lấy theo tag</button>
+
+    <!--demo lấy theo class-->
+    <p class="myClass">Xin chào class 1</p>
+    <p class="myClass">Xin chào class 2</p>
+    <button onclick="getByClass()">Lấy theo class</button>
+
+    <!--Lấy theo selector-->
+    <p class="myClasss">Xin chào Selector!</p>
+    <button onclick="getBySelector()">Lấy theo Selector</button>
+
+
+    <script>
+        //hàm lấy theo thẻ
+        function getByTag(){
+            let elements = document.getElementsByTagName("p").item(1);
+            alert(elements);
+        }
+
+        //hàm lấy theo class
+        function getByClass(){
+            let elements = document.getElementsByClassName("myClass");
+            alert(elements[1].innerHTML);
+        }
+        
+        //hàm lấy theo selector
+        function getBySelector(){
+            let element = document.querySelector(".myClasss");
+            alert(element.innerHTML);
+        }
+        
+    </script>
+</body>
+</html>

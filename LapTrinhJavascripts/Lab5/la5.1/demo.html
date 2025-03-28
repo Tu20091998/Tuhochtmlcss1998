@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--1.kiểm tra nút nhấn vào-->
+    <button onclick="checkNote(this)">Nút</button>
+    <a href="#" onclick="checkNote(this)">Liên kết</a>
+
+    <!--2.Lấy giá trị của text node-->
+    <p id="text">Chào Nguyễn Đình Tú</p>
+    <buton onclick="getText()">Lấy nội dung</buton>
+
+    <!--3.Kiểm tra loại node-->
+    <p id="check">Kiểm tra loại node</p>
+
+    <!--4.xoá nodeCha-->
+    <div>
+        <p id="child">Đây là 1 đoạn văn bản</p>
+        <button onclick="removeElement()">Nhấn vào đây để xoá đoạn văn bản trên</button>
+    </div>
+
+    <!--5.Đếm số mục trong danh sách con-->
+    <ul id="list">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+    <button onclick="countItem()">Nhấn để đếm số item</button>
+
+    <!--6. lấy danh sách thuộc tính của node-->
+    <a id="myLink" href="http://google.com"></a>
+    <button onclick="getHref()">Lấy URL</button>
+
+    <script>
+        //1.hàm kiểm tra nút nhấn vào
+        function checkNote(element){
+            alert("Bạn vừa bấm vào thẻ : " + element.nodeName);
+        }
+
+        //2.hàm lấy giá trị của text node
+        function getText(){
+            let textNode = document.getElementById("text").firstChild;
+            alert(textNode.nodeValue);
+        }
+
+        //3.kiểm tra loại node
+        let node = document.getElementById("check");
+        document.writeln(node.nodeType);
+
+        //4.hàm xoá nodeCha
+        function removeElement(){
+            let child = document.getElementById("child");
+            child.parentNode.removeChild(child);
+        }
+        
+        //5.hàm đếm số mục trong danh sách
+        function countItem(){
+            let list = document.getElementById("list");
+            alert("Số mục trong danh sách: " + list.childNodes.length);
+        }
+
+        //6.hàm lấy danh sách thuộc tính 
+        function getHref(){
+            let link = document.getElementById("myLink");
+            alert("Liên kết đến : "+ link.attributes["href"].value);
+        }
+    </script>
+</body>
+</html>

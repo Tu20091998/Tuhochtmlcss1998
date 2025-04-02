@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Con cò</p>
+    <div>
+        <p>Con cò bé bé</p>
+        <p>Nó đậu cành tre</p>
+        <p>Đi không hỏi mẹ</p>
+        <p>Biết đi đường nào</p>
+    </div>
+
+    <script>
+        let theP = document.querySelector("p");//tìm và trả về thẻ đầu tiên
+        theP.style.color = "red";
+
+        let arr = document.querySelectorAll("p");//trả về mảng các thẻ p
+        for (let i = 1; i < arr.length; i++) {
+            arr[i].style.color = "blue";
+        }
+
+        let theDiv = document.querySelector("div");
+        theDiv.style.color = "green";
+
+        
+    </script>
+</body>
+</html>

@@ -6,16 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <!--1.kiểm tra nút nhấn vào-->
-    <button onclick="checkNote(this)">Nút</button>
-    <a href="#" onclick="checkNote(this)">Liên kết</a>
-
     <!--2.Lấy giá trị của text node-->
     <p id="text">Chào Nguyễn Đình Tú</p>
     <buton onclick="getText()">Lấy nội dung</buton>
-
-    <!--3.Kiểm tra loại node-->
-    <p id="check">Kiểm tra loại node</p>
 
     <!--4.xoá nodeCha-->
     <div>
@@ -31,16 +24,37 @@
     </ul>
     <button onclick="countItem()">Nhấn để đếm số item</button>
 
-    <!--6. lấy danh sách thuộc tính của node-->
-    <a id="myLink" href="http://google.com"></a>
-    <button onclick="getHref()">Lấy URL</button>
 
+    <!--7. Các phần tử có cùng class-->
+    <p class="example">Đây là phần tử có cùng class</p>
+    <p class="example">Đây là phần tử có cùng class</p>
+    <p class="example">Đây là phần tử có cùng class</p>
+    <button onclick="changeText()">Đổi nội dung</button>
+    
+    <!--8. Truy xuất các phàn tử dùng selector-->
+    <p class="element">Đây là truy xuất selector</p>
+    <p class="element">Đây là truy xuất selector</p>
+    <button onclick="changeSelector()">Xoá nội dung selector</button>
+
+    
+    <!--11. Lấy phần tử con nằm trong div hoa-->
+    <div id="hoa">
+        <p>hoa hồng</p>
+        <p>hoa lan</p>
+        <p>hoa huệ</p>
+    </div>
+
+    <!--13. Xoá các phần tử dùng moveChild-->
+    <p id="hi">Hi , xin chào tú nguyễn</p>
+    <button onclick="xoaHi()">xoá dòng hi</button>
+    <br>
+
+    <!--this trong hàm-->
+    <button onclick="bamMau(this)">Bấm vào đây để đổi màu</button>
+    
+    <!--Hiển thị kết quả hỗ trợ phương thức của trình duyệt-->
+    <button onclick="kiemTraPThuc()">Nhấn để kiểm tra phương thức</button>
     <script>
-        //1.hàm kiểm tra nút nhấn vào
-        function checkNote(element){
-            alert("Bạn vừa bấm vào thẻ : " + element.nodeName);
-        }
-
         //2.hàm lấy giá trị của text node
         function getText(){
             let textNode = document.getElementById("text").firstChild;
@@ -60,7 +74,7 @@
         //5.hàm đếm số mục trong danh sách
         function countItem(){
             let list = document.getElementById("list");
-            alert("Số mục trong danh sách: " + list.childNodes.length);
+            alert("Số mục trong danh sách: " + list.children.length);
         }
 
         //6.hàm lấy danh sách thuộc tính 
@@ -68,6 +82,54 @@
             let link = document.getElementById("myLink");
             alert("Liên kết đến : "+ link.attributes["href"].value);
         }
+
+        //7 .truy xuất các phần tử có cùng class example và thay đổi nội dung trong class
+        function changeText(){
+            var elements = document.getElementsByClassName("example");
+            for(let i = 0;i<elements.length;i++){
+                elements[i].innerHTML = "Đã đổi nội dung";
+            }
+        }
+        
+        //8. truy xuất thẻ và class bằng selector
+        function changeSelector(){
+            var changeSelectors = document.querySelectorAll(".element").forEach(el => el.classList.remove("element"));
+            
+        }
+
+        //11. lấy nội dung trong thẻ div hoa
+        var divHoa = document.getElementById("hoa");
+        var pHoahong = divHoa.children[1];
+        alert(pHoahong.innerHTML);
+
+        //12. demo thêm node vào element dùng phương thức creatElement và appendChild
+        var newElements = document.createElement("p");
+        document.body.appendChild(newElements);
+        var text = document.createTextNode("Tú đẹp trai nhất!");
+        newElements.appendChild(text);
+
+        //13. xoá các node element bằng removeChild
+        function xoaHi(){
+            document.body.removeChild(hi);
+        }
+        
+        //demo this trong hàm
+        function bamMau(elementss){
+            alert(elementss.innerHTML);
+            elementss.style.backgroundColor = "yellow";
+        }
+
+        //hàm kiểm tra phương thức của trình duyệt
+        function kiemTraPThuc(){
+            if(typeof document.body.firstElementChild != "undefined"){
+                alert("trình duyệt hỗ trợ phương thức firstElementChild");
+            }
+            else{
+                alert("trình duyệt không hỗ trợ phương thức firstElementChild");
+            }
+        }
+
+        //
     </script>
 </body>
 </html>

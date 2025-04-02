@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt mua Iphone 9</title>
+</head>
+<body>
+    <!--Tạo nhãn cho các đầu nhập vào và hiển thị-->
+    <label id="pro" data-price="1950">Iphone 9</label>
+    <input id="qty" type="number">
+    <button onclick="display()">OK</button>
+    <hr>
+    <h3>Name: <span id="name"> ?</span></h3> 
+    <h3>Amount: <span id="amount"> ?</span></h3> 
+
+    <script>
+        function display(){
+            //lấy phần tử của sản phẩm
+            var pro = document.getElementById("pro");
+            var qty = document.getElementById("qty");
+
+            //lấy thông tin của sản phẩm
+            var name = pro.innerText;
+            var price = pro.getAttribute("data-price");
+            var quantity = qty.value;
+
+            //tính toán giá trị của amount
+            var amount = quantity*price;
+
+            //in ra màn hình
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("amount").innerHTML = amount;
+        }
+    </script>
+</body>
+</html>

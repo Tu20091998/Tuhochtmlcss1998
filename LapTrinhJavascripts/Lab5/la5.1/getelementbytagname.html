@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Con cò</p>
+    <div>
+        <p>Con cò bé bé</p>
+        <p>Nó đậu cành tre</p>
+        <p>Đi không hỏi mẹ</p>
+        <p>Biết đi đường nào</p>
+        <p>Thế là nó lạc đường!!!</p>
+    </div>
+
+    <script>
+        //truy cập vào tagname
+        let arrp = document.getElementsByTagName("p");//trả về mảng các thẻ p
+        arrp[0].style.color = "red";
+        arrp[1].style.color = "green";
+        arrp[2].style.color = "blue";
+        arrp[3].style.color = "orange";
+        arrp[4].style.color = "pink";
+        arrp[5].style.color = "yellow";
+
+        let size = 30;
+        for (let i = 0; i < arrp.length; i++) {
+            arrp[i].style.fontSize = size + "px";
+            size += 5;
+        }
+    </script>
+</body>
+</html>

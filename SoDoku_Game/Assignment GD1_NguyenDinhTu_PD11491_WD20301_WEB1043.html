@@ -135,7 +135,9 @@
         <button class="btn" onclick="dienSo(this)" id="b88">9</button>
         <br>
     </div>
-    <h2>Sudoku</h2>
+    <!--output là nơi hiển thị thông tin trạng thái lượt đi thứ mấy-->
+    <h2 id="output">Sudoku</h2>
+
     <div class="khung9x1">
         <!--Khung chứa 9 số để chọn rồi điền vào-->
         <!--Khi bấm nút thì gọi hàm chọn số, this là nút này-->
@@ -149,6 +151,9 @@
         <button class="btn" onclick="chonSo(this)" id="b7">8</button>
         <button class="btn" onclick="chonSo(this)" id="b8">9</button>
     </div>
+    <br>
+    <!--Bấm nút undo thì gọi hàm undo() ------------------------------->
+    <button onclick="undo()">Undo</button>
     <!--Phần lập trình javascript-->
     <script>
         //khai báo các biến--------------------------------------------------------------
@@ -182,7 +187,26 @@
             [5, 6, 1, 9, 2, 8, 3, 7, 4],
         ];
         let num = 1;//số sẽ điền vào
+        let luotDi = 0;//các lượt đi
+        let mangViTri = []; //nhớ các vị trí đã đi
+
         //khai báo các hàm -----------------------------------------------------------------
+        //hàm 
+        function ViTri(i,j){//là 1 class ghi nhớ vị trí đã đi
+            this.i = i;
+            this.j = j;
+        }
+        //viết hàm undo
+        function undo(){
+            if(luotDi == 0) return;
+            let vt = mangViTri.pop();//lấy ra vị trí cuối cùng đã nhớ
+            luotDi--;
+            output.innerHTML = "(undo)Lượt đi : "+ luotDi;
+            console.log("chạy hàm undo");
+            data[vt.i][vt.j] = 0;
+            duaSoVaoCacNut();
+        }
+
         function choiTiep(){
             //Tạo mảng số mới
             let dataGoc = [
@@ -292,6 +316,12 @@
                 data[i][j] = num;//điền số vào mảng, chỉ được điền vào khi là số 0
                 obj.style.color = "orange";//số mới điền vào có màu vàng
                 duaSoVaoCacNut();
+                luotDi++;//tăng lượt đi, nhớ vị trí đã đi
+                output.innerHTML = "Lượt đi : "+ luotDi;//in ra lượt đi 
+                mangViTri[luotDi] = new ViTri(i,j);
+
+
+
                 if(checkWin() == true){
                     let ok = confirm("Bạn đã thắng! Chúc mừng!. Bạn chơi tiếp hay là dừng lại ?");
                     if(ok){
@@ -437,11 +467,12 @@
         }
 
         //main : chương trình chính sẽ chạy bắt đầu từ đây-----------------------------------------------
+        let output = document.getElementById("output");
         ganCacNutVaoMang();//lời gọi hàm
         duaSoVaoCacNut();
         toMau();
         hoanVi();
-        xoaBotSo(1);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
+        xoaBotSo(30);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
         ganCacNutSoVaoMang();
         toMauCacNutSo();
     </script>

@@ -28,25 +28,25 @@ var thuc_hien = function(){
     switch(o){
         case '+': 
             ketqua = a + b;
-            alert("Tổng = "+ ketqua);
+            console.log("Tổng = "+ ketqua);
             break;
         
         case '-': 
             ketqua = a - b;
-            alert("Hiệu = "+ ketqua);
+            console.log("Hiệu = "+ ketqua);
             break;
 
         case '*': 
             ketqua = a * b;
-            alert("Tích = "+ ketqua);
+            console.log("Tích = "+ ketqua);
             break;
 
         case '/': 
             ketqua = a / b;
-            alert("Thương = "+ ketqua);
+            console.log("Thương = "+ ketqua);
             break;
         
-        default: alert(o + " Không phải là toán tử");
+        default: console.log(o + " Không phải là toán tử");
     }
     
 };

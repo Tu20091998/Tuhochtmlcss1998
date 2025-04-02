@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính tổng 3 số a,b,c</h2>
+    <table>
+        <tr>
+            <td>Cho số a :</td>
+            <td><input id="a" type="text"></td>
+        </tr>
+        <tr>
+            <td>Cho tiếp số b :</td>
+            <td><input id="b" type="text"></td>
+        </tr>
+        <tr>
+            <td>Và cho tiếp số c :</td>
+            <td><input id="c" type="text"></td>
+        </tr>
+    </table>
+    <h2 id="output">Kết quả: </h2>
+    <button onclick="tinhTong()">Tính tổng : </button>
+    <!-------------------------------------------------------->
+    <script>
+        function tinhTong(){
+            let soA = document.getElementById("a").value;
+            let soB = document.getElementById("b").value;
+            let soC = document.getElementById("c").value;
+            document.getElementById("output").innerHTML = "Tổng là : "+(Number(soA)+Number(soB)+Number(soC));
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

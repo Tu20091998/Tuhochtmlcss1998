@@ -154,6 +154,9 @@
     <br>
     <!--Bấm nút undo thì gọi hàm undo() ------------------------------->
     <button onclick="undo()">Undo</button>
+    <button onclick="thayDoiDoKho(10)">Dễ</button>
+    <button onclick="thayDoiDoKho(20)">Vừa</button>
+    <button onclick="thayDoiDoKho(30)">Khó</button>
     <!--Phần lập trình javascript-->
     <script>
         //khai báo các biến--------------------------------------------------------------
@@ -189,8 +192,14 @@
         let num = 1;//số sẽ điền vào
         let luotDi = 0;//các lượt đi
         let mangViTri = []; //nhớ các vị trí đã đi
+        let doKho = 10;
 
         //khai báo các hàm -----------------------------------------------------------------
+
+        function thayDoiDoKho(number){
+            doKho = number;
+            choiTiep();
+        }
         //hàm 
         function ViTri(i,j){//là 1 class ghi nhớ vị trí đã đi
             this.i = i;
@@ -229,8 +238,14 @@
                 }
             }
             hoanVi();
-            xoaBotSo(4);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
+            xoaBotSo(doKho);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
             ganCacNutSoVaoMang();
+            //tô lại màu chữ các số
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    aBtn[i][j].style.color =  "brown";
+                }
+            }
         }
         //kiểm tra thắng thua, bằng cách đếm các ô trống
         function checkWin(){
@@ -472,7 +487,7 @@
         duaSoVaoCacNut();
         toMau();
         hoanVi();
-        xoaBotSo(30);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
+        xoaBotSo(doKho);//dễ là 10,20 là vừa, 30 là khó , 40 là rất khó
         ganCacNutSoVaoMang();
         toMauCacNutSo();
     </script>

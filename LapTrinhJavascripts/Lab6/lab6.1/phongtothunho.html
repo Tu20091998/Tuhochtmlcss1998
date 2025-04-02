@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .small{
+        height: 50px;
+        width: 50px;
+    }
+    .big{
+        height: 100px;
+        width: 100px;
+    }
+    .bigger{
+        height: 150px;
+        width: 150px;
+    }
+</style>
+<body>
+    <button onclick="zoom(this)" class="small">Zoom</button>
+
+    <script>
+        let i = 0;
+        function zoom(obj){
+            switch(i%3){
+                case 0: 
+                    obj.classList.remove("small");
+                    obj.classList.add("big");
+                    obj.innerHTML = "Big";
+                    obj.style.fontSize = "20px";
+                break;
+                case 1: 
+                    obj.classList.remove("big");
+                    obj.classList.add("bigger");
+                    obj.innerHTML = "Bigger";
+                    obj.style.fontSize = "30px";
+                break;
+                case 2:
+                    obj.classList.remove("bigger");
+                    obj.classList.add("small");
+                    obj.innerHTML = "Small";
+                    obj.style.fontSize = "10px";
+                break;
+            }
+            i++;
+        }
+    </script>
+</body>
+</html>

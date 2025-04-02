@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="tho">
+        Con cò be be<br>
+        Con cò be be<br>
+        Con cò be be<br>
+        Con cò be be<br>
+    </p>
+    <br>
+    <button onclick="hide(this)">hide</button>
+
+    <script>
+        function hide(obj){
+            let p = document.getElementById("tho");
+            if(p.style.display == "none"){
+                p.style.display = "block";
+                obj.innerHTML = "Hide";
+                console.log(p);
+                
+            }
+            else{
+                p.style.display = "none";
+                obj.innerHTML = "Unhide";
+                console.log(p);
+            }
+            
+            
+            
+        }
+    </script>
+</body>
+</html>

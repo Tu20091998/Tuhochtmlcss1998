@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #tho{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <p id="tho">
+        Yêu anh không hả em ?<br>
+        Anh chỉ có tấm lòng chung thuỷ<br>
+        Anh nhà giàu , đi xe 4 bánh!<br>
+        Yêu anh thì không phí tuổi xuân đâu!<br>
+    </p>
+    <br>
+    <button onclick="doimau()">Đổi màu</button>
+
+    <script>
+        let bangMau=["orange","green","blue","yellow","pink"];
+        let i = 0;
+        function doimau(){
+            document.getElementById("tho").style.color = bangMau[i];
+            i++;
+            if(i == bangMau.length) i = 0;
+        }
+    </script>
+</body>
+</html>

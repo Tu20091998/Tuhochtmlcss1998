@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kéo thả quân bài</title>
+</head>
+<body>
+    <img src="img/10b.bmp"
+    ondrag="hide(this)"
+    draggable="true" 
+    style="position: absolute; top: 100px; left: 50px;"
+    ondragend="move(this)">
+
+    <img src="img/10c.bmp"
+    ondrag="hide(this)"
+    draggable="true" 
+    style="position: absolute; top: 100px; left: 50px;"
+    ondragend="move(this)">
+
+    <img src="img/10co.bmp" 
+    ondrag="hide(this)"
+    draggable="true" 
+    style="position: absolute; top: 100px; left: 50px;"
+    ondragend="move(this)">
+
+    <img src="img/10r.bmp" 
+    ondrag="hide(this)"
+    draggable="true" 
+    style="position: absolute; top: 100px; left: 50px;"
+    ondragend="move(this)">
+
+    <script>
+        let i = 0;
+        let vtop = 50;
+        function move(obj){
+            obj.style.top = vtop + "px";
+            obj.style.left = 350 + "px";
+            i++;
+            //sau khi tăng vtop thì lòi quân bài dưới
+            vtop+=100;
+            //trục z lớn thì quân bài nằm trên
+            obj.style.zIndex = i;
+        }
+
+        function hide(obj){
+            obj.style.top = -150 + "px";
+            obj.style.left = -50 + "px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload 1 file hoặc nhiều file</title>
+</head>
+<body>
+    <!--upload 1 file--> 
+    <input type="file" onchange="uploadFile(this.files)"><br><br>
+
+    <!--tên file sẽ hiển thị ở đây-->
+    <div id="output">Tên file sẽ được hiển thị ở đây: <br></div><br><br>
+
+    <!--upload nhiều file-->
+    <input type="file" multiple onchange="uploadFiles(this.files)">
+    <script>
+        //lấy id hiển thị ra màn hình
+        var output = document.getElementById("output");
+
+        //gọi hàm để gọi tên 1 file khi tải lên
+        function uploadFile(files){
+            //gán vào biến output để in ra màn hình
+            output.innerHTML = files[0].name;
+        }
+
+        //gọi hàm để gọi tên nhiều file khi đầy lên
+        function uploadFiles(files){
+            //lặp qua tên file vì trả về mảng
+            for(let i = 0; i < files.length; i++){
+                output.innerHTML += files[i].name + " ,";
+            }
+        }
+    </script>
+</body>
+</html>

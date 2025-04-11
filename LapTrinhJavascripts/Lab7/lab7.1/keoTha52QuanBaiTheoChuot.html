@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kéo thả quân bài</title>
+</head>
+<body>
+    <script>
+        let boBai = [
+            "2b.bmp", "2c.bmp", "2co.bmp", "2r.bmp",
+            "3b.bmp", "3c.bmp", "3co.bmp", "3r.bmp",
+            "4b.bmp", "4c.bmp", "4co.bmp", "4r.bmp",
+            "5b.bmp", "5c.bmp", "5co.bmp", "5r.bmp",
+            "6b.bmp", "6c.bmp", "6co.bmp", "6r.bmp",
+            "7b.bmp", "7c.bmp", "7co.bmp", "7r.bmp",
+            "8b.bmp", "8c.bmp", "8co.bmp", "8r.bmp",
+            "9b.bmp", "9c.bmp", "9co.bmp", "9r.bmp",
+            "10b.bmp", "10c.bmp", "10co.bmp", "10r.bmp",
+            "Ab.bmp", "Ac.bmp", "Aco.bmp", "Ar.bmp",
+            "b.bmp",
+            "Jb.bmp", "Jc.bmp", "Jco.bmp", "Jr.bmp",
+            "Kb.bmp", "Kc.bmp", "Kco.bmp", "Kr.bmp",
+            "Qb.bmp", "Qc.bmp", "Qco.bmp", "Qr.bmp",
+            "t.bmp", "v.bmp"
+        ];
+        let i = 0;
+        function move(obj){
+            obj.style.top = event.y - obj.height/2 + "px";
+            obj.style.left = event.x - obj.width/2 + "px";
+            i++;
+            //trục z lớn thì quân bài nằm trên
+            obj.style.zIndex = i;
+        }
+
+        function hide(obj){
+            obj.style.top = -150 + "px";
+            obj.style.left = -150 + "px";
+        }
+        
+        //xáo trộn ngẫu nhiên các quân bài
+        let tam = "";
+        let a , b;
+        for(i=0; i < 1000 ;i++){
+            a = Math.floor(Math.random() * boBai.length); //a là số ngẫu nhiên từ 0 đến 51
+            b = Math.floor(Math.random() * boBai.length); //a là số ngẫu nhiên từ 0 đến 51
+
+            //hoán vị
+            tam = boBai[a];
+            boBai[a] = boBai[b];
+            boBai[b] = tam;
+        }
+        
+        //dùng vòng lặp để in 52 quân bài lên trang
+        let vtop = 100;
+        for(let i = 0; i<boBai.length;i++){
+            vtop+=15;
+            document.writeln('<img src="img/'+boBai[i]+'" ondrag="hide(this)" draggable="true" style="position: absolute; top: '+ vtop +'px; left: 50px;"ondragend="move(this)">');
+        }
+    </script>
+</body>
+</html>

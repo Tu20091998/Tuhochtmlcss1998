@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo điều khiển cho trình đa phương tiện</title>
+</head>
+<body>
+    <!--Tạo khung video và trình điều khiển-->
+    <div id="container">
+        <h1>Video tuỳ chỉnh nút tự tạo</h1>
+        <div id="playerContainer">
+            <video id="myplayer" width="600px" height="500px" autoplay>
+                <source src="y2mate.com - The lost Jungle cinematic Unreal engine 5_720pHF.mp4">
+            </video>
+            <div id="controls">
+                <button onclick="playPause()">Play/Pause</button>
+                <button onclick="stopVideo()">Stop</button>
+                <button onclick="replayVideo()">Replay</button>
+                <button onclick="increaseVolume()">Volume(+)</button>
+                <button onclick="decreaseVolume()">Volume(-)</button>
+                <button onclick="muteVolume()">Mute/UnMute</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //truy cập đến id của video 
+        var player = document.getElementById("myplayer")
+        //tạo hàm để chạy hoặc tạm dừng video
+        function playPause(){
+            //nếu đang tạm dừng thì phát tiếp
+            if(player.paused){
+                player.play();
+            }
+            else{
+                //nếu video đang chạy thì tạm dừng
+                player.pause();
+            }
+        }
+
+        //tạo hàm để dừng hẳn video
+        function stopVideo(){
+            //currentTime là thuộc tính tính toán thời gian thực của video
+            if(player.currentTime){
+                //tạm dừng video
+                player.pause();
+
+                //đưa video về trạng thái chưa phát
+                player.currentTime = 0;
+            }
+        }
+
+        //tạo hàm để chạy lại video từ đầu
+        function replayVideo(){
+            //đưa video về trạng thái chưa phát
+            player.currentTime = 0;
+
+            //chạy lại video từ đầu
+            player.play();
+        }
+
+        //hàm để tăng âm lượng cho video
+        function increaseVolume(){
+             //âm lượng được quy định là 0.0 đến 1.0
+            if(player.volume < 1){
+                //ép kiểu về float để cộng 0.1 và làm tròn số, vì trả về chuỗi nên phải ép về kiểu số
+                player.volume = Number(parseFloat(player.volume + 0.2).toFixed(1));
+            }
+        }
+
+        //hàm để giảm âm lượng
+        function decreaseVolume(){
+            //âm lượng lớn hơn 0 thì giảm 
+            player.volume = Number(parseFloat(player.volume - 0.2).toFixed(1));
+        }
+
+        //hàm tắt tiếng và mở tiếng
+        function muteVolume(){
+            if(player.muted){
+                //trả về false thì tắt tiếng
+                player.muted = false;
+            }
+            else{
+                //trả về true thì bật tiếng
+                player.muted = true;
+            }
+        }
+    </script>
+</body>
+</html>

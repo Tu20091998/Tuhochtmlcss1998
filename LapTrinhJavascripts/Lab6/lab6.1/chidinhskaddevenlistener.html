@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo addeventlistener</title>
+</head>
+<body>
+    Cho ho va ten : <input id="ten">
+    <br>
+    <br>
+    <button id="btn">Clear</button>
+
+    <script>
+        function doiChuHoa(){
+            let ten = document.getElementById("ten");
+            ten.value = ten.value.toUpperCase();
+        }
+
+        function xoaChu(){
+            let ten = document.getElementById("ten");
+            ten.value = "";
+        }
+        //chỉ định bằng addeventlistener
+        document.getElementById("ten").addEventListener("blur",doiChuHoa);
+        document.getElementById("btn").addEventListener("click",function(){xoaChu()});
+    </script>
+</body>
+</html>

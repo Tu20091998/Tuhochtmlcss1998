@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt mua sản phẩm</title>
+</head>
+<style>
+    #phiVanChuyen{
+        display: none;
+        color: green;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <!--Tạo form đặt mua sản phẩm gồm các đầu vào nhập dữ liệu từ người dùng bao gồm các mục-->
+    <h2>Form đặt mua sản phẩm</h2>
+    <form onsubmit="return kiemtra()">
+        <label>Tên sản phẩm: </label>
+        <input id="san_pham" type="text"><br><br>
+
+        <labe>Đơn giá: </labe>
+        <input id="don_gia" type="text"><br><br>
+
+        <label>Loại sản phẩm: </label>
+        <select id="loai">
+            <option value="">Chọn loại</option>
+            <option value="thoi_trang">Thời trang</option>
+            <option value="dien_tu">Điện tử</option>
+            <option value="gia_dung">Gia dụng</option>
+        </select><br><br>
+
+        <input type="radio" name="dia_chi" onclick="hienthi(false)">Nội thành<br>
+        <input type="radio" name="dia_chi" onclick="hienthi(true)">Ngoại thành<br>
+
+        <div id="phiVanChuyen">Phí vận chuyển : 30,000đ</div><br>
+
+        <button type="submit">Đặt hàng ngay</button>
+    </form>
+
+    <!--viết js để xử lý sự kiện nhập vào-->
+    <script>
+        //hàm hiển thị hoặc ẩn phần phí vận chuyển
+        function hienthi(visible){
+            //truy cập đến id hiển thị phí vận chuyển
+            var phiVanChuyen = document.getElementById("phiVanChuyen");
+
+            //xét điều kiện để hiển thị khi nhấn 1 trong 2 mục nội thành và ngoại thành
+            phiVanChuyen.style.display = visible ? "block" : "none"; 
+        }
+
+        //hàm kiểm tra dữ liệu hợp lệ trước khi đặt hàng
+        function kiemtra(){
+            //kiểm tra sản phẩm
+            var sp = document.getElementById("san_pham");
+            if(sp.value.length == 0){
+                alert("Vui lòng nhập tên sản phẩm !!!");
+                return false;
+            }
+
+            //kiểm tra đơn giá
+            var dg = document.getElementById("don_gia");
+            if(isNaN(dg.value)){
+                alert("Vui lòng nhập số !!!");
+                return false;
+            }
+            else if(parseFloat(dg.value) <= 0){
+                alert("Vui lòng nhập số dương hoặc lớn hơn 0 !!!");
+                return false;
+            }
+
+            //kiểm tra chọn loại sản phẩm
+            var loai = document.getElementById("loai");
+            if(loai.value.length == 0){
+                alert("Vui lòng chọn loại sản phẩm !!!");
+                return false;
+            }
+
+            //kiểm tra chọn nội thành hay ngoại thành
+            var diaChi = document.getElementsByName("dia_chi");
+            if(!diaChi[0].checked && !diaChi[1].checked){
+                alert("Vui lòng chọn địa chỉ giao hàng !!!");
+                return false;
+            }
+
+            //nếu điền đúng thì trả về đúng
+            return alert("Chúc mừng ,bạn đã đặt hàng thành công!");
+        }
+    </script>
+</body>
+</html>

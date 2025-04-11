@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        Bạn thích loại trái cây nào ?<br>
+        <input type="checkbox" name="traiCay" value="Cam"> Cam<br>
+        <input type="checkbox" name="traiCay" value="Xoài"> Xoài<br>
+        <input type="checkbox" name="traiCay" value="Đào"> Đào<br>
+        <input type="checkbox" name="traiCay" value="Thăng long"> Thăng Long<br><br>
+        <input type="button" onclick="inra()" value="Chọn trái cây">
+
+        <p id="output"></p>
+    </form>
+
+    <script>
+        function inra(){
+            //các input
+            let inputs = document.getElementById("myform").elements;//mảng các checkbox , button
+            let str = "";
+            for (let i = 0; i < inputs.length - 1; i++) {
+                if(inputs[i].checked){
+                    str += inputs[i].value + ", ";
+                }
+            }
+
+            //in ra màn hình
+            output = document.getElementById("output");
+            output.innerHTML = "Bạn đã chọn trái cây là : "+ str;
+        }
+    </script>
+</body>
+</html>

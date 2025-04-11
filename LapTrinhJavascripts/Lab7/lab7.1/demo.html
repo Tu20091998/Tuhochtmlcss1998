@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Demo event.target và onchange</h2>
+    <form>
+        <!--2 dòng input này sẽ thay đổi thành chữ hoa khi rời focus-->
+        Họ: <input type="text" name="ho" onchange="doiThanhHoa(this)" placeholder="nhập họ"><br><br>
+        Tên: <input type="text" name="ten" onchange="doiThanhHoa(this)" placeholder="nhập tên"><br><br>
+        <input type="button" value="Hiển thị thông tin" onclick="inra()">
+    </form>
+
+    <p id="output"></p>
+    <script>
+        //hàm hiển thị ra màn hình
+        function inra(){
+            //lấy form bằng event.target
+            var form = event.target.parentElement;
+
+            //hiển thị ra màn hình
+            var output = document.getElementById("output");
+            output.innerHTML = "Họ và tên đầy đủ của bạn (in hoa) là : "+ form[0].value +" "+ form[1].value;
+        }
+
+        //hàm chuyển chữ thành chữ hoa
+        function doiThanhHoa(event){
+            //lấy giá trị nhập vào của input
+            var inputs = event.value;
+
+            //đổi giá trị input thành chữ hoa rồi gán lại
+            event.value = inputs.toUpperCase();
+        }
+    </script>
+</body>
+</html>

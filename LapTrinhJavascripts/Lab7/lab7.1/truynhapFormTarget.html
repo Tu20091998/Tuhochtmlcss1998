@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        Nhập họ:<br>
+        <input type="text" onchange="doiThanhHoa(this)"  placeholder="Nhập họ của bạn"><br>
+        Nhập tên:<br>
+        <input type="text"  placeholder="Nhập tên của bạn"><br><br>
+        <input type="button" value="Submit" onclick="inra()">
+    </form>
+
+    <p  id="output"></p>
+
+    <script>
+        function inra(){
+            //Lấy chính phần tử là nút sinh ra sự kiện xong truy cập ra form cha
+            let form = event.target.parentElement;
+            
+            //in ra màn hình
+            let output = document.getElementById("output");
+            output.innerHTML = "Họ và Tên là : "+ form[0].value + " " + form[1].value;
+
+        }
+        function doiThanhHoa(obj){
+            //lấy giá trị của nhập họ
+            let st = obj.value;
+            
+            //đổi thành hoa rồi đưa vào
+            obj.value = st.toUpperCase(); 
+        }
+    </script>
+</body>
+</html>

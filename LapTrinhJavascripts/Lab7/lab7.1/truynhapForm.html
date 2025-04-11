@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        Nhập họ:<br>
+        <input type="text" name="ho" placeholder="Nhập họ của bạn"><br>
+        Nhập tên:<br>
+        <input type="text" name="ten" placeholder="Nhập tên của bạn"><br><br>
+        <input type="button" value="Submit" onclick="inra()">
+    </form>
+
+    <p  id="output"></p>
+
+    <script>
+        function inra(){
+            //bản thân form
+            let inputs = document.getElementById("myform").elements;
+
+            //lấy các phần tử trong mảng inputs
+            let output = document.getElementById("output");
+            output.innerHTML = "Họ và tên là : " + inputs["ho"].value + " " + inputs["ten"].value;
+        }
+    </script>
+</body>
+</html>

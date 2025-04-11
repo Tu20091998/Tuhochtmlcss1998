@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Phong Cảnh</title>
+    <style>
+        img{
+            width: 700px;
+            height: 500px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body onload="loadImages()">
+
+    <h2>Slideshow Hoa</h2>
+
+    <div>
+        <img name="slideshow" class="visible" src="https://static.spacet.vn/image-resized/1024x10240_max/img/blog/2024-06-18/66715f7b1e4cb177fa8d81e0.webp" />
+    </div>
+
+    <div id="counter">1 / 5</div>
+
+    <div>
+        <button onclick="firstSlide()">First</button>
+        <button onclick="prevSlide()">Prev</button>
+        <button onclick="nextSlide()">Next</button>
+        <button onclick="lastSlide()">Last</button>
+    </div>
+
+    <script>
+        var images = [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr25uBssjn4hHIRUEWe0WLOvi2ObyTITmnIQ&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQq3RaIjtGWxlcPXSt-wVeCfTnxGCvHmem0A&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkUpwYan1ip1f8BMP0DoKrMIwtDXOoy28tXw&s",
+            "https://cdn.litiflorist.com/upload/1708478181452.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTss3swgUpy-wJletNeKseAXZZuE4udrLRF8w&s"
+        ];
+        var Index = 0;
+        var totalImages = images.length;
+
+        function loadImages() {
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];  // Load trước tất cả ảnh để tăng tốc độ hiển thị
+            }
+        }
+
+        //hàm thêm vào các hình ảnh và xoá các hình ảnh cũ để chèn hình mới
+        function updateImage() {
+            var imgElement = document.slideshow;
+            imgElement.classList.remove("visible");
+            setTimeout(() => {
+                imgElement.src = images[Index];
+                imgElement.classList.add("visible");
+                updateCounter();
+            }, 1000);
+        }
+
+        //hàm hiển thị số đếm khi kích vào thay đổi các ảnh
+        function updateCounter() {
+            document.getElementById("counter").innerText = (Index + 1) + " / " + totalImages;
+        }
+
+        //hàm nhấn để chuyển ảnh tiếp theo
+        function nextSlide() {
+            Index = (Index + 1) % totalImages;
+            updateImage();
+        }
+
+        //hàm nhấn để quay trở lại ảnh trước
+        function prevSlide() {
+            Index = (Index - 1 + totalImages) % totalImages;
+            updateImage();
+        }
+
+        //hàm nhấn để quay về ảnh đầu tiên
+        function firstSlide() {
+            Index = 0;
+            updateImage();
+        }
+
+        //hàm nhấn để nhảy đến ảnh cuối cùng
+        function lastSlide() {
+            Index = totalImages - 1;
+            updateImage();
+        }
+
+        // Tự động chuyển ảnh mỗi 3 giây
+        setInterval(nextSlide, 3000);
+    </script>
+
+</body>
+</html>

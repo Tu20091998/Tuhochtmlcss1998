@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đánh giá từ 1 đến 5 sao</title>
+</head>
+<style>
+    /*Tạo trang trí bố cục cho các ngôi sao*/
+    .stars{
+        list-style-type: none;
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    .star{
+        font-size: 2em;
+        color: #ddd;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .orange{
+        color: orange;
+    }
+
+    .output{
+        background-color: #ddd;
+        text-align: center;
+    }
+
+
+</style>
+<body>
+    <h2>Tạo đánh giá từ 1 đến 5 sao</h2>
+    <!--Tạo danh sách các ngôi sao hiển thị để đánh giá-->
+    <ul class="stars">
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+    </ul>
+
+    <p class="output"></p>
+
+    <!--mã js để điều khiển đánh giá-->
+    <script>
+        //truy cập đến phần tử có class tên output trong html đê hiển thị đã đánh giá bao nhiêu sao
+        var output = document.querySelector(".output");
+
+        //truy cập đến phần tử có class tên star , cụ thể là các ngôi sao có trong danh sách(trả về mảng)
+        var stars = document.querySelectorAll(".star");
+
+        //dùng vòng lặp để lặp qua các phần tử ngôi sao có trong danh sách
+        stars.forEach((star,index)=>{
+            //lấy chỉ mục và quy định chỉ mục cho các ngôi sao từ 1 đến 5
+            star.starValue = (index + 1);
+
+            //lắng nghe sự kiện và thêm hàm sự kiện cho các ngôi sao khi người dùng kích vào
+            star.addEventListener("click",starRate);
+        })
+
+        //tạo hàm xử lý sự kiện khi kích vào các ngôi sao
+        function starRate(e){
+            //in ra dòng bạn đã đánh giá bao nhiêu sao để người dùng biết
+            output.innerHTML = `Bạn đã đánh giá ${e.target.starValue} sao !`;
+
+            //lặp qua các ngôi sao và xét các điều kiện để tô màu cho các ngôi sao đó
+            stars.forEach((star,index)=>{
+                //xét trường hợp nếu chỉ số ngôi sao hiện tại nhỏ hơn chỉ số đánh giá
+                if(index < e.target.starValue){
+                    //thực hiện thêm class orange và tô màu ngôi sao
+                    star.classList.add("orange");
+                }
+                //nếu chỉ số ngôi sao hiện tại lớn hơn hoặc bằng chỉ số đánh giá
+                else{
+                    //thực hiện loại bỏ class orange và ngôi sao hiện màu trắng(không được đánh giá)
+                    star.classList.remove("orange");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

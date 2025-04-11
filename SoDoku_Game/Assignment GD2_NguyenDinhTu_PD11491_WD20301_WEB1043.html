@@ -8,13 +8,22 @@
     <style>
         /* định dạng các nút (button)*/
         .btn{
-            height: 50px;
+            height:50px;
             width: 50px;
             border: 1px solid gray;
             font-weight: bolder;
             font-size: 25px;
             color: black;
         }
+        .btn1{
+            height:60px;
+            width: 60px;
+            border: 1px solid gray;
+            font-weight: bolder;
+            font-size: 25px;
+            color: black;
+        }
+
         /*định dạng các nút */
         .khung9x9{
             height: 450px;
@@ -22,10 +31,25 @@
             display: flex;
             flex-wrap: wrap;
         }
+
+        .khung9x91{
+            height: 540px;
+            width: 540px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         /*Định dạng khung số*/
         .khung9x1{
             height: 50px;
             width: 450px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .khung9x11{
+            height: 60px;
+            width: 540px;
             display: flex;
             flex-wrap: wrap;
         }
@@ -34,7 +58,7 @@
 <body>
     <h2>SuDoKu Nguyễn Đình Tú</h2>
     <!--Khung hình vuông chứa 81 nút sát nhau-->
-    <div class="khung9x9">
+    <div id="khungNut" class="khung9x9">
         <!--hàng 0-->
         <button class="btn" onclick="dienSo(this)" id="b00">1</button>
         <button class="btn" onclick="dienSo(this)" id="b01">2</button>
@@ -138,7 +162,7 @@
     <!--output là nơi hiển thị thông tin trạng thái lượt đi thứ mấy-->
     <h2 id="output">Sudoku</h2>
 
-    <div class="khung9x1">
+    <div id="khungSo" class="khung9x1">
         <!--Khung chứa 9 số để chọn rồi điền vào-->
         <!--Khi bấm nút thì gọi hàm chọn số, this là nút này-->
         <button class="btn" onclick="chonSo(this)" id="b0">1</button>
@@ -157,6 +181,11 @@
     <button onclick="thayDoiDoKho(10)">Dễ</button>
     <button onclick="thayDoiDoKho(20)">Vừa</button>
     <button onclick="thayDoiDoKho(30)">Khó</button>
+    <!--Zooom-->
+    <button onclick="zoom()">Phóng to</button>
+
+    <!--thay đổi màu-->
+    <button onchange="changeColor()">Thay đổi màu</button>
     <!--Phần lập trình javascript-->
     <script>
         //khai báo các biến--------------------------------------------------------------
@@ -193,9 +222,55 @@
         let luotDi = 0;//các lượt đi
         let mangViTri = []; //nhớ các vị trí đã đi
         let doKho = 10;
-
+        let zoomIn = 0;//chẵn là lớn , lẻ là nhỏ
         //khai báo các hàm -----------------------------------------------------------------
 
+        //hàm thay đổi màu sodoku
+        function changeColor(){
+
+        }
+        //hàm phóng to
+        function zoom(){
+            if(zoomIn % 2 == 0){
+                //phóng to
+                document.getElementById("khungNut").classList.remove("khung9x9");
+                document.getElementById("khungNut").classList.add("khung9x91");
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        aBtn[i][j].classList.remove("btn");
+                        aBtn[i][j].classList.add("btn1");
+                    }
+                }
+                document.getElementById("khungSo").classList.remove("khung9x1");
+                document.getElementById("khungSo").classList.add("khung9x11");
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        aCacso[i].classList.remove("btn");
+                        aCacso[i].classList.add("btn1");
+                    }
+                }
+            }
+            else{
+                //thu nhỏ
+                document.getElementById("khungNut").classList.remove("khung9x91");
+                document.getElementById("khungNut").classList.add("khung9x9");
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        aBtn[i][j].classList.remove("btn1");
+                        aBtn[i][j].classList.add("btn");
+                    }
+                }
+                document.getElementById("khungSo").classList.remove("khung9x11");
+                document.getElementById("khungSo").classList.add("khung9x1");
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        aCacso[i].classList.remove("btn1");
+                        aCacso[i].classList.add("btn");
+                    }
+                }
+            }
+            zoomIn++;
+        }
         function thayDoiDoKho(number){
             doKho = number;
             choiTiep();

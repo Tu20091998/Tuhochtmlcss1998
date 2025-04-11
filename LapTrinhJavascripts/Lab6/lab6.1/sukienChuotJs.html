@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện chuột</title>
+</head>
+<body>
+    <!--Sự kiện chuột kích vào thì đổi màu và giữ chuột thì thay màu-->
+    <div id="div1" style="height: 100px; width: 100px; background-color: gray;"></div>
+    <br><br>
+
+    <!--Sự kiện rê chuột vào thì đổi màu và rời chuột thì đổi màu-->
+    <div id="div2" style="height: 100px; width: 100px; background-color: gray;"></div>
+
+    <script>
+        //viết sự kiện cho div1
+        function bamChuot(){
+            document.getElementById("div1").style.background = "yellow";
+        }
+        function thaChuot(){
+            document.getElementById("div1").style.background = "orange";
+        }
+        document.getElementById("div1").onmousedown = bamChuot;
+        document.getElementById("div1").onmouseup = thaChuot;
+        
+        //viết sự kiện cho div2
+        function vaoChuot(){
+            document.getElementById("div2").style.background = "lightblue";
+        }
+        function raChuot(){
+            document.getElementById("div2").style.background = "lightgreen";
+        }
+        document.getElementById("div2").onmouseenter = vaoChuot;
+        document.getElementById("div2").onmouseleave = raChuot;
+    </script>
+</body>
+</html>

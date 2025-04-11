@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉ định sự kiện bằng html</title>
+</head>
+<body>
+    Cho ho va ten : <input onblur="doiChuHoa()" id="ten">
+    <br>
+    <br>
+    <button id="btn" onclick="xoaChu()">Clear</button>
+
+    <script>
+        function doiChuHoa(){
+            let ten = document.getElementById("ten");
+            ten.value = ten.value.toUpperCase();
+        }
+
+        function xoaChu(){
+            let ten = document.getElementById("ten");
+            ten.value = "";
+        }
+    </script>
+</body>
+</html>

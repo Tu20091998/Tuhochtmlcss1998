@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        Nơi sinh của bạn ở đâu ?<br>
+        <input type="radio" name="noiSinh" value="Đà Nẵng"> Đà Nẵng<br>
+        <input type="radio" name="noiSinh" value="Gia Lai"> Gia Lai<br>
+        <input type="radio" name="noiSinh" value="Huế"> Huế<br>
+        <input type="radio" name="noiSinh" value="Nơi khác">Nơi khác <br><br>
+        <input type="text" name="noiSinh" placeholder="Thêm nơi khác ở đây"><br><br>
+        <input type="button" value="Chọn nơi" onclick="traloi()">
+
+    </form>
+    <p id="output"></p>
+
+    <script>
+        function traloi(){
+            //ngăn trang load tự động
+            event.preventDefault();
+
+            //truy cập vào các phần tử radio
+            let inputs = document.getElementById("myform").elements;//mảng các radio
+            let str = "";
+            for (let i = 0; i < inputs.length; i++) {
+                if(inputs[i].checked){
+                    str += inputs[i].value;
+                }
+                if(inputs[i].checked && inputs[i].value == "Nơi khác"){
+                    str = inputs[i+1].value;
+                }
+            }
+
+            //hiển thị ra màn hình
+            let output = document.getElementById("output");
+            output.innerHTML = "Tôi sinh ở : "+ str;
+        }
+    </script>
+</body>
+</html>

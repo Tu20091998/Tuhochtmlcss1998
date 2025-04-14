@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Tải lên file-->
+    <input type="file" multiple onchange="uploadFile(this.files)">
+    <br>
+    <p id="output"></p>
+    <script>
+        function uploadFile(files) {
+            let st = "";
+            for (let i = 0; i < files.length; i++) {
+                st += "<br>" + files[i].name + files[i].size + "." + files[i].lastModifiedDate;
+            }
+            output.innerHTML = st;
+        }
+    </script>
+</body>
+</html>

@@ -56,6 +56,9 @@
     </style>
 </head>
 <body>
+    <audio id="biTrung">
+        <source src="Bi trung roi.m4a">
+    </audio>
     <h2>SuDoKu Nguyễn Đình Tú</h2>
     <!--Khung hình vuông chứa 81 nút sát nhau-->
     <div id="khungNut" class="khung9x9">
@@ -386,19 +389,22 @@
             let i = obj.id.charAt(1);//hàngb78
             let j = obj.id.charAt(2);//hàng
             if(trungHang(i,num)){
-                alert("Bị trùng hàng "+ i);
+                biTrung.play();
+                //alert("Bị trùng hàng "+ i);
                 return;//kết thúc hàng nếu bị trùng
             }
             
             // hàm trùng khối 3x3
             if(trungKhoi(i,j,num)){
-                alert("Bị trùng khối!!!");
+                biTrung.play();
+                //alert("Bị trùng khối!!!");
                 return;// kết thúc hàm trùng khối
             }
 
             //nếu bị trùng trong cột thì không cho điền số
             if(trungCot(j,num)){
-                alert("Bị trùng cột!!");
+                biTrung.play();
+                //alert("Bị trùng cột!!");
                 return;
             }
 
@@ -412,7 +418,7 @@
 
 
 
-                if(checkWin() == true){
+            if(checkWin() == true){
                     let ok = confirm("Bạn đã thắng! Chúc mừng!. Bạn chơi tiếp hay là dừng lại ?");
                     if(ok){
                         choiTiep();

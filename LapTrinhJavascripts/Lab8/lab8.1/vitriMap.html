@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <p id="disp"></p>
+    <button onclick="getLocation()">Location</button>
+    <script>
+        let disp = document.getElementById("disp");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition)
+            } else {
+                disp.innerHTML = "Location NOT support";
+            }
+        }
+        function showPosition(position) {
+            disp.innerHTML = "Vy tuyen: Lat:" + position.coords.latitude +
+                "<br>Kinh tuyen Long:" + position.coords.longitude;
+        }
+
+    </script>
+</body>
+
+</html>

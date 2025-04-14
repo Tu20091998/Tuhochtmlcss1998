@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--tải lên 1 file duy nhất-->
+    <input type="file" onchange="uploadFile(this.files)">
+    <br>
+    <p id="output">Tên file hiển thị ở đây</p>
+
+    <script>
+        function uploadFile(files){
+            output.innerHTML = "Bạn chọn: "+ files[0].name + files[0].size +"."+ files[0].lastModifiedDate;
+        }
+    </script>
+</body>
+</html>

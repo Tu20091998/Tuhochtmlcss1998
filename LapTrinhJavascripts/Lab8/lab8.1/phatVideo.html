@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <video id="myVideo" controls loop>
+            <source src="y2mate.com - The lost Jungle cinematic Unreal engine 5_720pHF.mp4">
+        </video>
+        <div>
+            <button onclick="play()">Play</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="soundOnOff()">On/Off</button>
+            <button onclick="restart()">ReStart</button>
+        </div>
+    </div>
+
+    <script>
+        //nhấn vào thì chơi nhạc
+        function play(){
+            myVideo.play();
+        }
+
+        //hàm nhấn thì tạm dừng video
+        function stop(){
+            myVideo.pause();
+        }
+
+        //hàm nhấn thì tạm dừng video
+        function soundOnOff(){
+            if(myVideo.muted){
+                myVideo.muted = false;
+            }
+            else{
+                myVideo.muted = true;
+            }
+        }
+
+        //hàm phát nhạc lại từ đầu
+        function restart(){
+            //dừng đoạn phát và phát lại từ đầu
+            myVideo.currenTime = 0;
+
+            
+        }
+    </script>
+</body>
+</html>

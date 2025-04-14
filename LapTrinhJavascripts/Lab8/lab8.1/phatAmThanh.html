@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nhac Pham: Nhạc không lời
+    <audio id="player">
+        <source src="y2mate.com - Nhạc đồng quê nhẹ nhàng  nhạc nền video.mp3">
+    </audio>
+    <br>
+    <button onclick="play()">Play</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="start()">Start</button>
+    <button onclick="decreaseVolume()">V--</button>
+    <button onclick="increaseVolume()">V++</button>
+
+    <script>
+        //hàm nhấn vào để chơi nhạc
+        function play(){
+            player.play();
+        }
+
+        //hàm nhấn vào thì tạm dừng
+        function stop(){
+            player.pause();
+        }
+
+        //hàm phát nhạc lại từ đầu
+        function start(){
+            //dừng đoạn phát và phát lại từ đầu
+            player.load();
+            player.play();
+        }
+
+        //hàm giảm âm lượng
+        function decreaseVolume(){
+            if(player.volume > 0){
+                player.volume = (player.volume -  0.1).toFixed(1);
+            }
+            
+        }
+
+        //hàm tăng âm lượng
+        function increaseVolume(){
+            if(player.volume < 1){
+                player.volume = (player.volume +  0.1).toFixed(1);
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

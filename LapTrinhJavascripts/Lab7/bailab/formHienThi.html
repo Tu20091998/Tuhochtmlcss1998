@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điển vào form và hiển thị thông tin</title>
+</head>
+<body>
+    <!--Tạo form điền thông tin điền họ, tên và tuổi-->
+    <form method="GET" action="lab7.3.html">
+        <input type="text" id="firtname" name="Họ" placeholder="nhập họ của bạn">
+        <input type="text" id="lastname" name="Tên" placeholder="nhập tên của bạn">
+        <input type="text" id="age" name="Tuổi" placeholder="nhập tuổi của bạn">
+        <button type="submit">Nộp thông tin</button>
+    </form>
+
+    <!--Tạo js để xử lý thông tin nhận được-->
+    <script>
+        //tạo thuộc tính để trả về 1 chuỗi query string mà người dùng đã nhập vào
+        let q = window.location.search;
+
+        //tạo 1 đối tượng cấu trúc để lưu thông tin của người dùng nhập dưới dạng key và value
+        let params = new URLSearchParams(q);
+
+        //dùng vòng lặp , lặp qua các đối tượng và in ra thông tin của người dùng nhập từ form gồm key và value
+        for(let p of params){
+            //lấy ra key và value sau mỗi lần lặp tương ứng với key là họ tên và tuổi và value là giá trị người dùng nhập vào
+            let key = p[0];
+            let value = p[1];
+
+            //in ra thông tin dưới dạng thông báo hoặc in ra màn hình
+            alert(key + " : " + value);
+            document.writeln("<br>" + key + " : "+ value);
+        }
+    </script>
+</body>
+</html>

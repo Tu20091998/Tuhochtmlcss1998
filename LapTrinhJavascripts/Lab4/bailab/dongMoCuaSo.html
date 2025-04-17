@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 45 - Cửa sổ mới</title>
+    <script>
+        var newWindow = null; // Biến lưu cửa sổ mới
+
+        function openWindow() {
+            var width, height;
+            // Kiểm tra nếu trình duyệt là IE thì đặt kích thước 100x100, ngược lại 150x150
+            if (navigator.userAgent.indexOf("MSIE") !== -1 || navigator.appName === "Microsoft Internet Explorer") {
+                width = 100;
+                height = 100;
+            } else {
+                width = 150;
+                height = 150;
+            }
+
+            // Mở cửa sổ mới
+            newWindow = window.open("", "newWin", `width=${width},height=${height},toolbar=yes,menubar=yes`);
+        }
+
+        function closeWindow() {
+            if (newWindow && !newWindow.closed) {
+                newWindow.close();
+            } else {
+                alert("Cửa sổ đã đóng hoặc đang mở!");
+            }
+        }
+
+        function checkWindow() {
+            if (newWindow && !newWindow.closed) {
+                alert("Cửa sổ vẫn đang mở.");
+            } else {
+                alert("Cửa sổ đã bị đóng.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Điều khiển cửa sổ mới</h2>
+    <button onclick="openWindow()">Mở cửa sổ mới</button>
+    <button onclick="closeWindow()">Đóng cửa sổ mới</button>
+    <button onclick="checkWindow()">Kiểm tra cửa sổ mới</button>
+</body>
+</html>

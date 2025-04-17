@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Di chuyển khối hộp sang phải</title>
+</head>
+<style>
+    /*Tạo thuộc tính cho khối hộp*/
+    #block{
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+    }
+</style>
+<body>
+    <!--Tạo nút nhấn để di chuyển khối hộp qua phải-->
+    <button onclick="toTheRight()">Go right</button>
+
+    <!--Tạo khối hộp cần di chuyển-->
+    <div id="block"></div>
+
+    <script>
+        //tạo hàm để xử lý di chuyển khối hộp
+        function toTheRight(){
+            //truy cập đến class block của hộp
+            var block = document.getElementById("block");
+
+            //khởi tạo biến x để di chuyển khối hộp theo giá trị x
+            var x = 0;
+
+            //tạo hiệu ứng di chuyển sau 1 khoảng thời gian 
+            var animationBox = setInterval(function(){
+                //nếu như hộp di chuyển đến khoảng cách 600 thì dừng lại
+                if(x===600){
+                    clearInterval(animationBox);
+                }
+                else{
+                    //tăng x để thực hiện tăng sau số giây và x sẽ tăng 
+                    x++;
+
+                    //xác định hộp nằm bên trái và di chuyển theo px
+                    block.style.left = x + "px";
+                }
+            },10)
+        }
+    </script>
+</body>
+</html>

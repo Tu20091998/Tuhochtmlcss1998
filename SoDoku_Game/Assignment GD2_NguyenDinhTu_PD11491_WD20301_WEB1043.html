@@ -181,11 +181,17 @@
     <br>
     <!--Bấm nút undo thì gọi hàm undo() ------------------------------->
     <button onclick="undo()">Undo</button>
-    <button onclick="thayDoiDoKho(10)">Dễ</button>
-    <button onclick="thayDoiDoKho(20)">Vừa</button>
-    <button onclick="thayDoiDoKho(30)">Khó</button>
+    <button onclick="thayDoiDoKho(1)" id="btnDe">Dễ</button>
+    <button onclick="thayDoiDoKho(20)" id="btnVua">Vừa</button>
+    <button onclick="thayDoiDoKho(30)" id="btnKho">Khó</button>
     <!--Zooom-->
     <button onclick="zoom()">Phóng to</button>
+    <button onclick="nhacNen()">Bật nhạc/Tắt nhạc</button>
+    <audio src="y2mate.com - Nhạc đồng quê nhẹ nhàng  nhạc nền video.mp3" id="nhacNen">
+
+    </audio>
+
+
 
     <!--thay đổi màu-->
     <button onchange="changeColor()">Thay đổi màu</button>
@@ -226,12 +232,29 @@
         let mangViTri = []; //nhớ các vị trí đã đi
         let doKho = 10;
         let zoomIn = 0;//chẵn là lớn , lẻ là nhỏ
+        let bangMau = ["#ff80c0","#c72f3c","yellow","gray"];
+        let mauSo = 1;
         //khai báo các hàm -----------------------------------------------------------------
 
+        function nhacNen(){
+        var audio = document.getElementById("nhacNen");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
         //hàm thay đổi màu sodoku
         function changeColor(){
-
+            //đổi màu 
+            mauSo++;
+            if(mauSo == bangMau.length){
+                mauSo = 1;
+            }
+            toMau();
         }
+
+
         //hàm phóng to
         function zoom(){
             if(zoomIn % 2 == 0){
@@ -277,6 +300,19 @@
         function thayDoiDoKho(number){
             doKho = number;
             choiTiep();
+            //tô màu mới
+            btnDe.style.background = "lightgray";
+            btnVua.style.background = "lightgray";
+            btnKho.style.background = "lightgray";
+            if(doKho <= 10){
+                btnDe.style.background = "green";
+            }
+            else if(doKho <= 20){
+                btnVua.style.background = "green";
+            }
+            else{
+                btnKho.style.background = "green";
+            }
         }
         //hàm 
         function ViTri(i,j){//là 1 class ghi nhớ vị trí đã đi
@@ -409,6 +445,11 @@
             }
 
             if(data[i][j]==0){
+                //bắt đầu chơi không cho chọn màu
+                btnDe.hidden = true;
+                btnKho.hidden = true;
+                btn.Kho.hidden = true;
+
                 data[i][j] = num;//điền số vào mảng, chỉ được điền vào khi là số 0
                 obj.style.color = "orange";//số mới điền vào có màu vàng
                 duaSoVaoCacNut();
@@ -422,6 +463,9 @@
                     let ok = confirm("Bạn đã thắng! Chúc mừng!. Bạn chơi tiếp hay là dừng lại ?");
                     if(ok){
                         choiTiep();
+                        btnDe.removeAttribute("hidden");
+                        btnVua.removeAttribute("hidden");
+                        btnKho.removeAttribute("hidden");
                     }
                     else{
                         window.close();
@@ -475,9 +519,9 @@
             for(let i = 0 ; i < 9 ; i++){
                 for(let j = 0 ; j < 9 ; j++){
                     if((Math.floor(i/3) + Math.floor(j/3)) % 2 ==0){
-                        aBtn[i][j].style.background = "lightgray";
+                        aBtn[i][j].style.background = bangMau[mauSo];
                     }else{
-                        aBtn[i][j].style.background = "lightblue";
+                        aBtn[i][j].style.background = bangMau[mauSo-1];
                     }
                 }
             }

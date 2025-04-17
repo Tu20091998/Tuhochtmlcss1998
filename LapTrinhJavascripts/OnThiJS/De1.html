@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Danh sách các mặt hàng</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Giá sản phẩm</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Quần áo</td>
+                <td>100000</td>
+                <td><button onclick="them(this)">Thêm vào giỏ hàng</button></td>
+            </tr>
+            <tr>
+                <td>Giày dép</td>
+                <td>200000</td>
+                <td><button onclick="them(this)">Thêm vào giỏ hàng</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <h2>Danh sách giỏ hàng</h2>
+    <table border="1">
+        <thead>
+            <th>Tên sản phẩm</th>
+            <th>Giá sản phẩm</th>
+            <th>Hành động</th>
+        </thead>
+        <tbody id="cart">
+            <!--sản phẩm sẽ được hiển thị ở đây-->
+        </tbody>
+    </table>
+
+    <h3>Tổng tiền: <span id="tongtien">0</span></h3>
+
+    <script>
+        //hàm thêm sản phẩm
+        function them(button){
+            //hàng chứa nút thêm
+            var row = button.parentElement.parentElement.cloneNode(true);
+            
+            //sửa nút thêm thành nút xoá
+            var btnXoa = row.getElementsByTagName("button")[0];
+            
+            //sửa thuộc tính kích vào thành nội dung hàm xoá
+            btnXoa.setAttribute("onclick","xoa(this)");
+
+            //sửa nội dung bên trong thành xoá
+            btnXoa.innerHTML = "Xoá khỏi giỏ hàng";
+
+            //thêm vào hàng danh sách giỏ hàng
+            document.getElementById("cart").appendChild(row);
+
+            //sau khi chạy hàm thì tính tổng tiền
+            tinhTong();
+            
+        }
+
+        //hàm xoá sản phẩm
+        function xoa(button){
+            //xác định dòng cần xoá
+            var row = button.parentElement.parentElement;
+
+            //xoá khỏi dòng có trong giỏ hàng
+            document.getElementById("cart").removeChild(row);
+
+            //sau khi chạy hàm thì tính tổng
+            tinhTong();
+        }
+
+        //hàm tính tổng tiền
+        function tinhTong(){
+            //xác định vị trí cần tính tổng
+            var cart = document.getElementById("cart");
+
+            //lấy ra các dòng trong giỏ hàng
+            var row = cart.getElementsByTagName("tr");
+
+            //khai báo biến tổng để cộng dồn tổng tiền
+            var tong = 0;
+
+            //vì thẻ tr trả về mảng nên dùng vòng lặp
+            for(let i = 0; i< row.length; i++){
+                //mỗi lần lặp thì lấy ra các thẻ td
+                var cells = row[i].getElementsByTagName("td");
+
+                //lấy ra cột thứ 2 trong giỏ hàng là giá của sản phẩm
+                var price = parseInt(cells[1].innerHTML);
+
+                //sau mỗi lần lặp thì cộng vào biến tổng
+                tong+=price;
+            }
+            //in ra màn hình tổng tiền
+            document.getElementById("tongtien").innerHTML = tong.toLocaleString();
+        }
+    </script>
+</body>
+</html>

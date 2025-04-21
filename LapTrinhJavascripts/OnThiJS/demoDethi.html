@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng người dùng</title>
+    <title>Document</title>
 </head>
 <style>
     table,th,tr,td{
@@ -39,25 +39,25 @@
         <tr>
             <td class="stt">1</td>
             <td>Quần áo</td>
-            <td class="dongia">210.000</td>
+            <td class="dongia">210,000</td>
             <td><button onclick="them(this)">+</button></td>
         </tr>
         <tr>
             <td class="stt">2</td>
             <td>Giày dép</td>
-            <td class="dongia">300.000</td>
+            <td class="dongia">300,000</td>
             <td><button onclick="them(this)">+</button></td>
         </tr>
         <tr>
             <td class="stt">3</td>
             <td>Mắt kính</td>
-            <td class="dongia">400.000</td>
+            <td class="dongia">400,000</td>
             <td><button onclick="them(this)">+</button></td>
         </tr>
         <tr>
             <td class="stt">4</td>
             <td>Quần xì</td>
-            <td class="dongia">50.000</td>
+            <td class="dongia">50,000</td>
             <td><button onclick="them(this)">+</button></td>
         </tr>
     </table>
@@ -71,89 +71,85 @@
     <button onclick="tinhTien()" id="thanhToan">Thanh toán ngay</button>
 
     <script>
-        //truy cập đến id giỏ hàng , tổng tiền và thanh toán
+        //truy cập đến các id giỏ hàng, tổng tiền và thanh toán
         var gioHang = document.getElementById("gioHang");
         var tongSoTien = document.getElementById("tongSoTien");
         var thanhToan = document.getElementById("thanhToan");
 
-        //tạo hàm thêm sản phẩm
+        //hàm để thêm sản phẩm
         function them(obj){
-            //sao chép hàng chứa sản phẩm
+            //sao chép hàng trong danh mục hàng hoá
             var row = obj.parentNode.parentNode.cloneNode(true);
-
-            //thêm hàng vừa sao chép vào giỏ hàng
+            
+            //đưa hàng vừa sao chép vào giỏ hàng
             gioHang.appendChild(row);
 
-            //gọi hàm chỉnh sửa để cập nhật thay đổi giỏ hàng
+            //gọi hàm để chỉnh sửa giỏ hàng
             chinhSuaGioHang();
         }
 
-        //tạo hàm chỉnh sửa giỏ hàng
+        //hàm chỉnh sửa giỏ hàng
         function chinhSuaGioHang(){
-            //tạo biến tổng để cộng dồn tiền 
+            //tạo biến để cộng dồn tổng tiền
             var tong = 0;
 
-            //truy cập đến các phần tử trong giỏ hàng
+            //truy cập đến các dòng trong giỏ hàng
             var rows = gioHang.children;
             
-            //dùng vòng lặp để lặp các phần tử con 
-            for(let i = 0; i< rows.length;i++){
+            //dùng vòng lặp để lặp các dòng 
+            for(let i = 0;i < rows.length;i++){
                 //chỉnh sửa số thứ tự
-                rows[i].getElementsByClassName("stt")[0].innerHTML = ""+ (i+1);
-                
-                //chỉnh sửa thành nút -
+                rows[i].getElementsByClassName("stt")[0].innerHTML = "" + (i+1);
+            
+                //chỉnh sửa dấu + thành dấu -
                 rows[i].getElementsByTagName("button")[0].innerHTML = "-";
 
                 //chỉnh sửa thành hàm xoá
                 rows[i].getElementsByTagName("button")[0].setAttribute("onclick","xoa(this)");
 
-                //cộng dồn vào tổng tiền
-                tong += Number(rows[i].getElementsByClassName("dongia")[0].innerHTML.replaceAll(".",""));
-                
+                //cộng dồn tổng tiền 
+                tong += Number(rows[i].getElementsByClassName("dongia")[0].innerHTML.replaceAll(",",""));
             }
             //hiển thị tổng tiền và nút thanh toán
-            tongSoTien.innerHTML = "Tổng tiền là : "+ tong.toLocaleString();
-            
+            tongSoTien.innerHTML = "Tổng tiền là : "+ tong.toLocaleString() + "VNĐ";
+
+            //giỏ hàng bị xoá hết thì dấu tổng tiền và nút thanh toán
             if(rows.length === 0){
-                //không có hàng trong giỏ thì ẩn tổng tiền và nút thanh toán
                 tongSoTien.style.display = "none";
                 thanhToan.style.display = "none";
             }
             else{
-                //có hàng thì hiển thị
                 tongSoTien.style.display = "block";
                 thanhToan.style.display = "block";
             }
-            
         }
 
-        //hàm xoá sản phẩm
+        //dùng hàm xoá
         function xoa(obj){
-            //xác định hàng cần xoá trong giỏ hàng
+            //xác định dòng cần xoá
             var row = obj.parentNode.parentNode;
 
-            //xoá hàng dựa vào id giỏ hàng
+            //xoá dựa theo id giỏ hàng
             gioHang.removeChild(row);
 
-            //gọi hàm chỉnh sửa để cập nhật
+            //cập nhật giỏ hàng
             chinhSuaGioHang();
         }
 
-        //tạo hàm xác nhận đặt hàng
+        //tạo hàm xác nhận thanh toán
         function tinhTien(){
             //tạo xác nhận
-            var dongY = confirm("Bạn đồng ý đặt hàng chứ ?");
+            var dongY = confirm("Bạn có xác nhận đặt hàng không?");
 
-            //xét kết quả xác nhận
+            //xét xác nhận
             while(gioHang.children.length > 0){
-                //xác định hàng đầu tiên
+                //xác định dòng đầu tiên
                 var hangDauTien = gioHang.children[0];
 
-                //xoá hàng dựa vào id giỏ hàng
+                //xoá toàn bộ dựa theo id giỏ hàng
                 gioHang.removeChild(hangDauTien);
-                console.log(hangDauTien);
             }
-            //ẩn đi tổng tiền và nút thanh toán
+            //ẩn tổng tiền và nút thanh toán
             tongSoTien.style.display = "none";
             thanhToan.style.display = "none";
         }

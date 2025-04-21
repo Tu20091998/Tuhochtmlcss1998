@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm vào giỏ hàng</title>
+    <title>Nguyễn Đình Tú - PD11491</title>
 </head>
 <style>
     table,th,tr,td{
         border: 2px solid green;
         border-collapse: collapse;
+    }
+
+    .stt{
         text-align: center;
-        
+    }
+
+    .dongia{
+        text-align: right;
+        padding-right: 10px;
+        font-weight: bold;
     }
 
     th{
         background-color: lightgray;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     #tongSoTien{
@@ -24,52 +34,66 @@
     #thanhToan{
         display: none;
     }
+    .content{
+        padding-left: 10px;
+    }
 </style>
 <body>
     <h3>Họ và tên: Nguyễn Đình Tú</h3>
     <h3>Mã số: PD11491</h3>
-    <h1>Danh mục hàng hoá</h1>
+    <h2>CỬA HÀNG QUẦN ÁO</h2>
     <table border="1">
-        <tr>
-            <th>Số thứ tự</th>
-            <th>Tên sản phẩm</th>
-            <th>Giá sản phẩm</th>
-            <th>Đơn vị tiền tệ</th>
+        <tr id="tieuDe">
+            <th>TT</th>
+            <th>Tên hàng</th>
+            <th>Đơn vị</th>
+            <th>Đơn giá</th>
             <th>Thêm</th>
         </tr>
         <tr>
             <td class="stt">1</td>
-            <td>Quần áo</td>
-            <td class="dongia">210,000</td>
-            <td>VNĐ</td>
-            <td><button onclick="them(this)">+</button></td>
+            <td class="content">Áo thun</td>
+            <td class="content">cái</td>
+            <td class="dongia">250,000</td>
+            <td class="content"><button onclick="them(this)">+</button></td>
         </tr>
         <tr>
             <td class="stt">2</td>
-            <td>Giày dép</td>
-            <td class="dongia">300,000</td>
-            <td>VNĐ</td>
-            <td><button onclick="them(this)">+</button></td>
+            <td class="content">Áo tắm</td>
+            <td class="content">Bộ</td>
+            <td class="dongia">275,000</td>
+            <td class="content"><button onclick="them(this)">+</button></td>
         </tr>
         <tr>
             <td class="stt">3</td>
-            <td>Mắt kính</td>
-            <td class="dongia">400,000</td>
-            <td>VNĐ</td>
-            <td><button onclick="them(this)">+</button></td>
+            <td class="content">Quần jean</td>
+            <td class="content">cái</td>
+            <td class="dongia">1,120,000</td>
+            <td class="content"><button onclick="them(this)">+</button></td>
         </tr>
         <tr>
             <td class="stt">4</td>
-            <td>Quần xì</td>
-            <td class="dongia">50,000</td>
-            <td>VNĐ</td>
-            <td><button onclick="them(this)">+</button></td>
+            <td class="content">Áo váy</td>
+            <td class="content">Bộ</td>
+            <td class="dongia">310,000</td>
+            <td class="content"><button onclick="them(this)">+</button></td>
         </tr>
     </table>
+    <h3>Bấm dấu + để mua hàng</h3>
     <br><br>
     <h1>Giỏ hàng của bạn</h1>
-
-    <table id="gioHang"></table>
+    <table>
+        <thead>
+            <tr>
+                <th>TT</th>
+                <th>Tên hàng</th>
+                <th>Đơn vị</th>
+                <th>Đơn giá</th>
+                <th>Xoá</th>
+            </tr>
+        </thead>
+        <tbody id="gioHang"></tbody>
+    </table>
 
     <h2 id="tongSoTien">Tổng số tiền</h2>
 
@@ -85,7 +109,7 @@
         function them(obj){
             //sao chép hàng trong sản phẩm
             var row = obj.parentNode.parentNode.cloneNode(true);
-
+            
             //đưa hàng vừa sao chép qua giỏ
             gioHang.appendChild(row);
 
@@ -119,6 +143,7 @@
             //hiển thị tổng tiền và nút thanh toán
             tongSoTien.innerHTML = "Tổng tiền là: "+ tong.toLocaleString() + "VNĐ";
 
+            //nếu như không còn hàng trong giỏ thì ẩn nút thanh toán và tổng tiền
             if(rows.length === 0){
                 tongSoTien.style.display = "none";
                 thanhToan.style.display = "none";
@@ -144,7 +169,7 @@
         //tạo hàm xác nhận
         function tinhTien(){
             //tạo xác nhận 
-            var dongY = confirm("Bạn có xác nhận đặt hàng chứ ?");
+            var dongY = confirm("Đồng ý thanh toán ?");
 
             //xét ẩn tổng tiền và nút thanh toán theo xác nhận
             if(dongY == true){

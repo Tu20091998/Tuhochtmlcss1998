@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đánh giá từ 1 đến 5 sao</title>
+    <title>Document</title>
 </head>
 <style>
-    /*Tạo trang trí bố cục cho các ngôi sao*/
+    body{
+        justify-items: center;
+    }
+
     .stars{
-        list-style-type: none;
         padding: 10px;
-        border: 1px solid black;
+        border: 1px solid blue;
         text-align: center;
+        list-style-type: none;
+        width: 20%;
     }
 
     .star{
-        font-size: 2em;
+        font-size: 40px;
         color: #ddd;
         display: inline-block;
         cursor: pointer;
@@ -30,56 +34,49 @@
         text-align: center;
     }
 
-
 </style>
 <body>
     <h2>Tạo đánh giá từ 1 đến 5 sao</h2>
-    <!--Tạo danh sách các ngôi sao hiển thị để đánh giá-->
     <ul class="stars">
         <li class="star">&#10029</li>
         <li class="star">&#10029</li>
         <li class="star">&#10029</li>
         <li class="star">&#10029</li>
         <li class="star">&#10029</li>
+        <p class="output"></p>
     </ul>
-
-    <p class="output"></p>
-
-    <!--mã js để điều khiển đánh giá-->
+    
     <script>
-        //truy cập đến phần tử có class tên output trong html đê hiển thị đã đánh giá bao nhiêu sao
+        //truy cập đến phần tử output để hiển thị
         var output = document.querySelector(".output");
 
-        //truy cập đến phần tử có class tên star , cụ thể là các ngôi sao có trong danh sách(trả về mảng)
+        //truy cập đến mảng các ngôi sao
         var stars = document.querySelectorAll(".star");
 
-        //dùng vòng lặp để lặp qua các phần tử ngôi sao có trong danh sách
+        //duyệt qua các ngôi sao
         stars.forEach((star,index)=>{
-            //lấy chỉ mục và quy định chỉ mục cho các ngôi sao từ 1 đến 5
+            //lấy chỉ mục của ngôi sao
             star.starValue = (index + 1);
 
-            //lắng nghe sự kiện và thêm hàm sự kiện cho các ngôi sao khi người dùng kích vào
+            //khi người dùng kích vào ngôi sao
             star.addEventListener("click",starRate);
         })
 
-        //tạo hàm xử lý sự kiện khi kích vào các ngôi sao
+        //tạo hàm khi kích vào ngôi sao
         function starRate(e){
-            //in ra dòng bạn đã đánh giá bao nhiêu sao để người dùng biết
+            //in ra dòng thông báo người dùng chọn sao
             output.innerHTML = `Bạn đã đánh giá ${e.target.starValue} sao !`;
 
-            //lặp qua các ngôi sao và xét các điều kiện để tô màu cho các ngôi sao đó
+            //duyệt qua các ngôi sao để tô màu
             stars.forEach((star,index)=>{
-                //xét trường hợp nếu chỉ số ngôi sao hiện tại nhỏ hơn chỉ số đánh giá
+                //xét theo chỉ số 
                 if(index < e.target.starValue){
-                    //thực hiện thêm class orange và tô màu ngôi sao
                     star.classList.add("orange");
                 }
-                //nếu chỉ số ngôi sao hiện tại lớn hơn hoặc bằng chỉ số đánh giá
                 else{
-                    //thực hiện loại bỏ class orange và ngôi sao hiện màu trắng(không được đánh giá)
                     star.classList.remove("orange");
                 }
-            });
+            })
         }
     </script>
 </body>

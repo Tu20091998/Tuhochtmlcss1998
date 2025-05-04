@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        justify-items: center;
+    }
+
+    .stars{
+        padding: 10px;
+        border: 1px solid blue;
+        text-align: center;
+        list-style-type: none;
+        width: 20%;
+    }
+
+    .star{
+        font-size: 40px;
+        color: #ddd;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .orange{
+        color: orange;
+    }
+
+    .output{
+        background-color: #ddd;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <h2>Tạo đánh giá từ 1 đến 5 sao</h2>
+    <ul class="stars">
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+        <li class="star">&#10029</li>
+        <p class="output"></p>
+    </ul>
+    
+    <script>
+        //truy cập đến phần tử output để hiển thị
+        var output = document.querySelector(".output");
+
+        //truy cập đến mảng các ngôi sao
+        var stars = document.querySelectorAll(".star");
+
+        //duyệt qua các ngôi sao
+        stars.forEach((star,index)=>{
+            //lấy chỉ mục của ngôi sao
+            star.starValue = (index + 1);
+
+            //khi người dùng kích vào ngôi sao
+            star.addEventListener("click",starRate);
+        })
+
+        //tạo hàm khi kích vào ngôi sao
+        function starRate(e){
+            //in ra dòng thông báo người dùng chọn sao
+            output.innerHTML = `Bạn đã đánh giá ${e.target.starValue} sao !`;
+
+            //duyệt qua các ngôi sao để tô màu
+            stars.forEach((star,index)=>{
+                //xét theo chỉ số 
+                if(index < e.target.starValue){
+                    star.classList.add("orange");
+                }
+                else{
+                    star.classList.remove("orange");
+                }
+            })
+        }
+    </script>
+</body>
+</html>

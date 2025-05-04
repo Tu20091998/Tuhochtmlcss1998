@@ -7,7 +7,7 @@
 </head>
 <body>
     <!--Tạo form điền thông tin điền họ, tên và tuổi-->
-    <form method="GET" action="lab7.3.html">
+    <form method="GET" action="formHienThi.html">
         <input type="text" id="firtname" name="Họ" placeholder="nhập họ của bạn">
         <input type="text" id="lastname" name="Tên" placeholder="nhập tên của bạn">
         <input type="text" id="age" name="Tuổi" placeholder="nhập tuổi của bạn">
@@ -27,9 +27,9 @@
             //lấy ra key và value sau mỗi lần lặp tương ứng với key là họ tên và tuổi và value là giá trị người dùng nhập vào
             let key = p[0];
             let value = p[1];
+            console.log(p);
 
             //in ra thông tin dưới dạng thông báo hoặc in ra màn hình
-            alert(key + " : " + value);
             document.writeln("<br>" + key + " : "+ value);
         }
     </script>

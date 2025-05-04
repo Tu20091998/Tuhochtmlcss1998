@@ -7,7 +7,7 @@
 </head>
 <style>
     .content{
-        display: none;/*Ban đầu cho ẩn đi */
+        display: none;
     }
 
     .title{
@@ -16,7 +16,7 @@
     }
 
     .active{
-        display: block ;/*Ban đầu cho hiện lên */
+        display: block ;
     }
 </style>
 <body>
@@ -36,7 +36,6 @@
         //Thực hiện truy cập đến các class title và content nằm trong container
         var titles = document.querySelectorAll(".title");//trả về mảng các class
         var contents = document.querySelectorAll(".content");//trả về mảng các class
-        
         
         //tạo hàm ẩn nội dung của active trước khi hiển thị nội dung mới
         function hideAllcontent(){

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kéo thả logo vào hình chữ nhật</title>
+</head>
+<style>
+    #div1{
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        border: 1px solid pink;
+    }
+</style>
+<body>
+    <h2>Kéo thả logo vào hình chữ nhật</h2>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <p id="drag1" draggable="true" ondragstart="drag(event)">Kéo thả tôi</p>
+
+    <script>
+        //hàm dừng sự kiện mặc định
+        function allowDrop(event){
+            event.preventDefault();
+        }
+
+        //hàm xử lý phần tử kéo thả
+        function drag(event){
+            event.dataTransfer.setData("text",event.target.id);
+        }
+
+        //hàm xử lý vùng chứa
+        function drop(event){
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+</html>

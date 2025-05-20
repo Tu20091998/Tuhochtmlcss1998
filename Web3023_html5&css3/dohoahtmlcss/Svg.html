@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Vẽ hình chữ nhật trong svg-->
+    <svg width="100" height="100">
+        <rect x="0" y="0" width="50" height="50" fill="blue"></rect>
+    </svg>
+    <br>
+    <!--Vẽ hình tròn trong svg-->
+    <svg id="cicle" height="200">
+        <circle id="recicle" cx="200" cy="100" r="50" fill="red"></circle>
+    </svg>
+    <br>
+    <!--Vẽ hình chữ nhật có kèm theo style-->
+    <svg width="400" height="200">
+        <rect x="50" y="20" width="150" height="150"
+        style="fill: blue;
+                stroke: pink;
+                stroke-width: 5;
+                fill-opacity: 0.1;
+                stroke-opacity: 0.9;">
+        </rect>
+    </svg>
+    <br>
+    <!--Tạo đường kẻ-->
+    <svg height="200" width="500">
+        <line x1="0" y1="0" x2="200" y2="200"
+        style="stroke: red; stroke-width: 2;">
+
+        </line>
+    </svg>
+    <br>
+    <!--tạo hình eclipse-->
+    <svg height="140" width="500">
+        <ellipse cx="120" cy="80" rx="100" ry="50"
+        style="fill: green; stroke: red; stroke-width: 5;">
+        </ellipse>
+    </svg>
+    <br>
+    <!--Tạo hình tam giác-->
+    <svg height="250" width="250">
+        <polygon points="10,10 10,100 100,10"
+        style="fill: red; stroke: yellow; stroke-width: 5;">
+
+        </polygon>
+    </svg>
+    <br>
+    <!--Tạo đường thẳng gấp khúc-->
+    <svg height="200" width="500">
+        <polyline points="20,20 40,40 60,20 70,20 80,30"
+        style="fill: none; stroke: black; stroke-width: 3;">
+        </polyline>
+    </svg>
+</body>
+</html>

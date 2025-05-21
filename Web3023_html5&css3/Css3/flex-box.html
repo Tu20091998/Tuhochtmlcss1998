@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Flexbox</title>
+  <style>
+    .container {
+      display: flex;              /* 1. Kích hoạt flex */
+      flex-direction: row;        /* 2. Chiều sắp xếp ngang */
+      flex-wrap: wrap;            /* 6. Cho phép xuống dòng */
+      justify-content: space-around; /* 3. Căn ngang */
+      align-items: center;        /* 4. Căn dọc từng item */
+      align-content: space-between;/* 5. Căn khối dòng */
+      gap: 15px;                  /* 7. Khoảng cách giữa các item */
+      height: 300px;
+      border: 3px dashed #999;
+      padding: 10px;
+      background: #f0f0f0;
+    }
+
+    .item {
+      flex: 1 1 100px;            /* 8. Co giãn: grow, shrink, basis */
+      height: 80px;
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 80px;
+      border-radius: 8px;
+    }
+
+    .item:nth-child(2) {
+      order: 3;                   /* 9. Thay đổi thứ tự hiển thị */
+    }
+
+    .item:nth-child(4) {
+      align-self: flex-end;       /* 10. Căn riêng item */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔧 Flexbox Demo: 10 thuộc tính quan trọng</h2>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+</body>
+</html>

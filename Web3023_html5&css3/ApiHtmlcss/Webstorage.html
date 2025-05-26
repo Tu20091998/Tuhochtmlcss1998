@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStorage</title>
+</head>
+<body>
+    <script>
+        //localStorage . Lưu trữ dữ liệu lâu dài trên trình duyệt
+        // Lưu dữ liệu
+        localStorage.setItem("username", "kaito");
+
+        // Lấy dữ liệu
+        let name = localStorage.getItem("username");
+        console.log(name); // "kaito"
+
+        // Xóa dữ liệu
+        localStorage.removeItem("username");
+
+        // Xóa toàn bộ localStorage
+        localStorage.clear();
+
+
+        //Session storage . Lưu trữ tạm thời trên trình duyệt và bị xoá khi thoát trang
+        sessionStorage.setItem("status", "active");
+
+        let s = sessionStorage.getItem("status");
+        console.log(s); // "active"
+
+        sessionStorage.removeItem("status");
+    </script>
+</body>
+</html>

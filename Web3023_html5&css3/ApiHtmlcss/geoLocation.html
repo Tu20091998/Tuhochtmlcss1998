@@ -27,12 +27,12 @@
 
         //hàm để hiển thị vị trí
         function showPosition(position){
-        let latlon = position.coords.latitude + "," + position.coords.longitude;
-        input.innerHTML = "Toạ độ: " + latlon;
-
-        var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon +
-        "&zoom=14&size=400x300&sensor=false&key=";
-        document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+            let latlon = position.coords.latitude + "," + position.coords.longitude;
+            input.innerHTML = "Toạ độ: " + latlon;
+            
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon +
+            "&zoom=14&size=400x300&sensor=false&key=";
+            document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
         }
 
         //hàm để hiển thị lỗi

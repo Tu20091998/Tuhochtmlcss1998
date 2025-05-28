@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackgroundClip</title>
+</head>
+<style>
+    #box1{
+        border: 10px dotted black;
+        padding: 15px;
+        background-color: pink;
+        background-clip: border-box;
+    }
+
+    #box2{
+        border: 10px dotted blue;
+        padding: 15px;
+        background-color: lightblue;
+        background-clip:padding-box;
+    }
+
+    #box3{
+        border: 10px dotted green;
+        padding: 15px;
+        background-color: lightgray;
+        background-clip: content-box;
+    }
+</style>
+<body>
+    <div id="box1">
+        Đây là hộp của tú đẹp trai
+    </div>
+    <hr>
+    <div id="box2">
+        Đây là hộp của tú đẹp trai 2
+    </div>
+    <hr>
+    <div id="box3">
+        Đây là hộp của tú đẹp trai 3
+    </div>
+</body>
+</html>

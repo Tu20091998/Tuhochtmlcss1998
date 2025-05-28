@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackGroundOrigin</title>
+</head>
+<style>
+    #box1{
+        width: 30vw;
+        height: 30vh;
+        background: url("https://www.w3schools.com/css/paper.gif");
+        background-position: top left;
+        background-repeat: no-repeat;
+        padding: 15px;
+        background-origin: padding-box;
+        border: 10px double blueviolet;
+    }
+
+    #box2{
+        width: 30vw;
+        height: 30vh;
+        background: url("https://www.w3schools.com/css/paper.gif");
+        background-position: top left;
+        background-repeat: no-repeat;
+        padding: 15px;
+        background-origin: content-box;
+        border: 10px double lightblue;
+    }
+
+    #box3{
+        width: 30vw;
+        height: 30vh;
+        background: url("https://www.w3schools.com/css/paper.gif");
+        background-position: top left;
+        background-repeat: no-repeat;
+        padding: 15px;
+        background-origin: border-box;
+        border: 10px double red;
+    }
+</style>
+<body>
+    <div id="box1">
+        Hộp này sẽ hiển thị căn theo padding
+    </div>
+    <hr>
+    <div id="box2">
+        Hộp này sẽ hiển thị căn theo nội dung trong hộp
+    </div>
+    <hr>
+    <div id="box3">
+        Hộp này sẽ hiển thị căn theo đường biên bên trong hộp
+    </div>
+</body>
+</html>

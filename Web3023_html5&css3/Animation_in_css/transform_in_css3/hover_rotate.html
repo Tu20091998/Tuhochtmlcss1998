@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover_rotate</title>
+</head>
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    /* Khi rê chuột vào #rotate, ảnh sẽ xoay 90 độ */
+    #rotate:hover img{
+        transform: rotate(90deg);
+    }
+
+    /* Ảnh trong #transition có hiệu ứng chuyển động mượt khi thay đổi */
+    #transition img{
+        transition: 1s ease-in-out;
+    }
+
+    /* Khi rê chuột vào #transition, ảnh sẽ xoay 3 vòng */
+    #transition:hover img{
+        transform: rotate(1turn);
+    }
+</style>
+<body>
+    <!--Ảnh không có hiệu ứng chuyển động-->
+    <p>Ảnh không có hiệu ứng chuyển động</p>
+    <div id="rotate">
+        <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/01/anh-co-chu-hai-che-bua-2-17-11-15-25.jpg" alt="Rotate Only" >
+    </div>
+    <br>
+    <!--Ảnh có hiệu ứng chuyển động-->
+    <p>Ảnh có hiệu ứng chuyển động</p>
+    <div id="transition">
+        <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/01/anh-co-chu-hai-che-bua-2-17-11-15-25.jpg" alt="With Transition" >
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframe</title>
+</head>
+<style>
+    p{
+        animation: move 5s infinite;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        background-color: red;
+    }
+
+    @keyframes move{
+        0% {top: 0px;}
+        10% {top:20px;}
+        20% {top:40px;}
+        30% {top:60px;}
+        40% {top:80px;}
+        50% {top:100px;}
+        60% {top:80px;}
+        70% {top:60px;}
+        80% {top:40px;}
+        90% {top:20px;}
+        100%{top:0px;}
+    }
+</style>
+<body>
+    <p>Học keyframe cùng Tú đẹp trai</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation name</title>
+</head>
+<style>
+    @keyframes move{
+        from{top: 0px;}
+        to{top: 100px}
+    }
+
+    p{
+        position: absolute;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        animation-name: move;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+</style>
+<body>
+    <!--inherit: kế thừa từ phần tử cha,
+        initial : quay về 1 lần
+        unset: nếu không có 2 giá trị trên thì trả về mặc định-->
+    <p>Học animation name</p>
+</body>
+</html>

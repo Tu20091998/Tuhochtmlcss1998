@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo_animation_final</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: move;
+        animation-duration: 4s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes move{
+        0%{background-color: red; left: 0; top: 0;}
+        25%{background-color: yellow; left:200px; top: 0;}
+        50%{background-color: green; left: 200px; top: 200px;}
+        75%{background-color: orange; left: 0; top: 200px;}
+        100%{background-color: gray; left: 0; top: 0;}
+    }
+</style>
+<body>
+    <div class="box">
+        Hello World
+    </div>
+</body>
+</html>

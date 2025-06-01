@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Animation Fill Mode Demo</title>
+<style>
+  @keyframes move {
+    from { transform: translateX(0); background: red; }
+    to { transform: translateX(200px); background: blue; }
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+  }
+
+  /* Không bám gì */
+  .none {
+    background: gray;
+    animation: move 2s linear 3s;
+  }
+
+  /* Bám trạng thái from khi delay */
+  .backwards {
+    animation: move 2s linear 3s backwards;
+  }
+
+  /* Bám trạng thái to khi kết thúc */
+  .forwards {
+    animation: move 2s linear 3s forwards;
+  }
+
+  /* Bám trạng thái from khi delay và giữ trạng thái to khi xong */
+  .both {
+    animation: move 2s linear 3s both;
+  }
+</style>
+</head>
+<body>
+
+<h3>fill-mode: none (mặc định)</h3>
+<div class="box none"></div>
+
+<h3>fill-mode: backwards (bám from trước khi chạy)</h3>
+<div class="box backwards"></div>
+
+<h3>fill-mode: forwards (giữ trạng thái to sau khi chạy)</h3>
+<div class="box forwards"></div>
+
+<h3>fill-mode: both (bám from trước khi chạy + giữ to sau khi chạy)</h3>
+<div class="box both"></div>
+
+</body>
+</html>

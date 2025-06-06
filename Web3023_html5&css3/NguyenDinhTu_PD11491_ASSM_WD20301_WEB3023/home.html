@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ bán hàng</title>
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <h1>📦 Những sản phẩm bán chạy</h1>
+    <div class="product-container">
+        <div class="product-box">
+            <img src="image/maylanhtuong.webp" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy lạnh LG</h3>
+            <p class="product-price">Giá: 20,000,000 VNĐ</p>
+            <p title="Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn" class="product-description">Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maylanh-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        <div class="product-box">
+            <img src="image/iphone 12.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Iphone 12</h3>
+            <p class="product-price">Giá: 13,000,000 VNĐ</p>
+            <p title="Iphone 12 là sản phẩm bán chạy nhất mùa này" class="product-description">Iphone 12 là sản phẩm bán chạy nhất mùa này</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=iphone-12" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        <div class="product-box">
+            <img src="image/maygiatLG.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy giặt LG</h3>
+            <p class="product-price">Giá: 10,000,000 VNĐ</p>
+            <p title="Sản phẩm với chất lượng hoàn hảo" class="product-description">Sản phẩm với chất lượng hoàn hảo</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maygiat-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="reviews">
+    <h2>🌟 Đánh giá từ khách hàng</h2>
+    <div class="review-list">
+        <div class="review-card">
+            <p>“Sản phẩm chất lượng, giao hàng siêu nhanh! 📦👍”</p>
+            <h4>— Nguyễn Đình Tú</h4>
+            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        </div>
+        <div class="review-card">
+            <p>“Mình rất hài lòng với dịch vụ hỗ trợ của shop. 💬🤝”</p>
+            <h4>— Trần Nhật Duy</h4>
+            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        </div>
+        <div class="review-card">
+            <p>“Giá cả hợp lý, sản phẩm đúng mô tả. 👌💯”</p>
+            <h4>— Nguyễn Phi Trường</h4>
+            <div class="stars">⭐️⭐️⭐️⭐️</div>
+        </div>
+        <div class="review-card">
+            <p>“Sẽ quay lại mua lần sau. Website dễ dùng. 💻🛒”</p>
+            <h4>— Nguyễn Lý Đoàn Lộc</h4>
+            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        </div>
+        <div class="review-card">
+            <p>“Sẽ quay lại mua lần sau. Nhân viên thân thiện.🛒”</p>
+            <h4>— Nguyễn Thị Yến Nhi</h4>
+            <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        </div>
+    </div>
+</section>
+<script>
+    const addForms = document.querySelectorAll(".product-add");
+    const productNames = document.querySelectorAll(".product-name");
+    const productPrices = document.querySelectorAll(".product-price");
+
+    addForms.forEach((form, index) => {
+        form.addEventListener("submit", function (e) {
+        e.preventDefault();
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const name = productNames[index].textContent;
+            const price = productPrices[index].textContent;
+            cart.push({ name, price });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Đã thêm vào giỏ hàng!");
+        });
+    });
+</script>
+</body>
+</html>

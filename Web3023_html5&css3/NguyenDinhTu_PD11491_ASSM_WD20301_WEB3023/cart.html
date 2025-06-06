@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>🛒 Giỏ hàng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <h1>🛒 Giỏ hàng của bạn</h1>
+    <div id="cart-container"></div>
+
+    <div class="checkout-form">
+        <h2>📝 Thông tin đặt hàng</h2>
+        <form onsubmit="submitOrder(event)">
+            <input type="text" placeholder="Họ và tên" required>
+            <input type="tel" placeholder="Số điện thoại" required>
+            <input type="text" placeholder="Địa chỉ giao hàng" required>
+            <button type="submit">📦 Đặt hàng</button>
+        </form>
+    </div>
+
+    <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartContainer = document.getElementById("cart-container");
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Giỏ hàng trống.</p>";
+    } else {
+        cart.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "cart-item";
+            div.innerHTML = `
+                <h4>${item.name}</h4>
+                <p> ${item.price}</p>
+            `;
+            cartContainer.appendChild(div);
+        });
+    }
+
+    function submitOrder(e) {
+        e.preventDefault();
+        localStorage.removeItem("cart");
+        window.location.href = "thank-you.html";
+    }
+    </script>
+</body>
+</html>

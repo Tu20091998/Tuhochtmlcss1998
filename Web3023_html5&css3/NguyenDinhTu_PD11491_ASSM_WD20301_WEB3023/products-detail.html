@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="css/product_detail.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Chi tiết sản phẩm</h1>
+    <div id="product-detail"></div>
+    <script>
+    const products = {
+        "maylanh-lg": {
+            name: "Máy lạnh LG",
+            price: "20,000,000 VNĐ",
+            description: "Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn",
+            imgSrc: "image/maylanhtuong.webp"
+        },
+        "iphone-12": {
+            name: "Iphone 12",
+            price: "13,000,000 VNĐ",
+            description: "Iphone 12 là sản phẩm bán chạy nhất mùa này",
+            imgSrc: "image/iphone 12.jpg"
+        },
+        "maygiat-lg": {
+            name: "Máy giặt LG",
+            price: "10,000,000 VNĐ",
+            description: "Sản phẩm với chất lượng hoàn hảo",
+            imgSrc: "image/maygiatLG.jpg"
+        },
+        "maylanh-dung": {
+            name: "Máy lạnh đứng",
+            price: "6,000,000 VNĐ",
+            description: "Sản phẩm với chất lượng vượt trội",
+            imgSrc: "image/Maylanhdung.jpg"
+        },
+        "laptop-hp": {
+            name: "Laptop HP",
+            price: "10,000,000 VNĐ",
+            description: "Sản phẩm với chất lượng vượt trội",
+            imgSrc: "image/laptop-hp-250-g9-i3-1215u_66f214f7f4c44faab6c42d87f080d9d4.webp"
+        },
+        "ban-ghe-go": {
+            name: "Bàn ghế gỗ",
+            price: "30,000,000 VNĐ",
+            description: "Được làm từ gỗ quý ngàn năm",
+            imgSrc: "image/Bo-ghe-san-vuon-ngoai-troi-BC-VB-2.jpg"
+        },
+        "tivi-lg": {
+            name: "Tivi LG",
+            price: "9,000,000 VNĐ",
+            description: "Màn hình mỏng cho trải nghiệm",
+            imgSrc: "image/Tivi LG.webp"
+        },
+        "tu-lanh-aqua": {
+            name: "Tủ lạnh Aqua",
+            price: "9,000,000 VNĐ",
+            description: "Màn hình mỏng cho trải nghiệm",
+            imgSrc: "image/tu-lanh-aqua-aqr-t220fa-fb4-1-45181742-4ca0-4573-8f69-283bb3a2c283.webp"
+        }
+    };
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const productId = getQueryParam('product');
+
+    const container = document.getElementById('product-detail');
+
+    if (productId && products[productId]) {
+    const p = products[productId];
+    container.innerHTML = `
+        <div class="container">
+            <div class="product-image">
+            <img src="${p.imgSrc}" alt="${p.name}" />
+            </div>
+            <h2 class="product-name">${p.name}</h2>
+            <p class="product-price">Giá: ${p.price}</p>
+            <p class="product-description">${p.description}</p>
+            <button class="return_page" onclick="parent.document.getElementsByName('content')[0].src='products.html'">← Quay lại danh sách</button>
+        </div>
+        `;
+    } else {
+    container.innerHTML = `
+        <div class="container">
+            <p>Sản phẩm không tồn tại hoặc chưa chọn sản phẩm.</p>
+            <button class="return_page" onclick="parent.document.getElementsByName('content')[0].src='products.html'">← Quay lại danh sách</button>
+        </div>
+        `;
+    }
+</script>
+</body>
+</html>

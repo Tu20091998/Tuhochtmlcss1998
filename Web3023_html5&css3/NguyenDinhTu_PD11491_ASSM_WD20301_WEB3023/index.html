@@ -1,41 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ - Web bán hàng</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="marquee">
-        <p class="marquee-text">Chào mừng bạn đến Trang bán hàng của Tôi</p>
+    <div class="container-grid">
+        <nav>
+            <div class="nav-container">
+                <span class="trademark">🛍️ LUXORA</span>
+                <ul>
+                    <li><a href="home.html" target="content">Trang chủ</a></li>
+                    <li><a href="products.html" target="content">Sản phẩm</a></li>
+                    <li><a href="contact.html" target="content">Liên hệ</a></li>
+                    <li><a href="login.htm" target="content">Đăng nhập</a></li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button>Tìm</button>
+                </div>
+                <a href="cart.html" target="content"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+
+        <header>
+            <div class="bg-container">
+                <div class="bg bg1"></div>
+                <div class="bg bg2"></div>
+                <div class="bg bg3"></div>
+            </div>
+        </header>
+
+        <aside>
+            <div class="sidebar">
+                <h2>Danh mục</h2>
+                <ul>
+                    <li>🏠<a href="home.html" target="content">Trang chủ</a></li>
+                    <li>📦<a href="products.html" target="content">Sản phẩm</a></li>
+                    <li>🔍<a href="#">Tìm kiếm</a></li>
+                    <li>🔐<a href="login.htm" target="content">Đăng nhập</a></li>
+                    <li>🔐<a href="register.html" target="content">Đăng ký</a></li>
+                    <li>📞<a href="contact.html" target="content">Liên hệ</a></li>
+                    <li>🛒<a href="cart.html" target="content">Giỏ hàng của bạn</a></li>
+                    <li>💬<a href="home.html">Hỗ trợ</a></li>
+                    <li>⭐<a href="home.html">Đánh giá</a></li>
+                    
+                </ul>
+                <br>
+                <h2>Liên hệ</h2>
+                <img src="image/co-founder.jpg" alt="ảnh biểu tượng đồng sáng lập">
+                <div class="contact">
+                    <a href="https://www.facebook.com/" style="margin-right: 10px; color: #3b5998;">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" style="color: #FF0000;">
+                        <i class="fab fa-youtube fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <iframe name="content" src="home.html"></iframe>
+        </main>
+
+        <footer>
+            <p>📍 Địa chỉ: 116 Nguyễn Huy Tưởng - Hoà Minh - Liên Chiểu - TP Đà Nẵng</p>
+            <p>📞 Hotline: 0336620188</p>
+            <p>© 2025 LUXORA. All rights reserved.</p>
+        </footer>
     </div>
-    <header>
-        <div class="bg-container">
-            <div class="bg bg1"></div>
-            <div class="bg bg2"></div>
-            <div class="bg bg3"></div>
-        </div>
-        <h1>Shop của Tôi</h1>
-        <p>Bán hàng bằng cả trái tim</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="home.html" target="content">Trang chủ</a></li>
-            <li><a href="products.html" target="content">Sản phẩm</a></li>
-            <li><a href="products-detail.html" target="content">Liên hệ</a></li>
-            <li><a href="login.htm" target="content">Đăng nhập</a></li>
-        </ul>
-    </nav>
-
-    <!--Nơi này sẽ hiển thị phần thân trang-->
-    <main>
-        <iframe name="content" src="home.html"></iframe>
-    </main>
-
-    <footer>
-        <p>Bản quyền thuộc về Shop của Tú</p>
-    </footer>
 </body>
 </html>

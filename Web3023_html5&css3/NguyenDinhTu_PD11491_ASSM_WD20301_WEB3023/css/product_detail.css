@@ -1,14 +1,13 @@
 body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(to right, #4facfe, #00f2fe);
+        margin: 0;
     }
 
     .container {
         width: 30vw;
-        height: 35vh;
-        margin-top: 10vh;
+        height: auto;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 10vh;
         background-color: #fff;
         padding: 20px;
         border-radius: 8px;

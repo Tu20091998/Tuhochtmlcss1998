@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/product_detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <nav>
+        <div class="nav-container">
+            <span class="trademark"><i class="fas fa-shopping-bag blue-icon"></i> LUXORA</span>
+            <ul>
+                <li><a href="index.html" target="content">Trang chủ</a></li>
+                <li><a href="products.html" target="content">Sản phẩm</a></li>
+                <li><a href="contact.html" target="content">Liên hệ</a></li>
+                <li><a href="login.htm" target="content">Đăng nhập</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                <button>Tìm</button>
+            </div>
+            <a href="cart.html" target="content"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+
     <h1 style="text-align: center;">Chi tiết sản phẩm</h1>
     <div id="product-detail"></div>
+    <footer>
+        <p>📍 Địa chỉ: 116 Nguyễn Huy Tưởng - Hoà Minh - Liên Chiểu - TP Đà Nẵng</p>
+        <p>📞 Hotline: 0336620188</p>
+        <p>© 2025 LUXORA. All rights reserved.</p>
+        <div class="link-contact">
+            <div>
+                <h3>YouTube</h3>
+                <i class="fab fa-youtube" style="color: red; font-size: 32px;"></i>
+            </div>
+            <div>
+                <h3>FaceBook</h3>
+                <i class="fab fa-facebook" style="color: #1877f2; font-size: 32px;"></i>
+            </div>
+        </div>
+        
+    </footer>
     <script>
     const products = {
         "maylanh-lg": {

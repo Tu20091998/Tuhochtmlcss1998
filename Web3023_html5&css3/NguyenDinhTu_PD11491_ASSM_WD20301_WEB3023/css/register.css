@@ -1,11 +1,10 @@
 body {
         font-family: Arial, sans-serif;
-        background: #ecf0f3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
         margin: 0;
+    }
+
+    .register{
+        justify-items: center;
     }
 
     .form-container {
@@ -13,8 +12,8 @@ body {
         padding: 30px;
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        width: 100%;
-        max-width: 400px;
+        width: 70vh;
+        margin: 50px;
     }
 
     h2 {
@@ -24,7 +23,7 @@ body {
     }
 
     input {
-        width: 31vw;
+        width: clamp(30vw,31vw,32vw);
         padding: 12px;
         margin: 10px 0;
         border: 1px solid #ccc;
@@ -32,7 +31,7 @@ body {
         font-size: 16px;
     }
 
-    button {
+    .register-btn {
         width: 33vw;
         padding: 12px;
         background-color: #3498db;
@@ -43,7 +42,7 @@ body {
         cursor: pointer;
     }
 
-    button:hover {
+    .register-btn:hover {
         background-color: #2980b9;
     }
 
@@ -62,25 +61,4 @@ body {
         text-decoration: underline;
     }
 
-    /* Responsive cho điện thoại */
-    @media (max-width: 480px) {
-        .form-container {
-            display: flex;
-            padding: 20px 15px;
-            flex-direction: column;
-        }
-
-        .form-container h2 {
-            font-size: 22px;
-        }
-
-        .form-container input,
-        .form-container button {
-            font-size: 15px;
-            padding: 10px;
-        }
-
-        .link {
-            font-size: 13px;
-        }
-    }
+    

@@ -4,127 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <nav>
+        <div class="nav-container">
+            <span class="trademark"><i class="fas fa-shopping-bag blue-icon"></i> LUXORA</span>
+            <ul>
+                <li><a href="index.html" target="content">Trang chủ</a></li>
+                <li><a href="products.html" target="content">Sản phẩm</a></li>
+                <li><a href="contact.html" target="content">Liên hệ</a></li>
+                <li><a href="login.htm" target="content">Đăng nhập</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                <button>Tìm</button>
+            </div>
+            <a href="cart.html" target="content"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+    <div class="sbsb">
+        <div class="sidebar">
+            <h2 class="sidebar-title">Danh mục sản phẩm</h2>
+            <select class="select-btn">
+                <option value="Tivi">Tivi</option>
+                <option value="Máy giặt">Máy giặt</option>
+                <option value="Tủ lạnh">Tủ lạnh</option>
+                <option value="Bàn ghế">Bàn ghế</option>
+            </select>
+        </div>
+    </div>
+    
     <h1>📦 Danh sách sản phẩm</h1>
     <div class="product-container">
-            <div class="product-box">
-                <img src="image/maylanhtuong.webp" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Máy lạnh LG</h3>
-                <p class="product-price">Giá: 20,000,000 VNĐ</p>
-                <p title="Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn" class="product-description">Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=maylanh-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        <div class="product-box">
+            <img src="image/maylanhtuong.webp" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy lạnh LG</h3>
+            <p class="product-price">Giá: 20,000,000 VNĐ</p>
+            <p title="Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn" class="product-description">Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maylanh-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
-
-            <div class="product-box">
-                <img src="image/iphone 12.jpg" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Iphone 12</h3>
-                <p class="product-price">Giá: 13,000,000 VNĐ</p>
-                <p title="Iphone 12 là sản phẩm bán chạy nhất mùa này" class="product-description">Iphone 12 là sản phẩm bán chạy nhất mùa này</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=iphone-12" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        </div>
+        <div class="product-box">
+            <img src="image/iphone 12.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Iphone 12</h3>
+            <p class="product-price">Giá: 13,000,000 VNĐ</p>
+            <p title="Iphone 12 là sản phẩm bán chạy nhất mùa này" class="product-description">Iphone 12 là sản phẩm bán chạy nhất mùa này</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=iphone-12" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
-
-            <div class="product-box">
-                <img src="image/maygiatLG.jpg" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Máy giặt LG</h3>
-                <p class="product-price">Giá: 10,000,000 VNĐ</p>
-                <p title="Sản phẩm với chất lượng hoàn hảo" class="product-description">Sản phẩm với chất lượng hoàn hảo</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=maygiat-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        </div>
+        <div class="product-box">
+            <img src="image/maygiatLG.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy giặt LG</h3>
+            <p class="product-price">Giá: 10,000,000 VNĐ</p>
+            <p title="Sản phẩm với chất lượng hoàn hảo" class="product-description">Sản phẩm với chất lượng hoàn hảo</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maygiat-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
-
-            <div class="product-box">
-                <img src="image/Maylanhdung.jpg" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Máy lạnh đứng</h3>
-                <p class="product-price">6,000,000 VNĐ</p>
-                <p title="Sản phẩm với chất lượng vượt trội" class="product-description">Sản phẩm với chất lượng vượt trội</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=maylanh-dung" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        </div>
+        <div class="product-box">
+            <img src="image/Maylanhdung.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy lạnh đứng</h3>
+            <p class="product-price">6,000,000 VNĐ</p>
+            <p title="Sản phẩm với chất lượng vượt trội" class="product-description">Sản phẩm với chất lượng vượt trội</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maylanh-dung" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
-
-            <div class="product-box">
-                <img src="image/laptop-hp-250-g9-i3-1215u_66f214f7f4c44faab6c42d87f080d9d4.webp" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Laptop HP</h3>
-                <p class="product-price">10,000,000 VNĐ</p>
-                <p title="Sản phẩm với chất lượng vượt trội" class="product-description">Sản phẩm với chất lượng vượt trội</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=laptop-hp" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        </div>
+        <div class="product-box">
+            <img src="image/laptop-hp-250-g9-i3-1215u_66f214f7f4c44faab6c42d87f080d9d4.webp" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Laptop HP</h3>
+            <p class="product-price">10,000,000 VNĐ</p>
+            <p title="Sản phẩm với chất lượng vượt trội" class="product-description">Sản phẩm với chất lượng vượt trội</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=laptop-hp" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
-
-            <div class="product-box">
-                <img src="image/Bo-ghe-san-vuon-ngoai-troi-BC-VB-2.jpg" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Bàn ghế gỗ</h3>
-                <p class="product-price">30,000,000 VNĐ</p>
-                <p title="Được làm từ gỗ quý ngàn năm" class="product-description">Được làm từ gỗ quý ngàn năm</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=ban-ghe-go" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        </div>
+        <div class="product-box">
+            <img src="image/Bo-ghe-san-vuon-ngoai-troi-BC-VB-2.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Bàn ghế gỗ</h3>
+            <p class="product-price">30,000,000 VNĐ</p>
+            <p title="Được làm từ gỗ quý ngàn năm" class="product-description">Được làm từ gỗ quý ngàn năm</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=ban-ghe-go" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
-
-            <div class="product-box">
-                <img src="image/Tivi LG.webp" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Tivi LG</h3>
-                <p class="product-price">9,000,000 VNĐ</p>
-                <p title="Màn hình mỏng cho trải nghiệm tuyệt vời chân thực" class="product-description">Màn hình mỏng cho trải nghiệm tuyệt vời và chân thực</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=tivi-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        </div>
+        <div class="product-box">
+            <img src="image/Tivi LG.webp" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Tivi LG</h3>
+            <p class="product-price">9,000,000 VNĐ</p>
+            <p title="Màn hình mỏng cho trải nghiệm tuyệt vời chân thực" class="product-description">Màn hình mỏng cho trải nghiệm tuyệt vời và chân thực</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=tivi-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
-
-            <div class="product-box">
-                <img src="image/tu-lanh-aqua-aqr-t220fa-fb4-1-45181742-4ca0-4573-8f69-283bb3a2c283.webp" alt="Ảnh sản phẩm">
-                <h3 class="product-name">Tủ lạnh Aqua</h3>
-                <p class="product-price">9,000,000 VNĐ</p>
-                <p title="Tủ lạnh có nhiều ngăn, mang lại cảm giác rộng rãi" class="product-description">Tủ lạnh có nhiều ngăn, mang lại cảm giác rộng rãi</p>
-                <div class="btn-process">
-                    <form class="product-add">
-                        <input type="hidden" name="product_id">
-                        <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
-                    </form>
-                    <a href="products-detail.html?product=tu-lanh-aqua" class="view-detail-button" target="content">Chi tiết 🔍</a>
-                </div>
+        </div>
+        <div class="product-box">
+            <img src="image/tu-lanh-aqua-aqr-t220fa-fb4-1-45181742-4ca0-4573-8f69-283bb3a2c283.webp" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Tủ lạnh Aqua</h3>
+            <p class="product-price">9,000,000 VNĐ</p>
+            <p title="Tủ lạnh có nhiều ngăn, mang lại cảm giác rộng rãi" class="product-description">Tủ lạnh có nhiều ngăn, mang lại cảm giác rộng rãi</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=tu-lanh-aqua" class="view-detail-button" target="content">Chi tiết 🔍</a>
             </div>
+        </div>
+        <div class="product-box">
+            <img src="image/maylanhtuong.webp" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy lạnh LG</h3>
+            <p class="product-price">Giá: 20,000,000 VNĐ</p>
+            <p title="Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn" class="product-description">Máy lạnh đến từ Mỹ là lựa chọn tốt cho gia đình bạn</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maylanh-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        <div class="product-box">
+            <img src="image/iphone 12.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Iphone 12</h3>
+            <p class="product-price">Giá: 13,000,000 VNĐ</p>
+            <p title="Iphone 12 là sản phẩm bán chạy nhất mùa này" class="product-description">Iphone 12 là sản phẩm bán chạy nhất mùa này</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=iphone-12" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        <div class="product-box">
+            <img src="image/maygiatLG.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy giặt LG</h3>
+            <p class="product-price">Giá: 10,000,000 VNĐ</p>
+            <p title="Sản phẩm với chất lượng hoàn hảo" class="product-description">Sản phẩm với chất lượng hoàn hảo</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maygiat-lg" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        <div class="product-box">
+            <img src="image/Maylanhdung.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Máy lạnh đứng</h3>
+            <p class="product-price">6,000,000 VNĐ</p>
+            <p title="Sản phẩm với chất lượng vượt trội" class="product-description">Sản phẩm với chất lượng vượt trội</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=maylanh-dung" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        <div class="product-box">
+            <img src="image/laptop-hp-250-g9-i3-1215u_66f214f7f4c44faab6c42d87f080d9d4.webp" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Laptop HP</h3>
+            <p class="product-price">10,000,000 VNĐ</p>
+            <p title="Sản phẩm với chất lượng vượt trội" class="product-description">Sản phẩm với chất lượng vượt trội</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=laptop-hp" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        <div class="product-box">
+            <img src="image/Bo-ghe-san-vuon-ngoai-troi-BC-VB-2.jpg" alt="Ảnh sản phẩm">
+            <h3 class="product-name">Bàn ghế gỗ</h3>
+            <p class="product-price">30,000,000 VNĐ</p>
+            <p title="Được làm từ gỗ quý ngàn năm" class="product-description">Được làm từ gỗ quý ngàn năm</p>
+            <div class="btn-process">
+                <form class="product-add">
+                    <input type="hidden" name="product_id">
+                    <button type="submit" name="addCart">Thêm vào giỏ 🛒</button>
+                </form>
+                <a href="products-detail.html?product=ban-ghe-go" class="view-detail-button" target="content">Chi tiết 🔍</a>
+            </div>
+        </div>
+        
     </div>
     <div id="pagination" class="pagination" style="text-align: center; margin-top: 10vh;"></div>
 
+    <footer>
+        <p>📍 Địa chỉ: 116 Nguyễn Huy Tưởng - Hoà Minh - Liên Chiểu - TP Đà Nẵng</p>
+        <p>📞 Hotline: 0336620188</p>
+        <p>© 2025 LUXORA. All rights reserved.</p>
+        <div class="link-contact">
+        <div>
+            <h3>YouTube</h3>
+            <i class="fab fa-youtube" style="color: red; font-size: 32px;"></i>
+        </div>
+        <div>
+            <h3>FaceBook</h3>
+            <i class="fab fa-facebook" style="color: #1877f2; font-size: 32px;"></i>
+        </div>
+        </div>
+    </footer>
+
     <script>
-        const itemsPerPage = 4; // số sản phẩm mỗi trang
+        const itemsPerPage = 8; // số sản phẩm mỗi trang
         let currentPage = 1;
 
         const products = document.querySelectorAll('.product-box');

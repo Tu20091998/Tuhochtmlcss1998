@@ -4,45 +4,122 @@
     <meta charset="UTF-8">
     <title>🛒 Giỏ hàng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <h1>🛒 Giỏ hàng của bạn</h1>
-    <div id="cart-container"></div>
+    <nav>
+        <div class="nav-container">
+            <span class="trademark"><i class="fas fa-shopping-bag blue-icon"></i> LUXORA</span>
+            <ul>
+                <li><a href="index.html" target="content">Trang chủ</a></li>
+                <li><a href="products.html" target="content">Sản phẩm</a></li>
+                <li><a href="contact.html" target="content">Liên hệ</a></li>
+                <li><a href="login.htm" target="content">Đăng nhập</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                <button>Tìm</button>
+            </div>
+            <a href="cart.html" target="content"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+
+    <div class="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã giỏ</th>
+                    <th>Người dùng</th>
+                    <th>Mã SP</th>
+                    <th>Số lượng</th>
+                    <th>Ngày thêm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Hình ảnh</th>
+                    <th>Mô tả</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>12</td>
+                    <td>
+                        <form method="POST" >
+                            <input type="hidden" name="cart_id">
+                            <button type="submit" name="decrease">-</button>
+                            <span style="margin: 0 10px;">2</span>
+                            <button type="submit" name="increase">+</button>
+                        </form>
+                    </td>
+                    <td>06/07/2025</td>
+                    <td>Máy giặt LG</td>
+                    <td>12,000,000 VNĐ</td>
+                    <td><img src="image/maygiatLG.jpg" alt="Hình ảnh máy giặt lg"></td>
+                    <td>Sản phẩm với chất lượng hoàn hảo</td>
+                    <td>
+                        <form method="POST">
+                            <button type="submit" class="delete-btn">🗑️ Xoá</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>12</td>
+                    <td>
+                        <form method="POST" >
+                            <input type="hidden" name="cart_id">
+                            <button type="submit" name="decrease">-</button>
+                            <span style="margin: 0 10px;">2</span>
+                            <button type="submit" name="increase">+</button>
+                        </form>
+                    </td>
+                    <td>06/07/2025</td>
+                    <td>Bàn ghế sân vườn ngoài trời</td>
+                    <td>12,000,000 VNĐ</td>
+                    <td><img src="image/Bo-ghe-san-vuon-ngoai-troi-BC-VB-2.jpg" alt="Hình ảnh bàn ghế"></td>
+                    <td>Sản phẩm với chất lượng hoàn hảo</td>
+                    <td>
+                        <form method="POST">
+                            <button type="submit" class="delete-btn">🗑️ Xoá</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="total-price"><strong>Tổng tiền: </strong>24.000.000 VNĐ</p>
+    </div>
+
 
     <div class="checkout-form">
         <h2>📝 Thông tin đặt hàng</h2>
-        <form onsubmit="submitOrder(event)">
+        <form action="thank-you.html">
             <input type="text" placeholder="Họ và tên" required>
             <input type="tel" placeholder="Số điện thoại" required>
             <input type="text" placeholder="Địa chỉ giao hàng" required>
-            <button type="submit">📦 Đặt hàng</button>
+            <a href="thank-you.html"><button>📦 Đặt hàng</button></a>
         </form>
     </div>
 
-    <script>
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const cartContainer = document.getElementById("cart-container");
-    if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Giỏ hàng trống.</p>";
-    } else {
-        cart.forEach(item => {
-            const div = document.createElement("div");
-            div.className = "cart-item";
-            div.innerHTML = `
-                <h4>${item.name}</h4>
-                <p> ${item.price}</p>
-            `;
-            cartContainer.appendChild(div);
-        });
-    }
-
-    function submitOrder(e) {
-        e.preventDefault();
-        localStorage.removeItem("cart");
-        window.location.href = "thank-you.html";
-    }
-    </script>
+    <footer>
+        <p>📍 Địa chỉ: 116 Nguyễn Huy Tưởng - Hoà Minh - Liên Chiểu - TP Đà Nẵng</p>
+        <p>📞 Hotline: 0336620188</p>
+        <p>© 2025 LUXORA. All rights reserved.</p>
+        <div class="link-contact">
+            <div>
+                <h3>YouTube</h3>
+                <i class="fab fa-youtube" style="color: red; font-size: 32px;"></i>
+            </div>
+            <div>
+                <h3>FaceBook</h3>
+                <i class="fab fa-facebook" style="color: #1877f2; font-size: 32px;"></i>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

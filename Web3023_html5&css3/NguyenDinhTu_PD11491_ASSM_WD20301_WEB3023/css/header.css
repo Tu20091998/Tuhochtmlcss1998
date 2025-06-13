@@ -1,0 +1,105 @@
+/*Định dạng phần menu*/
+nav{
+    grid-area: nav;
+    background-color: lightblue;
+}
+
+/*icon giỏ hàng*/
+.fa-shopping-cart {
+    font-size: 24px;
+    color: #0056b3;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+nav .nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap; /* Giúp responsive */
+    background-color: lightblue;
+}
+
+nav .nav-container .trademark{
+    font-size: clamp(30px,3vw,40px);
+    padding: 10px;
+    color: #0056b3;
+}
+
+nav .nav-container a{
+    font-size: clamp(15px,1.5vw,20px);
+    text-decoration: none;
+    color: #0056b3;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 10px;
+}
+
+nav ul li a{
+    font-size: clamp(15px,1.5vw,20px);
+    text-decoration: none;
+    color: #0056b3;
+}
+
+nav ul li a:hover{
+    transition: all 0,5s ease-in-out;
+    color: white;
+}
+
+/*Nút tìm kiếm*/
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-box input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+    transition: 0.3s ease-in-out;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px #007bff66;
+}
+
+.search-box button {
+    padding: 7px;
+    color: #0056b3;
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(15px,1.5vw,20px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    scale: 1.1;
+}
+
+.icon-hover {
+    color: #6c757d;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+.icon-hover:hover {
+    color: #007bff;
+}
+
+.fa-shopping-cart:hover{
+    scale: 1.2;
+}

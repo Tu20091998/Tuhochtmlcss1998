@@ -1,10 +1,18 @@
-body {
-        font-family: Arial, sans-serif;
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
         margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
     }
 
     .register{
         justify-items: center;
+    }
+
+    .register .form-container form label{
+        font-weight: bold;
+        color: #2c3e50;
     }
 
     .form-container {
@@ -12,8 +20,9 @@ body {
         padding: 30px;
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        width: 70vh;
+        width: 33vw;
         margin: 50px;
+        justify-content: center;
     }
 
     h2 {

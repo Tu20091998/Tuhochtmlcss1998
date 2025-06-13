@@ -1,8 +1,12 @@
-    body {
-        margin: 0;
-        justify-content: center;
-    }
 
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
+    }
+    
     .login{
         justify-items: center;
     }
@@ -12,9 +16,15 @@
         padding: 40px;
         border-radius: 15px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        width: clamp(43vw,45vw,46vw);
+        width: 33vw;
         justify-content: center;
         margin: 50px;
+    }
+
+    .login .login-container form label{
+        font-weight: bold;
+        padding: 10px;
+        color: #2c3e50;
     }
 
     h2 {
@@ -25,16 +35,17 @@
 
     input[type="email"],
     input[type="password"] {
-        width: clamp(42vw,43vw,45vw);
+        width: 31vw;
         padding: 12px;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         border: 1px solid #ccc;
         border-radius: 10px;
         font-size: 16px;
+        margin-top: 5px;
     }
 
     .login-btn {
-        width: clamp(44vw,45vw,47vw);
+        width: 33vw;
         padding: 12px;
         background-color: #3498db;
         border: none;

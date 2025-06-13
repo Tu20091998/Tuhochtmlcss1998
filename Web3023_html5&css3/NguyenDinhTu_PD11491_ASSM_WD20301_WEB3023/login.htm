@@ -4,58 +4,37 @@
     <meta charset="UTF-8">
     <title>Đăng nhập</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <span class="trademark"><i class="fas fa-shopping-bag blue-icon"></i> LUXORA</span>
-            <ul>
-                <li><a href="index.html" target="content">Trang chủ</a></li>
-                <li><a href="products.html" target="content">Sản phẩm</a></li>
-                <li><a href="contact.html" target="content">Liên hệ</a></li>
-                <li><a href="login.htm" target="content">Đăng nhập</a></li>
-            </ul>
-            <div class="search-box">
-                <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <button>Tìm</button>
+    <div class="container-grid">
+        <div id="header"></div>  <!-- Sẽ được chèn header.html -->
+        <main>
+            <!-- Nội dung riêng từng trang -->
+            <div class="login">
+                <div class="login-container">
+                    <h2><i class="fa-duotone fa-solid fa-user"></i> Đăng nhập</h2>
+                    <div id="error" class="error-message">Email hoặc mật khẩu không đúng</div>
+                    <form onsubmit="return login()">
+                        <label>Email:</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn" required>
+
+                        <label>Mật khẩu:</label>
+                        <input type="password" id="password" placeholder="Nhập mật khẩu của bạn" required>
+                        <button type="submit" class="login-btn">Đăng nhập</button>
+                    </form>
+                    <div class="link">
+                        Bạn chưa có tài khoản ? <a href="register.html">Đăng ký</a>
+                    </div>
+                </div>
             </div>
-            <a href="cart.html" target="content"><i class="fas fa-shopping-cart"></i></a>
-        </div>
-    </nav>
-    <div class="login">
-        <div class="login-container">
-            <h2>Đăng nhập</h2>
-            <div id="error" class="error-message">Email hoặc mật khẩu không đúng</div>
-            <form onsubmit="return login()">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Mật khẩu" required>
-                <button type="submit" class="login-btn">Đăng nhập</button>
-            </form>
-            <div class="link">
-                Chưa có tài khoản? <a href="register.html">Đăng ký</a>
-            </div>
-        </div>
+        </main>
+        <div id="footer"></div>  <!-- Sẽ được chèn footer.html -->
     </div>
 
-    <footer>
-            <p>📍 Địa chỉ: 116 Nguyễn Huy Tưởng - Hoà Minh - Liên Chiểu - TP Đà Nẵng</p>
-            <p>📞 Hotline: 0336620188</p>
-            <p>© 2025 LUXORA. All rights reserved.</p>
-            <div class="link-contact">
-            <div>
-                <h3>YouTube</h3>
-                <i class="fab fa-youtube" style="color: red; font-size: 32px;"></i>
-            </div>
-            <div>
-                <h3>FaceBook</h3>
-                <i class="fab fa-facebook" style="color: #1877f2; font-size: 32px;"></i>
-            </div>
-            </div>
-            
-        </footer>
 
     <script>
         function login() {
@@ -72,6 +51,33 @@
             error.style.display = 'block';
             return false; // chặn gửi form
             }
+        }
+
+
+        // Load header và footer
+        fetch('header.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+                highlightCurrentPage(); // Tô sáng menu
+            });
+
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+            
+        // Hàm tô sáng menu
+        function highlightCurrentPage() {
+            const links = document.querySelectorAll('.nav-link');
+            const currentPage = window.location.pathname.split('/').pop();
+        
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href').split('/').pop();
+                if (linkPage === currentPage || 
+                    (currentPage === '' && linkPage === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
         }
     </script>
 </body>

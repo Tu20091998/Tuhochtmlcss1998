@@ -65,24 +65,24 @@ body{
 }
 
 .price-section {
-    background-color: lightgray;
+    background-color: #c19a6b;
     border-radius: 5px;
     padding: 1.5rem;
 }
 
 .current-price {
     font-size: 1.8rem;
-    color: #0056b3;
+    color: whitesmoke;
     font-weight: bold;
 }
 
 .original-price {
     text-decoration: line-through;
-    color: #6c757d;
+    color: whitesmoke;
 }
 
 .discount-badge {
-    background: #0056b3;
+    background: orange;
     color: white;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
@@ -105,7 +105,7 @@ body{
     width: 30px;
     height: 30px;
     background: #f1f1f1;
-    border: none;
+    border: 1px solid #c19a6b;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -115,7 +115,7 @@ body{
     height: 30px;
     text-align: center;
     margin: 0 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #c19a6b;
 }
 
 .add-to-cart-btn, .buy-now-btn{
@@ -125,16 +125,17 @@ body{
     font-weight: bold;
     cursor: pointer;
     margin-right: 1rem;
+    color: whitesmoke;
+    background-color: #c19a6b;
 }
 
 .buy-now-btn {
-    background: #d70018;
+    background: #c19a6b;
     color: white;
 }
 
 /* Phần sản phẩm liên quan */
 .related-products {
-    margin-top: 3rem;
     grid-column: 1 / -1;
     text-align: center;
     justify-content: center;
@@ -145,7 +146,6 @@ body{
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 1rem;
-
 }
 
 .related-item {
@@ -153,11 +153,11 @@ body{
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
-    border: 1px solid blue;
+    border: 1px solid #c19a6b;
 }
 
 .related-item:hover{
-    border: 1px solid lightblue;
+    border: 1px solid #D4AF37;
 }
 
 .related-item img {
@@ -189,6 +189,8 @@ body{
 
 .btn-process{
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
 }
 
 .related-products .related-list .related-item button{
@@ -196,22 +198,260 @@ body{
     background-color: lightblue;
     cursor: pointer;
     font-size: clamp(10px,1.2vw,20px);
-    color: blue;
+    background-color: #c19a6b;
+    color: whitesmoke;
     border-radius: 10px;
+    border: none;
+    flex-wrap: nowrap;
 }
 
 .view-detail-button {
     text-align: center;
     align-content: center;
     justify-items: center;
-    background-color: #3498db;
-    color: white;
+    background-color: #c19a6b;
+    color: whitesmoke;
     border-radius: 10px;
     text-decoration: none;
     margin: 5px;
     padding: 2px;
+    flex-wrap: nowrap;
 }
 
 .view-detail-button:hover {
     background-color: #2980b9;
+}
+
+@media(max-width:1200px){
+
+    .btn-process{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .related-products .related-list .related-item button{
+        padding: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+        font-size: clamp(10px,1.1vw,20px);
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .view-detail-button {
+        text-align: center;
+        align-content: center;
+        justify-items: center;
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px;
+        font-size: clamp(10px,1.1vw,20px);
+    }
+}
+
+@media(max-width:1037px){
+
+    .btn-process{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* Layout chính */
+    .product-detail-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 30px;
+    }
+
+    .related-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .related-products .related-list .related-item button{
+        padding: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+        font-size: clamp(10px,1.5vw,20px);
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .view-detail-button {
+        text-align: center;
+        align-content: center;
+        justify-items: center;
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px;
+        font-size: clamp(10px,1.5vw,20px);
+    }
+}
+
+@media(max-width:810px){
+
+    .btn-process{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* Layout chính */
+    .product-detail-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 30px;
+    }
+
+    .related-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .related-products .related-list .related-item button{
+        padding: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+        font-size: clamp(10px,2.1vw,20px);
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        border: none;
+        
+    }
+
+    .view-detail-button {
+        text-align: center;
+        align-content: center;
+        justify-items: center;
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px;
+        font-size: clamp(10px,2.1vw,20px);
+        
+    }
+}
+
+@media(max-width:550px){
+
+    .related-item{
+        height: max-content;
+    }
+
+    .btn-process{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* Layout chính */
+    .product-detail-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 30px;
+    }
+
+    .related-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .related-products .related-list .related-item button{
+        padding: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+        font-size: clamp(10px,1.8vw,20px);
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        border: none;
+        
+    }
+
+    .view-detail-button {
+        text-align: center;
+        align-content: center;
+        justify-items: center;
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px;
+        font-size: clamp(10px,1.8vw,20px);
+        
+    }
+}
+
+@media(max-width:475px){
+
+    .related-item{
+        height: max-content;
+    }
+
+    .btn-process{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* Layout chính */
+    .product-detail-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 30px;
+    }
+
+    .related-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .related-products .related-list .related-item button{
+        padding: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+        font-size: clamp(10px,4vw,20px);
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        border: none;
+        
+    }
+
+    .view-detail-button {
+        text-align: center;
+        align-content: center;
+        justify-items: center;
+        background-color: #c19a6b;
+        color: whitesmoke;
+        border-radius: 10px;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px;
+        font-size: clamp(10px,4vw,20px);
+        
+    }
 }

@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phần đầu trang</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="index.html">
 </head>
 <body>
     <!-- Menu sẽ luôn hiển thị -->
     <nav>
         <div class="nav-container">
-            <span class="trademark"><i class="fas fa-shopping-bag blue-icon"></i> LUXORA</span>
+            <div class="trademark">
+                <i class="fas fa-shopping-bag blue-icon trademark_icon"></i> LUXORA<br>
+            </div>
             <ul>
-                <li><a href="index.html" class="nav-link active" data-page="home"><i class="fa-duotone fa-solid fa-house"></i> Trang chủ</a></li>
-                <li><a href="products.html" class="nav-link" data-page="products"><i class="fa-sharp-duotone fa-solid fa-list"></i> Sản phẩm</a></li>
-                <li><a href="contact.html" class="nav-link" data-page="contact"><i class="fa-sharp-duotone fa-solid fa-phone"></i> Liên hệ</a></li>
-                <li><a href="login.htm" class="nav-link" data-page="login"><i class="fa-sharp-duotone fa-solid fa-user"></i> Đăng nhập</a></li>
+                <li><a href="index.html" class="nav-link active" data-page="home"><i class="fa-duotone fa-solid fa-house menu_icon"></i> Trang chủ</a></li>
+                <li><a href="products.html" class="nav-link" data-page="products"><i class="fa-sharp-duotone fa-solid fa-list menu_icon"></i> Sản phẩm</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact"><i class="fa-sharp-duotone fa-solid fa-phone menu_icon"></i> Liên hệ</a></li>
+                <li><a href="login.htm" class="nav-link" data-page="login"><i class="fa-sharp-duotone fa-solid fa-user menu_icon"></i> Đăng nhập</a></li>
             </ul>
             <div class="search-box">
                 <input type="text" placeholder="Bạn tìm gì...">
-                <button><i class="fa-duotone fa-solid fa-magnifying-glass"></i></button>
+                <button><i class="fa-duotone fa-solid fa-magnifying-glass menu_icon"></i></button>
+                <a href="cart.html" class="nav-link" data-page="cart"> <i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
             </div>
-            <a href="cart.html" class="nav-link" data-page="cart"> <i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
         </div>
     </nav>
 </body>

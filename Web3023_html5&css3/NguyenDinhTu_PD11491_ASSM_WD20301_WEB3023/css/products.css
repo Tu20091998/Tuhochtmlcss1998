@@ -11,6 +11,7 @@
         text-align: center;
         margin-bottom: 30px;
         color: #2c3e50;
+        margin-top: 50px
     }
 
     .product-container{
@@ -23,13 +24,13 @@
 
     .product-box{
         display: block;
-        background-color:  #f5f7fa;
+        background-color:  whitesmoke;
         border-radius: 10px;
         box-shadow: 0 5px 10px;
         padding: 15px;
-        width: 20%;
+        width: 20vw;
         text-align: center;
-        height: 50vh;
+        height: auto;
         margin-bottom: 10px;
         border: 0.5px solid transparent;
         transition: background-color 0.3s ease;
@@ -37,19 +38,24 @@
 
     .product-box:hover{
         cursor: pointer;
-        border-color: green;
+        border-color: #D4AF37;
         background-color: #f0f0f0;
     }
 
     .product-box img{
-        width: 100%;
-        height: 150px;
+        width: 20vw;
+        height: 30vh;
         border-radius: 10px;
         object-fit: contain;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .product-box img:hover{
+        scale: 1.1;
     }
 
     .product-box .product-name{
-        font-size: clamp(15px,2vw,25px);
+        font-size: clamp(20px,2vw,25px);
         margin: 10px;
         color: #2c3e50;
         max-height: 24px;
@@ -59,15 +65,23 @@
         margin: 10px;
         color: gray;
         max-height: 24px;
-        font-size: clamp(10px,1.2vw,20px);
+        font-size: clamp(15px,1.2vw,20px);
     }
 
     .product-box .product-add{
         padding: 5px;
     }
 
+    .product-box .product-add button:hover{
+        background-color: #D4AF37;
+    }
+
+    .product-add button{
+        width: auto;
+    }
+
     .product-box .product-description{
-        font-size: clamp(10px,1.2vw,20px);
+        font-size: clamp(15px,1.2vw,20px);
         margin: 10px;
         color: gray;
         height: 24px;
@@ -80,19 +94,20 @@
 
     .product-box form button{
         padding: 10px;
-        background-color: lightblue;
+        background-color: #c19a6b;
         cursor: pointer;
-        font-size: clamp(10px,1.2vw,20px);
-        color: blue;
+        font-size: clamp(15px,1.2vw,20px);
+        color: whitesmoke;
         border-radius: 10px;
+        border: none;
     }
 
     .view-detail-button {
         text-align: center;
         align-content: center;
         justify-items: center;
-        background-color: #3498db;
-        color: white;
+        background-color: #c19a6b;
+        color: whitesmoke;
         border-radius: 10px;
         text-decoration: none;
         margin: 5px;
@@ -100,11 +115,12 @@
     }
 
     .view-detail-button:hover {
-        background-color: #2980b9;
+        background-color: #D4AF37;
     }
 
     .btn-process{
-        display: flex;
+        display: grid;
+        grid-template-columns: auto auto;
     }
 
     .pagination{
@@ -144,13 +160,17 @@
         transition: border-color 0.3s;
     }
 
+    .select-btn option{
+        background-color: #c19a6b;
+        color: whitesmoke;
+    }
+
     .select-btn:hover {
-        border-color: #007bff;
+        border-color: #D4AF37;
     }
 
     .select-btn:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        border-color: #D4AF37;
     }
 
         /* Phân trang */
@@ -163,7 +183,7 @@
 
     .page-btn {
         padding: 8px 16px;
-        background-color: #f1f1f1;
+        background-color: whitesmoke;
         border: 1px solid #ddd;
         color: #333;
         cursor: pointer;
@@ -176,9 +196,9 @@
     }
 
     .page-btn.active {
-        background-color: #007bff;
+        background-color: #c19a6b;
         color: white;
-        border: 1px solid #007bff;
+        border: 1px solid #c19a6b;
     }
 
     .page-btn:disabled {
@@ -186,43 +206,156 @@
         cursor: not-allowed;
     }
 
-    @media (max-width: 600px) {
-        .product-container {
-            flex-direction: row;
-            flex-wrap: wrap;
+    @media(max-width:1200px){
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
             justify-content: center;
         }
 
-        .product-box {
-            width: 48%;
-            justify-content: center;
+        .product-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 5px;
+            justify-items: center;
+        }
+
+        .product-box{
+            display: block;
+            background-color:  #f5f7fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px;
+            padding: 25px;
+            width: 25vw;
+            text-align: center;
+            height:45vh;
+            margin-bottom: 10px;
+            border: 0.5px solid transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-box img{
+            width: 15vw;
+            height: 20vh;
+            border-radius: 10px;
+            object-fit: contain;
+            transition: all 0.5s ease-in-out;
         }
     }
 
-    @media (max-width: 800px) {
-        .product-container {
-            flex-direction: row;
-            flex-wrap: wrap;
+        @media(max-width:957px){
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
             justify-content: center;
-
         }
 
-        .product-box {
-            width: 48%;
-            justify-content: center;
+        .product-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 5px;
+            justify-items: center;
+        }
+
+        .product-box{
+            display: block;
+            background-color:  #f5f7fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px;
+            padding: 25px;
+            width: 25vw;
+            text-align: center;
+            height:45vh;
+            margin-bottom: 10px;
+            border: 0.5px solid transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-box img{
+            width: 15vw;
+            height: 20vh;
+            border-radius: 10px;
+            object-fit: contain;
+            transition: all 0.5s ease-in-out;
         }
     }
 
-    @media (max-width: 100px) {
-        .product-container {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
+    @media(max-width:768px){
 
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: center;
         }
 
-        .product-box {
-            width: 48%;
+        .product-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 5px;
+            justify-items: center;
+        }
+
+        .product-box{
+            display: block;
+            background-color:  #f5f7fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px;
+            padding: 25px;
+            width: 40vw;
+            text-align: center;
+            height: 45vh;
+            margin-bottom: 10px;
+            border: 0.5px solid transparent;
+            transition: background-color 0.3s ease;
+        }
+    }
+
+    @media(max-width:567px){
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
             justify-content: center;
+        }
+
+        .product-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 5px;
+            justify-items: center;
+        }
+
+        .product-box{
+            justify-items: center;
+            display: block;
+            background-color:  #f5f7fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px;
+            padding: 25px;
+            width: 80vw;
+            text-align: center;
+            height: 45vh;
+            margin-bottom: 10px;
+            border: 0.5px solid transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-box img{
+            width: 50vw;
+            height: 20vh;
+            border-radius: 10px;
+            object-fit: contain;
+            transition: all 0.5s ease-in-out;
         }
     }

@@ -7,7 +7,6 @@ body{
 }
 
 :root{
-    --main-color: lightblue;
     --text-color: #333;
     --bg-color: #f5f5f5;
     --white: #fff;
@@ -20,9 +19,15 @@ body{
         "header"
         "main"
         "footer";
-    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
     height: auto;
     width: 100%;
+    flex-wrap: wrap;
+}
+
+h1{
+    margin-top: 20px;
 }
 
 /* Cấu trúc main content */
@@ -31,8 +36,11 @@ body{
     display: grid;
     grid-template-areas: 
         "products"
+        "products"
         "reviews";
-    gap: 2rem;
+    gap: 3rem;
+    width: auto;
+    justify-items: center;
 }
 
 .product-container {
@@ -40,6 +48,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+    width: 100%;
 }
 
 .reviews {
@@ -50,6 +59,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    width: 100%;
 }
 
 
@@ -58,58 +68,76 @@ header{
     grid-area: header;
     background-color: var(--bg-color);
     text-align: center;
-    padding: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 10px;
+    padding: 20px;
 }
 
+.bg-image{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 5px;
+    width: 100%;
+}
 
-.bg-container{
+.bg-image img{
+    width: 100%;
+    height: 19vh;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.bg-image img:hover{
+    scale: 1.02;
+}
+
+.bg-container {
     position: relative;
     width: 100%;
     height: 40vh;
     overflow: hidden;
     border: none;
-    background-color: var(--bg-color);
+    border-radius: 5px;
 }
 
-.bg{
+/* Thay đổi từ flex sang absolute */
+.bg {
     position: absolute;
     width: 100%;
     height: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0;
-    animation: al_bg 10s ease-in-out infinite alternate;
+    opacity: 0; /* Ẩn tất cả ảnh ban đầu */
+    animation: fade 10s infinite ease-in-out;
 }
 
-.bg1{
-    background-image: url("../image/banner1.jpg");
+.bg1 {
+    background-image: url("../image/banner_header1.jpg");
     animation-delay: 0s;
 }
 
-.bg2{
-    background-image: url("../image/banner2.png");
-    animation-delay: 3.3s;
+.bg2 {
+    background-image: url("../image/mau-thiet-ke-banner-giay-the-thao-minh-duong-media.jpg");
+    animation-delay: 3.33s;
 }
 
-.bg3{
-    background-image: url("../image/banner3.png");
-    animation-delay: 6.6s;
+.bg3 {
+    background-image: url("../image/mau-thiet-ke-banner-ro-bot-hut-bui-minh-duong-media1.jpg");
+    animation-delay: 6.66s;
 }
 
-@keyframes al_bg{
-    0%{
-        opacity: 0;
-    }
-    33%{
-        opacity: 1;
-    }
-    66%{
-        opacity: 0;
-    }
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; } 
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
 }
-
 
 .reviews {
     padding: 40px 20px;
@@ -159,33 +187,336 @@ header{
     margin-top: 5px;
 }
 
-@media (max-width: 600px) {
-    .product-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+.fire-icon {
+    color: orangered;
+    transition: all 0.5s ease-in-out;
+}
 
+.fire-icon:hover {
+    transform: rotate(360deg); /* Xoay 360 độ khi hover */
+}
+
+.product_new_icon {
+    color: yellow;
+    transition: all 0.5s ease-in-out;
+}
+
+.product_new_icon:hover {
+    transform: rotate(360deg); /* Xoay 360 độ khi hover */
+}
+
+.product_outstanding{
+    transition: all 0.5s ease-in-out;
+}
+
+.product_outstanding:hover {
+    transform: rotate(360deg); /* Xoay 360 độ khi hover */
+}
+
+.star_appraisal{
+    transition: all 0.5s ease-in-out;
+}
+
+.star_appraisal:hover {
+    transform: rotate(360deg); /* Xoay 360 độ khi hover */
+}
+
+    .header{
+        width: 100%;
+        border: 0px solid black;
+        background-color: whitesmoke;
+        height: 100%;
     }
 
-    .product-box {
-        width: 48%;
-        justify-content: center;
+@media(max-width:1200px){
+    .container-grid {
+        display: grid;
+        grid-template-areas: 
+            "nav"
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        height: auto;
+        width: 100%;
+    }
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-area: header;
+        background-color: var(--bg-color);
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+        justify-items: center;
+        grid-gap: 10px;
+        padding: 20px;
+        height: 90vh;
+    }
+
+    .container-grid main header{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .bg-container{
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        border: none;
+        background-color: var(--bg-color);
+    }
+
+    .container-grid main header{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .container-grid main header .bg-image{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .container-grid main header .bg-image img{
+        width: 100%;
     }
 }
 
-@media (max-width: 800px) {
-    .product-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+.wave{
+    width: 100%;
+    justify-items: center;
+}
 
+.wave-text {
+    animation: wave 3s ease-in-out infinite;
+    width: 80%;
+    font-size: clamp(24px,2vw,40px);
+}
+
+@keyframes wave {
+    0%, 100% { transform: scale(1.1) }
+    25% { transform: scale(1.2) }
+    50% { transform: scale(1.1) }
+    75% { transform:  scale(1.2)}
+}
+
+@media(max-width:1300px){
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-gap: 10px;
+        padding: 20px;
+        height: 40vh;
     }
 
-    .product-box {
-        width: 48%;
-        justify-content: center;
+    .bg-image{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 5px;
+        width: 100%;
+    }
+
+    .bg-image img{
+        width: 100%;
+        height: 17vh;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
     }
 }
+
+@media(max-width:1200px){
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-gap: 10px;
+        padding: 20px;
+        height: 40vh;
+        margin-bottom: 65vh;
+    }
+
+    .bg-image{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 5px;
+        width: 100%;
+    }
+
+    .bg-image img{
+        width: 100%;
+        height: 25vh;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+
+@media(max-width:750px){
+    .container-grid {
+        display: grid;
+        grid-template-areas: 
+            "nav"
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        width: 100%;
+    }
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-area: header;
+        background-color: var(--bg-color);
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        grid-gap: 10px;
+        padding: 20px;
+        height: 25vh;
+    }
+
+    .container-grid main header{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .bg-container{
+        width: 100%;
+        height: 40vh;
+        overflow: hidden;
+        border: none;
+        background-color: var(--bg-color);
+    }
+
+    .container-grid main header{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .container-grid main header .bg-image{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .container-grid main header .bg-image img{
+        width: 100%;
+    }
+}
+
+    @media(max-width:600px){
+    .container-grid {
+        display: grid;
+        grid-template-areas: 
+            "nav"
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        height: auto;
+        width: 100%;
+    }
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-area: header;
+        background-color: var(--bg-color);
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        height: 20vh;
+    }
+
+    .bg-container{
+        width: 100%;
+        height: 30vh;
+        overflow: hidden;
+        border: none;
+    }
+
+    .container-grid main header{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .container-grid main header .bg-image{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .container-grid main header .bg-image img{
+        width: 100%;
+    }
+}
+
+    @media(max-width:475px){
+    .container-grid {
+        display: grid;
+        grid-template-areas: 
+            "nav"
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        height: auto;
+        width: 100%;
+    }
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-area: header;
+        background-color: var(--bg-color);
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        height: 10vh;
+        width: 90vw;
+    }
+
+    .bg-container{
+        width: 100%;
+        height: 20vh;
+        overflow: hidden;
+        border: none;
+    }
+
+    .container-grid main header{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .container-grid main header .bg-image{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .container-grid main header .bg-image img{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
 
 
 

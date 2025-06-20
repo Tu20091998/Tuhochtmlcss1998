@@ -1,15 +1,29 @@
 /*Định dạng phần menu*/
 nav{
     grid-area: nav;
-    background-color: lightblue;
+    width: auto;
+}
+
+.trademark_icon {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-1px); }
+    75% { transform: translateX(1px); }
 }
 
 /*icon giỏ hàng*/
 .fa-shopping-cart {
-    font-size: 24px;
-    color: #0056b3;
+    font-size: 16px;
+    color: whitesmoke;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+}
+
+.fa-shopping-cart:hover{
+    color: #D4AF37;
 }
 
 nav .nav-container {
@@ -18,19 +32,21 @@ nav .nav-container {
     align-items: center;
     padding: 10px;
     flex-wrap: wrap; /* Giúp responsive */
-    background-color: lightblue;
+    background-color: #c19a6b;
+    width: auto;
 }
 
 nav .nav-container .trademark{
-    font-size: clamp(30px,3vw,40px);
+    font-size: clamp(30px,2.5vw,40px);
     padding: 10px;
-    color: #0056b3;
+    color: whitesmoke;
+    font-weight: bold;
 }
 
 nav .nav-container a{
-    font-size: clamp(15px,1.5vw,20px);
+    font-size: clamp(10px,1.5vw,20px);
     text-decoration: none;
-    color: #0056b3;
+    color: whitesmoke;
 }
 
 nav ul{
@@ -44,14 +60,29 @@ nav ul{
 }
 
 nav ul li a{
-    font-size: clamp(15px,1.5vw,20px);
+    font-size: clamp(10px,1.5vw,15px);
     text-decoration: none;
-    color: #0056b3;
+    color: #c19a6b;
 }
 
 nav ul li a:hover{
     transition: all 0,5s ease-in-out;
-    color: white;
+    color: #FFA000;
+}
+
+.menu_icon{
+    font-size: 15px;
+    color: whitesmoke;
+    
+}
+
+.menu_icon:hover{
+    color: #FFA000;
+    scale: 1.5;
+}
+
+.trademark_icon{
+    font-size: 30px;
 }
 
 /*Nút tìm kiếm*/
@@ -62,9 +93,13 @@ nav ul li a:hover{
     gap: 5px;
 }
 
+.search-box a:hover{
+    color: #FFA000;
+}
+
 .search-box input {
-    padding: 8px;
-    font-size: 16px;
+    padding: 7px;
+    font-size: 14px;
     border: none;
     border-radius: 8px;
     width: 250px;
@@ -73,18 +108,22 @@ nav ul li a:hover{
 
 .search-box input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px #007bff66;
+    border-color: #FFA000;
 }
 
 .search-box button {
-    padding: 7px;
-    color: #0056b3;
+    padding: 5px;
+    color: #c19a6b;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: clamp(15px,1.5vw,20px);
     cursor: pointer;
     transition: 0.3s;
+    background-color: #c19a6b;
+}
+
+nav .nav-container .search-box a{
+    margin-left: 20px;
 }
 
 .search-box button:hover {
@@ -93,13 +132,396 @@ nav ul li a:hover{
 
 .icon-hover {
     color: #6c757d;
-    font-size: 24px;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 .icon-hover:hover {
-    color: #007bff;
+    color: whitesmoke;
 }
 
 .fa-shopping-cart:hover{
     scale: 1.2;
 }
+
+.trademark{
+    animation: colorChange 3s linear infinite;
+}
+
+@keyframes colorChange {
+    0% { color: orange; }
+    25% { color: yellow; }
+    50% { color: black; }
+    75% { color: gray; }
+    100% { color: green; }
+}
+
+@media(max-width:1200px){
+    nav{
+        grid-area: nav;
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+
+    nav .nav-container a{
+        font-size: clamp(30px,1.5vw,20px);
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    nav .nav-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Giúp responsive */
+        background-color: #c19a6b;
+        justify-content: center;
+        padding: 1rem;
+        gap: 20px;
+    }
+
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 7px;
+    }
+
+    .menu_icon{
+        font-size: 20px;
+        color: whitesmoke;
+    }
+
+    /*icon giỏ hàng*/
+    .fa-shopping-cart {
+        font-size: 14px;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        
+    }
+
+    .search-box{
+        gap: 10px;
+    }
+
+    .search-box input {
+        padding: 10px;
+        font-size: 15px;
+        border: none;
+        border-radius: 8px;
+        width: 60vw;
+        transition: 0.3s ease-in-out;
+    }
+
+    .search-box button {
+        padding: 10px;
+        color: whitesmoke;
+        border: none;
+        border-radius: 8px;
+        font-size: clamp(12px,1.5vw,20px);
+        cursor: pointer;
+        transition: 0.3s;
+        margin-right: 10px;
+    }
+}
+
+@media(max-width:768px){
+    nav{
+        grid-area: nav;
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+
+    nav .nav-container a{
+        font-size: clamp(21px,1.5vw,20px);
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    nav .nav-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Giúp responsive */
+        background-color: #c19a6b;
+        justify-content: center;
+        padding: 1rem;
+        gap: 20px;
+        width: 94vw;
+    }
+
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 7px;
+    }
+
+    .menu_icon{
+        font-size: 20px;
+        color: whitesmoke;
+    }
+
+    /*icon giỏ hàng*/
+    .fa-shopping-cart {
+        font-size: 14px;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        
+    }
+
+    .search-box{
+        gap: 10px;
+    }
+
+    .search-box input {
+        padding: 10px;
+        font-size: 15px;
+        border: none;
+        border-radius: 8px;
+        width: 60vw;
+        transition: 0.3s ease-in-out;
+    }
+
+    .search-box button {
+        padding: 10px;
+        color: whitesmoke;
+        border: none;
+        border-radius: 8px;
+        font-size: clamp(12px,1.5vw,20px);
+        cursor: pointer;
+        transition: 0.3s;
+        margin-right: 10px;
+    }
+}
+
+
+@media(max-width:630px){
+    nav{
+        grid-area: nav;
+        display: flex;
+    }
+
+    nav .nav-container a{
+        font-size: clamp(16px,1.5vw,20px);
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    nav .nav-container ul li a{
+        font-size: clamp(16px,1.5vw,20px);
+    }
+
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .menu_icon{
+        font-size: 15px;
+    }
+
+    /*icon giỏ hàng*/
+    .fa-shopping-cart {
+        font-size: 14px;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        margin-left: 5px;
+    }
+
+    .search-box input {
+        padding: 8px;
+        font-size: 10px;
+        border: none;
+        border-radius: 8px;
+        width: 260px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .search-box button {
+        padding: 7px;
+        color: whitesmoke;
+        border: none;
+        border-radius: 8px;
+        font-size: clamp(12px,1.5vw,20px);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+@media(max-width:488px){
+    nav{
+        grid-area: nav;
+        display: flex;
+    }
+
+    nav .nav-container a{
+        font-size: clamp(14px,1.5vw,20px);
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    nav .nav-container ul li a{
+        font-size: clamp(14px,1.5vw,20px);
+    }
+
+    .menu_icon{
+        font-size: 10px;
+    }
+
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    /*icon giỏ hàng*/
+    .fa-shopping-cart {
+        font-size: 10px;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .search-box input {
+        padding: 8px;
+        font-size: 10px;
+        border: none;
+        border-radius: 8px;
+        width: 210px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .search-box button {
+        padding: 7px;
+        color: whitesmoke;
+        border: none;
+        border-radius: 8px;
+        font-size: clamp(12px,1.5vw,20px);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+@media(max-width:440px){
+    nav{
+        grid-area: nav;
+        display: flex;
+    }
+
+    nav .nav-container a{
+        font-size: clamp(11px,1.5vw,20px);
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    nav .nav-container ul li a{
+        font-size: clamp(11px,1.5vw,20px);
+    }
+
+    .menu_icon{
+        font-size: 10px;
+    }
+
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    /*icon giỏ hàng*/
+    .fa-shopping-cart {
+        font-size: 10px;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .search-box input {
+        padding: 8px;
+        font-size: 10px;
+        border: none;
+        border-radius: 8px;
+        width: 190px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .search-box button {
+        padding: 7px;
+        color: whitesmoke;
+        border: none;
+        border-radius: 8px;
+        font-size: clamp(12px,1.5vw,20px);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+@media(max-width:375px){
+    nav{
+        grid-area: nav;
+        display: flex;
+    }
+
+    nav .nav-container a{
+        font-size: clamp(9px,1.5vw,20px);
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    nav .nav-container ul li a{
+        font-size: clamp(9px,1.5vw,20px);
+    }
+
+    .menu_icon{
+        font-size: 10px;
+    }
+
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    /*icon giỏ hàng*/
+    .fa-shopping-cart {
+        font-size: 10px;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .search-box input {
+        padding: 8px;
+        font-size: 10px;
+        border: none;
+        border-radius: 8px;
+        width: 160px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .search-box button {
+        padding: 7px;
+        color: whitesmoke;
+        border: none;
+        border-radius: 8px;
+        font-size: clamp(12px,1.5vw,20px);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+

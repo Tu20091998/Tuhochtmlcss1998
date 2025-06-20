@@ -14,6 +14,7 @@
         <div id="header"></div>  <!-- Sẽ được chèn header.html -->
         <main>
             <div class="cart">
+                <h1>🛒 Giỏ hàng của bạn</h1>
                 <table>
                     <thead>
                         <tr>
@@ -35,11 +36,11 @@
                             <td>22</td>
                             <td>12</td>
                             <td>
-                                <form method="POST" >
+                                <form method="POST" class="quantity_product">
                                     <input type="hidden" name="cart_id">
-                                    <button type="submit" name="decrease">-</button>
-                                    <span style="margin: 0 10px;">2</span>
                                     <button type="submit" name="increase">+</button>
+                                    <span>2</span>
+                                    <button type="submit" name="decrease">-</button>
                                 </form>
                             </td>
                             <td>06/07/2025</td>
@@ -58,11 +59,11 @@
                             <td>22</td>
                             <td>12</td>
                             <td>
-                                <form method="POST" >
+                                <form method="POST" class="quantity_product">
                                     <input type="hidden" name="cart_id">
-                                    <button type="submit" name="decrease">-</button>
-                                    <span style="margin: 0 10px;">2</span>
                                     <button type="submit" name="increase">+</button>
+                                    <span>2</span>
+                                    <button type="submit" name="decrease">-</button>
                                 </form>
                             </td>
                             <td>06/07/2025</td>
@@ -78,9 +79,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <p class="total-price"><strong>Tổng tiền: </strong>24.000.000 VNĐ</p>
+                <p class="total-price"><strong>💵 Tổng tiền: </strong>24.000.000 VNĐ</p>
             </div>
-
 
             <div class="checkout-form">
                 <h2>📝 Thông tin đặt hàng</h2>

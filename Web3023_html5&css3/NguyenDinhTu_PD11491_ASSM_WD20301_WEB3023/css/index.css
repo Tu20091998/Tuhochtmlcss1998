@@ -21,9 +21,8 @@ body{
         "footer";
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
-    height: auto;
+    height: 100%;
     width: 100%;
-    flex-wrap: wrap;
 }
 
 h1{
@@ -81,13 +80,15 @@ header{
     display: grid;
     grid-template-rows: auto auto;
     grid-gap: 5px;
-    width: 100%;
+    width: 50vw;
+    height: 36vh;
 }
 
 .bg-image img{
     width: 100%;
-    height: 19vh;
+    height: 18vh;
     border-radius: 5px;
+    object-fit: fill;
     transition: all 0.5s ease-in-out;
 }
 
@@ -98,13 +99,12 @@ header{
 .bg-container {
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: 100%;
     overflow: hidden;
     border: none;
     border-radius: 5px;
 }
 
-/* Thay đổi từ flex sang absolute */
 .bg {
     position: absolute;
     width: 100%;
@@ -112,8 +112,8 @@ header{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0; /* Ẩn tất cả ảnh ban đầu */
-    animation: fade 10s infinite ease-in-out;
+    opacity: 0;
+    animation: fade 12s infinite ease-in-out;
 }
 
 .bg1 {
@@ -123,12 +123,12 @@ header{
 
 .bg2 {
     background-image: url("../image/mau-thiet-ke-banner-giay-the-thao-minh-duong-media.jpg");
-    animation-delay: 3.33s;
+    animation-delay: 4s;
 }
 
 .bg3 {
     background-image: url("../image/mau-thiet-ke-banner-ro-bot-hut-bui-minh-duong-media1.jpg");
-    animation-delay: 6.66s;
+    animation-delay: 8s;
 }
 
 @keyframes fade {
@@ -294,7 +294,7 @@ header{
 .wave-text {
     animation: wave 3s ease-in-out infinite;
     width: 80%;
-    font-size: clamp(24px,2vw,40px);
+    font-size: clamp(30px,2vw,40px);
 }
 
 @keyframes wave {
@@ -334,8 +334,16 @@ header{
     header{
         grid-gap: 10px;
         padding: 20px;
-        height: 40vh;
-        margin-bottom: 65vh;
+        height: 20vh;
+        margin-bottom: 80vh;
+    }
+
+    .bg-container{
+        width: 100%;
+        height: 55vh;
+        overflow: hidden;
+        border: none;
+        background-color: var(--bg-color);
     }
 
     .bg-image{
@@ -343,6 +351,7 @@ header{
         grid-template-rows: auto auto;
         grid-gap: 5px;
         width: 100%;
+        height: 100%;
     }
 
     .bg-image img{
@@ -350,6 +359,58 @@ header{
         height: 25vh;
         border-radius: 5px;
         transition: all 0.5s ease-in-out;
+    }
+}
+
+@media(max-width:1000px){
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-gap: 10px;
+        padding: 20px;
+        height: 20vh;
+        margin-bottom: 80vh;
+    }
+
+    .bg-container{
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        border: none;
+        background-color: var(--bg-color);
+    }
+
+    .bg-image{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 5px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg-image img{
+        width: 100%;
+        height: 25vh;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+@media(max-width:900px){
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-gap: 10px;
+        padding: 20px;
+        height: 20vh;
+        margin-bottom: 70vh;
+    }
+
+    .bg-container{
+        width: 100%;
+        height: 40vh;
+        overflow: hidden;
+        border: none;
+        background-color: var(--bg-color);
     }
 }
 
@@ -364,6 +425,7 @@ header{
             "footer";
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
+        height: auto;
         width: 100%;
     }
 
@@ -377,7 +439,15 @@ header{
         justify-items: center;
         grid-gap: 10px;
         padding: 20px;
-        height: 25vh;
+        height: 0;
+    }
+
+    /*Định dạng phần đầu trang*/
+    header{
+        grid-gap: 10px;
+        padding: 20px;
+        height: 20vh;
+        margin-bottom: 70vh;
     }
 
     .container-grid main header{
@@ -387,7 +457,7 @@ header{
 
     .bg-container{
         width: 100%;
-        height: 40vh;
+        height: 36vh;
         overflow: hidden;
         border: none;
         background-color: var(--bg-color);
@@ -405,8 +475,9 @@ header{
         width: 100%;
     }
 
-    .container-grid main header .bg-image img{
+    .bg-image img{
         width: 100%;
+        height: 20vh;
     }
 }
 
@@ -433,7 +504,7 @@ header{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         justify-items: center;
-        height: 20vh;
+        margin-bottom: 60vh
     }
 
     .bg-container{
@@ -468,10 +539,9 @@ header{
             "header"
             "main"
             "footer";
-        grid-template-columns: 1fr;
+        grid-template-columns: 107vw;
         grid-template-rows: auto auto auto auto;
         height: auto;
-        width: 100%;
     }
 
     /*Định dạng phần đầu trang*/
@@ -483,13 +553,14 @@ header{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         justify-items: center;
-        height: 10vh;
-        width: 90vw;
+        height: 0vh;
+        width: 98vw;
+        margin-bottom: 60vh
     }
 
     .bg-container{
         width: 100%;
-        height: 20vh;
+        height: 25vh;
         overflow: hidden;
         border: none;
     }
@@ -509,7 +580,56 @@ header{
     .container-grid main header .bg-image img{
         width: 100%;
     }
+
+    .bg-image img{
+        width: 100%;
+        height: 18vh;
+    }
 }
+
+    @media(max-width:375px){
+        /*Định dạng phần đầu trang*/
+        header{
+            grid-area: header;
+            background-color: var(--bg-color);
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            justify-items: center;
+            height: 0vh;
+            width: 110vw;
+            margin-bottom: 60vh
+        }
+
+        .bg-container{
+            width: 100%;
+            height: 25vh;
+            overflow: hidden;
+            border: none;
+        }
+
+        .container-grid main header{
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
+        .container-grid main header .bg-image{
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+
+        .container-grid main header .bg-image img{
+            width: 100%;
+        }
+
+        .bg-image img{
+            width: 100%;
+            height: 18vh;
+        }
+    }
 
 
 

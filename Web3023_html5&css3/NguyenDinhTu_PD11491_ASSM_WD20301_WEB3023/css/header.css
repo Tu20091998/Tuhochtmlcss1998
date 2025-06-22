@@ -141,6 +141,7 @@ nav .nav-container .search-box a{
 
 .fa-shopping-cart:hover{
     scale: 1.2;
+    color: #FFA000;
 }
 
 .trademark{
@@ -250,7 +251,7 @@ nav .nav-container .search-box a{
         justify-content: center;
         padding: 1rem;
         gap: 20px;
-        width: 94vw;
+        width: 100vw;
     }
 
     nav ul{
@@ -309,6 +310,17 @@ nav .nav-container .search-box a{
         display: flex;
     }
 
+    nav .nav-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Giúp responsive */
+        background-color: #c19a6b;
+        justify-content: center;
+        padding: 1rem;
+        gap: 20px;
+        width: 102vw;
+    }
+
     nav .nav-container a{
         font-size: clamp(16px,1.5vw,20px);
         text-decoration: none;
@@ -363,6 +375,17 @@ nav .nav-container .search-box a{
     nav{
         grid-area: nav;
         display: flex;
+    }
+
+    nav .nav-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Giúp responsive */
+        background-color: #c19a6b;
+        justify-content: center;
+        padding: 1rem;
+        gap: 20px;
+        width: 110vw;
     }
 
     nav .nav-container a{
@@ -473,6 +496,7 @@ nav .nav-container .search-box a{
     nav{
         grid-area: nav;
         display: flex;
+        width: min-content;
     }
 
     nav .nav-container a{

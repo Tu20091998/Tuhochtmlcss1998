@@ -21,7 +21,7 @@
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         width: 33vw;
-        margin: 50px;
+        margin: 10rem;
         justify-content: center;
     }
 
@@ -32,7 +32,7 @@
     }
 
     input {
-        width: clamp(30vw,31vw,32vw);
+        width: 95%;
         padding: 12px;
         margin: 10px 0;
         border: 1px solid #c19a6b;
@@ -42,7 +42,7 @@
     }
 
     .register-btn {
-        width: 33vw;
+        width: 100%;
         padding: 12px;
         background-color: #c19a6b;
         border: none;
@@ -53,7 +53,7 @@
     }
 
     .register-btn:hover {
-        background-color: #D4AF37;
+        background-color: #FFA000;
     }
 
     .link {
@@ -69,7 +69,7 @@
 
     .link a:hover {
         text-decoration: underline;
-        color: #D4AF37;
+        color: #FFA000;
     }
 
     @media(max-width:1200px){
@@ -79,8 +79,8 @@
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 33vw;
-            margin: 50px;
-            height: 70vh;
+            margin: 100px;
+            height: 32vh;
         }
     }
 
@@ -92,7 +92,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 40vw;
             margin: 50px;
-            height: 70vh;
         }
 
         input {
@@ -125,7 +124,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 42vw;
             margin: 50px;
-            height: 70vh;
         }
     }
 
@@ -137,7 +135,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 50vw;
             margin: 50px;
-            height: 70vh;
         }
 
         input {
@@ -169,7 +166,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 70vw;
             margin: 50px;
-            height: 70vh;
         }
 
         input {

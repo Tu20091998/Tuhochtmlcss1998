@@ -35,7 +35,7 @@
     @media(max-width:768px){
 
         .icon-style-4 {
-            font-size: 1.5rem;
+            font-size: 1rem;
             color: #c19a6b;
             padding: 10px;
             border: 2px dashed #c19a6b;
@@ -43,16 +43,9 @@
             transition: all 0.4s;
         }
 
-        .icon-style-4:hover {
-            color: white;
-            background: #3498db;
-            border-style: solid;
-            transform: translateY(-5px);
-        }
-
         .location{
             color: red;
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
 
         .container-grid main{
@@ -61,5 +54,9 @@
 
         .container-grid main p{
             font-size: 15px;
+        }
+
+        h1{
+            font-size: 1.5rem;
         }
     }

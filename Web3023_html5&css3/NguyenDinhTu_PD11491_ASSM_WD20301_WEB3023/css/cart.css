@@ -24,12 +24,16 @@
         box-sizing: border-box;
     }
 
+    .checkout-form button:hover{
+        color: #FFA000;
+    }
+
     .checkout-form form a{
         text-decoration: none;
     }
 
     table{
-        width: 90vw;
+        width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
         background-color: white;
@@ -37,7 +41,7 @@
 
     th,td{
         border: 1px solid lightgray;
-        padding: 10px;
+        padding: 5px;
         text-align: center;
     }
 
@@ -54,7 +58,7 @@
 
     button{
         font-size: 10px;
-        padding: 5px;
+        padding:5px;
         width: 2rem;
         align-self: center;
         margin: 5px;
@@ -63,15 +67,6 @@
     .total-price{
         margin-top: 30px;
         font-size: 2rem;
-    }
-
-    .confirm-btn{
-        padding: 15px;
-        background-color: green;
-        color: white;
-        border-radius: 5px;
-        border: none;
-        text-decoration: none;
     }
 
     .quantity_product{
@@ -121,6 +116,11 @@
         th:nth-child(5), td:nth-child(5){
             display: none;
         }
+
+        .total-price{
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
     }
 
     @media(max-width:400px){
@@ -138,8 +138,6 @@
         th:nth-child(9), td:nth-child(9){
             display: none;
         }
-
-
     }
 
 

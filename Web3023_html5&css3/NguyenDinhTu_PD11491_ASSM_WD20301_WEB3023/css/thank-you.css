@@ -1,0 +1,44 @@
+    body{
+        margin: 0;
+    }
+
+    h1 {
+        color: green; 
+        font-size: clamp(30px,2vw,40px);
+    }
+
+    .thank-you{
+        justify-items: center;
+        margin: 10vh;
+    }
+
+    img{
+        width: clamp(300px,70vw,500px);
+        height: clamp(300px,70vw,500px);
+        border-radius: 10px;
+    }
+
+    @media(max-width:700px){
+        h1{
+            font-size: 1.5rem;
+        }
+    }
+
+    @media(max-width:600px){
+        h1{
+            font-size: 1.2rem;
+        }
+    }
+
+    @media(max-width:414px){
+        h1{
+            font-size: 1.1rem;
+        }
+    }
+
+    @media(max-width:360px){
+        h1{
+            font-size: 1rem;
+        }
+    }
+    

@@ -38,7 +38,7 @@
 
     .product-box:hover{
         cursor: pointer;
-        border-color: #D4AF37;
+        border-color: #FFA000;
         background-color: #f0f0f0;
     }
 
@@ -73,7 +73,7 @@
     }
 
     .product-box .product-add button:hover{
-        background-color: #D4AF37;
+        background-color: #FFA000;
     }
 
     .product-add button{
@@ -115,7 +115,7 @@
     }
 
     .view-detail-button:hover {
-        background-color: #D4AF37;
+        background-color: #FFA000;
     }
 
     .btn-process{
@@ -166,11 +166,11 @@
     }
 
     .select-btn:hover {
-        border-color: #D4AF37;
+        border-color: #FFA000;
     }
 
     .select-btn:focus {
-        border-color: #D4AF37;
+        border-color: #FFA000;
     }
 
         /* Phân trang */
@@ -231,7 +231,7 @@
             padding: 25px;
             width: 25vw;
             text-align: center;
-            height:45vh;
+            height:43vh;
             margin-bottom: 10px;
             border: 0.5px solid transparent;
             transition: background-color 0.3s ease;
@@ -310,9 +310,9 @@
             border-radius: 10px;
             box-shadow: 0 5px 10px;
             padding: 25px;
-            width: 40vw;
+            width: 43vw;
             text-align: center;
-            height: 45vh;
+            height: 43vh;
             margin-bottom: 10px;
             border: 0.5px solid transparent;
             transition: background-color 0.3s ease;
@@ -331,9 +331,50 @@
             display: grid;
             grid-template-columns: 1fr;
             flex-wrap: wrap;
-            width: 100%;
+            width: 108vw;
             gap: 5px;
+            justify-content: center;
+        }
+
+        .product-box{
             justify-items: center;
+            display: block;
+            background-color:  #f5f7fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px;
+            padding: 25px;
+            width: 80vw;
+            text-align: center;
+            height: 80%;
+            margin-bottom: 10px;
+            border: 0.5px solid transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-box img{
+            width: 50vw;
+            height: 20vh;
+            border-radius: 10px;
+            object-fit: contain;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+        @media(max-width:375px){
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .product-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            flex-wrap: wrap;
+            width: 113vw;
+            gap: 5px;
+            justify-content: center;
         }
 
         .product-box{

@@ -18,7 +18,7 @@
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         width: 33vw;
         justify-content: center;
-        margin: 50px;
+        margin: 10rem;
     }
 
     .login .login-container form label{
@@ -35,7 +35,7 @@
 
     input[type="email"],
     input[type="password"] {
-        width: 31vw;
+        width: 95%;
         padding: 12px;
         margin-bottom: 30px;
         border: 1px solid #D4AF37;
@@ -45,7 +45,7 @@
     }
 
     .login-btn {
-        width: 33vw;
+        width: 100%;
         padding: 12px;
         background-color: #c19a6b;
         border: none;
@@ -56,7 +56,7 @@
     }
 
     .login-btn:hover {
-        background-color: #D4AF37;
+        background-color: #FFA000;
     }
 
     .link {
@@ -72,7 +72,7 @@
 
     .link a:hover {
         text-decoration: underline;
-        color: #D4AF37;
+        color: #FFA000;
     }
 
     .error-message {
@@ -94,7 +94,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             width: 44vw;
             justify-content: center;
-            margin: 50px;
+            margin: 15rem;
         }
 
         input[type="email"],
@@ -186,6 +186,44 @@
 
         .login-btn {
             width: 52vw;
+            padding: 12px;
+            background-color: #c19a6b;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+
+    @media(max-width:450px){
+        .login{
+            justify-items: center;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 80vw;
+            justify-content: center;
+            margin: 50px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 75vw;
+            padding: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #D4AF37;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .login-btn {
+            width: 81vw;
             padding: 12px;
             background-color: #c19a6b;
             border: none;

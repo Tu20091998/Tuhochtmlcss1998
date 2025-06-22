@@ -6,6 +6,23 @@
         padding: 0;
         background-color: var(--bg-color);
     }
+
+    .container-grid {
+        display: grid;
+        grid-template-areas: 
+            "nav"
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        height: 100%;
+        width: 100%;
+    }
+
+    main{
+        width: 100%;
+    }
     
     h1{
         text-align: center;
@@ -299,7 +316,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             flex-wrap: wrap;
-            width: 100%;
+            width: 105vw;
             gap: 5px;
             justify-items: center;
         }
@@ -310,7 +327,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 10px;
             padding: 25px;
-            width: 43vw;
+            width: 42vw;
             text-align: center;
             height: 43vh;
             margin-bottom: 10px;
@@ -319,7 +336,7 @@
         }
     }
 
-    @media(max-width:567px){
+    @media(max-width:600px){
         body{
             padding: 0;
             margin: 0;
@@ -360,7 +377,7 @@
         }
     }
 
-        @media(max-width:375px){
+    @media(max-width:500px){
         body{
             padding: 0;
             margin: 0;
@@ -372,7 +389,7 @@
             display: grid;
             grid-template-columns: 1fr;
             flex-wrap: wrap;
-            width: 113vw;
+            width: 119vw;
             gap: 5px;
             justify-content: center;
         }
@@ -385,6 +402,47 @@
             box-shadow: 0 5px 10px;
             padding: 25px;
             width: 80vw;
+            text-align: center;
+            height: 80%;
+            margin-bottom: 10px;
+            border: 0.5px solid transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-box img{
+            width: 50vw;
+            height: 20vh;
+            border-radius: 10px;
+            object-fit: contain;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+        @media(max-width:375px){
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .product-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            flex-wrap: wrap;
+            width: 121vw;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .product-box{
+            justify-items: center;
+            display: block;
+            background-color:  #f5f7fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px;
+            padding: 25px;
+            width: 100vw;
             text-align: center;
             height: 45vh;
             margin-bottom: 10px;

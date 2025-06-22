@@ -181,7 +181,7 @@ footer {
         background: #c19a6b;
         color: whitesmoke;
         margin-top: 50px;
-        width: 90vw;
+        width: 102vw;
         justify-content: center;
         overflow: hidden;
         font-size: 10px;
@@ -192,5 +192,8 @@ footer {
         line-height: 1.6;
         opacity: 0.9;
         word-wrap: break-word;
+    }
+    main{
+        width: 121vw;
     }
 }

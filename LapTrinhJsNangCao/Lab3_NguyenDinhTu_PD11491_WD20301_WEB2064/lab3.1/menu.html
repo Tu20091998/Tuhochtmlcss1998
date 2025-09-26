@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu đồ uống</title>
+</head>
+<body>
+    <h2>Menu đồ uống</h2>
+    <ul id="drinkList"></ul>
+
+    <script>
+        let drinks = ["Cà phê ", "Trà sữa", "Nước cam", "Sinh tố", "Nước lọc"];
+
+        function renderList(arr){
+            let ul = document.getElementById("drinkList");
+            ul.innerHTML = "";
+
+            arr.forEach(drink => {
+                let li = document.createElement("li");
+                li.textContent = drink;
+                ul.appendChild(li);
+            });
+        }
+
+        renderList(drinks);
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Cà phê",
+      "parent_id": null
+    },
+    {
+      "id": "2",
+      "name": "Trà sữa",
+      "parent_id": null
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Cà phê sữa",
+      "price": 20000,
+      "cate_id": 1,
+      "detail": "Ngon đậm đà",
+      "image": "5-cach-pha-ca-phe-sua-tuoi-khong-duong-co.jpeg"
+    },
+    {
+      "id": "2",
+      "name": "Trà sữa trân châu",
+      "price": 30000,
+      "cate_id": 2,
+      "detail": "Thơm béo",
+      "image": "tra-sua-tu-lam.webp"
+    }
+  ],
+  "product_variants": [
+    {
+      "id": "1",
+      "product_id": 1,
+      "variant_name": "Size M",
+      "price": 20000,
+      "quantity": 10,
+      "image": "ca_phe_sua__7f2f3c911b0a40d3a04ab5aa9f152a59_master.jpg"
+    },
+    {
+      "id": "2",
+      "product_id": 2,
+      "variant_name": "Size L",
+      "price": 30000,
+      "quantity": 15,
+      "image": "xingfu-tra-sua-tran-chau-duong-den-2-FILEminimizer.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Nguyễn Văn A",
+      "email": "a@gmail.com",
+      "phone": "0901234567",
+      "address": "Hà Nội"
+    }
+  ],
+  "orders": [
+    {
+      "id": "e8dc",
+      "user": {
+        "name": "Nguyễn Đình Tú",
+        "email": "dinhtu20091998@gmail.com",
+        "phone": "0336620188",
+        "address": "93 Nguyễn Văn Tỵ - Hoà Phước - Hoà Vang - Đà Nẵng"
+      },
+      "total": 220000,
+      "items": [
+        {
+          "productId": 2,
+          "name": "Trà sữa trân châu",
+          "price": 30000,
+          "quantity": 6
+        },
+        {
+          "productId": 1,
+          "name": "Cà phê sữa",
+          "price": 20000,
+          "quantity": 2
+        }
+      ],
+      "create_at": "2025-10-02T11:41:03.989Z"
+    }
+  ],
+  "order_details": []
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Giỏ hàng</h1>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="checkout.html">Thanh toán</a>
+        </nav>
+    </header>
+
+    <main>
+        <table border="1" cellpadding="8" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        <h3>Tổng cộng: <span id="total">0</span> VND</h3>
+        <button onclick="window.location.href='checkout.html'">Thanh toán</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Susan Shop</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

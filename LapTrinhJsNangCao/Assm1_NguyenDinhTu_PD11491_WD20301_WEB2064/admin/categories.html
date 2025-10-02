@@ -1,0 +1,22 @@
+<div class="main">
+    <header><h1>Quản lý danh mục</h1></header>
+    <section>
+        <button onclick="showAddForm()">+ Thêm danh mục</button>
+        <div id="form-add" style="display:none; margin:10px 0;">
+            <input type="text" id="cate-name" placeholder="Tên danh mục">
+            <button onclick="saveCategory()">Lưu</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Parent</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="category-list"></tbody>
+        </table>
+    </section>
+</div>

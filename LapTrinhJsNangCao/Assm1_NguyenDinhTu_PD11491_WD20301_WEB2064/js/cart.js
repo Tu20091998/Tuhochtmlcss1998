@@ -2,61 +2,63 @@
 //khai báo đường dẫn api
 const API_URL = "http://localhost:4000/products";
 
+//hiển thị giỏ hàng
 async function loadCart(){
-    //lấy dữ liệu từ local và chuyển đổi thành js
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let tbody = document.getElementById("cart-items");
     let total = 0;
 
     tbody.innerHTML = "";
 
-    //lặp và hiển thị giỏ hàng
     for(let item of cart){
         let subtotal = item.price * item.quantity;
         total += subtotal;
 
         tbody.innerHTML += `
             <tr>
-                <td>${item.name}</td>
-                <td>${item.price} VND</td>
                 <td>
-                    <button onclick="updateQuantity(${item.productId}, -1)">-</button>
-                    ${item.quantity}
-                    <button onclick="updateQuantity(${item.productId}, 1)">+</button>
+                    <img src="images/${item.image}" alt="${item.name}" width="60" height="60">
                 </td>
-                <td>${subtotal} VND</td>
-                <td><button onclick="removeItem(${item.productId})">Xóa</button></td>
+                <td>
+                    <strong>${item.name}</strong><br>
+                    <small>${item.detail}</small><br>
+                    <em>${item.variant}</em>
+                </td>
+                <td>${item.price.toLocaleString()} VND</td>
+                <td>
+                    <button onclick="updateQuantity(${item.productId}, '${item.variantId}', -1)">-</button>
+                    ${item.quantity}
+                    <button onclick="updateQuantity(${item.productId}, '${item.variantId}', 1)">+</button>
+                </td>
+                <td>${subtotal.toLocaleString()} VND</td>
+                <td>
+                    <button onclick="removeItem(${item.productId}, '${item.variantId}')">Xóa</button>
+                </td>
             </tr>
         `;
     }
-    document.getElementById("total").innerText = total;
+
+    document.getElementById("total").innerText = total.toLocaleString() + " VND";
 }
 
-//hàm cập nhật số lượng trong giỏ hàng
-function updateQuantity(productId, change){
+//hàm cập nhật số lượng
+function updateQuantity(productId, variantId, change) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    //kiểm tra xem có sản phẩm trong giỏ hàng hay chưa?
-    let item = cart.find(i => i.productId === productId);
-
+    let item = cart.find(i => i.productId === productId && i.variantId == variantId);
     if(item){
         item.quantity += change;
-
-        //nếu số lượng bằng 0 thì xoá sản phẩm khỏi giỏ
         if(item.quantity <= 0){
-            cart = cart.filter(i => i.productId !== productId);
+            cart = cart.filter(i => !(i.productId === productId && i.variantId == variantId));
         }
     }
-    //chuyển dữ liệu đưa lại vào local
     localStorage.setItem("cart", JSON.stringify(cart));
-
-    loadCart(); //render lại;
+    loadCart();
 }
 
 //hàm xoá sản phẩm trong giỏ hàng
-function removeItem(productId){
+function removeItem(productId, variantId) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter(i => i.productId !== productId);
+    cart = cart.filter(i => !(i.productId === productId && i.variantId == variantId));
     localStorage.setItem("cart", JSON.stringify(cart));
     loadCart();
 }

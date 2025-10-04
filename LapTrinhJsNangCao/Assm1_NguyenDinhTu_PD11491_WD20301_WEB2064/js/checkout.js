@@ -18,6 +18,7 @@ function loadCheckout(){
         tbody.innerHTML += `
             <tr>
                 <td>${item.name}</td>
+                <td><img src="images/${item.image}" alt="${item.name}" width="50" height="50"></td>
                 <td>${item.price} VND</td>
                 <td>${item.quantity}</td>
                 <td>${subtotal} VND</td>
@@ -53,7 +54,8 @@ document.getElementById("checkout-form").addEventListener("submit", async(e)=>{
         user,
         total,
         items: cart,
-        create_at: new Date().toISOString()
+        create_at: new Date().toISOString(),
+        status: "pending"
     };
 
     //xử lý đặt hàng
@@ -67,13 +69,12 @@ document.getElementById("checkout-form").addEventListener("submit", async(e)=>{
 
         if(!res.ok) throw new Error("Không lưu được đơn hàng !");
 
-        alert("Đặt hàng thành công !");
-
         //xoá giỏ hàng sau khi đặt hàng
         localStorage.removeItem("cart");
 
-        //quay về trang giỏ hàng
-        window.location.href = "cart.html";
+        window.location.href = "thankyou.html";
+
+        alert("Đặt hàng thành công !");
     }
     catch(err){
         console.log(err);

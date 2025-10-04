@@ -17,7 +17,6 @@ async function loadProducts(){
                 <p>${p.detail}</p>
                 <p><strong>Giá: ${p.price} VND</strong></p>
                 <button onclick="viewDetail(${p.id})">Xem chi tiết</button>
-                <button onclick="addToCart(${p.id}, ${p.price}, '${p.name}')">Thêm vào giỏ</button>
             </div>
         `).join("");
     }
@@ -28,26 +27,7 @@ async function loadProducts(){
 
 //chuyển sang trang chi tiết
 function viewDetail(id){
-    window.location.href = `product.html?id=${id}`;
-}
-
-function addToCart(id, price, name) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || []; 
-
-    let item = cart.find(i => i.productId === id);
-    if(item){
-        item.quantity++;
-    } else {
-        cart.push({
-            productId: id,
-            name: name,       // lưu thêm để hiển thị nhanh
-            price: price,     // lưu thêm để không phải fetch API lại
-            quantity: 1
-        });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Đã thêm vào giỏ hàng !");
+    window.location.href = `product_detail.html?id=${id}`;
 }
 
 loadProducts();

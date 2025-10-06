@@ -30,7 +30,7 @@ async function loadProductDetail(){
         let detailDiv = document.getElementById("product-detail");
         detailDiv.innerHTML = `
             <h2>${product.name}</h2>
-            <img src="images/${product.image}" alt="${product.name}" width="200" height="200">
+            <img src="../images/${product.image}" alt="${product.name}" width="200" height="200">
             <p>${product.detail}</p>
             <select id="variant">
                 ${variants.map(v => `

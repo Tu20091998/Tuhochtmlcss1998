@@ -18,7 +18,7 @@ function loadCheckout(){
         tbody.innerHTML += `
             <tr>
                 <td>${item.name}</td>
-                <td><img src="images/${item.image}" alt="${item.name}" width="50" height="50"></td>
+                <td><img src="../images/${item.image}" alt="${item.name}" width="50" height="50"></td>
                 <td>${item.price} VND</td>
                 <td>${item.quantity}</td>
                 <td>${subtotal} VND</td>

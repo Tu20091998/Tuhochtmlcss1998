@@ -17,7 +17,7 @@ async function loadCart(){
         tbody.innerHTML += `
             <tr>
                 <td>
-                    <img src="images/${item.image}" alt="${item.name}" width="60" height="60">
+                    <img src="../images/${item.image}" alt="${item.name}" width="60" height="60">
                 </td>
                 <td>
                     <strong>${item.name}</strong><br>
@@ -38,7 +38,7 @@ async function loadCart(){
         `;
     }
 
-    document.getElementById("total").innerText = total.toLocaleString() + " VND";
+    document.getElementById("total").innerText = total.toLocaleString();
 }
 
 //hàm cập nhật số lượng

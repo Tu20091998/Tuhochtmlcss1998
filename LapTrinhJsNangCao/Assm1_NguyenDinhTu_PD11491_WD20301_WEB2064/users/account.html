@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Cảm ơn bạn!</title>
-    <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="../styles/thank-you.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thông tin người dùng</title>
+  <link rel="stylesheet" href="../styles/account.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -38,7 +39,7 @@
             </nav>
             
             <div class="search-container">
-                <input type="text" id="search-input" placeholder="Tìm món uống yêu thích...">
+                <input type="text" id="search-input" placeholder="Tìm món yêu thích...">
                 <button onclick="searchProducts()">
                     <i class="fas fa-search"></i>
                     <span>Tìm kiếm</span>
@@ -47,22 +48,33 @@
         </div>
     </header>
 
-    <main class="thankyou-container">
-        <div class="thankyou-card">
-            <img src="https://cellphones.com.vn/sforum/wp-content/uploads/2024/03/hinh-nen-powerpoint-cam-on-cuoi-slide-4.jpg" 
-                    alt="Cảm ơn" 
-                    class="thankyou-img" />
 
-            <h1>🎉 Cảm ơn bạn đã đặt hàng!</h1>
-            <p>Đơn hàng của bạn đã được ghi nhận.<br>
-                Chúng tôi sẽ liên hệ để xác nhận sớm nhất 💌.</p>
+    <!-- form người dùng -->
+    <div class="user-form-wrapper">
+        <div class="user-container">
+            <h2>Thông tin người dùng</h2>
+            <form id="user-form">
+                <label for="name">Họ và tên</label>
+                <input type="text" id="name" required />
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+                
+                <label for="phone">Số điện thoại</label>
+                <input type="text" id="phone" />
+                
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address" />
+                
+                <button type="submit">Cập nhật</button>
+                
+                <button id="logout-btn">Đăng xuất</button>
+            </form>
 
-            <div class="thankyou-actions">
-                <button class="btn" onclick="window.location.href='index.html'">🏠 Về trang chủ</button>
-                <button class="btn btn-outline" onclick="window.location.href='cart.html'">🛍️ Tiếp tục mua sắm</button>
-            </div>
+            <div id="status"></div>
         </div>
-    </main>
+    </div>
+
 
     <!-- Footer -->
     <footer>
@@ -117,5 +129,7 @@
             </p>
         </div>
     </footer>
+
+  <script src="../js/account.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Giỏ hàng</title>
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/cart.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -46,22 +47,31 @@
         </div>
     </header>
 
-    <main>
-        <table border="1" cellpadding="8" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th>Ảnh</th>
-                    <th>Sản phẩm</th>
-                    <th>Giá</th>
-                    <th>Số lượng</th>
-                    <th>Thành tiền</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items"></tbody>
-        </table>
-        <h3>Tổng cộng: <span id="total">0</span> VND</h3>
-        <button onclick="window.location.href='checkout.html'">Thanh toán</button>
+    <main class="cart-container">
+        <h1 class="cart-title">🛒 Giỏ hàng của bạn</h1>
+
+        <div class="cart-table-wrapper">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </div>
+
+        <div class="cart-summary">
+            <h3>Tổng cộng: <span id="total">0</span> VND</h3>
+            <button class="checkout-btn" onclick="window.location.href='checkout.html'">
+                Thanh toán
+            </button>
+        </div>
     </main>
 
     <!-- Footer -->

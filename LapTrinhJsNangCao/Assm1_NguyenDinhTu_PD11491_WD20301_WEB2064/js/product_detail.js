@@ -26,23 +26,26 @@ async function loadProductDetail(){
         let variants = await variantRes.json();
         console.log(variants);
 
-        //render HTML
         let detailDiv = document.getElementById("product-detail");
         detailDiv.innerHTML = `
-            <h2>${product.name}</h2>
-            <img src="../images/${product.image}" alt="${product.name}" width="200" height="200">
-            <p>${product.detail}</p>
-            <select id="variant">
-                ${variants.map(v => `
-                    <option value="${v.id}" data-price="${v.price}" data-name="${v.variant_name}">
-                        ${v.variant_name} - ${v.price} VND (còn ${v.quantity})
-                    </option>
-                `).join("")}
-            </select>
+            <img src="../images/${product.image}" alt="${product.name}">
+            <div class="pd-info">
+                <h2>${product.name}</h2>
+                <p>${product.detail}</p>
 
-            <button onclick="addToCart(${product.id}, '${product.name}', '${product.image}', '${product.detail}')">
-                Thêm vào giỏ
-            </button>
+                <label for="variant"><strong>Chọn phiên bản:</strong></label>
+                <select id="variant">
+                    ${variants.map(v => `
+                        <option value="${v.id}" data-price="${v.price}" data-name="${v.variant_name}">
+                            ${v.variant_name} - ${v.price.toLocaleString()} VND (Còn ${v.quantity})
+                        </option>
+                    `).join("")}
+                </select>
+                    
+                <button onclick="addToCart(${product.id}, '${product.name}', '${product.image}', '${product.detail}')">
+                    🛒 Thêm vào giỏ hàng
+                </button>
+            </div>
         `;
     }
     catch(err){
@@ -52,6 +55,14 @@ async function loadProductDetail(){
 
 //thêm sản phẩm vào giỏ
 function addToCart(productId, name, image, detail){
+
+    const userData = JSON.parse(localStorage.getItem("user"));
+    if (!userData) {
+        alert("Vui lòng đăng nhập để tiếp tục!");
+        window.location.href = "login.html";
+        return;
+    }
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     
     //truy cập đến lựa chọn size

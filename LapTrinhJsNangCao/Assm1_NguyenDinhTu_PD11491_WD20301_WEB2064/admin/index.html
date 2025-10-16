@@ -2,32 +2,118 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Admin - Dashboard</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <title>Trang Quản Trị - Susan Shop</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Admin Panel</h2>
-        <a href="index.html">🏠 Dashboard</a>
-        <a href="categories.html">📂 Danh mục</a>
-        <a href="products.html">📦 Sản phẩm</a>
-        <a href="orders.html">🧾 Đơn hàng</a>
-        <a href="users.html">👤 Khách hàng</a>
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-mug-hot"></i>
+                <h1>Admin - Susan Coffee & Tea</h1>
+            </div>
 
-    <!-- Main content -->
-    <div class="main">
-        <header>
-            <h1>Thống kê</h1>
-        </header>
-        <section>
-            <div>
-                <h3>Số lượng sản phẩm: <span id="total-products">0</span></h3>
-                <h3>Doanh thu: <span id="total-revenue">0</span> VND</h3>
-                <h3>Số lượng đơn hàng: <span id="total-orders">0</span></h3>
+            <nav>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Trang chủ</span>
+                </a>
+                <a href="products.html">
+                    <i class="fas fa-box"></i>
+                    <span>Sản phẩm</span>
+                </a>
+                <a href="categories.html">
+                    <i class="fas fa-tags"></i>
+                    <span>Danh mục</span>
+                </a>
+                <a href="orders.html">
+                    <i class="fas fa-receipt"></i>
+                    <span>Đơn hàng</span>
+                </a>
+                <a href="users.html">
+                    <i class="fas fa-users"></i>
+                    <span>Người dùng</span>
+                </a>
+                <a href="login.html" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <h2>Trang quản trị Susan Shop</h2>
+
+        <section class="stats">
+            <div class="card">
+                <h3>Tổng danh mục</h3>
+                <p id="total-categories">0</p>
+            </div>
+            <div class="card">
+                <h3>Tổng sản phẩm</h3>
+                <p id="total-products">0</p>
+            </div>
+            <div class="card">
+                <h3>Người dùng</h3>
+                <p id="total-users">0</p>
+            </div>
+            <div class="card">
+                <h3>Đơn hàng</h3>
+                <p id="total-orders">0</p>
             </div>
         </section>
-    </div>
+    
+        <section class="recent-orders">
+            <h3>Đơn hàng gần đây</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã đơn</th>
+                        <th>Khách hàng</th>
+                        <th>Tổng tiền</th>
+                        <th>Ngày đặt</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody id="order-list">
+                <!-- dữ liệu đơn hàng sẽ hiển thị ở đây -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Thêm phần thống kê nâng cao -->
+        <section class="extra-stats">
+            <div class="card">
+                <h3>Tổng doanh thu</h3>
+                <p id="total-revenue">0 ₫</p>
+            </div>
+            <div class="card">
+                <h3>Sản phẩm sắp hết hàng</h3>
+                <ul id="low-stock-list"></ul>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h3>Thống kê danh mục theo số lượng sản phẩm</h3>
+            <canvas id="categoryChart" width="400" height="200"></canvas>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Susan Coffee & Tea - Trang quản trị</p>
+            <p class="made-with-love">
+                Made with <i class="fas fa-heart" style="color:#e74c3c"></i> & 
+                <i class="fas fa-coffee" style="color:#8B4513"></i>
+            </p>
+            <a href="../users/index.html">Về trang người dùng</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

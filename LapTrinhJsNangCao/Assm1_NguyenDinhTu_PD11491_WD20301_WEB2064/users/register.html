@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang đăng ký</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
     <!-- Header -->
@@ -44,19 +46,31 @@
         </div>
     </header>
 
-    <!--Hiển thị đăng ký-->
-    <div id="register-container">
-        <h1>Susan Shop</h1>
-        <h3>Đăng ký</h3>
-        <form id="register-form">
-            <label>Họ tên: <input type="text" id="name" required></label><br>
-            <label>Email: <input type="email" id="email" required></label><br>
-            <label>Mật khẩu: <input type="password" id="password" required></label><br>
-            <label>Điện thoại: <input type="text" id="phone"></label><br>
-            <label>Địa chỉ: <input type="text" id="address"></label><br>
-            <button type="submit">Đăng ký</button>
-        </form>
-        <p>Bạn đã có tài khoản ? <a href="login.html">Hãy đăng nhập</a></p>
+    <div id="register">
+        <div id="register-container">
+            <h2>Đăng ký</h2>
+
+            <form id="register-form">
+                <label>Họ tên:</label>
+                <input type="text" id="name" placeholder="Nhập họ tên của bạn" required>
+
+                <label>Email:</label>
+                <input type="email" id="email" placeholder="Nhập email của bạn" required>
+
+                <label>Mật khẩu:</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+
+                <label>Điện thoại:</label>
+                <input type="text" id="phone" placeholder="Số điện thoại (nếu có)">
+
+                <label>Địa chỉ:</label>
+                <input type="text" id="address" placeholder="Địa chỉ của bạn">
+
+                <button type="submit">Đăng ký</button>
+            </form>
+
+            <p>Bạn đã có tài khoản? <a href="login.html">Hãy đăng nhập</a></p>
+        </div>
     </div>
 
     <!-- Footer -->

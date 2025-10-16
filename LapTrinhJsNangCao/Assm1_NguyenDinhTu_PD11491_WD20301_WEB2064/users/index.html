@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Susan Shop</title>
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/product.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -46,15 +47,20 @@
         </div>
     </header>
 
-    <!-- Danh sách sản phẩm -->
-    <main>
-        <h3>Danh mục</h3>
-        <div id="categories">
-            <ul id="category-menu"></ul>
-        </div>
+    <main class="shop-layout">
+        <!-- DANH MỤC BÊN TRÁI -->
+        <aside class="sidebar">
+            <h3>Danh mục</h3>
+            <ul id="category-menu" class="category-menu"></ul>
+        </aside>
 
-        <h2>Danh sách sản phẩm</h2>
-        <div id="product-list" class="grid"></div>
+        <!-- DANH SÁCH SẢN PHẨM BÊN PHẢI -->
+        <section class="product-area">
+            <div class="product-header">
+                <h2>Danh sách sản phẩm</h2>
+            </div>
+            <div id="product-list" class="product-grid"></div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -93,6 +99,7 @@
                 <a href="contact.html"><i class="fas fa-address-book"></i> Liên Hệ</a>
                 <a href="shipping.html"><i class="fas fa-shipping-fast"></i> Giao Hàng</a>
                 <a href="return.html"><i class="fas fa-exchange-alt"></i> Đổi Trả</a>
+                <a href="../admin/index.html"><i class="fas fa-lock"></i> Đến trang Admin</a>
                 
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>

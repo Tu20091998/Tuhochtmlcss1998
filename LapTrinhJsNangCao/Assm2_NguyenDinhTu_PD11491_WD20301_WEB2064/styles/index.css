@@ -194,3 +194,20 @@
             font-size: 0.9rem;
             opacity: 0.8;
         }
+
+        .category-menu li {
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .category-menu li:hover {
+            background: #f3f3f3;
+        }
+        
+        .category-menu li.active {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }

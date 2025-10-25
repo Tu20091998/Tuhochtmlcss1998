@@ -1,0 +1,70 @@
+/* ==== BẢNG CHI TIẾT ĐƠN HÀNG ==== */
+.container{
+    padding: 3rem;
+}
+
+.order-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.order-detail-table th,
+.order-detail-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-detail-table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.order-detail-table tr:last-child td {
+    border-bottom: none;
+}
+
+.order-detail-table .table-active {
+    background-color: #f1f1f1;
+}
+
+/* ==== TỔNG TIỀN ==== */
+.order-detail-table td strong {
+    color: var(--primary-color);
+}
+
+/* ==== ALERT ==== */
+.alert {
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* ==== BACK BUTTON ==== */
+.back-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: orange;
+    text-decoration: none;
+    color: white;
+}

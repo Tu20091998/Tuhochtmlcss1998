@@ -10,6 +10,14 @@ const roleInput = document.getElementById("user-role");
 
 // tải danh sách người dùng
 async function loadUsers() {
+    //xét đăng nhập
+    const userData = JSON.parse(localStorage.getItem("admin"));
+
+    if (!userData || userData.role !== "admin") {
+        alert("⚠️ Bạn không có quyền truy cập trang này!");
+        window.location.href = "login.html";
+    }
+
     try {
         const res = await fetch(`${API_URL}`);
         if (!res.ok) throw new Error("Không thể tải danh sách người dùng");
@@ -102,3 +110,10 @@ document.getElementById("reset-form").addEventListener("click", resetForm);
 
 // khởi tạo
 loadUsers();
+
+//hàm đăng xuất tài khoản admin
+document.getElementById("logout-btn").addEventListener("click", () => {
+    localStorage.removeItem("admin");
+    alert("Đăng xuất thành công!");
+    window.location.href = "login.html";
+});

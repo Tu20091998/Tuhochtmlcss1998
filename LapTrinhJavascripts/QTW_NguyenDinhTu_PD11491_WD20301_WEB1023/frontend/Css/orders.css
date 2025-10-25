@@ -1,0 +1,88 @@
+/* ==== BẢNG LỊCH SỬ ĐƠN HÀNG ==== */
+
+.container{
+    padding: 3rem;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.order-table th,
+.order-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.order-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==== TRẠNG THÁI ==== */
+.order-table td:nth-child(4) {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ==== NÚT XEM CHI TIẾT & HỦY ==== */
+.action-btn {
+    display: inline-block;
+    margin: 0.3rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    transition: var(--transition);
+}
+
+.detail-btn {
+    background-color: var(--third-color);
+}
+
+.detail-btn:hover {
+    background-color: #ff8c00;
+}
+
+.cancel-btn {
+    background-color: #888;
+}
+
+.cancel-btn:hover {
+    background-color: #555;
+}
+
+/* ==== ALERT ==== */
+.alert {
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}

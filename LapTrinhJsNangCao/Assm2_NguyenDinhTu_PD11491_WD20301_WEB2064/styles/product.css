@@ -74,6 +74,7 @@
     padding: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .product:hover {
@@ -87,6 +88,7 @@
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
+    cursor:pointer;
 }
 
 .product h3 {

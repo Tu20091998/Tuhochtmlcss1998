@@ -73,6 +73,8 @@ function addToCart(productId, name, image, detail){
     let variantName = variantSelect.options[variantSelect.selectedIndex].dataset.name;
     let price = parseInt(variantSelect.options[variantSelect.selectedIndex].dataset.price);
 
+    console.log();
+
     //kiểm tra đã có sản phẩm hay variant này trong giỏ hàng hay không?
     let item = cart.find(i => i.productId === productId && i.variantId === variantId);
     if(item){

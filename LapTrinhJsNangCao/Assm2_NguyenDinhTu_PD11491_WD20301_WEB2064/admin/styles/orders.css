@@ -7,10 +7,12 @@
 .order-table th, .order-table td {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: left;
+    text-align: center;
 }
 .order-table th {
-    background: #f3f3f3;
+    background: #8B4513;
+    text-align: center;
+    color: white;
 }
 .order-table select {
     padding: 5px;

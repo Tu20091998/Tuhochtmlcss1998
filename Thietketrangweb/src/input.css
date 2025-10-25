@@ -1,1 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ultra&display=swap');
 @import "tailwindcss";
+
+
+@theme{
+    --color-tuychon: #2233CC;
+    --color-tuychon2-100: #22FFCC;
+    --color-tuychon2-500: #22FFFF;
+
+    --font-roboto : "Roboto", "sans-serif";
+    --font-ultra : "Ultra", "serif";
+    --font-Libre_Baskerville : "Libre Baskerville", "serif";
+}
+
+:root{
+    --my-image-size: 70% 50%;
+}

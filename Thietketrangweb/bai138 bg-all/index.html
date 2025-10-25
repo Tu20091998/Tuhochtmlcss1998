@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css">
+</head>
+<body class="p-4">
+    <!--bg-repeat-->
+    <!-- <div class="bg-[url('../img/Screenshot_1.png')] size-300 bg-repeat-round"></div> -->
+
+    <!--bg-auto-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] size-300 h-screen bg-no-repeat"></div> -->
+
+    <!--bg-cover giữ nguyên tỉ lệ ảnh , không bóp méo, có thể bị cắt-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] bg-cover size-100 bg-no-repeat"></div> -->
+
+    <!--bg-contain , ưu tiên hiển thị trọn vẹn bức ảnh-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] bg-contain size-300 bg-no-repeat"></div> -->
+
+    <!--bg-size root-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] bg-size-(--my-image-size) size-300 bg-no-repeat bg-amber-100"></div> -->
+
+    <!-- bg-size-value
+    <div class="bg-[url(../img/Screenshot_2.png)] bg-size-[700px_700px] h-screen bg-no-repeat bg-amber-100"></div> -->
+
+    <!--bg-position-->
+    <!--ảnh nền được căn bên góc trái bên trên-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] bg-top-left w-90 h-50 bg-no-repeat"></div> -->
+
+    <!-- <br> -->
+    <!--ảnh nền được căn giữa màn hình-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] bg-center w-90 h-50 bg-no-repeat"></div> -->
+
+    <!-- <br> -->
+    <!--ảnh nền được căn bên phải bên trên màn hình-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] bg-top-right w-90 h-50 bg-no-repeat"></div> -->
+
+    <!-- <br> -->
+    <!--ảnh nền được căn bên trái màn hình-->
+    <!-- <div class="bg-[url(../img/Screenshot_2.png)] bg-left w-90 h-50 bg-no-repeat"></div> -->
+
+
+
+    <!--137.5 [Tailwind CSS #26] Kiểm Soát Cuộn Ảnh Nền Với background-attachment-->
+    <!--bg-fixed cố định với viewport không cuộn theo nội dung-->
+    <!-- <div class="bg-[url(../img/anh_dan_ong_cuoi.png)] bg-fixed h-96 bg-contain"></div> -->
+
+    <!--bg-scroll cuộn hình theo nội dung, đây là hành động mặc định của css-->
+    <!-- <div class="bg-[url(../img/anh_dan_ong_cuoi.png)] bg-scroll h-96 bg-contain"></div> -->
+
+    <!-- <div class="bg-[url(../img/anh_dan_ong_cuoi.png)] bg-scroll h-96 bg-contain">
+        <p>lorem*40</p>
+    </div> -->
+
+
+    <!--bg-clip-border nền bao quanh cả đường viền-->
+    <div class="bg-red-500 border-4 border-dotted p-4 mb-4 bg-clip-border">
+        nền kéo dài đến phần viền
+    </div>
+
+    <!--bg-clip-padding ảnh nền chỉ hiển thị trong nội dung phạm vi padding-->
+    <div class="bg-red-500 border-4 border-dotted p-4 mb-4 bg-clip-padding">
+        nền kéo dài đến phần padding
+    </div>
+
+    <!--bg-clip-padding ảnh nền chỉ hiển thị sát nội dung-->
+    <div class="bg-red-500 border-4 border-dotted p-4 mb-4 bg-clip-content">
+        nền kéo dài đến phần content
+    </div>
+
+    <!--bg-clip-text màu nền hiển thị trong nội dung, bên ngoài thì trong suốt-->
+    <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-red-200">
+        Lorem ipsum dolor sit
+    </h2>
+
+    
+</body>
+</html>

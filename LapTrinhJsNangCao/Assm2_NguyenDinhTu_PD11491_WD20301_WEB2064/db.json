@@ -1,9 +1,8 @@
 {
   "categories": [
     {
-      "id": "1",
       "name": "Cà phê",
-      "parent_id": null
+      "id": "1"
     },
     {
       "id": "2",
@@ -16,9 +15,8 @@
       "parent_id": null
     },
     {
-      "id": "4",
       "name": "Đồ ăn vặt",
-      "parent_id": null
+      "id": "4"
     }
   ],
   "products": [
@@ -71,12 +69,12 @@
       "image": "tra-sua-tu-lam.webp"
     },
     {
-      "id": "7",
       "name": "Trà sữa matcha",
-      "price": 35000,
-      "cate_id": 2,
+      "cate_id": "2",
+      "price": "35000",
       "detail": "Hương matcha Nhật Bản",
-      "image": "tra-sua-matcha.jpg"
+      "image": "cach-lam-tra-sua-thai-xanh-ngon-me-ly-tai-nha_1024x1024.webp",
+      "id": "7"
     },
     {
       "id": "8",
@@ -441,7 +439,7 @@
         }
       ],
       "create_at": "2025-10-15T10:47:11.465Z",
-      "status": "pending"
+      "status": "shipping"
     },
     {
       "id": "39ad",

@@ -1,0 +1,56 @@
+/* ==== BẢNG GIỎ HÀNG ==== */
+.cart-container{
+    padding: 3rem;
+}
+
+.cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+}
+
+.cart-container th,
+.cart-container td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.cart-container thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cart-container img {
+    max-width: 60px;
+    height: auto;
+    border-radius: var(--radius);
+}
+
+/* Tổng tiền */
+.total-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+/* Nút xoá và đặt hàng */
+.cart-container button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+form .confirm-order-btn{
+    position: absolute;
+    right: 3rem;
+}
+
+.cart-container form {
+    display: inline;
+}

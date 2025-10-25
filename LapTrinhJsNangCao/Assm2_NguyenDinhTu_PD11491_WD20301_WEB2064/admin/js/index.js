@@ -3,6 +3,14 @@ const API_URL = "http://localhost:4000"; // đường dẫn json-server
 //json-server --watch db.json --port 4000
 //hàm hiển thị thông tin trên trang chủ
 async function loadDashBoard() {
+    //xét đăng nhập
+    const userData = JSON.parse(localStorage.getItem("admin"));
+
+    if (!userData || userData.role !== "admin") {
+        alert("⚠️ Bạn không có quyền truy cập trang này!");
+        window.location.href = "login.html";
+    }
+
     try{
         //lấy dữ liệu từ jb.json
         const [categoriesRes, productsRes, usersRes, ordersRes, product_variantsRes] = await Promise.all([

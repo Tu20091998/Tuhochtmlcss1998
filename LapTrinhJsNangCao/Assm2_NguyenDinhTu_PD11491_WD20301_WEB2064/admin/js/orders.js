@@ -2,6 +2,14 @@ const API_ORDERS = "http://localhost:4000/orders";
 
 //hàm hiển thị sản phẩm
 async function loadOrders() {
+    //xét đăng nhập
+    const userData = JSON.parse(localStorage.getItem("admin"));
+
+    if (!userData || userData.role !== "admin") {
+        alert("⚠️ Bạn không có quyền truy cập trang này!");
+        window.location.href = "login.html";
+    }
+
     try {
         const res = await fetch(API_ORDERS);
         const orders = await res.json();
@@ -88,3 +96,9 @@ async function deleteOrder(id) {
 
 loadOrders();
 
+//hàm đăng xuất tài khoản admin
+document.getElementById("logout-btn").addEventListener("click", () => {
+    localStorage.removeItem("admin");
+    alert("Đăng xuất thành công!");
+    window.location.href = "login.html";
+});

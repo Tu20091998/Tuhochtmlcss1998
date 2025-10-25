@@ -19,6 +19,15 @@ async function loadCategories(){
         //gắn sự kiện click cho từng danh mục
         document.querySelectorAll("#category-menu li").forEach(li => {
             li.addEventListener("click",()=>{
+
+                // Xóa class active ở tất cả li
+                document.querySelectorAll("#category-menu li").forEach(item => {
+                    item.classList.remove("active");
+                });
+            
+                // Thêm class active cho li hiện tại
+                li.classList.add("active");
+                
                 const cateId = li.dataset.id;
                 loadProducts(cateId);
             });
@@ -93,13 +102,11 @@ async function searchProducts() {
         // Bỏ dấu cho từ khóa
         const normalizedKeyword = removeVietnameseTones(keyword);
 
-        // Lọc sản phẩm
+        // Lọc sản phẩm theo tên đúng như từ khoá nhưng đã bỏ dấu
         const filtered = products.filter(p => {
             const name = removeVietnameseTones(p.name.toLowerCase());
-            const detail = removeVietnameseTones(p.detail.toLowerCase());
             return (
-                name.includes(normalizedKeyword) ||
-                detail.includes(normalizedKeyword)
+                name.includes(normalizedKeyword)
             );
         });
 
@@ -108,8 +115,6 @@ async function searchProducts() {
         console.error("Lỗi khi tìm kiếm sản phẩm:", err);
     }
 }
-
-
 
 //chuyển sang trang chi tiết
 function viewDetail(id){

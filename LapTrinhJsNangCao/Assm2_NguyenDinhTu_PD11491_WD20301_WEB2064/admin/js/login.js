@@ -16,7 +16,7 @@ document.getElementById("login-form").addEventListener("submit", async function(
         const users = await res.json();
 
         //tìm tài khoản admin
-        const admin = users.find(u => u.email === email && password === password && u.role === "admin");
+        const admin = users.find(u => u.email === email && u.password === password && u.role === "admin");
 
         //nếu tìm được thì lưu vào phiên local
         if(admin){

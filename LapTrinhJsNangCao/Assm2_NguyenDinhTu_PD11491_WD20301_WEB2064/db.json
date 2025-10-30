@@ -357,13 +357,13 @@
       "name": "Nguyễn Đình Tú",
       "email": "dinhtu2009199998@gmail.com",
       "password": "admin1234",
-      "phone": "",
-      "address": "",
+      "phone": "0336620188",
+      "address": "116 Nguyễn Huy Tưởng",
       "role": "admin",
       "id": "2"
     },
     {
-      "name": "Nguyễn Phi Trường",
+      "name": "Nguyễn Phi",
       "email": "dinhtu200919998@gmail.com",
       "password": "1234",
       "phone": "0336620188",
@@ -439,7 +439,7 @@
         }
       ],
       "create_at": "2025-10-15T10:47:11.465Z",
-      "status": "shipping"
+      "status": "pending"
     },
     {
       "id": "39ad",
@@ -561,6 +561,104 @@
         }
       ],
       "create_at": "2025-10-15T10:54:32.891Z",
+      "status": "pending"
+    },
+    {
+      "id": "a577",
+      "user": {
+        "name": "Tuấn Nguyễn",
+        "email": "tuanprosupe@gmail.com",
+        "phone": "0336620188",
+        "address": "116 Nguyễn Huy Tưởng"
+      },
+      "total": 254000,
+      "items": [
+        {
+          "productId": 1,
+          "name": "Cà phê sữa",
+          "image": "5-cach-pha-ca-phe-sua-tuoi-khong-duong-co.jpeg",
+          "detail": "Ngon đậm đà",
+          "variantId": 1,
+          "variant": "Size M",
+          "price": 20000,
+          "quantity": 4
+        },
+        {
+          "productId": 2,
+          "name": "Cà phê đen",
+          "image": "Cach-pha-cafe-den-nong.jpg",
+          "detail": "Đậm vị truyền thống",
+          "variantId": 2,
+          "variant": "Size M",
+          "price": 18000,
+          "quantity": 3
+        },
+        {
+          "productId": 9,
+          "name": "Trà sữa Thái Xanh",
+          "image": "cach-lam-tra-sua-thai-xanh-ngon-me-ly-tai-nha_1024x1024.webp",
+          "detail": "Đậm vị trà Thái",
+          "variantId": 9,
+          "variant": "Size M",
+          "price": 30000,
+          "quantity": 4
+        }
+      ],
+      "create_at": "2025-10-27T08:40:46.883Z",
+      "status": "pending"
+    },
+    {
+      "id": "fc42",
+      "user": {
+        "name": "Tuấn Nguyễn",
+        "email": "dinhtu200919989@gmail.com",
+        "phone": "0336620188",
+        "address": "116 Nguyễn Huy Tưởng"
+      },
+      "total": 150000,
+      "items": [
+        {
+          "productId": 1,
+          "name": "Cà phê sữa",
+          "image": "5-cach-pha-ca-phe-sua-tuoi-khong-duong-co.jpeg",
+          "detail": "Ngon đậm đà",
+          "variantId": 1,
+          "variant": "Size M",
+          "price": 20000,
+          "quantity": 3
+        },
+        {
+          "productId": 4,
+          "name": "Cappuccino",
+          "image": "capuchino-la-gi-17.png",
+          "detail": "Phong cách Ý cổ điển",
+          "variantId": 4,
+          "variant": "Size M",
+          "price": 35000,
+          "quantity": 1
+        },
+        {
+          "productId": 3,
+          "name": "Bạc xỉu",
+          "image": "bac_xiu_da.jpg",
+          "detail": "Ngọt béo vị sữa",
+          "variantId": 3,
+          "variant": "Size M",
+          "price": 25000,
+          "quantity": 1
+        },
+        {
+          "productId": 6,
+          "name": "Trà sữa trân châu",
+          "image": "tra-sua-tu-lam.webp",
+          "detail": "Trân châu dẻo, sữa béo",
+          "variantId": 6,
+          "variant": "Size M",
+          "price": 30000,
+          "quantity": 1
+        }
+      ],
+      "create_at": "2025-10-27T08:41:28.859Z",
       "status": "pending"
     }
   ],

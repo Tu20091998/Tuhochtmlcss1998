@@ -48,6 +48,7 @@ async function loadUsers() {
 document.getElementById("user-form").addEventListener("submit", async function(e){
     e.preventDefault();
 
+    //lấy dữ liệu từ form
     const userData = {
         name: nameInput.value.trim(),
         email: emailInput.value.trim(),
@@ -59,14 +60,17 @@ document.getElementById("user-form").addEventListener("submit", async function(e
 
     const id = idInput.value.trim();
 
+    //xét id có tồn tại hay không?
     if (id) {
+        //nếu đã tồn tại id thì cập nhật
         await fetch(`${API_URL}/${id}`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({id, ...userData})
+            body: JSON.stringify(userData)
         });
         alert("Cập nhật thành công!");
     } else {
+        //nếu không thì thêm mới
         await fetch(`${API_URL}`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -91,6 +95,9 @@ async function editUser(id) {
     phoneInput.value = user.phone;
     addressInput.value = user.address;
     roleInput.value = user.role;
+
+    //cuộn lên đầu trang
+    window.scrollTo({top: 0 , behavior: "smooth"});
 }
 
 // xóa người dùng
@@ -105,7 +112,6 @@ async function deleteUser(id) {
 function resetForm() {
     document.getElementById("user-form").reset();
 }
-
 document.getElementById("reset-form").addEventListener("click", resetForm);
 
 // khởi tạo

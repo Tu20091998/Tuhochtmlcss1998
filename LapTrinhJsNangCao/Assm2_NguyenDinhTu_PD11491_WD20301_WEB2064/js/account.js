@@ -30,6 +30,8 @@ document.getElementById("user-form").addEventListener("submit", async (e) =>{
         address: document.getElementById("address").value.trim(),
     };
 
+    console.log(userData);
+
     //gửi request PUT về server để yêu cầu thay đổi
     const res = await fetch(`${API_URL}/${userData.id}`,{
         method: "PUT",

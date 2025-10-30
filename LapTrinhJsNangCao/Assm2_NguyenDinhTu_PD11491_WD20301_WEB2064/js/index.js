@@ -45,8 +45,8 @@ async function loadProducts(cateId = null){
         // Nếu có cateId, thêm query param vào URL
         let url = cateId ? `${API_PRO}?cate_id=${cateId}` : API_PRO;
 
-        let res = await fetch(url);//gửi request tới api để chờ lấy dữ liệu
-        let products = await res.json();//chuyển đổi dữ liệu nhận được từ json thành js object
+        let res = await fetch(url);
+        let products = await res.json();
 
         let list = document.getElementById("product-list");
         list.innerHTML = products.map(p => `

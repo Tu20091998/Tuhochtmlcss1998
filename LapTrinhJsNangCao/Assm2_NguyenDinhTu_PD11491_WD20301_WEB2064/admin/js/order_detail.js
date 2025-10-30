@@ -79,6 +79,7 @@ function renderOrderDetail(order) {
     `;
 }
 
+//hàm cập nhật trạng thái đơn hàng
 async function updateStatus(id) {
     const newStatus = document.getElementById("order-status").value;
     try {
@@ -94,6 +95,7 @@ async function updateStatus(id) {
     }
 }
 
+//hàm quay lại danh sách đơn hàng
 function backToList() {
     window.location.href = "orders.html";
 }

@@ -22,6 +22,7 @@ async function loadOrders() {
         }
 
         list.innerHTML = `
+            <h2>Quản lý đơn hàng</h2>
             <table class="order-table">
                 <thead>
                     <tr>

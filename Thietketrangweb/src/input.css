@@ -13,5 +13,9 @@
 }
 
 :root{
-    --my-image-size: 70% 50%;
+    /*box shadow :offset-x, offset-y, blur-radius, spread-radius, color*/
+    --my--shadow: 10px 10px 20px 3px rgba(255, 0, 0, 0.9);
+    --my--columns: 100px;
 }
+
+

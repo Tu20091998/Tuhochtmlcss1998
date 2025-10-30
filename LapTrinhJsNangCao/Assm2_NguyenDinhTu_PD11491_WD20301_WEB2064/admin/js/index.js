@@ -30,7 +30,7 @@ async function loadDashBoard() {
             product_variantsRes.json()
         ]);
 
-        // cập nhật thống kê
+        // hiển thị thống kê số lượng
         document.getElementById("total-categories").textContent = categories.length;
         document.getElementById("total-products").textContent = products.length;
         document.getElementById("total-users").textContent = users.length;
@@ -63,7 +63,7 @@ async function loadDashBoard() {
         // hiển thị đơn hàng gần đây
         const orderList = document.getElementById("order-list");
         orderList.innerHTML = orders
-        .slice(-5) // lấy 5 đơn mới nhất
+        .slice(-5) // lấy 5 đơn mới nhất tính từ cuối mảng 
         .reverse()
         .map(order => `
             <tr>
@@ -108,7 +108,9 @@ function renderCategoryChart(data) {
         options: {
             scales: {
                 y: { beginAtZero: true }
-            }
+            },
+            
+            responsive: true
         }
     });
 }

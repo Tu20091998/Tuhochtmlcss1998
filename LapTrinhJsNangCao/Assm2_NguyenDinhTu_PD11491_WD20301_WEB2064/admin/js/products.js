@@ -26,6 +26,7 @@ async function loadProducts() {
         window.location.href = "login.html";
     }
 
+    //lấy dữ liệu sản phẩm trong db.json
     const res = await fetch(API_PRODUCTS);
     const data = await res.json();
     productList.innerHTML = data.map(p => `
@@ -95,7 +96,7 @@ async function updateProduct(id, formData){
 
     // Lấy ảnh người dùng vừa chọn
     const imageFile = formData.get("image");
-    let imageName = oldProduct.image || "default.jpg"; // mặc định giữ ảnh cũ
+    let imageName = oldProduct.image || "default.jpg";
 
     // Nếu người dùng chọn ảnh mới → dùng ảnh mới
     if (imageFile && imageFile.name) {
@@ -154,6 +155,8 @@ async function deleteProduct(id) {
 function openVariantPage(productId) {
     window.location.href = `variants.html?product_id=${productId}`;
 }
+
+//chạy hàm để hiển thị ngay
 loadCategories();
 loadProducts();
 

@@ -1,31 +1,30 @@
 <script setup>
   import {computed, reactive, ref} from 'vue'
 
-  const count = ref(0);
+  const firstName = ref('Nguyễn Đình');
 
-  const book = reactive({
-    name: "Nhà giả kim",
-    chapter:[]
-  })
+  const lastName = ref('Tú');
 
-  const addChapter = () =>{
-    book.chapter.push("Chapter 1")
-  }
+  const fullName = computed({
+    get(){
+      return firstName.value + ' ' + lastName.value
+    },
 
-  const editName = () =>{
-    book.name = "Đắc nhân tâm";
-  }
-
-  const isPublish = computed(() =>{
-    return book.chapter.length ? "Đã xuất bản" : "Xuất bản cái nịt" 
+    set(newValue){
+      [firstName.value, lastName.value] = newValue.split(',')
+    }
   });
+
+  const changeFullName = () =>{
+    fullName.value = 'Nguyễn Đình,Thao'
+  }
 </script>
 
 <template>
   <div>
-    <p id="book">{{ book.name }}</p>
-    <p id="book">{{ isPublish }}</p>
-    <button @click="addChapter">Thêm chapter</button>
-    <button @click="editName">Đổi tên sách </button>
+    <p id="book">Full name:{{ fullName }}</p>
+    <p id="book">Full name:{{ firstName }}</p>
+    <p id="book">Full name:{{ lastName }}</p>
+    <button @click="changeFullName">changeFullname</button>
   </div>
 </template>

@@ -1,27 +1,31 @@
 <script setup>
-  import { computed, reactive, ref, watch } from 'vue';
+  import { computed, reactive, ref, watch, watchEffect } from 'vue';
   
   const x = ref(0);
   const y = ref(0);
 
   const user = reactive({
-    age: 18
+    age: 18,
+    class:{
+      students: 0,
+      name: "A"
+    }
   })
 
-  watch(() => x.value + y.value, (sum) =>{
-    console.log(`Tổng của x và y là: ${sum}`);
+  watchEffect(() =>{
+    console.log(`Giá trị của x là ${x.value} và y là ${y.value}`);
   })
 
-  watch([x, () => y.value + 1], ([newX, newY])=>{
-    console.log(`Giá trị cập nhật là ${newX} và ${newY}`);
+  watchEffect(() =>{
+    console.log(`User: ${JSON.stringify(user)}`);
   })
 
-  watch(()=>user.age, (newAge)=>{
-    console.log(`Tuổi được cập nhật là ${newAge}`);
-  })
+  // watch(user, (newUser, oldUser)=>{
+  //   console.log(`User:  ${JSON.stringify(newUser)} ${JSON.stringify(oldUser)}`);
+  // },{deep: true, immediate:true});
 
   const changeAge = () =>{
-    user.age = 20;
+    user.class.students++;
   }
 
   const increment = () =>{

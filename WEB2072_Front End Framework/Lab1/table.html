@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng danh sách</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+    .after::after{
+        display: none;
+    }
+</style>
+<body>
+    <div class="container my-5">
+        <div class="d-flex gap-3">
+            <!----------------nút 1----------------------->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-light border p-2 d-flex align-items-center dropdown-toggle after" 
+                        type="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="true"
+                        style="gap: 0.5rem;">
+
+                    Area 
+                    <span class="badge bg-secondary-subtle text-dark fw-bold mx-1">4</span> 
+                    selected
+                    <span class="ms-2"></span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-xmark" style="margin: 0.5rem;"></i>
+                </button>
+
+                <ul class="dropdown-menu p-3 shadow show" 
+                    style="min-width: 220px; border-radius: 10px; position: absolute;"> 
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="CENTRE-EST" id="area1">
+                            <label class="form-check-label" for="area1">
+                                <span class="badge" style="background-color: #fce4ec; color: #ad1457;">CENTRE-EST</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="CENTRE OUEST" id="area2" checked>
+                            <label class="form-check-label" for="area2">
+                                <span class="badge" style="background-color: #e0f7fa; color: #00bcd4;">CENTRE OUEST</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="EST" id="area3">
+                            <label class="form-check-label" for="area3">
+                                <span class="badge bg-info-subtle text-info border border-info-subtle">EST</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="NORD" id="area4">
+                            <label class="form-check-label" for="area4">
+                                <span class="badge bg-success-subtle text-success border border-success-subtle">NORD</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="OUEST" id="area5">
+                            <label class="form-check-label" for="area5">
+                                <span class="badge bg-warning-subtle text-warning border border-warning-subtle">OUEST</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="REGION PARISIENNE" id="area6" checked>
+                            <label class="form-check-label" for="area6">
+                                <span class="badge" style="background-color: #f3e5f5; color: #9c27b0;">REGION PARISIENNE</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="SUD EST" id="area7" checked>
+                            <label class="form-check-label" for="area7">
+                                <span class="badge" style="background-color: #fff8e1; color: #ffc107;">SUD EST</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="SUD OUEST" id="area8" checked>
+                            <label class="form-check-label" for="area8">
+                                <span class="badge" style="background-color: #ffe0b2; color: #ff9800;">SUD OUEST</span>
+                            </label>
+                        </div>
+                    </li>
+
+                    <li><hr class="dropdown-divider my-2"></li>
+                    <li>
+                        <div class="d-flex justify-content-between align-items-center px-2 pt-1">
+                            <span class="text-dark fw-bold">Tout sélectionner</span>
+                            <button class="btn btn-sm btn-light border p-1" style="width: 25px; height: 25px; line-height: 0;">
+                                <span style="font-size: 1.2rem; display: block; margin-top: -5px; line-height: 1;">&minus;</span> 
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!------------------nút 2 và 3---------------->
+            <div class="d-flex align-items-center border rounded-3 p-2 shadow-sm" style="gap: 0.5rem;">
+                <span class="text-secondary me-2">Type</span>
+
+                <span class="badge rounded-3 me-2 fw-bold" style="background-color: whitesmoke !important; color: black;">3</span>
+
+                <span class="fw-bold me-2">selected</span>
+
+                <i class="fa-solid fa-chevron-down" style="margin: 0.5rem;"></i>
+                <button type="button" class="btn-close p-0 m-0" aria-label="Clear filter" style="font-size: 0.75rem;"></button>
+            </div>
+
+            <div class="d-flex align-items-center border rounded-3 p-2 shadow-sm" style="gap: 0.5rem;">
+                <span class="text-secondary me-2">State</span>
+
+                <div class="me-2" style="border-radius: 0.5rem; border: 1px solid lightgray; padding: 0.2rem;">
+                    <span class="d-inline-block rounded-circle me-1" style="width: 8px; height: 8px; background-color: #198754;"></span>
+                    <span class="fw-bold">OPEN</span>
+                </div>
+            
+                <i class="fa-solid fa-chevron-down" style="margin: 0.5rem;"></i>
+                <button type="button" class="btn-close p-0 m-0" aria-label="Clear filter" style="font-size: 0.75rem;"></button>
+            </div>
+        </div>
+
+        <!-----------------bảng-------------------->
+        <div class="table-responsive">
+            <table class="table table-borderless align-middle" style="min-width: 900px;">
+
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-muted fw-normal" style="width: 60px;">ID</th> 
+                        <th scope="col" class="text-muted fw-normal" style="width: 150px;">Name <i class="fas fa-sort text-secondary ms-1"></i></th>
+                        <th scope="col" class="text-muted fw-normal">City <i class="fas fa-sort-up text-secondary ms-1"></i></th>
+                        <th scope="col" class="text-muted fw-normal">Banner <i class="fas fa-sort-down text-secondary ms-1"></i></th>
+                        <th scope="col" class="text-muted fw-normal">Area <i class="fas fa-sort text-secondary ms-1"></i></th>
+                        <th scope="col" class="text-muted fw-normal">Type <i class="fas fa-sort text-secondary ms-1"></i></th>
+                        <th scope="col" class="text-muted fw-normal">State <i class="fas fa-sort text-secondary ms-1"></i></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td class="text-muted">101</td> <td class="fw-bold">Central Hub</td> <td class="fw-bold">Lyon</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">SUPER</span></td>
+                        <td><span class="badge" style="background-color: #f7d2d9; color: #a53d50;">CENTRE-EST</span></td>
+                        <td>Franchisé</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">● OPEN</span></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td class="text-muted">102</td>
+                        <td class="fw-bold">Paris Tower</td>
+                        <td class="fw-bold">Paris</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">SUPER</span></td>
+                        <td><span class="badge" style="background-color: #f7d2f7; color: #a53d9e;">REGION PARISIENNE</span></td>
+                        <td>Franchisé</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">● OPEN</span></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td class="text-muted">103</td>
+                        <td class="fw-bold">North Gate</td>
+                        <td class="fw-bold">La Gorgue</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">HYPER</span></td>
+                        <td><span class="badge bg-info-subtle text-info border border-info-subtle">NORD</span></td>
+                        <td>Franchisé</td>
+                        <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">● CLOSED</span></td>
+                    </tr>
+
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td class="text-muted">104</td>
+                        <td class="fw-bold">South Point</td>
+                        <td class="fw-bold">Béziers</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">SUPER</span></td>
+                        <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">SUD EST</span></td>
+                        <td>Franchisé</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">● OPEN</span></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td class="text-muted">105</td>
+                        <td class="fw-bold">Toulouse Mega</td>
+                        <td class="fw-bold">Toulouse</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">HYPER</span></td>
+                        <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">SUD OUEST</span></td>
+                        <td>Franchisé</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">● OPEN</span></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td class="text-muted">106</td>
+                        <td class="fw-bold">East Gate 2</td>
+                        <td class="fw-bold">Dijon</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">HYPER</span></td>
+                        <td><span class="badge" style="background-color: #f7d2d9; color: #a53d50;">CENTRE-EST</span></td>
+                        <td>Non franchisé</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">● OPEN</span></td>
+                    </tr>
+
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td class="text-muted">7893</td>
+                        <td class="fw-bold">Lyon Berliet</td>
+                        <td class="fw-bold">Lyon</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">HYPER</span></td>
+                        <td><span class="badge" style="background-color: #f7d2d9; color: #a53d50;">CENTRE-EST</span></td>
+                        <td>Non franchisé</td>
+                        <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">● CLOSED</span></td>
+                    </tr>
+                    <tr style="border-bottom: none;">
+                        <td class="text-muted">2304</td>
+                        <td class="fw-bold">Pauillac Branch</td>
+                        <td class="fw-bold">Pauillac</td>
+                        <td><span class="badge bg-light text-secondary fw-normal">HYPER</span></td>
+                        <td><span class="badge bg-warning-subtle text-warning border border-warning-subtle">SUD OUEST</span></td>
+                        <td>Non franchisé</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success-subtle">● OPEN</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,53 +1,45 @@
 <script setup>
   import { computed, reactive, ref } from 'vue';
   //phần tử trong object chứa trong mảng
-  const shoppingItems = ref([
+  const todos = reactive([
     {
-      name: "orange",
-      price: 10,
-      isActive: true
+      id: 1,
+      text: 'Learn Vue',
     },
     {
-      name: "apple",
-      price: 12,
-      isActive: true
+      id: 2,
+      text: 'Learn JavaScript',
     },
     {
-      name: "banana",
-      price: 18,
-      isActive: true
+      id: 3,
+      text: 'Learn TypeScript',
     }
   ])
 
-  //phần tử trong object
-  const user = ref(
-    {
-      firstName: "Tú",
-      lastName: "Nguyễn",
-      age: 27
+  const newTodo = ref();
+
+  const addTodo = () =>{
+    if(newTodo.value.trim() === "") return
+
+    const todo = {
+      id: todos.length + 1,
+      text: newTodo.value,
     }
-  )
+
+    todos.push(todo);
+    newTodo.value = "";
+  }
 
 </script>
 
 <template>
   <div>
-    <!--//phần tử trong object chứa trong mảng-->
+    <input type="text" v-model="newTodo" @keyup.enter="addTodo">
+    <button @click="addTodo">Add Todo</button>
     <ul>
-      <template v-for="(item,index) in shoppingItems">
-        <li v-if="item.isActive" :key="item.name">
-          {{ item.name }} - {{ item.price }} : {{ item.isActive ? 'Active' : 'Deactive' }} - {{ index }}
+        <li v-for="todo in todos" :key="todo.id">
+          {{ todo.id }} - {{ todo.text }}
         </li>
-      </template>
-    </ul>
-
-    <span v-for="n in 10" :key="n">{{ n }}</span>
-
-    <!--//phần tử trong object-->
-    <ul>
-      <li v-for="(value, key, index) in user" :key="key">
-        {{ key }}: {{ value }} - {{ index }}
-      </li>
     </ul>
   </div>
 </template>

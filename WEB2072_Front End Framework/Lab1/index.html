@@ -56,14 +56,14 @@
     <script>
         // *** 1. Dữ liệu mẫu (productsData) ***
         const productsData = [
-            { name: "All New Rush", price: "72.00", image: "Placeholder 1" },
-            { name: "Toyota Yaris", price: "55.50", image: "Placeholder 2" },
-            { name: "Honda CRV", price: "85.00", image: "Placeholder 3" },
-            { name: "Mazda CX-5", price: "90.00", image: "Placeholder 4" },
-            { name: "Kia Seltos", price: "68.00", image: "Placeholder 5" },
-            { name: "Ford Ranger", price: "78.00", image: "Placeholder 6" },
-            { name: "Hyundai Accent", price: "45.00", image: "Placeholder 7" },
-            { name: "VinFast VF8", price: "110.00", image: "Placeholder 8" },
+            { name: "BMW 2220", price: "72.00", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-yPt8AZYeSJcnJk9I4PAsXlOqNBfzXUxLAw&s" },
+            { name: "Toyota Yaris", price: "55.50", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-wbwhwoQWpaydzZa_n3J13qs0q-jsrmIAw&s" },
+            { name: "Honda CRV", price: "85.00", image: "https://otohonda.com.vn/wp-content/uploads/Tinh-nang-toan-noi-bat-tren-Honda-CR-V.jpg" },
+            { name: "Mazda CX-5", price: "90.00", image: "https://drive.gianhangvn.com/image/2yccuim-2454396j32458.jpg" },
+            { name: "Kia Seltos", price: "68.00", image: "https://upload.wikimedia.org/wikipedia/commons/7/74/Kia_Seltos_SP2_PE_Snow_White_Pearl_%2815%29.jpg" },
+            { name: "Ford Ranger", price: "78.00", image: "https://fordlongbien.com/wp-content/uploads/2022/08/ford-ranger-xlt-2023-mau-do-cam-icon-fordlongbien_com.jpg" },
+            { name: "Hyundai Accent", price: "45.00", image: "https://i1-vnexpress.vnecdn.net/2024/06/01/HyundaiAccent2024HNVnE7859JPG-1717251948.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=zrUjazQPAMBrhDWvqgImQA" },
+            { name: "VinFast VF8", price: "110.00", image: "https://cdn.gianhangvn.com/image/vinfast-vf8-trang-1-buraswf.jpg" },
         ];
 
         // *** 2. Hàm Tạo và Chèn HTML ***
@@ -79,8 +79,8 @@
                         </div>
 
                         <img class="bg-light d-flex justify-content-center align-items-center mb-4 rounded" 
-                            style="height: 150px; opacity: 0.7;" 
-                            src="https://via.placeholder.com/200x150?text=${product.image.replace(' ', '+')}" 
+                            style="height: 150px; opacity: 0.8;" 
+                            src="${product.image}"
                             alt="${product.image}"> 
                                     
                         <div class="d-flex justify-content-between align-items-center">

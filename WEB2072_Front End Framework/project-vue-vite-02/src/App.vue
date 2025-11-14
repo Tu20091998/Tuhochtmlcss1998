@@ -7,7 +7,7 @@ const loading = ref(false)
 // Dữ liệu sản phẩm mẫu
 const product = ref({
   name: 'VinFast-VF8',
-  description: 'Dòng xe mang phong cách, sử dụng pin tốt nhất hiện nay !',
+  description: 'Dòng xe mang phong cách Bác Vượng',
   price: 1200,
   oldPrice: 1500,
   rating: 4.5,
@@ -34,4 +34,30 @@ const product = ref({
 
     <ProductCard v-else v-bind="product" />
   </div>
+
+
+  <!-- <div>
+    <a href="https://vite.dev" target="_blank">
+      <img src="/vite.svg" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://vuejs.org/" target="_blank">
+      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+    </a>
+  </div>
+  <HelloWorld msg="Vite + Vue" /> -->
 </template>
+
+<style scoped>
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+</style>

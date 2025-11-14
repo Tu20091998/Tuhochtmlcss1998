@@ -1,21 +1,45 @@
 <template>
-<div>
-    <div class="card border-0 shadow-sm p-4 rounded-4" style="max-width: 600px; margin: auto; background: #f5f7ff; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);">
-        <div id="carouselExample" class="carousel slide" ref="carouselRef">
-            <div class="carousel-inner">
-                <div class="carousel-item active" 
-                v-for="(img, index) in allImages" style="aspect-ratio: 16 / 9; overflow: hidden;"
-                :key="index">
-                    <img :src="img" class="d-block" alt="ProductImage" style="object-fit: cover; width: 100%; height: auto;">
+    <div class="card border-0 shadow-sm p-4 rounded-4" style="max-width: 600px; margin: auto; background: #f5f7ff;">
+        <!-- Hình sản phẩm với Carousel -->
+        <div
+            :key="selectedColor?.name"
+            :id="`productCarousel-${name.replace(/\s+/g, '-')}-${selectedColor?.name || 'default'}`"
+            class="carousel slide position-relative"
+            data-bs-ride="carousel"
+        >
+            <div class="carousel-inner" style="height: 250px; width: 400px;">
+                <div
+                    v-for="(img, index) in selectedImages"
+                    :key="index"
+                    class="carousel-item"
+                    :class="{ active: index === 0 }"
+                    style="height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;"
+                >
+                    <img
+                        :src="img"
+                        class="d-block w-100 rounded-3"
+                        style="object-fit: contain;"
+                        alt="product image"
+                    />
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                :data-bs-target="`#productCarousel-${name.replace(/\s+/g, '-')}-${selectedColor?.name || 'default'}`"
+                data-bs-slide="prev"
+            >
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                :data-bs-target="`#productCarousel-${name.replace(/\s+/g, '-')}-${selectedColor?.name || 'default'}`"
+                data-bs-slide="next"
+            >
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
             </button>
         </div>
 
@@ -112,11 +136,10 @@
             </button>
         </div>
     </div>
-</div>
 </template>
 
 <script setup>
-import { ref, computed, onUnmounted, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps({
     name: String,
@@ -134,30 +157,22 @@ const props = defineProps({
 const selectedColor = ref(props.colors[0])
 const selectedSize = ref(null)
 const quantity = ref(1)
-const currentIndex = ref(0)
-const carouselRef = ref(null)
-let carouselInstance = null
 
 const allImages = props.colors.map(color => color.imgs).flat();
 
+console.log(allImages);
+
+// Mỗi màu có thể chứa nhiều ảnh
+const selectedImages = computed(() => selectedColor.value?.imgs || [selectedColor.value?.img])
 
 const canBuy = computed(() =>
     selectedColor.value && selectedSize.value && quantity.value > 0 && props.inStock
 )
 
-onMounted(() => {
-    // Khởi tạo Bootstrap Carousel
-    carouselInstance = new bootstrap.Carousel(carouselRef.value)
-})
-
 function selectColor(color) {
     selectedColor.value = color
-
-    const colorStartIndex = props.colors.indexOf(color);
-
-    // Chuyển carousel đến ảnh đầu của màu
-    carouselInstance.to(colorStartIndex)
 }
+
 
 function selectSize(size) {
     selectedSize.value = size
@@ -174,6 +189,4 @@ function decreaseQty() {
 function buyNow() {
     alert(`Đã đặt hàng: ${props.name} (${selectedSize.value})`)
 }
-
-
 </script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout 12 cột</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!--hệ thống layout 12 cột-->
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col border border-primary">1</div>
+            <div class="col border border-primary">2</div>
+            <div class="col border border-primary">3</div>
+            <div class="col border border-primary">4</div>
+            <div class="col border border-primary">5</div>
+            <div class="col border border-primary">6</div>
+            <div class="col border border-primary">7</div>
+            <div class="col border border-primary">8</div>
+            <div class="col border border-primary">9</div>
+            <div class="col border border-primary">10</div>
+            <div class="col border border-primary">11</div>
+            <div class="col border border-primary">12</div>
+        </div>
+
+        <!--column size-->
+        <div class="row mb-3">
+            <div class="col-2 border border-primary text-center">2</div>
+            <div class="col-4 border border-primary text-center">4</div>
+            <div class="col-6 border border-primary text-center">6</div>
+        </div>
+
+        <!--để cột cuối cùng là col để hệ thống tự tính toán-->
+        <div class="row mb-3">
+            <div class="col-2 border border-primary text-center">2</div>
+            <div class="col-4 border border-primary text-center">4</div>
+            <div class="col border border-primary text-center">6</div>
+        </div>
+
+        <!--column size với brekpoint-->
+        <div class="row mb-3">
+            <div class="col-sm-2 border border-primary text-center">2</div>
+            <div class="col-sm-4 border border-primary text-center">4</div>
+            <div class="col-sm-6 border border-primary text-center">6</div>
+        </div>
+
+        <!--nếu không chỉ định size thì sẽ auto tự động chiếm diện tích đều nhau-->
+        <div class="row mb-3">
+            <div class="col-sm-2 border border-primary text-center">2</div>
+            <div class="col-sm-4 border border-primary text-center">4</div>
+            <div class="col-sm-6 border border-primary text-center">6</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col border border-primary text-center">x</div>
+            <div class="col border border-primary text-center">x</div>
+            <div class="col border border-primary text-center">x</div>
+        </div>
+
+        <!--trong 1 khối div cũng có nhiều điểm dừng-->
+        <div class="row mb-3">
+            <div class="col-sm-12 col-md-8 col-lg-4 border border-primary text-center">x</div>
+        </div>
+    </div>
+
+    
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

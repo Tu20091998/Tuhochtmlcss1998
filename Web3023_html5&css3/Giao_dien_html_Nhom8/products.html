@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản Phẩm - Anh Hoà Bakery</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8yI0Iz8/N/wGk/K5I8S5UqXqYm5oF12k/G5D5s7O2P+0eF+l4z9K8k/8lQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .navbar-brand {
+        font-size: 1.5rem;
+      }
+      /* Style cho card sản phẩm được giữ nguyên */
+      .card-img-top {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* Thêm padding-top cho body để nội dung không bị navbar che khuất */
+      body {
+        padding-top: 80px; /* Tùy chỉnh dựa trên chiều cao navbar của bạn */
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top shadow"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <img
+            src="https://file.hstatic.net/1000313040/article/8d8225f164ee86b0dfff_1024x1024.jpg"
+            alt="Logo"
+            style="
+              height: 4rem;
+              border-radius: 1rem;
+              margin-right: 8px;
+              vertical-align: middle;
+            "
+          />
+          Anh Hoà Bakery
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Sản phẩm</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Khuyến mãi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">Liên hệ</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Tin tức</a></li>
+          </ul>
+          <button class="btn btn-outline-light ms-lg-3">
+            <i class="fas fa-shopping-cart"></i> Giỏ hàng (0)
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="py-4 text-center bg-light rounded-3 my-4 shadow-sm">
+        <h1 class="display-5 fw-bold text-secondary">Danh Mục Sản Phẩm</h1>
+        <p class="fs-5 text-muted">
+          Khám phá tất cả hương vị ngọt ngào từ Anh Hoà Bakery
+        </p>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a href="index.html" class="text-decoration-none">Trang chủ</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="product-list" class="container my-5">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="card shadow-sm mb-4">
+            <div
+              class="card-header bg-secondary bg-opacity-75 text-white fw-bold"
+            >
+              <i class="fas fa-filter"></i> Lọc Theo Danh Mục
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark">Bánh ngọt</a>
+                <span class="badge bg-secondary float-end">12</span>
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark">Bánh mặn</a>
+                <span class="badge bg-secondary float-end">8</span>
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark"
+                  >Bánh nhỏ & Snack</a
+                >
+                <span class="badge bg-secondary float-end">10</span>
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark">Bánh mì</a>
+                <span class="badge bg-secondary float-end">5</span>
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark"
+                  >Bánh truyền thống Việt</a
+                >
+                <span class="badge bg-secondary float-end">6</span>
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark">Bánh lạnh</a>
+                <span class="badge bg-secondary float-end">4</span>
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark"
+                  >Bánh đặc sản</a
+                >
+                <span class="badge bg-secondary float-end">3</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card shadow-sm mb-4">
+            <div
+              class="card-header bg-secondary bg-opacity-75 text-white fw-bold"
+            >
+              <i class="fas fa-dollar-sign"></i> Lọc Theo Giá
+            </div>
+            <div class="card-body">
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="priceRange"
+                  id="priceAll"
+                  checked
+                />
+                <label class="form-check-label" for="priceAll">Tất cả</label>
+              </div>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="priceRange"
+                  id="price1"
+                />
+                <label class="form-check-label" for="price1"
+                  >Dưới 50.000 VND</label
+                >
+              </div>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="priceRange"
+                  id="price2"
+                />
+                <label class="form-check-label" for="price2"
+                  >50.000 - 100.000 VND</label
+                >
+              </div>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="priceRange"
+                  id="price3"
+                />
+                <label class="form-check-label" for="price3"
+                  >100.000 - 250.000 VND</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="priceRange"
+                  id="price4"
+                />
+                <label class="form-check-label" for="price4"
+                  >Trên 250.000 VND</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+          <div
+            class="d-flex justify-content-between align-items-center mb-4 p-3 bg-light rounded shadow-sm"
+          >
+            <span class="text-muted">Hiển thị 1-9 của 27 sản phẩm</span>
+            <select class="form-select w-auto" aria-label="Sắp xếp sản phẩm">
+              <option selected>Sắp xếp theo: Mặc định</option>
+              <option value="1">Giá: Thấp đến Cao</option>
+              <option value="2">Giá: Cao đến Thấp</option>
+              <option value="3">Tên: A-Z</option>
+              <option value="4">Tên: Z-A</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://tongkho88.vn/wp-content/uploads/2023/09/banh-sinh-nhat-dau-tay-de-thuong-3.png"
+                  class="card-img-top"
+                  alt="Bánh Kem Dâu"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">Bánh Kem Dâu Tây</h5>
+                  <p class="card-text text-muted">Mềm mịn, ngọt ngào.</p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">250.000 VND</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://product.hstatic.net/200000849803/product/b_nh_m__hoa_c_c-02_c538befb57bc41619bc739d69e539303.png"
+                  class="card-img-top"
+                  alt="Bánh Mì Hoa Cúc"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">Bánh Mì Hoa Cúc</h5>
+                  <p class="card-text text-muted">
+                    Hương thơm bơ sữa tự nhiên.
+                  </p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">55.000 VND</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMW6zrck12og0R2rbRP5JnM2cO5WgDsodgfQ&s"
+                  class="card-img-top"
+                  alt="Bánh Tiramisu"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">Bánh Tiramisu Ý</h5>
+                  <p class="card-text text-muted">
+                    Chuẩn vị cà phê & Mascarpone.
+                  </p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">80.000 VND</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://file.hstatic.net/1000398438/file/1102861465181819_814768157446853189_n_d88e64a301a34e84ac4170e66d9e7add_grande.jpg"
+                  class="card-img-top"
+                  alt="Macaron"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">Set Macaron Ngũ Sắc</h5>
+                  <p class="card-text text-muted">
+                    Quà tặng ngọt ngào, tinh tế.
+                  </p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">120.000 VND</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://beptruong.edu.vn/wp-content/uploads/2021/01/hinh-anh-banh-tart-trung-hongkong.jpg"
+                  class="card-img-top"
+                  alt="Bánh Tart Trứng"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">Bánh Tart Trứng Hong Kong</h5>
+                  <p class="card-text text-muted">
+                    Vỏ giòn, nhân kem trứng béo ngậy.
+                  </p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">18.000 VND/cái</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://vcdn1-dulich.vnecdn.net/2021/08/07/230702205-374170334060215-7790-4565-9332-1628331424.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=6opfcvKYV7ltXffdpZkGVA"
+                  class="card-img-top"
+                  alt="Bánh Sừng Bò"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">Croissant Bơ Pháp</h5>
+                  <p class="card-text text-muted">
+                    Nhiều lớp, thơm lừng vị bơ.
+                  </p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">35.000 VND</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://www.huongnghiepaau.com/wp-content/uploads/2019/01/banh-mousse-chanh-day.jpg"
+                  class="card-img-top"
+                  alt="Bánh Mousse Chanh Leo"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">Mousse Chanh Leo Tươi</h5>
+                  <p class="card-text text-muted">
+                    Vị chua ngọt thanh mát, giải nhiệt.
+                  </p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">65.000 VND/cốc</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card shadow-sm h-100">
+                <img
+                  src="https://file.hstatic.net/200000644331/file/cach-lam-banh-donut-socola-thom-min-de-dang-2335520_grande.jpg"
+                  class="card-img-top"
+                  alt="Donuts Socola"
+                />
+                <div class="card-body text-center d-flex flex-column">
+                  <h5 class="card-title fw-bold">
+                    Donuts Phủ Socola Hạnh Nhân
+                  </h5>
+                  <p class="card-text text-muted">
+                    Mềm xốp, phủ lớp socola đậm đà.
+                  </p>
+                  <p class="text-dark fw-bold fs-4 mt-auto">25.000 VND</p>
+                  <a href="#" class="btn btn-secondary mt-2"
+                    ><i class="fas fa-cart-plus"></i> Thêm vào giỏ</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav
+            aria-label="Page navigation"
+            class="mt-5 d-flex justify-content-center"
+          >
+            <ul class="pagination shadow-sm">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+                  >Trước</a
+                >
+              </li>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="bg-secondary text-white pt-5 pb-4">
+      <div class="container text-md-left">
+        <div class="row text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mt-3">
+            <h5 class="text-uppercase mb-4 fw-bold text-warning">
+              Anh Hoà Bakery
+            </h5>
+            <img
+              src="https://file.hstatic.net/1000313040/article/8d8225f164ee86b0dfff_1024x1024.jpg"
+              alt="Logo"
+              style="
+                height: 15rem;
+                width: 15rem;
+                border-radius: 1rem;
+                margin-right: 8px;
+                vertical-align: middle;
+              "
+            />
+            <p class="text-light" style="margin-top: 1rem">
+              Chúng tôi cam kết mang đến những chiếc bánh không chỉ ngon miệng,
+              mà còn là cầu nối cho mọi khoảnh khắc ngọt ngào của gia đình và
+              bạn bè.
+            </p>
+            <p class="text-light">
+              Sự tận tâm và chất lượng luôn là ưu tiên hàng đầu của chúng tôi.
+            </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mt-3">
+            <h5 class="text-uppercase mb-4 fw-bold">Danh mục</h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Bánh ngọt</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Bánh mặn</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Bánh nhỏ & Snack</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Bánh mì</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Bánh truyền thống Việt</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Bánh lạnh</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Bánh đặc sản</a
+              >
+            </p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mt-3">
+            <h5 class="text-uppercase mb-4 fw-bold">Liên hệ</h5>
+            <ul class="list-unstyled text-light">
+              <li class="mb-2">
+                116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - TP Đà
+                Nẵng
+              </li>
+              <li class="mb-2">info@anhhoabakery.vn</li>
+              <li class="mb-2">Điện thoại & Zalo: +84 94 703 39 34</li>
+              <li class="mb-2">Giờ mở cửa: 07:00 - 22:00</li>
+              <li class="mb-2">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.2548292363635!2d108.16609981033811!3d16.052260784560655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142196d9a203685%3A0x4e8027fe58d65525!2zQ2FvIMSR4bqzbmcgRlBUIEPGoSBT4bufIDI!5e0!3m2!1svi!2s!4v1763108581051!5m2!1svi!2s"
+                  width="250"
+                  height="200"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mt-3">
+            <h5 class="text-uppercase mb-4 fw-bold">Theo dõi</h5>
+            <div class="iframe-responsive-wrapper">
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61581921368571&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                width="340"
+                height="400"
+                style="border: none; overflow: hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-3" />
+
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-center">
+              © 2025 Bản quyền thuộc về:
+              <a href="#" class="text-warning" style="text-decoration: none"
+                ><strong>Anh Hoà Bakery</strong></a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

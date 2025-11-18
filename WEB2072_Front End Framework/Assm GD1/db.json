@@ -1,0 +1,114 @@
+{
+  "personal": {
+    "id": 1,
+    "name": "Nguyễn Đình Tú",
+    "title": "Lập trình viên Back-end | Vue 3 Specialist",
+    "email": "dinhtu20091998@gmail.com",
+    "phone": "0336 620 188",
+    "address": "116 Nguyễn Huy Tưởng",
+    "avatar": "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/476105649_122218490228227192_144966244338490235_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Z-o1LbB51VcQ7kNvwHyUu1A&_nc_oc=Adktf9HnW1SlwgQHXHRUFnHXVr8NE0RGJsBvzBSg2Krlg6-RZz3GMPAeC1vlx2_ts7g&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=tFTeLMh5qc2zox0xxN4czQ&oh=00_AfiUqLgGb8PlksOTH0KSf5pD-IiMOPj1-YkSHPe1c3_HPw&oe=69220542",
+    "bio": "Sinh viên năm cuối FPT Polytechnic, chuyên môn sâu về phát triển giao diện người dùng (UI) và trải nghiệm người dùng (UX) bằng Vue 3, Pinia và tích hợp API RESTful hiệu quả.",
+    "social": {
+      "github": "https://github.com/nguyenvana-dev",
+      "linkedin": "https://linkedin.com/in/nguyenvana-dev",
+      "facebook": "https://facebook.com/nguyenvana.dev"
+    },
+    "hardSkills": [
+      "Vue 3 / Composition API",
+      "JavaScript (ES6+)",
+      "Pinia / Vuex",
+      "TypeScript",
+      "HTML5/CSS3 (Tailwind CSS, Bootstrap)",
+      "RESTful API",
+      "Git & GitHub",
+      "PHP",
+      "PHP MyAdmin"
+    ],
+    "softSkills": [
+      "Giải quyết vấn đề",
+      "Làm việc nhóm (Scrum)",
+      "Quản lý thời gian",
+      "Khả năng thích nghi"
+    ]
+  },
+  "education": [
+    {
+      "id": 1,
+      "institution": "FPT Polytechnic Đà Nẵng",
+      "address": "116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - Thành Phố Đà Nẵng",
+      "degree": "Cao đẳng Phát triển Phần mềm",
+      "period": "Fall 2025 - Present",
+      "details": "Chuyên ngành Công Nghệ Thông Tin, tập trung vào lập trình Web Full-stack (MERN/MEVN)."
+    },
+    {
+      "id": 2,
+      "institution": "Trường THPT Nguyễn Thái Học - Xã Chư Pưh - Tỉnh Gia Lai",
+      "degree": "Tốt nghiệp THPT",
+      "period": "2015 - 2017",
+      "details": "Đạt giải khuyến khích Môn Lịch sử"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "Thực tập sinh Front-end",
+      "company": "Công ty Cổ phần Công nghệ FPT Complex",
+      "period": "06/2027 - 12/2027",
+      "description": "Phát triển và bảo trì 3 module chính của hệ thống CRM nội bộ bằng Vue 3. Đóng góp vào việc tối ưu hóa hiệu suất giao diện, giảm thời gian tải trang 15%."
+    },
+    {
+      "id": 2,
+      "title": "Phát triển dự án Freelance",
+      "company": "Khách hàng cá nhân",
+      "period": "01/2026 - Present",
+      "description": "Thiết kế và triển khai 5+ website Landing Page theo yêu cầu, đảm bảo tính responsive và chuẩn SEO cơ bản."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Trang web bán hàng Shopping Cart",
+      "tech": "Vue 3, Boostrap 5, Tailwind CSS, PHP, API Resful, PHP MyAdmin",
+      "members": 4,
+      "duration": "4 tháng (03/2027 - 07/2027)",
+      "image": "https://bizflyportal.mediacdn.vn/bizflyportal/kienthuccoban/the16018854165022.jpg",
+      "description": "Hệ thống bán hàng trực tuyến, đặt hàng từ xa, tích hợp AI phân tích hành vi của người dùng, hệ thống quản lý admin phân quyền, hiệu quả",
+      "startDate": "2027-03-01",
+      "endDate": "2027-07-01"
+    },
+    {
+      "id": 2,
+      "name": "Trang web bán bánh Anh Hoà Bakery",
+      "tech": "Vue 3, Boostrap 5, Vue Router, Mock API, Tailwind CSS, PHP, API Resful, PHP MyAdmin",
+      "members": 1,
+      "duration": "1 tháng (11/2026 - 12/2026)",
+      "image": "https://vietwebgroup.vn/admin/uploads/20170621084101an%20hoa.png",
+      "description": "Xây dựng giao diện bán bánh trực tuyến, tích hợp AI phân tích và trả lời tin nhắn người dùng",
+      "startDate": "2026-11-15",
+      "endDate": "2026-12-15"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Sức mạnh của Composition API trong Vue 3",
+      "summary": "Phân tích cách Composition API giúp tổ chức code, tái sử dụng logic và làm việc với TypeScript hiệu quả hơn so với Options API.",
+      "date": "15/11/2025",
+      "content": "Nội dung chi tiết về các hàm `ref`, `reactive`, `computed` và `watch`..."
+    },
+    {
+      "id": 2,
+      "title": "Tối ưu hóa hình ảnh cho hiệu suất Web",
+      "summary": "Hướng dẫn các kỹ thuật Lazy Loading, nén ảnh WebP và sử dụng `<picture>` element để tăng tốc độ tải trang.",
+      "date": "01/11/2025",
+      "content": "Nội dung chi tiết về Web Performance và Core Web Vitals..."
+    },
+    {
+      "id": 3,
+      "title": "So sánh Tailwind CSS và Bootstrap trong dự án Vue",
+      "summary": "Đánh giá ưu nhược điểm của hai framework CSS phổ biến khi áp dụng vào một dự án Front-end hiện đại.",
+      "date": "20/10/2025",
+      "content": "Nội dung chi tiết về kích thước bundle, tốc độ phát triển và khả năng tùy chỉnh..."
+    }
+  ]
+}

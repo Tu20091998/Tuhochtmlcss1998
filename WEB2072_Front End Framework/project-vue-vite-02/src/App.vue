@@ -14,6 +14,7 @@ const product = ref({
   reviews: '25',
   isBestseller: true,
   inStock: true,
+  quantity: 0,
   colors: [
     { name: 'White', code: '#f0f0f0', 
       imgs: [
@@ -45,7 +46,7 @@ const product = ref({
     { name: 'Green', code: '#008000', 
         imgs: [
         'https://hips.hearstapps.com/hmg-prod/images/2023-vinfast-vf8-9283-64638ba8c149b.jpg?crop=0.641xw:0.543xh;0.114xw,0.346xh&resize=2048:*',
-        'https://cdn2.tuoitre.vn/thumb_w/480/471584752817336320/2024/1/30/vinfast-vf-8-my-1706585047078553530582.jpg',
+        'https://cdnphoto.dantri.com.vn/enc95I1bY4bXeqnzIb4kI3dL10I=/thumb_w/1020/2024/01/31/2023-vinfast-vf8-1706690534816.jpg',
         'https://kingwrap.vn/wp-content/uploads/2025/02/dan-decal-doi-mau-vinfast-vf8-1.jpg.webp',
         'https://images-stag.jazelc.com/uploads/theautopian-m2en/vf8_rear.jpg',
         'https://hips.hearstapps.com/hmg-prod/images/2023-vinfast-vf8-8311-64638b6f4efeb.jpg?crop=0.651xw:0.550xh;0.182xw,0.347xh&resize=2048:*'
@@ -72,6 +73,9 @@ const product = ref({
       <p>Đang tải dữ liệu...</p>
     </div>
 
-    <ProductCard v-else v-bind="product" />
+    <ProductCard v-else 
+      v-bind="product"
+      v-model:quantity = product.quantity
+    />
   </div>
 </template>

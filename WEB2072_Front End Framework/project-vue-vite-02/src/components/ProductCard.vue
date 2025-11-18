@@ -6,7 +6,7 @@
                 <div class="carousel-item active" 
                 v-for="(img, index) in allImages" style="aspect-ratio: 16 / 9; overflow: hidden;"
                 :key="index">
-                    <img :src="img" class="d-block" alt="ProductImage" style="object-fit: cover; width: 100%; height: auto;">
+                    <img :src="img" class="d-block" alt="ProductImage" style="object-fit: contain; width: 100%; height: auto;">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -50,7 +50,13 @@
                 <div
                     v-for="(color, index) in colors"
                     :key="index"
-                    :style="{ backgroundColor: color.code, border: selectedColor?.name === color.name ? '3px solid #FF99FF' : '1px solid #ccc' }"
+                    :style="{ 
+                        backgroundColor: color.code, 
+                        // Thay đổi border
+                        border: selectedColor?.name === color.name ? '2px solid white' : '1px solid #ccc',
+                        // Thêm box-shadow khi được chọn
+                        boxShadow: selectedColor?.name === color.name ? `0 0 10px 3px ${color.code}` : 'none' 
+                    }"
                     class="rounded-circle"
                     style="width: 32px; height: 32px; cursor: pointer;"
                     @click="selectColor(color)">
@@ -63,11 +69,11 @@
             <h5 style="text-align: left;">Size</h5>
             <div class="d-flex flex-wrap gap-2 mt-2">
                 <button
-                    v-for="size in sizes"
+                    v-for="size in props.sizes"
                     :key="size"
                     @click="selectSize(size)"
                     class="btn rounded-pill px-3 "
-                    :class="selectedSize === size ? 'btn-dark' : 'btn-outline-dark'">
+                    :class="props.sizes === size ? 'btn-dark' : 'btn-outline-dark'">
                     {{ size }}
                 </button>
             </div>
@@ -83,7 +89,7 @@
             </div>
             <div class="input-group" style="width: 120px;">
                 <button class="btn btn-outline-secondary" @click="decreaseQty">-</button>
-                <input type="text" class="form-control text-center" v-model="quantity" readonly />
+                <input type="text" class="form-control text-center" :value="props.quantity" readonly />
                 <button class="btn btn-outline-secondary" @click="increaseQty">+</button>
             </div>
         </div>
@@ -116,8 +122,9 @@
 </template>
 
 <script setup>
-import { ref, computed, onUnmounted, onMounted } from 'vue'
+import { ref, computed, onUnmounted, onMounted, reactive, watch } from 'vue'
 
+//khai báo prop để nhận thông tin từ trang app.vue
 const props = defineProps({
     name: String,
     description: String,
@@ -128,23 +135,31 @@ const props = defineProps({
     isBestseller: Boolean,
     inStock: Boolean,
     colors: Array,
-    sizes: Array
+    sizes: Array,
+    quantity: Number
 })
 
-const selectedColor = ref(props.colors[0])
-const selectedSize = ref(null)
-const quantity = ref(1)
-const currentIndex = ref(0)
-const carouselRef = ref(null)
-let carouselInstance = null
+//khi chọn thay đổi số lượng thì log ra số lượng vừa thay đổi
+watch(()=> props.quantity, (newValue, oldValue)=>{
+    if(newValue != oldValue){
+        console.log("Giá trị của số lượng là: " + newValue);
+    }
+});
 
-const allImages = computed(() => selectedColor.value.imgs)
-console.log(allImages);
+
+//khi thông tin được điền đầy đủ và điều kiện thoả mãn thì cho đặt mua
+const selectedColor = ref(props.colors[0]);
+
+//lấy toàn bộ mảng hình ảnh
+const allImages = computed(() => selectedColor.value.imgs);
 
 const canBuy = computed(() =>
-    selectedColor.value && selectedSize.value && quantity.value > 0 && props.inStock
+    selectedColor.value && selectedSize.value && props.quantity > 0 && props.inStock
 )
 
+//gọi hàm để điều khiển carousel
+let carouselInstance = null
+const carouselRef = ref(null)
 onMounted(() => {
     // Khởi tạo Bootstrap Carousel
     carouselInstance = new bootstrap.Carousel(carouselRef.value)
@@ -153,27 +168,39 @@ onMounted(() => {
 function selectColor(color) {
     selectedColor.value = color
 
+    //khi chọn màu thì in ra màu đang được chọn
+    console.log("Màu đang được chọn là: "+ selectedColor.value.name);
+    console.log("Mảng hình ảnh đang được chọn là: ", selectedColor.value.imgs);
+
     const colorStartIndex = props.colors.indexOf(color);
 
     // Chuyển carousel đến ảnh đầu của màu
     carouselInstance.to(colorStartIndex)
 }
 
+
+//chọn size
+const selectedSize = ref(props.sizes);
 function selectSize(size) {
     selectedSize.value = size
+    console.log("Size đang được chọn là: "+ selectedSize.value);
 }
 
+//khi thay đổi số lượng
+const emit = defineEmits(['update:quantity']);
+
 function increaseQty() {
-    quantity.value++
+    emit('update:quantity',props.quantity + 1);
 }
 
 function decreaseQty() {
-    if (quantity.value > 1) quantity.value--
+    if (props.quantity > 1) {
+        emit('update:quantity',props.quantity - 1);
+    }
 }
 
+//hiển thị nếu đặt được hàng
 function buyNow() {
     alert(`Đã đặt hàng: ${props.name} (${selectedSize.value})`)
 }
-
-
 </script>

@@ -1,0 +1,126 @@
+{
+  "personal": {
+    "id": 1,
+    "name": "Nguyễn Đình Tú",
+    "title": "Lập trình viên Back-end | Vue 3 Specialist",
+    "email": "dinhtu20091998@gmail.com",
+    "phone": "0336 620 188",
+    "address": "116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - Thành Phố Đà Nẵng",
+    "avatar": "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/476105649_122218490228227192_144966244338490235_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Z-o1LbB51VcQ7kNvwHyUu1A&_nc_oc=Adktf9HnW1SlwgQHXHRUFnHXVr8NE0RGJsBvzBSg2Krlg6-RZz3GMPAeC1vlx2_ts7g&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=tFTeLMh5qc2zox0xxN4czQ&oh=00_AfiUqLgGb8PlksOTH0KSf5pD-IiMOPj1-YkSHPe1c3_HPw&oe=69220542",
+    "bio": "Sinh viên năm cuối FPT Polytechnic, chuyên môn sâu về phát triển giao diện người dùng (UI) và trải nghiệm người dùng (UX) bằng Vue 3, Pinia và tích hợp API RESTful hiệu quả.",
+    "social": {
+      "github": "https://github.com/Tu20091998/Tuhochtmlcss1998/tree/main/WEB2072_Front%20End%20Framework",
+      "youtube": "https://www.youtube.com/@T%C3%BANguy%E1%BB%85n-j6q1f",
+      "facebook": "https://www.facebook.com/nguyen.tu.910079/",
+      "gmail": "dinhtu20091998@gmail.com"
+    },
+    "hardSkills": [
+      "Vue 3 / Composition API",
+      "JavaScript (ES6+)",
+      "Pinia / Vuex",
+      "TypeScript",
+      "HTML5/CSS3 (Tailwind CSS, Bootstrap)",
+      "RESTful API",
+      "Git & GitHub",
+      "PHP",
+      "PHP MyAdmin"
+    ],
+    "softSkills": [
+      "Giải quyết vấn đề",
+      "Làm việc nhóm (Scrum)",
+      "Quản lý thời gian",
+      "Khả năng thích nghi"
+    ],
+    "imageVarriant": [
+      "https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/531491958_122272624880227192_6939438269720427805_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=lj6MTN1zmvAQ7kNvwHH-imY&_nc_oc=AdkPSDSoxa6HvmgKJc17oz9Y-QQxRXh3WV9rctQ4ebnJeIYuiY3d5JsBqM4Ywz2DPac&_nc_zt=23&_nc_ht=scontent.fdad3-5.fna&_nc_gid=eDFK14TBrI_gVPYTk_ZRxg&oh=00_AfgiDSAz8ZSZMl5-Smx8y2PZbVWLQ55th2mOM1v1WYEVrw&oe=69224518",
+      "https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/532595643_122272625276227192_6909185136577903990_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ifK31Yro8c0Q7kNvwFA6Q7C&_nc_oc=Adk0RhJeaPhXwrNaRLdaY3yhIt5742_1Nq7Lwcd4b4BfzK2X5xQ_L8f5AJqQE9mMQL0&_nc_zt=23&_nc_ht=scontent.fdad3-1.fna&_nc_gid=7VvUm7VNwBtmluVjgxecKA&oh=00_AfhN54JGjVy4pjvvRGfTIFgBUtx58sI5uUK1pAMQXM3nqQ&oe=69224FCF",
+      "https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/531988084_122272625144227192_6000574899972441679_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=q9cEF8hX6WkQ7kNvwHSuwvf&_nc_oc=AdlFc2Ac5yEV0RIvgtW1ib3YSUXPn5YMvffJUQQf9wtZfa9S11E_souKRvAtIUYSik4&_nc_zt=23&_nc_ht=scontent.fdad3-4.fna&_nc_gid=tY73XUwF41AMxOGN9jvsJg&oh=00_Afhp77tellgp7kLES5hj652dXE3hC5wlRQHC2cpiG5CFKw&oe=69223E91",
+      "https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/529671781_122272625060227192_1886001621252594016_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=-hFjKMTXHYYQ7kNvwG-TgsP&_nc_oc=AdkGjCZvTyHPSXs9iI2FJAS-utRQNChpSZ-kaSZthyhRKhElqAE_1RLtReli1eiDsJQ&_nc_zt=23&_nc_ht=scontent.fdad3-5.fna&_nc_gid=b0fESMkPbXXrUa2rf5_A5Q&oh=00_Afi2dIQTS7YVCLdQ6Pgmye5yjlyJXhPAN4J2KqfeJOBOZQ&oe=69224DD4",
+      "https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/518334982_122265299750227192_658140400978957214_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=QN6hxhT9CGYQ7kNvwHwZhQs&_nc_oc=Adn7Ab-Q8KqqpYcrUbOPqjOdO4SYjgiRJgQpNGWoGfx7epdr96CJDxrtCg06uIFrThE&_nc_zt=23&_nc_ht=scontent.fdad3-4.fna&_nc_gid=gpSs4sbaoSp4EH-NiDIBpQ&oh=00_Afh0OqgggvngTTl5j-plTGVut6M1OyfwJdNJ374v1-0lLw&oe=692236FA",
+      "https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/530924218_122272624766227192_6404560857140010992_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=k0XWA3Yxd3QQ7kNvwF1m08Y&_nc_oc=AdlAQMcq3IF72zCYbEVVeJGPY5kJiRkwAKvSIea1HQAfdnFB6ta3KJMp6gpaJe9d2r8&_nc_zt=23&_nc_ht=scontent.fdad3-5.fna&_nc_gid=P5R9l5gBmLzT8HXDHsQXHw&oh=00_Afi3svw-ZbUepY98YI6IBoraj9oB-_CIvx7grEL3N9f9hQ&oe=69223EA2",
+      "https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/530987855_122272625000227192_77713218959089886_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=WvG_4L4BzsYQ7kNvwG9d5yA&_nc_oc=Adlh19GvEFXy4Xeiwxf1X-YvI_wbGoiTxGH_Es6DFvHRJrZ576fL4PhebPUZysn7fbY&_nc_zt=23&_nc_ht=scontent.fdad3-5.fna&_nc_gid=1Ei8MSH2wpQ-stS_QhJFGg&oh=00_AfjKTZMaUqn53QnXCE9KaqBg4cHhNjWoxu4HqxG_wku0QQ&oe=69224A02",
+      "https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/476105649_122218490228227192_144966244338490235_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Z-o1LbB51VcQ7kNvwEQmL3H&_nc_oc=AdnNnVsmljznQl8wQAvkDG6OId55Yu7dQ636ooEzcPDuCwqJTFyo_YbY6P_AOjZ_54Y&_nc_zt=23&_nc_ht=scontent.fdad3-4.fna&_nc_gid=07AuCj-yEk1LI8VvBgOH6w&oh=00_AfiP4ct-aU28TYxUqo02UgZolah-WhOgPMMcNmJd8TrBYQ&oe=69223D82"
+    ]
+  },
+  "education": [
+    {
+      "id": 1,
+      "institution": "FPT Polytechnic Đà Nẵng",
+      "address": "116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - Thành Phố Đà Nẵng",
+      "degree": "Cao đẳng Phát triển Phần mềm",
+      "period": "Fall 2025 - Present",
+      "details": "Chuyên ngành Công Nghệ Thông Tin, tập trung vào lập trình Web Full-stack (MERN/MEVN)."
+    },
+    {
+      "id": 2,
+      "institution": "Trường THPT Nguyễn Thái Học",
+      "degree": "Tốt nghiệp THPT",
+      "period": "2015 - 2017",
+      "details": "Đạt giải khuyến khích Môn Lịch sử",
+      "address": "Xã Chư Pưh - Tỉnh Gia Lai"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "Thực tập sinh Front-end",
+      "company": "Công ty Cổ phần Công nghệ FPT Complex",
+      "period": "06/2027 - 12/2027",
+      "description": "Phát triển và bảo trì 3 module chính của hệ thống CRM nội bộ bằng Vue 3. Đóng góp vào việc tối ưu hóa hiệu suất giao diện, giảm thời gian tải trang 15%."
+    },
+    {
+      "id": 2,
+      "title": "Phát triển dự án Freelance",
+      "company": "Khách hàng cá nhân",
+      "period": "01/2026 - Present",
+      "description": "Thiết kế và triển khai 5+ website Landing Page theo yêu cầu, đảm bảo tính responsive và chuẩn SEO cơ bản."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Trang web bán hàng Shopping Cart",
+      "tech": "Vue 3, Boostrap 5, Tailwind CSS, PHP, API Resful, PHP MyAdmin",
+      "members": 4,
+      "duration": "4 tháng (03/2027 - 07/2027)",
+      "image": "https://bizflyportal.mediacdn.vn/bizflyportal/kienthuccoban/the16018854165022.jpg",
+      "description": "Hệ thống bán hàng trực tuyến, đặt hàng từ xa, tích hợp AI phân tích hành vi của người dùng, hệ thống quản lý admin phân quyền, hiệu quả",
+      "startDate": "2027-03-01",
+      "endDate": "2027-07-01"
+    },
+    {
+      "id": 2,
+      "name": "Trang web bán bánh Anh Hoà Bakery",
+      "tech": "Vue 3, Boostrap 5, Vue Router, Mock API, Tailwind CSS, PHP, API Resful, PHP MyAdmin",
+      "members": 1,
+      "duration": "1 tháng (11/2026 - 12/2026)",
+      "image": "https://vietwebgroup.vn/admin/uploads/20170621084101an%20hoa.png",
+      "description": "Xây dựng giao diện bán bánh trực tuyến, tích hợp AI phân tích và trả lời tin nhắn người dùng",
+      "startDate": "2026-11-15",
+      "endDate": "2026-12-15"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Sức mạnh của Composition API trong Vue 3",
+      "summary": "Phân tích cách Composition API giúp tổ chức code, tái sử dụng logic và làm việc với TypeScript hiệu quả hơn so với Options API.",
+      "date": "15/11/2025",
+      "content": "Nội dung chi tiết về các hàm `ref`, `reactive`, `computed` và `watch`..."
+    },
+    {
+      "id": 2,
+      "title": "Tối ưu hóa hình ảnh cho hiệu suất Web",
+      "summary": "Hướng dẫn các kỹ thuật Lazy Loading, nén ảnh WebP và sử dụng `<picture>` element để tăng tốc độ tải trang.",
+      "date": "01/11/2025",
+      "content": "Nội dung chi tiết về Web Performance và Core Web Vitals..."
+    },
+    {
+      "id": 3,
+      "title": "So sánh Tailwind CSS và Bootstrap trong dự án Vue",
+      "summary": "Đánh giá ưu nhược điểm của hai framework CSS phổ biến khi áp dụng vào một dự án Front-end hiện đại.",
+      "date": "20/10/2025",
+      "content": "Nội dung chi tiết về kích thước bundle, tốc độ phát triển và khả năng tùy chỉnh..."
+    }
+  ]
+}

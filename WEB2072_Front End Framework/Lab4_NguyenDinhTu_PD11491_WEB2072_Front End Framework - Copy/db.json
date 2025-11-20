@@ -1,0 +1,734 @@
+
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "VinFast-VF8",
+      "description": "Dòng xe mang phong cách, sử dụng pin tốt nhất !",
+      "price": 1200,
+      "oldPrice": 1500,
+      "rating": 4.5,
+      "reviews": "25",
+      "isBestseller": true,
+      "inStock": true,
+      "quantity": 0,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+            "https://vinfast-vn.vn/wp-content/uploads/2023/10/vinfast-vf8-1.png",
+            "https://vinfast-timescity.com.vn/wp-content/uploads/2022/12/vinfast-vf8-2023-plus-trang-brahminy-white-2_optimized-1024x768.jpg",
+            "https://vinfast-timescity.com.vn/wp-content/uploads/2022/12/vinfast-vf8-2023-plus-trang-brahminy-white-3_optimized-scaled.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+            "https://vinfastotominhdao.vn/wp-content/uploads/VinFast-VF8-1.jpg",
+            "https://vinfast-tiengiang.vn/wp-content/uploads/2023/12/vinfast-231207_0042_vf-8s-765x430.jpg",
+            "https://xehay.vn/uploads/images/2023/3/01/xehay-VF-8-060422-1.jpg"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://otovinfastsaigon.vn/wp-content/uploads/2020/06/vinfast-vf8-gia-xe-18.jpg",
+            "https://giaxeoto247.com/wp-content/uploads/2022/08/o-to-dien-VinFast-VF-8-mau-Den-Jet-Black.jpg",
+            "https://media.ed.edmunds-media.com/vinfast/lt/vinfast_f34_lt_411221_1600.jpg"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://hips.hearstapps.com/hmg-prod/images/2023-vinfast-vf8-9283-64638ba8c149b.jpg?crop=0.641xw:0.543xh;0.114xw,0.346xh&resize=2048:*",
+            "https://cdnphoto.dantri.com.vn/enc95I1bY4bXeqnzIb4kI3dL10I=/thumb_w/1020/2024/01/31/2023-vinfast-vf8-1706690534816.jpg",
+            "https://kingwrap.vn/wp-content/uploads/2025/02/dan-decal-doi-mau-vinfast-vf8-1.jpg.webp"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+            "https://vinfast-cars.vn/wp-content/uploads/2024/10/vinfast-vf8-xanh-duong.png",
+            "https://vinfast-timescity.com.vn/wp-content/uploads/2023/01/bang-mau-xe-vinfast-vf8-2023-3_optimized.jpeg",
+            "https://vinfastquangnam.com.vn/wp-content/uploads/2024/08/vinfast-vf8-city-edition-3-6f80-5570.jpg"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+    {
+      "id": 2,
+      "name": "Toyota Corolla",
+      "description": "Crossover đô thị, tiết kiệm nhiên liệu và bền bỉ. !",
+      "price": 1400,
+      "oldPrice": 1000,
+      "rating": 4.5,
+      "reviews": "30",
+      "isBestseller": false,
+      "inStock": true,
+      "quantity": 0,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+            "https://static.wixstatic.com/media/b4dcef_e3af3f7ff32c4d91a6aa8c7be7328fa8~mv2.png/v1/fill/w_568,h_426,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4dcef_e3af3f7ff32c4d91a6aa8c7be7328fa8~mv2.png",
+            "https://drive.gianhangvn.com/image/ngoai-that-hong-xe-toyota-cross-1-8g-toyota-hanoi-vn-1889648j22961.jpg",
+            "https://toyota-kontum.net/wp-content/uploads/2024/03/z5205928141859_8120864a7da35894d82c09d6f865231f.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+            "https://i1-vnexpress.vnecdn.net/2024/05/06/Toyota-Corolla-Cross-2024-4.jpg?w=2400&h=0&q=100&dpr=1&fit=crop&s=lJ5k1C4khq5uCdrDlqdwyg&t=image",
+            "https://toyotamydinh.com.vn/Upload/car/corolla-cross/cross-mau-do.jpg",
+            "https://drive.gianhangvn.com/image/z5319002218394-0684a6e8c3b2c169f8071104738ac7ad-2613137j22961.jpg"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://static.wixstatic.com/media/b4dcef_52ddbf7a098040e19ffb243cf5d032d9~mv2.jpg/v1/fill/w_568,h_348,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4dcef_52ddbf7a098040e19ffb243cf5d032d9~mv2.jpg",
+            "https://cdn.24h.com.vn/upload/4-2024/images/2024-10-17/to1-1729129677-340-width740height555.jpg",
+            "https://bizweb.dktcdn.net/100/446/720/products/z3665729857607-a8ce2d40ca4631dcbb02430e0a8f3afe.jpg?v=1661248554297"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://canadaoneprod-com.cdn-convertus.com/uploads/sites/93/2025/04/2022_Toyota_Corolla_Cross_Cypress_004.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNjXCzi9rQJAhfrOyxlHg5ZJeWYwMyWntTg&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReEePvEPWLl-4NwWhp-ehpl7yQptEpBHeVEg&s"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+            "https://www.thedrive.com/wp-content/uploads/2022/11/03/2022-Toyota-Corolla-Cross_KL_37.jpg?quality=85",
+            "https://cdn.tienphong.vn/images/4a827a45a28f470f28dd921daef1c186c492399e350b77c56311180ee7cb459e0e17fcfdbde3306f839dffc4db3d6fc3909b84f48407e615870d84a214840f69417c52cb7112c19e8b90f34c8eb1f383/2026-toyota-corolla-cross-us-5s-2048x1152.jpg",
+            "https://www.vantrowtoyota.com/static/brand-toyota/vehicle/2025/Toyota/Corolla_Cross/MRP/01.jpg"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+    {
+      "id": 3,
+      "name": "Ford Ranger",
+      "description": "Vua bán tải hiệu suất cao, chinh phục mọi địa hình.!",
+      "price": 1000,
+      "oldPrice": 2000,
+      "rating": 4.5,
+      "reviews": "30",
+      "isBestseller": true,
+      "inStock": true,
+      "quantity": 9,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+            "https://www.ford.com.vn/content/dam/Ford/vn/nameplate/ranger/model-walk/sport/vn-sport-frozen-white-model-walk.webp",
+            "https://fordlongbien.com/wp-content/uploads/2022/08/ford-ranger-wildtrak-mau-trang-icon-fordlongbien.jpg",
+            "https://dailymuabanxe.net/wp-content/uploads/2023/02/z4119344566177_5dbe6fd02f25292e636b3de3783262ad.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+            "https://fordthuduc.com.vn/wp-content/uploads/2022/11/thiet-ke-dau-xe-ford-ranger-xls-2023-mau-do.jpg",
+            "https://ford-benthanh.net/wp-content/uploads/2025/02/z6596650712134_bb08ea600f75d45a3cf1426bfeb75cc5.jpg",
+            "https://cdn.gianhangvn.com/image/chi-tiet-ford-ranger-wildtrak-2025-2-97hat56.jpg"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://fordlongbien.com/wp-content/uploads/2022/08/ford-ranger-xlt-2023-mau-den-icon-fordlongbien_com.jpg",
+            "https://fordthuduc.com.vn/wp-content/uploads/2022/11/thiet-ke-dau-xe-ford-ranger-xls-2023-mau-den.jpg",
+            "https://fordbacninh.com/wp-content/uploads/2024/04/Ford-Ranger-XLS-2024-Mau-Den-1.jpg"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxNfnOAgsx2qZPltf1DKV1QY2SmFXxtNuBA&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZeH8TGWCye6AjvVtO3f8YPUHAwS_XJbEv0w&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVztaFFqZ9KAmqCWi17NZ5XobOoBg2GG9d6A&s"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+            "https://thanhxuanford.vn/public/upload/images/hinhsanpham/ford-ranger-xlt-the-he-moi-10521660637206.jpg",
+            "https://cdn.ecommercedns.uk/files/2/251192/9/41568139/img-8274.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxJ3avzUOQFgCfaPdUBYm39m3n2Ytn1-e7eQ&s"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+    {
+      "id": 4,
+      "name": "Honda City",
+      "description": "Sedan hạng B, vận hành êm ái, bền bỉ và giữ giá.!",
+      "price": 5000,
+      "oldPrice": 3000,
+      "rating": 4.5,
+      "reviews": "30",
+      "isBestseller": false,
+      "inStock": true,
+      "quantity": 77,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+            "https://cdn.gianhangvn.com/image/honda-city-ban-g-2023-a2-2nd9ugx.jpg",
+            "https://hondalongan.vn/wp-content/uploads/2021/11/City-rs-moi-2023-14.jpg",
+            "https://drive.gianhangvn.com/image/bfptugq-2448939j32146.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+            "https://i1-vnexpress.vnecdn.net/2022/10/04/-4862-1664877829.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=-kOQ-d5XWiD2ItQR2Ox7WQ&t=image",
+            "https://drive.gianhangvn.com/image/bwafufe-2448882j29010.jpg",
+            "https://hondaototphcm.com/files/assets/honda_city_rs_facelift_do.webp"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://otohondaquan2.vn/wp-content/uploads/2021/11/honda-city-rs-2024-mau-den-987-min.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsBWd9-ayukiDh8ry7OxJDTk3LoFCV8YLcBA&s",
+            "https://otohondaquan2.vn/wp-content/uploads/2021/11/honda-city-rs-2024-mau-den-2.jpg"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://www.shutterstock.com/image-photo/green-color-front-view-honda-260nw-2629948753.jpg",
+            "https://kereta.info/wp-content/uploads/2013/12/wpid-body-sticker-wrap-modified-honda-city-2013-2014-bodykit02.jpg",
+            "https://www.shutterstock.com/image-photo/hiresgreen-color-34-front-view-260nw-2639266767.jpg"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://hondamydinh.net/wp-content/uploads/2021/01/Honda-City-2023-VNE-3019-1679387849.png",
+           "https://otohondaquan2.vn/wp-content/uploads/2021/11/honda-city-2024-mau-xanh-720x480-min.jpg",
+           "https://otohonda.com.vn/wp-content/uploads/Danh-Gia-Chi-Tiet-Honda-City-2009-Danh-Bai-Cac-Doi-Thu-Trong-Phan-Khuc-Sedan-Hang-B.jpg"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+
+    {
+      "id": 5,
+      "name": "Hyundai Santa Fe",
+      "description": "SUV 7 chỗ cỡ lớn, nội thất hiện đại, nhiều tiện nghi.!",
+      "price": 4000,
+      "oldPrice": 6000,
+      "rating": 5,
+      "reviews": "90",
+      "isBestseller": true,
+      "inStock": true,
+      "quantity": 77,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+           "https://vn-hyundai.com/wp-content/uploads/2024/09/all-new-santafe-vn-hyundai-trang.png",
+           "https://cdn.jdpower.com/JDPA_2022%20Hyundai%20Santa%20Fe%20Hybrid%20Limited%20White%20Front%20Quarter%20View.jpg",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq-kq8q6EAXbcpuMFfxeq7Y0v48A33crNMzQ&s"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_i98LplBL9R5GICne2MDHyA7omFE49L1Dig&s",
+           "https://hyundai-ngocan.weebly.com/uploads/2/5/0/6/25061710/ngoai-that-santafe-2019-mau-do-3_orig.jpg",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR78k55holECFwGc0xOFLFqge8oGg39G_x8AQ&s"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://hyundaingocan.com/wp-content/uploads/2024/09/ngoai-that-Hyundai-Santafe-all-new-Hyundai-Ngoc-An-4.jpg",
+            "https://drive.gianhangvn.com/image/2642401-2685247j33520.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFl1KXkm6nnioVZ-Lk2-Dt9mToueggl94DIA&s"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://drive.gianhangvn.com/image/rskew48-2698304j30542x16.jpg",
+            "https://i.ytimg.com/vi/K5I-9I9nRP0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAPOQNqUy707vclLRFc6TVlKobltw",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/2024_Hyundai_Santa_Fe_Calligraphy_AWD_in_Rockwood_Green_Pearl%2C_front_right.jpg/2560px-2024_Hyundai_Santa_Fe_Calligraphy_AWD_in_Rockwood_Green_Pearl%2C_front_right.jpg"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+            "https://i1-vnexpress.vnecdn.net/2021/09/21/HyundaiSantaFe202116JPG1631935127jpg-1632200363.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=QuYo3G_1RXoHkPy3I68vSQ",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2RfivyqW16X5P0IeFBhrRJ3MiNGpFSapZ0w&s",
+            "https://www.hyundaisg.vn/wp-content/uploads/2021/05/santafe_2021_xanh_hyundaisg-3-scaled.jpg"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+    {
+      "id": 6,
+      "name": "Toyota Camry",
+      "description": "Sedan hạng D, biểu tượng của sự sang trọng !",
+      "price": 7000,
+      "oldPrice": 8000,
+      "rating": 4.9,
+      "reviews": "200",
+      "isBestseller": true,
+      "inStock": false,
+      "quantity": 97,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlwF81K0t6LMA6lYV7SX7B9R0xEe4m5FONSg&s",
+           "https://cdn.jdpower.com/JDPA_2021%20Toyota%20Camry%20TRD%20White%20Front%20Quarter.jpg",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3634rdmUGaz8aSpiESYI1fjE7Iv964iTiw&s"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+           "https://toyota-saigon.vn/wp-content/uploads/2025/02/toyota-camry-2025-5.jpg",
+           "https://s.bonbanh.com/uploads/users/493081/car/6496663/m_1761458137.477.jpg",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFDy4eVeBMuRK53mOI-w1WSrZLcmr5d7xeUA&s"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://external-preview.redd.it/e6Bge-QgwQw9g3TZ5sdaSFgQHztOH6NBVf46neu7i48.jpg?auto=webp&s=16747eed8576600d9b3ee5c061edbac44068ca32",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJg6Hkz3hhgXX0RvKNSbJGSATOzqq7I_uvg&s",
+            "https://vcdn1-vnexpress.vnecdn.net/2020/12/11/Toyota-Camry-nhap-My-7-1607700994.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=YwWvvA5fqTVyaCljm-jr6w"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://images.autotrader.com/hn/c/e748e274dd16468a847e3d6f7489c830.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRA4FcjeD7G42PubjgQWwhoIGcRCqT8M7R8g&s",
+            "https://static.overfuel.com/photos/1111/585641/391c5fd49b6848528f0055e420840897.webp"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://static.wixstatic.com/media/b4dcef_878f1cdd7a134fb2a45d14f4a36ead56~mv2.png/v1/fill/w_568,h_354,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4dcef_878f1cdd7a134fb2a45d14f4a36ead56~mv2.png",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUfmA_1iVlZHtGKP11EM2Uscf3Hqi3ACfueA&s",
+           "https://cdn.tienphong.vn/images/bdfc554ea35983ad68a96e0050b6e2cb7ce2d3b0ccfab14a1c6f53a6135f05262cf7fb02f1362242a71c62f817a751e32261a6be18d8f77d553a78079acfe43f/8_UXOO.jpg.webp"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+
+    {
+      "id": 7,
+      "name": "Ford Everest",
+      "description": "SUV 7 chỗ đa dụng, mạnh mẽ vượt trội!",
+      "price": 9000,
+      "oldPrice": 6000,
+      "rating": 4.9,
+      "reviews": "200",
+      "isBestseller": false,
+      "inStock": false,
+      "quantity": 97,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+            "https://www.benthanhford.com.vn/static/team/2025/images/1749477093_ford-everest-titanium-2022-mau-trang-icon.jpg",
+            "https://carsales.pxcrush.net/carsales/car/cil/trcevpvew0qrzx3ei8zxrfzta.jpg?pxc_method=fitfill&pxc_bgtype=self&pxc_size=720,480&pxc_density=2",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNvUB-bXtb9of76fGb6h_fgMAC9ynhyZERrw&s"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+           "https://xeford.info/wp-content/uploads/2022/06/vn-sport-coloriser-Cam-1-e1654068368712.png",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV3JVFTlJzpwBG_E5MZec2MANFWErHc3PPOA&s",
+           "https://bizweb.dktcdn.net/100/446/720/products/z3910421142584-c70db8f8321f3d9e6fd05519cf2ae98d.jpg?v=1669436376033"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://www.ford.com.vn/content/dam/Ford/vn/nameplate/everest/overview/models/sport-absolute-black.webp",
+            "https://fordlongbien.com/wp-content/uploads/2022/07/ford-everest-sport-2023-mau-den-icon.jpg",
+            "https://fordcapital.vn/wp-content/uploads/2021/11/thong-so-ky-thuat-xe-Ford_Everest_2023-380x238.jpg"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://i.ytimg.com/vi/38j4yBx4oQE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAaCDDHUIbTdt9AmVABwPI-xXuFSA",
+            "https://i.ytimg.com/vi/05ytIT1f2_E/maxresdefault.jpg",
+            "https://broauto.vn/uploads/source/tin-tuc/ford-everest/len-do-cam-trai-camping/ford-everest-up-camping.jpg"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://vcdn1-vnexpress.vnecdn.net/2022/11/25/Ford-Everest-1-8395-1669366384.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=FPNnTupQe9ZhCTiUXl1uxw",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBsNsgZpVhbLrBGOMchVbAnzRQ26L7G5xWrA&s",
+           "https://i1-vnexpress.vnecdn.net/2022/07/09/26-Everest-Sport.jpg?w=2400&h=0&q=100&dpr=1&fit=crop&s=l4WKs_DwXud00vAwrrRZxw&t=image"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+
+    {
+      "id": 8,
+      "name": "Honda CR-V",
+      "description": "Crossover 7 chỗ, tiện nghi, an toàn cao.!",
+      "price": 1000,
+      "oldPrice": 2000,
+      "rating": 4.9,
+      "reviews": "200",
+      "isBestseller": true,
+      "inStock": false,
+      "quantity": 97,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+            "https://hondaotophumyhung.vn/wp-content/uploads/2022/03/ngoai-that-Honda-CR-V-2024-13-380x228.jpg",
+            "https://static.overfuel.com/photos/67/372913/image-1.webp",
+            "https://drive.gianhangvn.com/image/honda-crv-2024-bv-1-2522084j24258.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+           "https://giaxeoto.vn/admin/upload/images/resize/640-honda-crv-2025-co-gi-moi.jpg",
+           "https://honda-kiengiang.vn/wp-content/uploads/2022/03/Honda-CR-V-2024-VnE-3352.jpg",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhq67YxrVQ6ZxaD2QCiuQHAf44hizhNr2fg&s"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY8_8NErKYmvrspGWD-aKqbXzlFLAXGi5JDw&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXs7U3tGwXXCD45bfDIQwdXmSmnIYboyi7zQ&s",
+            "https://cdn.24h.com.vn/upload/2-2021/images/2021-04-16/Chi-Tiet-Honda-CR-V-Black-Series-vua-ra-mat-tai-dai-ly-crv--7--1618512802-286-width660height436.jpg"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://img1.oto.com.vn/resize/400x9999/2023/12/06/OpzfnMD2/cr-v-b19c.webp",
+            "https://media.ed.edmunds-media.com/honda/cr-v/2003/oem/2003_honda_cr-v_4dr-suv_lx_rq_oem_1_500.jpg",
+            "https://images.dealersync.com/2571/Photos/616141/wm_701afaae5d9d4587b697fde4b3189e41_616141.jpg?_=7dc15cb6e043be391067b047beb25c3d0855974c"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://hondaankhanh.vn/wp-content/uploads/2023/03/Honda-CR-V-1.jpg",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiFFm9CPOoDrR_pkw9LaOg65UpzKuPVb5h0w&s",
+           "https://i2-vnexpress.vnecdn.net/2021/09/18/HondaCRVjpg-1631980227.jpg?w=700&h=420&q=100&dpr=1&fit=crop&s=EduGtSsiIyia3AFr3ggyvA"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+
+    {
+      "id": 9,
+      "name": "VinFast VF 5 Plus",
+      "description": "Mẫu SUV điện cỡ nhỏ, năng động cho đô thị.!",
+      "price": 2000,
+      "oldPrice": 3000,
+      "rating": 4.6,
+      "reviews": "20",
+      "isBestseller": false,
+      "inStock": true,
+      "quantity": 97,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+           "https://drive.gianhangvn.com/image/2m5buny-2577071j31264.jpg",
+           "https://giaxebantai.com/wp-content/uploads/2025/05/500149431_122132608556409247_2208392182393127701_n.jpg",
+           "https://photo2.tinhte.vn/data/attachment-files/2023/04/6414037_vinfast_vf5_plus.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+            "https://i1-vnexpress.vnecdn.net/2023/04/21/VinFastVF52023VnE7660JPG-1682062495.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=AY67VY4aHxVnSvKRiJe5vQ",
+            "https://banggiavinfast.vn/wp-content/uploads/2023/10/xe-vinfast-vf5-plus-2023-mau-do-6.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfJ6kdn3nbZgsk-ErSnGDVKTlzkPEG_9y7fw&s"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://banggiavinfast.vn/wp-content/uploads/2023/10/xe-vinfast-vf5-mau-den.jpg",
+            "https://vinfastotohaiphong.com.vn/images/Upload/images/vinfast-vf5-plus-den.jpg",
+            "https://cmu-cdn.vinfast.vn/2024/03/1802fe53-vinfast-vf5-plus0-1709471122436913203083.webp"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD20fOdt24uJp-kmXRYDmn-jJ1-OeGlFypJA&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO_eXnUe4QN2vXCauDIyyHiLxlZrWKd_2QxA&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ25a4eHn_hRoYcO7wKHyiYbJXW_SvZeV5aQ&s"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://i1-vnexpress.vnecdn.net/2024/01/11/VinFast-VF-5-2023-VnE-7585-JPG-8314-1704961122.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=2qzcx9FhBTZ4hKrBPIdW8Q&t=image",
+           "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/4/27/1185484/PR2_Anh-4.jpg",
+           "https://cdn.baohatinh.vn/images/f93ac99cb52f0015b621e03fb255131b1a98ef7df5a005da1217a4213105f6b2271d2dc8399837c80d3dd47cb3a132d9/130d4102248t4612l0-a2.jpg"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+
+    {
+      "id": 10,
+      "name": "Hyundai Accent",
+      "description": "Sedan hạng B, thiết kế trẻ trung, nhiều tùy chọn !",
+      "price": 7000,
+      "oldPrice": 9000,
+      "rating": 4.8,
+      "reviews": "20",
+      "isBestseller": true,
+      "inStock": true,
+      "quantity": 97,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+           "https://otohyundai.com.vn/wp-content/uploads/2023/02/z3974101044171_c7e61877e5996b8422ff903b75341bd0_result-2.jpg",
+           "https://drive.gianhangvn.com/image/accent-2024-1-2633564j23807.jpg",
+           "https://hyundai-mientrung.com/wp-content/uploads/2024/09/anh-xe-hyundai-accent-at-dac-biet-mau-trang-2024-14.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+            "https://i1-vnexpress.vnecdn.net/2024/06/01/HyundaiAccent2024HNVnE7859JPG-1717251948.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=zrUjazQPAMBrhDWvqgImQA",
+            "https://www.hyundaisg.vn/wp-content/uploads/2025/01/hyundai-accent-2025-mau-do-hyundaisg-1-420x280.jpg",
+            "https://otohyundai.com.vn/wp-content/uploads/2023/02/297368685_909503867108918_785035067649844269_n_result.jpg"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://static.chotot.com/storage/chotot-kinhnghiem/xe/2023/01/9fbe6b9e-gia-xe-hyundai-accent-2022-cho-tot.png",
+            "https://sieuthiotosaigon.vn/upload/product/z57850317556725ae756851e3875beca8bf880ed0c8c85-4675.jpg",
+            "https://dailymuabanxe.net/wp-content/uploads/2023/01/z4007550625450_f9949a0b445a834c685edd8a10fc9f77.jpg"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3o1Ur8Wn1PZVerJGIYmwELAq6gXbNdiF-Kg&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQivUnHHsuQhQajUK4JT-gFqsuIE_7oDW-WSw&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScNkWsoGSxF6P9vCi1pwry70MN2k5EbsOvnA&s"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://vcdn1-vnexpress.vnecdn.net/2022/05/03/HyundaiAccent-1651585591-9437-1651585606.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=koUYSoSjcNP7DeybQDt2ww",
+           "https://drive.gianhangvn.com/image/23akv9j-2634929j30542.jpg",
+           "https://www.hyundaisg.vn/wp-content/uploads/2025/01/hyundai-accent-2025-mau-xanh-4.jpg"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+
+    {
+      "id": 11,
+      "name": "BMW 2000",
+      "description": "Dòng xe cao cấp dành cho giới thượng lưu.!",
+      "price": 9000,
+      "oldPrice": 10000,
+      "rating": 4.8,
+      "reviews": "20",
+      "isBestseller": true,
+      "inStock": true,
+      "quantity": 97,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+           "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/1477bbe21e8d6b5e719c7c3ccab577fd47dd8cc3/photos/9nA1bGON.z4w9wvyOJ-(edit).jpg?t=163085430436",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpuZpbmuja_akwIiRIZcEAchauLKLEiVW7-w&s",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgU6ryjtC8FL0AS-Ohb5Vtq8XKLsO_fkuYHQ&s"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL3eMjSvx657VXyH-7g_23LZnY1OAuYv4EOg&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZUTrTMpzsLn5kb0gs6Nz84_vd18VOCRTY1g&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjsWt1HUAtxG4CDBAFFm9POtTyy5I4xUUeNg&s"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+            "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/c51905b0000b639a185eeb080dd879bf007f5604/photos/KmYAJkAY.bjUH-egqR-(edit).jpg?t=162442623779",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjs3GozrX6tVVAPUFtCGZOjjxVp-T10EKHOA&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxdzL3ELbV2nErAUQh4g9UzYaIoJllbEilQQ&s"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdNvVwRSeePTAjSMGAGbi_Nm3uJZY13mUuCg&s",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVY6sTsEZwMyYJPUVFOVtS6BgqD-QJQMcDAA&s",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYU-wugipzEBhmR2I0sFk1sxKkHb_pAY1nuw&s"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://i.pinimg.com/736x/47/e1/4c/47e14ce34cfd1921717454816ba12dc1.jpg",
+           "https://bringatrailer.com/wp-content/uploads/2020/02/2000_bmw_528i_1583417519ffabbf2e1b29E720047-B6C6-463A-8779-46BED51D0ED6_1_105_c.jpeg?fit=909%2C606",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBROkZW8VvChoFpTRRnlIu_Db56WUfuAJaJQ&s"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    },
+
+    {
+      "id": 12,
+      "name": " Tesla Elon Musk",
+      "description": "Xe của tỷ phú giàu nhất hành tinh.!",
+      "price": 20000,
+      "oldPrice": 10000,
+      "rating": 4.8,
+      "reviews": "290",
+      "isBestseller": true,
+      "inStock": true,
+      "quantity": 97,
+      "colors": [
+        {
+          "name": "White",
+          "code": "#f0f0f0",
+          "imgs": [
+           "https://xehay.vn/uploads/images/2022/1/01/xehay-tesla-model-x-040122-1.jpg",
+           "https://ditruiec.com/public/upload/tesla-model-y.jpg",
+           "https://cand.com.vn/Files/Image/hientk/2018/10/22/4a102692-1f7f-4215-98c1-a97a1f60899d.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000",
+          "imgs": [
+           "https://vcdn1-vnexpress.vnecdn.net/2025/11/17/Tesla-Model-Y-1-1763348171-1704-1763348321.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=4PCsHrwqsJRdiFY_CJ_KnA",
+           "https://giaxeoto.vn/admin/upload/images/resize/640-tesla-model-s-2025-co-gi-moi.jpg",
+           "https://cdn.tgdd.vn/hoi-dap/1384408/xe-dien-tesla-cua-nuoc-nao-xe-tesla-co-tot-khong-co-nen-3-800x450.jpg"
+          ]
+        },
+        {
+          "name": "Black",
+          "code": "#000000",
+          "imgs": [
+           "https://cdn.tuoitrethudo.vn/stores/news_dataimages/tuoitrethudocomvn/122017/29/10/xe-dien-tesla-model-3-manh-me-hon-nho-goi-do-sac-toi-den-tu-dau-toi-chan-03-.7688.JPG",
+           "https://cdn.tienphong.vn/images/a6bf4f60924201126af6849ca45a3980cc5a7ec882f125e0486f4a3655f853b6d6969e5f8d5f736382f97f43797e7075755790f872254cf614d2b4b03e7a805a/1034054-1811.jpg",
+           "https://bhd.1cdn.vn/2024/12/21/static-images.vnncdn.net-vps_images_publish-000001-000003-2024-12-21-_w-tesla-model-s-1jpg-62614.jpg"
+          ]
+        },
+        {
+          "name": "Green",
+          "code": "#008000",
+          "imgs": [
+           "https://static-images.vnncdn.net/vps_images_publish/000001/000003/2025/8/25/ceo-xiaomi-bat-ngo-keu-goi-khach-hang-mua-xe-doi-thu-tesla-1628.jpg?width=500&s=gnkhii80ecR7yYmOjh41CQ",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-16u-RwKunm8O44cw_SboyC2FpXhlrG2Q1g&s",
+           "https://cafefcdn.com/thumb_w/640/203337114487263232/2023/5/30/avatar1685460985674-16854609859481987760587-0-25-369-615-crop-16854610151281194508452.png"
+          ]
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF",
+          "imgs": [
+           "https://autopro8.mediacdn.vn/zoom/600_315/134505113543774208/2023/12/8/avatar1702020314891-1702020315077929710172-0-0-314-600-crop-1702020403257489415227.jpeg",
+           "https://media.auto5.vn/files/maihuong/2024/08/06/16-074206.jpg",
+           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSanwp0bYKZFJxYJA2UAAzGvh80HfxhyzrAzg&s"
+          ]
+        }
+      ],
+      "sizes": ["4 Ghế", "7 Ghế", "12 Ghế", "16 Ghế"]
+    }
+
+  ]
+}
+

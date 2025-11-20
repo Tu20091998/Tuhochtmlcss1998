@@ -29,7 +29,9 @@
       "Giải quyết vấn đề",
       "Làm việc nhóm (Scrum)",
       "Quản lý thời gian",
-      "Khả năng thích nghi"
+      "Khả năng thích nghi",
+      "Tiếng anh văn phòng",
+      "Lên kế hoạch làm việc"
     ],
     "imageVarriant": [
       "https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/531491958_122272624880227192_6939438269720427805_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=lj6MTN1zmvAQ7kNvwHH-imY&_nc_oc=AdkPSDSoxa6HvmgKJc17oz9Y-QQxRXh3WV9rctQ4ebnJeIYuiY3d5JsBqM4Ywz2DPac&_nc_zt=23&_nc_ht=scontent.fdad3-5.fna&_nc_gid=eDFK14TBrI_gVPYTk_ZRxg&oh=00_AfgiDSAz8ZSZMl5-Smx8y2PZbVWLQ55th2mOM1v1WYEVrw&oe=69224518",
@@ -121,6 +123,16 @@
       "summary": "Đánh giá ưu nhược điểm của hai framework CSS phổ biến khi áp dụng vào một dự án Front-end hiện đại.",
       "date": "20/10/2025",
       "content": "Nội dung chi tiết về kích thước bundle, tốc độ phát triển và khả năng tùy chỉnh..."
+    }
+  ],
+  "messages": [
+    {
+      "id": "1d47",
+      "name": "Nguyễn Phi Trường",
+      "email": "truong8386@gmail.com",
+      "subject": "Dự án Web làm bánh",
+      "message": "Tôi rất vui khi được hợp tác với bạn !",
+      "timestamp": "2025-11-19T14:49:34.358Z"
     }
   ]
 }

@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted, defineAsyncComponent} from 'vue';
 
+//json-server --watch db.json --port 3000
+
 // Import Components
 import HeaderComponent from './components/Header.vue';
 import FooterComponent from './components/Footer.vue';
 import Home from './components/Home.vue';
 import Skills from './components/Skills.vue';
 import Contact from './components/Contact.vue';
+
 // Các trang còn lại
 const DetailInfo = defineAsyncComponent(() => import('./components/DetailInfo.vue'));
 const Articles = defineAsyncComponent(() => import('./components/Articles.vue'));
@@ -18,22 +21,23 @@ const apiBaseUrl = 'http://localhost:3000';
 
 // Dữ liệu dự phòng (Fallback data - dùng khi API lỗi hoặc chưa chạy)
 const portfolioData = ref({
-    personal: { name: "Đang Tải...", title: "...", avatar: "https://placehold.co/150x150/9CA3AF/ffffff?text=Loading" },
+    personal: { name: "Đang Tải...", title: "...", avatar: "https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/474443694_122215494704227192_8696271321617163636_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=TJAbx1RLIf8Q7kNvwEvMJGX&_nc_oc=AdkrmzGhjPkI79BrNjHq4OijWF3eRCieWtvgo9KzNpk2HVVn8CSOEIc4Bvwi0_ljO3A&_nc_zt=23&_nc_ht=scontent.fdad3-1.fna&_nc_gid=0P289ub5PZLifSKYAo7WdQ&oh=00_AfhZS6lMVVyMLj94nywJl3h0Zwh1SRxGeA_5NT_usAvRUg&oe=69239FD4" },
     education: [], experience: [], projects: [], articles: [],
 });
 
-// --- LOGIC GỌI API VỚI THỬ LẠI ---
-const fetchWithRetry = async (url: string, retries: number = 3): Promise<any> => {
-    for (let i = 0; i < retries; i++) {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return await response.json();
-        } catch (error) {
-            console.warn(`Thử lần ${i + 1} thất bại cho ${url}. Thử lại sau ${2 ** i}s...`);
-            if (i === retries - 1) throw error;
-            await new Promise(resolve => setTimeout(resolve, 1000 * (2 ** i)));
+// Gọi api từ db.json
+const apiFetch = async (url: string): Promise<any> => {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Lỗi HTTP! Status: ${response.status} cho URL: ${url}`);
         }
+
+        return await response.json();
+        
+    } catch (error) {
+        console.error(`Lỗi khi thực hiện fetch đến ${url}:`, error);
+        throw error; // Ném lỗi để bên ngoài có thể xử lý tiếp
     }
 };
 
@@ -41,26 +45,26 @@ const fetchData = async () => {
     isLoading.value = true;
     try {
         const [personal, education, experience, projects, articles] = await Promise.all([
-            fetchWithRetry(`${apiBaseUrl}/personal`),
-            fetchWithRetry(`${apiBaseUrl}/education`),
-            fetchWithRetry(`${apiBaseUrl}/experience`),
-            fetchWithRetry(`${apiBaseUrl}/projects`),
-            fetchWithRetry(`${apiBaseUrl}/articles`),
+            apiFetch(`${apiBaseUrl}/personal`),
+            apiFetch(`${apiBaseUrl}/education`),
+            apiFetch(`${apiBaseUrl}/experience`),
+            apiFetch(`${apiBaseUrl}/projects`),
+            apiFetch(`${apiBaseUrl}/articles`),
         ]);
 
         // Cập nhật dữ liệu từ API
         portfolioData.value = { personal, education, experience, projects, articles };
+
         console.log("Dữ liệu đã được tải thành công từ API.");
 
     } catch (error) {
         console.error("Lỗi khi tải dữ liệu từ API. Sử dụng dữ liệu Mock Fallback.");
-        // Nếu lỗi, giữ nguyên dữ liệu dự phòng ban đầu
     } finally {
         isLoading.value = false;
     }
 };
 
-// --- LIFECYCLE HOOKS ---
+// --- Đảm bảo khi trang được load hết mới gọi api lấy dữ liệu ---
 onMounted(fetchData);
 
 // --- HÀM CHUYỂN TRANG ---
@@ -98,7 +102,6 @@ const changeView = (view: string) => {
                 
                 <div v-else class="text-center py-5">
                     <h1 class="h3 fw-bold text-gray-800">404 - Trang không tìm thấy</h1>
-                    <!-- Sử dụng Bootstrap button class -->
                     <button @click="changeView('Home')" class="btn btn-primary mt-4">Về Trang Chủ</button>
                 </div>
             </div>

@@ -50,7 +50,6 @@
                     
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <!-- Ép kiểu an toàn cho selectedArticle -->
                         <h5 class="modal-title fs-5 fw-bold text-primary" id="articleDetailModalLabel">{{ (selectedArticle as any).title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -64,9 +63,6 @@
                         <div class="article-content text-dark">
                             <p>Đây là phần nội dung chi tiết của bài viết <strong>"{{ (selectedArticle as any).title }}"</strong>.</p>
                             <p>{{ (selectedArticle as any).content }}</p>
-                            
-                            <h6 class="mt-4 fw-semibold text-info">Ghi chú Giai đoạn 1:</h6>
-                            <p class="small text-secondary">Nội dung này được lấy từ trường 'content' trong db.json. Trong Giai đoạn 2, bạn sẽ cần thay thế nội dung tĩnh này bằng HTML/Markdown chi tiết của bài viết được tải từ Backend.</p>
                         </div>
                     </div>
                     

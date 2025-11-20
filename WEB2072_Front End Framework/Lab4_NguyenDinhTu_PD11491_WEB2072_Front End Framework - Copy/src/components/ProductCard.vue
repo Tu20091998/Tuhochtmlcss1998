@@ -1,22 +1,27 @@
 <template>
 <div>
-    <div class="card border-0 shadow-sm p-4 rounded-4" style="max-width: 600px; margin: auto; background: #f5f7ff; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);">
-        <div id="carouselExample" class="carousel slide" ref="carouselRef">
-            <div class="carousel-inner">
-                <div class="carousel-item active" 
-                v-for="(img, index) in allImages" style="aspect-ratio: 16 / 9; overflow: hidden;"
-                :key="index">
-                    <img :src="img" class="d-block" alt="ProductImage" style="object-fit: contain; width: 100%; height: auto;">
+    <div class="card border-0 shadow-sm p-4 rounded-4 " style="width: 100%; margin: auto; background: #f5f7ff; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);">
+
+        <div class="card border-0 shadow-sm p-2 rounded-4" style=" background: #f5f7ff; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);">
+            <div :id="`carousel-${props.id}`" class="carousel slide" ref="carouselRef"> 
+                <div class="carousel-inner">
+                    <div class="carousel-item active" 
+                    v-for="(img, index) in allImages" style="aspect-ratio: 16 / 9; overflow: hidden;"
+                    :key="index">
+                        <img :src="img" class="d-block" alt="ProductImage" style="object-fit: contain; width: 100%; height: auto;">
+                    </div>
                 </div>
+
+                <button class="carousel-control-prev" type="button" :data-bs-target="`#carousel-${props.id}`" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" :data-bs-target="`#carousel-${props.id}`" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
 
         <!-- Giá -->
@@ -122,10 +127,9 @@
 </template>
 
 <script setup>
-import { ref, computed, onUnmounted, onMounted, reactive, watch } from 'vue'
-
-//khai báo prop để nhận thông tin từ trang app.vue
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 const props = defineProps({
+    id: [String, Number],
     name: String,
     description: String,
     price: Number,
@@ -137,70 +141,76 @@ const props = defineProps({
     colors: Array,
     sizes: Array,
     quantity: Number
-})
+});
 
-//khi chọn thay đổi số lượng thì log ra số lượng vừa thay đổi
+// selectedColor an toàn
+const selectedColor = ref(props.colors?.[0] ?? null);
+
+// All images an toàn
+const allImages = computed(() => selectedColor.value?.imgs ?? []);
+
+// selectedSize đúng
+const selectedSize = ref(null);
+
+// Điều kiện mua
+const canBuy = computed(() =>
+    selectedColor.value && selectedSize.value && props.quantity > 0 && props.inStock
+);
+
+// chọn size
+function selectSize(size) {
+    selectedSize.value = size;
+    console.log("Size đã chọn:", size);
+}
+
 watch(()=> props.quantity, (newValue, oldValue)=>{
     if(newValue != oldValue){
         console.log("Giá trị của số lượng là: " + newValue);
     }
 });
 
+//truy cập vào carousel
+let carouselInstance = null;
+const carouselRef = ref(null);
 
-//khi thông tin được điền đầy đủ và điều kiện thoả mãn thì cho đặt mua
-const selectedColor = ref(props.colors[0]);
-
-//lấy toàn bộ mảng hình ảnh
-const allImages = computed(() => selectedColor.value.imgs);
-
-const canBuy = computed(() =>
-    selectedColor.value && selectedSize.value && props.quantity > 0 && props.inStock
-)
-
-//gọi hàm để điều khiển carousel
-let carouselInstance = null
-const carouselRef = ref(null)
 onMounted(() => {
-    // Khởi tạo Bootstrap Carousel
-    carouselInstance = new bootstrap.Carousel(carouselRef.value)
-})
+    if (carouselRef.value) {
+        carouselInstance = new bootstrap.Carousel(carouselRef.value);
+    }
+});
 
+//hàm chọn màu dựa theo carousel
 function selectColor(color) {
-    selectedColor.value = color
+    selectedColor.value = color;
 
-    //khi chọn màu thì in ra màu đang được chọn
-    console.log("Màu đang được chọn là: "+ selectedColor.value.name);
-    console.log("Mảng hình ảnh đang được chọn là: ", selectedColor.value.imgs);
+    console.log("Màu chọn:", color.name);
+    console.log("Mảng hình ảnh đang được chọn: ",color.imgs);
 
-    const colorStartIndex = props.colors.indexOf(color);
+    const idx = props.colors.indexOf(color);
 
-    // Chuyển carousel đến ảnh đầu của màu
-    carouselInstance.to(colorStartIndex)
-}
-
-
-//chọn size
-const selectedSize = ref(props.sizes);
-function selectSize(size) {
-    selectedSize.value = size
-    console.log("Size đang được chọn là: "+ selectedSize.value);
-}
-
-//khi thay đổi số lượng
-const emit = defineEmits(['update:quantity']);
-
-function increaseQty() {
-    emit('update:quantity',props.quantity + 1);
-}
-
-function decreaseQty() {
-    if (props.quantity > 1) {
-        emit('update:quantity',props.quantity - 1);
+    if (carouselInstance) {
+        carouselInstance.to(idx);
+    } else {
+        console.warn("Carousel chưa khởi tạo, delay 100ms");
+        setTimeout(() => {
+            if (carouselInstance) carouselInstance.to(idx);
+        }, 100);
     }
 }
 
-//hiển thị nếu đặt được hàng
-function buyNow() {
-    alert(`Đã đặt hàng: ${props.name} (${selectedSize.value})`)
+// số lượng
+const emit = defineEmits(['update:quantity']);
+
+function increaseQty() {
+    emit('update:quantity', props.quantity + 1);
 }
+
+function decreaseQty() {
+    if (props.quantity > 1) emit('update:quantity', props.quantity - 1);
+}
+
+function buyNow() {
+    alert(`Đã đặt hàng: ${props.name} (${selectedSize.value})`);
+}
+
 </script>

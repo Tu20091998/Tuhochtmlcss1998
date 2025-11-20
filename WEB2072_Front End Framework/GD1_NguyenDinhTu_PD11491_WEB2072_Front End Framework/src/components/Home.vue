@@ -9,9 +9,8 @@
     });
 
     const emit = defineEmits(['changeView']);
-
-    // Lấy 2 bài viết nổi bật
-    const featuredArticles = computed(() => props.portfolioData.articles.slice(0, 2));
+    
+    const featuredArticles = computed(() => props.portfolioData.articles);
 </script>
 
 <template>

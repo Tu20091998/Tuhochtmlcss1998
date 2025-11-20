@@ -1,7 +1,5 @@
 <script setup lang="ts">
 
-// SỬA LỖI TS: personalData được định nghĩa là Object và có thể là null/undefined khi tải.
-// Đã thêm Optional Chaining trong template để truy cập an toàn.
 const props = defineProps({
     currentView: String, 
     personalData: {
@@ -34,16 +32,15 @@ const navItems = [
                     {{ (personalData as any)?.name || 'Portfolio' }}
                 </a>
                 
-                <!-- Toggle Button cho Mobile (Sử dụng Collapse) -->
+                <!-- Toggle Button cho Mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Menu Desktop & Mobile (Sử dụng Collapse) -->
+                <!-- Menu Desktop & Mobile-->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li v-for="item in navItems" :key="item.view" class="nav-item mx-2">
-                            <!-- Thêm data-bs-toggle/target để đóng menu sau khi click trên mobile -->
                             <a @click="emit('changeView', item.view)"
                                 data-bs-toggle="collapse" 
                                 data-bs-target="#navbarNav" 

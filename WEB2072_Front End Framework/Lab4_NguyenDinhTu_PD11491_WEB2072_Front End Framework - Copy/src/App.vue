@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import ProductCard from './components/ProductCard.vue'
-
-const loading = ref(true)
-const products = ref<any[]>([])      // mảng sản phẩm
-const quantities = ref<number[]>([]) // quantity cho từng sản phẩm
-
-onMounted(async () => {
-  const res = await fetch("http://localhost:3000/products")
-  const data = await res.json()
-  products.value = data              // lấy tất cả sản phẩm
-  quantities.value = products.value.map(() => 1) // khởi tạo quantity mặc định
-  loading.value = false
-})
+  import { ref, onMounted } from 'vue'
+  import ProductCard from './components/ProductCard.vue'
+  
+  const loading = ref(true)
+  const products = ref<any[]>([])      // mảng sản phẩm
+  const quantities = ref<number[]>([]) // quantity cho từng sản phẩm
+  
+  onMounted(async () => {
+    const res = await fetch("http://localhost:3000/products")
+    const data = await res.json()
+    products.value = data // lấy tất cả sản phẩm
+    quantities.value = products.value.map(() => 0) // khởi tạo quantity mặc định
+    loading.value = false
+  })
 </script>
 
 <template>

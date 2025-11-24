@@ -1,27 +1,22 @@
 <template>
 <div>
     <div class="card border-0 shadow-sm p-4 rounded-4 " style="width: 100%; margin: auto; background: #f5f7ff; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);">
-
-        <div class="card border-0 shadow-sm p-2 rounded-4" style=" background: #f5f7ff; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);">
-            <div :id="`carousel-${props.id}`" class="carousel slide" ref="carouselRef"> 
-                <div class="carousel-inner">
-                    <div class="carousel-item active" 
-                    v-for="(img, index) in allImages" style="aspect-ratio: 16 / 9; overflow: hidden;"
-                    :key="index">
-                        <img :src="img" class="d-block" alt="ProductImage" style="object-fit: contain; width: 100%; height: auto;">
-                    </div>
+        <div :id="`carousel-${props.id}`" class="carousel slide" ref="carouselRef"> 
+            <div class="carousel-inner">
+                <div class="carousel-item active" 
+                v-for="(img, index) in allImages" style="aspect-ratio: 16 / 9; overflow: hidden;"
+                :key="index">
+                    <img :src="img" class="d-block" alt="ProductImage" style="object-fit: contain; width: 100%; height: auto;">
                 </div>
-
-                <button class="carousel-control-prev" type="button" :data-bs-target="`#carousel-${props.id}`" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-
-                <button class="carousel-control-next" type="button" :data-bs-target="`#carousel-${props.id}`" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
+            <button class="carousel-control-prev" type="button" :data-bs-target="`#carousel-${props.id}`" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" :data-bs-target="`#carousel-${props.id}`" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
         <!-- Giá -->
@@ -63,7 +58,7 @@
                         boxShadow: selectedColor?.name === color.name ? `0 0 10px 3px ${color.code}` : 'none' 
                     }"
                     class="rounded-circle"
-                    style="width: 32px; height: 32px; cursor: pointer;"
+                    style="width: 2rem; height: 2rem; cursor: pointer;"
                     @click="selectColor(color)">
                 </div>
             </div>
@@ -77,7 +72,7 @@
                     v-for="size in props.sizes"
                     :key="size"
                     @click="selectSize(size)"
-                    class="btn rounded-pill px-3 "
+                    class="btn rounded-pill px-2 "
                     :class="props.sizes === size ? 'btn-dark' : 'btn-outline-dark'">
                     {{ size }}
                 </button>
@@ -127,90 +122,90 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
-const props = defineProps({
-    id: [String, Number],
-    name: String,
-    description: String,
-    price: Number,
-    oldPrice: Number,
-    rating: Number,
-    reviews: String,
-    isBestseller: Boolean,
-    inStock: Boolean,
-    colors: Array,
-    sizes: Array,
-    quantity: Number
-});
-
-// selectedColor an toàn
-const selectedColor = ref(props.colors?.[0] ?? null);
-
-// All images an toàn
-const allImages = computed(() => selectedColor.value?.imgs ?? []);
-
-// selectedSize đúng
-const selectedSize = ref(null);
-
-// Điều kiện mua
-const canBuy = computed(() =>
-    selectedColor.value && selectedSize.value && props.quantity > 0 && props.inStock
-);
-
-// chọn size
-function selectSize(size) {
-    selectedSize.value = size;
-    console.log("Size đã chọn:", size);
-}
-
-watch(()=> props.quantity, (newValue, oldValue)=>{
-    if(newValue != oldValue){
-        console.log("Giá trị của số lượng là: " + newValue);
+    import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+    const props = defineProps({
+        id: [String, Number],
+        name: String,
+        description: String,
+        price: Number,
+        oldPrice: Number,
+        rating: Number,
+        reviews: String,
+        isBestseller: Boolean,
+        inStock: Boolean,
+        colors: Array,
+        sizes: Array,
+        quantity: Number
+    });
+    
+    // selectedColor an toàn
+    const selectedColor = ref(props.colors?.[0] ?? null);
+    
+    // All images an toàn
+    const allImages = computed(() => selectedColor.value?.imgs ?? []);
+    
+    // selectedSize đúng
+    const selectedSize = ref(null);
+    
+    // Điều kiện mua
+    const canBuy = computed(() =>
+        selectedColor.value && selectedSize.value && props.quantity > 0 && props.inStock
+    );
+    
+    // chọn size
+    function selectSize(size) {
+        selectedSize.value = size;
+        console.log("Size đã chọn:", size);
     }
-});
-
-//truy cập vào carousel
-let carouselInstance = null;
-const carouselRef = ref(null);
-
-onMounted(() => {
-    if (carouselRef.value) {
-        carouselInstance = new bootstrap.Carousel(carouselRef.value);
+    
+    watch(()=> props.quantity, (newValue, oldValue)=>{
+        if(newValue != oldValue){
+            console.log("Giá trị của số lượng là: " + newValue);
+        }
+    });
+    
+    //truy cập vào carousel
+    let carouselInstance = null;
+    const carouselRef = ref(null);
+    
+    onMounted(() => {
+        if (carouselRef.value) {
+            carouselInstance = new bootstrap.Carousel(carouselRef.value);
+        }
+    });
+    
+    //hàm chọn màu dựa theo carousel
+    function selectColor(color) {
+        selectedColor.value = color;
+    
+        console.log("Màu chọn:", color.name);
+        console.log("Mảng hình ảnh đang được chọn: ",color.imgs);
+    
+        const idx = props.colors.indexOf(color);
+    
+        if (carouselInstance) {
+            carouselInstance.to(idx);
+        } else {
+            console.warn("Carousel chưa khởi tạo, delay 100ms");
+            setTimeout(() => {
+                if (carouselInstance) carouselInstance.to(idx);
+            }, 100);
+        }
     }
-});
-
-//hàm chọn màu dựa theo carousel
-function selectColor(color) {
-    selectedColor.value = color;
-
-    console.log("Màu chọn:", color.name);
-    console.log("Mảng hình ảnh đang được chọn: ",color.imgs);
-
-    const idx = props.colors.indexOf(color);
-
-    if (carouselInstance) {
-        carouselInstance.to(idx);
-    } else {
-        console.warn("Carousel chưa khởi tạo, delay 100ms");
-        setTimeout(() => {
-            if (carouselInstance) carouselInstance.to(idx);
-        }, 100);
+    
+    // số lượng
+    const emit = defineEmits(['update:quantity']);
+    
+    function increaseQty() {
+        emit('update:quantity', props.quantity + 1);
     }
-}
-
-// số lượng
-const emit = defineEmits(['update:quantity']);
-
-function increaseQty() {
-    emit('update:quantity', props.quantity + 1);
-}
-
-function decreaseQty() {
-    if (props.quantity > 1) emit('update:quantity', props.quantity - 1);
-}
-
-function buyNow() {
-    alert(`Đã đặt hàng: ${props.name} (${selectedSize.value})`);
-}
+    
+    function decreaseQty() {
+        if (props.quantity > 1) emit('update:quantity', props.quantity - 1);
+    }
+    
+    function buyNow() {
+        alert(`Đã đặt hàng: ${props.name} (${selectedSize.value})`);
+    }
 
 </script>

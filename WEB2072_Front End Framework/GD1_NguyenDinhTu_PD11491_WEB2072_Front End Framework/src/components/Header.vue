@@ -4,7 +4,6 @@ const props = defineProps({
     currentView: String, 
     personalData: {
         type: Object,
-        // Đặt required: true, vì nó luôn được truyền từ App.vue (dù là mock hay API)
         required: true 
     }
 });
@@ -84,8 +83,6 @@ const navItems = [
 /* Custom style cho hiệu ứng màu gradient */
 .text-gradient {
     background-image: linear-gradient(45deg, #0575E6, #021B79);
-    -webkit-text-fill-color: transparent;
-
 }
 
 /* Hiệu ứng hover cho menu item */

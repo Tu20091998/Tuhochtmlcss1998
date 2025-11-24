@@ -17,7 +17,7 @@
     <section class="container-fluid max-width-center pt-3 g-5 mt-3">
         <!-- Thông tin cá nhân cơ bản -->
         <div class="row g-4 align-items-center justify-content-between bg-white p-4 p-md-5 rounded-3 shadow mb-5">
-            <div class="col-md-7 order-2 order-md-1 mt-3 mt-md-0">
+            <div class="col-md-7 order-2 mt-3">
                 <h1 class="fs-2 fs-md-1 fw-bolder text-dark">
                     Chào, tôi là <span>{{ portfolioData.personal.name }}</span>
                 </h1>
@@ -41,8 +41,8 @@
         <!-- Học vấn -->
         <div class="bg-white p-4 p-md-5 rounded-3 shadow mb-5">
             <h2 class="fs-3 fw-bold text-dark mb-4 border-bottom pb-2">Học vấn</h2>
-            <ul class="list-unstyled space-y-4">
-                <li v-for="edu in portfolioData.education" :key="edu.id" class="p-3 bg-light rounded-2 border-start border-4 border-info hover-shadow-md transition">
+            <ul class="list-unstyled">
+                <li v-for="edu in portfolioData.education" :key="edu.id" class="p-3 bg-light rounded-2 border-start border-4 border-info hover-shadow-md transition gap-2 mb-4">
                     <p class="fw-bold fs-6 text-dark">{{ edu.degree }}</p>
                     <p class="text-primary">{{ edu.institution }}</p>
                     <p class="small text-secondary">{{ edu.period }}</p>
@@ -55,10 +55,10 @@
             <h2 class="fs-3 fw-bold text-dark mb-4 border-bottom pb-2">Kinh nghiệm làm việc</h2>
             <ol class="list-unstyled position-relative ms-3 ps-3 border-start border-secondary">
                 <li v-for="exp in portfolioData.experience" :key="exp.id" class="mb-5 position-relative">
-                    <span class="position-absolute top-0 start-0 translate-middle badge rounded-circle bg-primary p-2 ring-white timeline-dot"></span>
+                    <span class="position-absolute top-0 start-0 translate-middle badge rounded-circle bg-primary"></span>
                     <h3 class="d-flex align-items-center mb-1 fs-5 fw-semibold text-dark">{{ exp.title }} <span class="badge bg-info-subtle text-info fw-medium ms-3">{{ exp.period }}</span></h3>
-                    <p class="d-block mb-2 small fw-normal text-secondary">{{ exp.company }}</p>
-                    <p class="text-base fw-normal text-secondary">{{ exp.description }}</p>
+                    <p class="d-block mb-2 small mt-3 fw-normal text-secondary">{{ exp.company }}</p>
+                    <p class="fw-normal text-secondary">{{ exp.description }}</p>
                 </li>
             </ol>
         </div>
@@ -141,16 +141,6 @@
 /* Kỹ năng */
 .fs-7 {
     font-size: 0.875rem; /* text-sm */
-}
-
-/* Timeline dot */
-.timeline-dot {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border: 4px solid white; /* ring-white */
-    z-index: 1;
 }
 
 /* Hiệu ứng chung */

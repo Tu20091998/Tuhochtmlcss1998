@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, defineAsyncComponent} from 'vue';
 
-//json-server --watch db.json --port 3001
+//json-server --watch db.json --port 3002
 
 // Import Components
 import HeaderComponent from './components/Header.vue';
@@ -17,7 +17,7 @@ const Articles = defineAsyncComponent(() => import('./components/Articles.vue'))
 // --- TRẠNG THÁI VÀ DỮ LIỆU ---
 const currentView = ref('Home');
 const isLoading = ref(true);
-const apiBaseUrl = 'http://localhost:3001';
+const apiBaseUrl = 'http://localhost:3002';
 
 // Dữ liệu dự phòng (Fallback data - dùng khi API lỗi hoặc chưa chạy)
 const portfolioData = ref({

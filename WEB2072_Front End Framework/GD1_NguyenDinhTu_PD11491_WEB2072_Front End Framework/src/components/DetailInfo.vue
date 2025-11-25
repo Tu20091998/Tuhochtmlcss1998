@@ -91,4 +91,8 @@ const props = defineProps({
 .transform-hover-scale:hover {
     transform: scale(1.03);
 }
+
+.list-group{
+    text-align: left;
+}
 </style>

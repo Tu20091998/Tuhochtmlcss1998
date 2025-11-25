@@ -11,7 +11,7 @@ const props = defineProps({
 <template>
     <!-- Footer: Nền tối, Margin Top lớn, Padding responsive -->
     <footer class="bg-dark text-white mt-5 p-4 p-md-5">
-        <div class="container-fluid max-width-center"> 
+        <div class="container-fluid"> 
             <div class="row g-4 g-md-5">
                 
                 <!-- 1. Thông tin liên hệ -->
@@ -74,7 +74,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.max-width-center {
+footer {
     width: 100%;
 }
 .icon-size {

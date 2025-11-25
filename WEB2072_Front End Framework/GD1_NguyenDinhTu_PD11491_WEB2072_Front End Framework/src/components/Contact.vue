@@ -8,11 +8,14 @@ const form = ref({
     message: ''
 });
 
+//node server.cjs
+
 const statusMessage = ref<string | null>(null);
 const isError = ref(false);
 const isSubmitting = ref(false); // Trạng thái gửi form
 
-const CONTACT_API_URL = 'http://localhost:3000/messages'; 
+//gọi cổng nodemailer
+const CONTACT_API_URL = 'http://localhost:3001/messages'; 
 
 const submitForm = async () => {
     statusMessage.value = null;

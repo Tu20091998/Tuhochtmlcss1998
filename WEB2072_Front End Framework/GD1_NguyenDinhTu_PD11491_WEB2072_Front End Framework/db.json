@@ -16,13 +16,9 @@
     },
     "hardSkills": [
       "Vue 3 / Composition API",
-      "JavaScript (ES6+)",
-      "Pinia / Vuex",
       "TypeScript",
-      "HTML5/CSS3 (Tailwind CSS, Bootstrap)",
-      "RESTful API",
+      "HTML5/CSS3/JavaScript (ES6+)",
       "Git & GitHub",
-      "PHP",
       "PHP MyAdmin"
     ],
     "softSkills": [
@@ -49,7 +45,7 @@
       "id": 1,
       "institution": "FPT Polytechnic Đà Nẵng",
       "address": "116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - Thành Phố Đà Nẵng",
-      "degree": "Cao đẳng Phát triển Phần mềm",
+      "degree": "Cao đẳng Ngành Công Nghệ Thông Tin",
       "period": "Fall 2025 - Present",
       "details": "Chuyên ngành Công Nghệ Thông Tin, tập trung vào lập trình Web Full-stack (MERN/MEVN)."
     },
@@ -58,7 +54,7 @@
       "institution": "Trường THPT Nguyễn Thái Học",
       "degree": "Tốt nghiệp THPT",
       "period": "2015 - 2017",
-      "details": "Đạt giải khuyến khích Môn Lịch sử",
+      "details": "Đạt danh hiệu Học sinh Giỏi cấp tỉnh môn Toán năm học 2016-2017.",
       "address": "Xã Chư Pưh - Tỉnh Gia Lai"
     }
   ],
@@ -68,7 +64,7 @@
       "title": "Thực tập sinh Front-end",
       "company": "Công ty Cổ phần Công nghệ FPT Complex",
       "period": "06/2027 - 12/2027",
-      "description": "Phát triển và bảo trì 3 module chính của hệ thống CRM nội bộ bằng Vue 3. Đóng góp vào việc tối ưu hóa hiệu suất giao diện, giảm thời gian tải trang 15%."
+      "description": "Tham gia phát triển giao diện người dùng cho dự án nội bộ sử dụng Vue 3, Pinia và Tailwind CSS, cải thiện hiệu suất tải trang lên đến 30%."
     },
     {
       "id": 2,
@@ -108,21 +104,24 @@
       "title": "Sức mạnh của Composition API trong Vue 3",
       "summary": "Phân tích cách Composition API giúp tổ chức code, tái sử dụng logic và làm việc với TypeScript hiệu quả hơn so với Options API.",
       "date": "15/11/2025",
-      "content": "Nội dung chi tiết về các hàm `ref`, `reactive`, `computed` và `watch`..."
+      "content": "Nội dung chi tiết về các hàm `ref`, `reactive`, `computed` và `watch`...",
+      "image": "https://cafedev.vn/wp-content/uploads/2024/03/cafedev_13af5262-ba14-4e0e-9985-4fa1717414fc.png" 
     },
     {
       "id": 2,
       "title": "Tối ưu hóa hình ảnh cho hiệu suất Web",
       "summary": "Hướng dẫn các kỹ thuật Lazy Loading, nén ảnh WebP và sử dụng `<picture>` element để tăng tốc độ tải trang.",
       "date": "01/11/2025",
-      "content": "Nội dung chi tiết về Web Performance và Core Web Vitals..."
+      "content": "Nội dung chi tiết về Web Performance và Core Web Vitals...",
+      "image": "https://bizflyportal.mediacdn.vn/bizflyportal/images/toi16244359751479.jpg"
     },
     {
       "id": 3,
       "title": "So sánh Tailwind CSS và Bootstrap trong dự án Vue",
       "summary": "Đánh giá ưu nhược điểm của hai framework CSS phổ biến khi áp dụng vào một dự án Front-end hiện đại.",
       "date": "20/10/2025",
-      "content": "Nội dung chi tiết về kích thước bundle, tốc độ phát triển và khả năng tùy chỉnh..."
+      "content": "Nội dung chi tiết về kích thước bundle, tốc độ phát triển và khả năng tùy chỉnh...",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhITuVqbWIe3RRkdE2y1vksJAklLJCq2e9AkefcwOMhCmQzxLO1Js4dVISIG_D9_aQlIuWq75Bs1KSYZUEMO-lNw5ZQKpv4Mdhr5GG_kZvLJ3ETGudQ6c7w-XKI64_pHJq5gZ1b-aB_ZoK2XzhCWfBp2mpXaM_cXpYj8RchazwhOI4ggqPAnayPygS2/s1920/2cxdh1tt2g3n55p13615%5B1%5D.jpg"
     }
   ],
   "messages": [

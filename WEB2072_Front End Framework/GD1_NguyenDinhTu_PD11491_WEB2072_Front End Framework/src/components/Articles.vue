@@ -38,6 +38,7 @@
                     
                     <h3 class="fs-5 fw-bold text-primary mb-2 hover-text-dark">{{ article.title }}</h3>
                     <p class="text-secondary mt-1">{{ article.summary }}</p>
+                    <img :src="article.image" :alt="'Ảnh minh họa bài viết'" class="img-fluid my-3 rounded-2 shadow-sm" v-if="article.image" style="max-height: 200px; object-fit: cover;">
                     <span class="small text-muted mt-2 d-block">Ngày đăng: {{ article.date }}</span>
                 </a>
             </div>
@@ -58,6 +59,7 @@
                     <div class="modal-body">
                         <p class="small text-muted mb-3">Ngày đăng: {{ (selectedArticle as any).date }}</p>
                         <p class="fs-6 fw-medium text-secondary mb-4">{{ (selectedArticle as any).summary }}</p>
+                        <img :src="(selectedArticle as any).image" :alt="'Ảnh minh họa bài viết'" class="img-fluid mb-4 rounded-2 shadow-sm" v-if="(selectedArticle as any).image" style="max-height: 200px; object-fit: cover;">
                         
                         <!-- Nội dung chi tiết -->
                         <div class="article-content text-dark">

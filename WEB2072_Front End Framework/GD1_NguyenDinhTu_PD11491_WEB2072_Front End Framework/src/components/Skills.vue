@@ -14,8 +14,8 @@ const props = defineProps({
         <!-- Học vấn chi tiết -->
         <div class="card bg-white p-4 p-md-5 rounded-3 shadow-lg mb-5">
             <h2 class="fs-3 fw-bold text-dark mb-4 border-bottom pb-2">Quá trình Học vấn</h2>
-            <ul class="list-unstyled space-y-4">
-                <li v-for="edu in portfolioData.education" :key="edu.id" class="p-3 border border-light-subtle rounded-3 shadow-sm hover-shadow-md transition">
+            <ul class="list-unstyled space-y-4 d-flex gap-4">
+                <li v-for="edu in portfolioData.education" :key="edu.id" class="p-3 border border-light-subtle rounded-3 shadow-sm hover-shadow-md transition w-50">
                     <p class="fw-bold fs-5 text-primary">{{ edu.degree }}</p>
                     <p class="fs-6 text-dark">{{ edu.institution }}</p>
                     <p class="small text-secondary">{{ edu.period }}</p>
@@ -32,7 +32,7 @@ const props = defineProps({
                 <div class="col-md-6">
                     <h3 class="fs-5 fw-semibold mb-3 text-primary">Kỹ năng cứng (Hard Skills)</h3>
                     <div class="d-flex flex-column gap-3">
-                        <div v-for="skill in portfolioData.personal.hardSkills" :key="skill" class="bg-light p-3 rounded-2 d-flex justify-content-between align-items-center">
+                        <div v-for="skill in portfolioData.personal.hardSkills" :key="skill" class="bg-light p-3 rounded-2 d-flex justify-content-between align-items-left">
                             <span class="fw-medium text-dark">{{ skill }}</span>
                             <!-- Placeholder cho Progress Bar Bootstrap -->
                             <div class="progress w-50" role="progressbar" aria-label="Skill level" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">

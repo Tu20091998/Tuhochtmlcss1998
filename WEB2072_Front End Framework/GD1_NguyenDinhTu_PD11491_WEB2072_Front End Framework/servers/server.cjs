@@ -28,7 +28,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Địa chỉ email cá nhân của bạn (người nhận thông báo)
-const MY_PERSONAL_EMAIL = 'tuanprosupe@gmail.com'; 
+const MY_PERSONAL_EMAIL = 'dinhtu20091998@gmail.com'; 
 
 // ===================================================================
 

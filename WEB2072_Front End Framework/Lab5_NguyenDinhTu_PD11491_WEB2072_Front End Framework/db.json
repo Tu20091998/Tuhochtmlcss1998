@@ -1,0 +1,48 @@
+{
+  "cartItems": [
+    { 
+      "id": "TNR001", 
+      "name": "Toner Chống Mụn", 
+      "category": "Toner", 
+      "price": 14.25, 
+      "quantity": 2, 
+      "imageUrl": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-358700002-1732605842_img_380x380_64adc6_fit_center.jpg", 
+      "description": "Sản phẩm chuyên biệt cho da dầu và da mụn. Công thức chứa 2% Salicylic Acid (BHA) giúp thẩm thấu sâu, loại bỏ bã nhờn, và làm sạch lỗ chân lông. Tinh dầu Tràm trà (Tea Tree Oil) làm dịu các nốt mụn sưng đỏ, giảm viêm hiệu quả. Toner giúp cân bằng pH, mang lại cảm giác sạch thoáng, không gây khô căng.", 
+      "size": "100ml" 
+    },
+    { 
+      "id": "RBT002", 
+      "name": "Toner Tăng Cường Rạng Rỡ", 
+      "category": "Toner", 
+      "price": 12.50, 
+      "quantity": 1, 
+      "imageUrl": "https://product.hstatic.net/200000793347/product/z4790822589080_543ee2d23c14478a2d97cfdd1b590da0_127a73689245453dbc5171344d3bfab2_master.jpg", 
+      "description": "Toner làm sáng da chứa Niacinamide và Vitamin C ổn định, giúp cải thiện kết cấu da, làm mờ thâm nám và đốm đen, mang lại làn da đều màu và căng bóng. Công thức dịu nhẹ, không cồn, giúp cân bằng độ ẩm tức thì, chuẩn bị tốt nhất cho các bước dưỡng tiếp theo.", 
+      "size": "100ml" 
+    },
+    { 
+      "id": "HYT003", 
+      "name": "Serum Dưỡng Ẩm Chuyên Sâu", 
+      "category": "Serum", 
+      "price": 13.00, 
+      "quantity": 1, 
+      "imageUrl": "https://dermalogica.com.vn/cdn/shop/files/dermalogica-vietnam-facial-oils-and-serums-30-ml-circular-hydration-serum-tinh-ch-t-c-p-m-chuyen-sau-circular-hydration-serum-31730966986957.png?v=1742373057", 
+      "description": "Serum cấp nước thế hệ mới với phức hợp Hyaluronic Acid đa phân tử và Ceramides. Cung cấp độ ẩm sâu tới tầng biểu bì, khóa ẩm, giúp da căng mọng, mịn màng suốt 24 giờ. Kết cấu lỏng nhẹ, thấm nhanh, không gây bết dính, lý tưởng cho mọi loại da, kể cả da nhạy cảm.", 
+      "size": "30ml" 
+    }
+  ],
+  "vouchers": [
+    { 
+      "code": "TONER10", 
+      "discount": 0.10, 
+      "applicableCategory": "Toner", 
+      "title": "Giảm 10% cho tất cả Toner" 
+    },
+    { 
+      "code": "SERUM20", 
+      "discount": 0.20, 
+      "applicableCategory": "Serum", 
+      "title": "Giảm 20% cho tất cả Serum" 
+    }
+  ]
+}

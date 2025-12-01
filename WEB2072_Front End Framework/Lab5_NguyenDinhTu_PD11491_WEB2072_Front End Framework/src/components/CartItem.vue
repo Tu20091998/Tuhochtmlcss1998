@@ -3,7 +3,13 @@
         <div class="flex-shrink-0 pt-1 me-3">
             <div class="d-flex align-items-start">
                 <!-- Checkbox -->
-                <input type="checkbox" class="cart-checkbox form-check-input me-3" checked />
+                <input 
+                type="checkbox" 
+                class="cart-checkbox form-check-input me-3"
+                :checked="item.isChecked" 
+                @change="emit('update-checked', item.id, $event.target.checked)"/>
+
+                <!-- Tên và Danh mục sản phẩm -->
                 <div class="d-flex flex-column text-start">
                     <p class="mb-0 fw-semibold text-dark">{{ item.name }}</p>
                     <p class="text-secondary mb-2" style="font-size: 0.85em;">{{ item.category }} Category</p>
@@ -68,7 +74,9 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits(['update-quantity']);
+// Định nghĩa sự kiện emit để thông báo thay đổi số lượng
+const emit = defineEmits(['update-quantity', 'update-checked']);
+
 </script>
 
 <style scoped>

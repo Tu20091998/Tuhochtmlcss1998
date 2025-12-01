@@ -1,25 +1,13 @@
 <template>
     <!-- 1. Tóm tắt Đơn hàng -->
-    <div class="card sticky-top shadow-lg border-0 rounded-4 p-4 mb-4" style="top: 1rem;">
+    <div class="card shadow-lg border-0 rounded-4 p-4 mb-4">
         <h2 class="fs-5 fw-bold text-dark mb-4 border-bottom pb-3">Tóm tắt đơn hàng</h2>
         
-        <!-- Chi tiết tính tiền từng sản phẩm (Lab 6) -->
+        <!-- Chi tiết tính tiền từng sản phẩm -->
         <div class="small text-secondary mb-3 border-bottom pb-3">
             <div v-for="item in cart" :key="item.id" class="d-flex justify-content-between mb-1">
                 <span class="text-muted">x{{ item.quantity }} {{ item.name }}</span>
                 <span class="fw-medium text-dark">${{ (item.price * item.quantity).toFixed(2) }}</span>
-            </div>
-        </div>
-
-        <!-- Phí giao hàng (Giữ lại giao diện theo ảnh mẫu) -->
-        <div class="small text-secondary mb-4 border-bottom pb-3">
-            <div class="d-flex justify-content-between mb-2">
-                <span>Giao ngay hôm nay chỉ với</span>
-                <span class="fw-medium text-dark">$20.00</span>
-            </div>
-            <div class="d-flex justify-content-between align-items-center text-muted" style="font-size: 0.75rem;">
-                <span>Giao đến:</span>
-                <span class="fw-medium">Thành phố Hồ Chí Minh</span>
             </div>
         </div>
 
@@ -43,7 +31,7 @@
             </div>
         </div>
 
-        <!-- Tổng đơn hàng (Lab 5, 6) -->
+        <!-- Tổng đơn hàng -->
         <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3 fs-5 fw-bold text-dark">
             <span>Tổng đơn hàng</span>
             <span class="text-custom-orange">${{ orderSummary.orderTotal.toFixed(2) }}</span>
@@ -59,7 +47,6 @@
                 type="text"
                 placeholder="Thêm mã giảm giá ở đây..."
                 v-model="voucherInput"
-                @input="voucherInput = voucherInput.toUpperCase()"
                 class="form-control rounded-start-pill"
             />
             <button
@@ -78,7 +65,7 @@
 
         <!-- Nút Thanh toán -->
         <button
-            @click="() => alert('Thanh toán thành công! Cảm ơn bạn đã mua hàng.')"
+            @click="notifyPayment"
             class="btn btn-custom-orange w-100 py-3 mt-2 rounded-3 fs-5"
         >
             Thanh toán Ngay
@@ -94,47 +81,57 @@ const props = defineProps({
     cart: { type: Array, required: true },
     vouchers: { type: Array, required: true },
     appliedVoucherCode: { type: String, default: null },
-    TAX_RATE: { type: Number, default: 0.08 },
+    taxRate: { type: Number, default: 0.08 },
 });
 
 const emit = defineEmits(['apply-voucher']);
 
 const voucherInput = ref('');
 const message = ref(null);
-const SHIPPING_FEE = 20.00; // Phí ship cố định (chỉ để hiển thị)
 
 // --- LOGIC TÍNH TOÁN ĐƠN HÀNG ---
 const orderSummary = computed(() => {
-    //bản chất là tìm voucher đã áp dụng từ props
+
+    //bản chất là so sánh mã voucher nhập vào với mã voucher đã áp dụng
     const appliedVoucher = props.vouchers.find(v => v.code === props.appliedVoucherCode) || null;
 
-    // 1. Tính Subtotal (Tổng phụ)
-    const subtotal = props.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    // 1. Tính Subtotal 
+    const subtotal = props.cart.reduce((acc, item) => {
+        //các mặt hàng khác không được chọn sẽ không tính vào tổng subtotal
+        return acc + (item.isChecked ? item.price * item.quantity : 0);
+    }, 0);
 
     // 2. Tính Discount
     let discount = 0;
     if (appliedVoucher) {
         discount = props.cart.reduce((acc, item) => {
+
+            // Chỉ áp dụng giảm giá cho các mặt hàng thuộc danh mục áp dụng của voucher
             if (item.category === appliedVoucher.applicableCategory) {
+                // Tính tổng giảm giá
                 return acc + item.price * item.quantity * appliedVoucher.discount;
             }
+
             return acc;
         }, 0);
     }
 
     // 3. Tính thuế (Tax)
     const amountAfterDiscount = subtotal - discount;
-    const tax = amountAfterDiscount > 0 ? amountAfterDiscount * props.TAX_RATE : 0;
+
+    //dòng này để tính thuế không âm
+    const tax = amountAfterDiscount > 0 ? amountAfterDiscount * props.taxRate : 0;
     
     // 4. Tính Order Total (Tổng đơn hàng)
-    const orderTotal = amountAfterDiscount + tax + SHIPPING_FEE;
+    const orderTotal = amountAfterDiscount + tax;
 
+    // Trả về các giá trị đã tính toán
     return { subtotal, discount, tax, orderTotal, appliedVoucher };
 });
 
 // --- LOGIC VOUCHER (Phát sự kiện lên App.vue) ---
 const handleVoucherSubmit = () => {
-    // Phát sự kiện lên App.vue để xử lý logic voucher phức tạp
+    // Phát sự kiện lên App.vue
     emit('apply-voucher', voucherInput.value.trim().toUpperCase());
 };
 
@@ -149,6 +146,24 @@ watch(() => props.appliedVoucherCode, (newCode) => {
         }
     }
 });
+
+// Hàm thông báo thanh toán
+const notifyPayment = () => {
+    //kiểm tra logic giỏ hàng trống
+    if (props.cart.length === 0) {
+        alert('Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm trước khi thanh toán.');
+        return;
+    }
+
+    //kiểm tra logic tổng đơn hàng âm hoặc bằng 0
+    if (orderSummary.value.orderTotal <= 0) {
+        alert('Tổng đơn hàng không hợp lệ. Vui lòng kiểm tra giỏ hàng của bạn.');
+        return;
+    }
+
+    // Hiển thị thông báo đặt hàng thành công
+    alert(`Cảm ơn bạn đã thanh toán đơn hàng trị giá $${orderSummary.value.orderTotal.toFixed(2)}!`);
+};
 </script>
 
 <style scoped>

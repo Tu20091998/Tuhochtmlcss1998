@@ -1,33 +1,5 @@
 <template>
   <div class="min-vh-100 bg-light font-sans">
-    <!-- Cần thêm Bootstrap CDN link trong index.html hoặc main.js -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-
-    <!-- Header (Tái tạo theo ảnh mẫu bằng Navbar Bootstrap) -->
-    <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm border-bottom">
-      <div class="container-xxl">
-        <a class="navbar-brand fs-4 fw-bold" href="#">Chăm sóc sắc đẹp</a>
-        
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav gap-4">
-            <li class="nav-item"><a class="nav-link text-secondary" href="#">Về chúng tôi</a></li>
-            <li class="nav-item"><a class="nav-link text-secondary" href="#">Sản phẩm</a></li>
-            <li class="nav-item"><a class="nav-link text-secondary" href="#">Câu hỏi thường gặp</a></li>
-          </ul>
-        </div>
-
-        <div class="d-flex align-items-center gap-3 text-secondary">
-          <!-- Icons (Search, Cart, User) -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-          <div class="position-relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6em;">{{ totalItems }}</span>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-        </div>
-      </div>
-    </header>
-
     <!-- Nội dung chính -->
     <main class="container-xxl py-5">
       <div class="row g-4">
@@ -43,7 +15,11 @@
             <!-- Thao tác chung -->
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <label class="d-flex align-items-center form-check-label text-secondary">
-                    <input type="checkbox" class="cart-checkbox form-check-input me-2" checked />
+                    <input 
+                    type="checkbox" 
+                    class="cart-checkbox form-check-input me-2" 
+                    :checked="selectAll" 
+                    @change="handleSelectAllChange"/>
                     Chọn tất cả sản phẩm
                 </label>
                 <div class="text-sm text-secondary">
@@ -52,7 +28,7 @@
                 </div>
             </div>
 
-            <!-- LOADING STATE (Lab 7) -->
+            <!-- LOADING STATE -->
             <div v-if="loading" class="d-flex justify-content-center align-items-center py-5 text-secondary">
               <div class="spinner-border text-primary me-3" role="status" style="width: 1.5rem; height: 1.5rem;"></div>
               <span>Đang tải dữ liệu giỏ hàng từ API...</span>
@@ -65,6 +41,7 @@
                 :key="item.id"
                 :item="item"
                 @update-quantity="handleQuantityChange"
+                @update-checked="handleCheckedChange"
               />
             </div>
           </div>
@@ -101,7 +78,9 @@ const vouchers = ref([]);
 
 const TAX_RATE = 0.08; // Thuế 8%
 
-// --- LOAD DỮ LIỆU THẬT TỪ API (Đã sửa lỗi URL) ---
+////json-server --watch db.json --port 3003
+
+// --- LOAD DỮ LIỆU THẬT TỪ API ---
 onMounted(async () => {
   loading.value = true;
   
@@ -139,20 +118,28 @@ onMounted(async () => {
   }
 });
 
+
 // --- HÀM XỬ LÝ SỰ KIỆN TỪ COMPONENT CON ---
 
 // Xử lý sự kiện thay đổi số lượng từ CartItem.vue
 const handleQuantityChange = (id, newQuantity) => {
+
+  // Tìm sản phẩm trong giỏ hàng theo id
   const item = cart.value.find(item => item.id === id);
+
+  // Cập nhật số lượng nếu tìm thấy
   if (item) {
     item.quantity = newQuantity; 
   }
 };
 
+
 // Xử lý sự kiện áp dụng voucher từ OrderSummary.vue
 const handleApplyVoucher = (code) => {
+  // Tìm voucher theo mã code
   const foundVoucher = vouchers.value.find(v => v.code === code);
 
+  // Nếu không tìm thấy voucher, bỏ áp dụng
   if (!foundVoucher) {
     appliedVoucherCode.value = null; 
     return;
@@ -161,6 +148,7 @@ const handleApplyVoucher = (code) => {
   // Kiểm tra áp dụng voucher theo danh mục sản phẩm
   const isApplicable = cart.value.some(item => item.category === foundVoucher.applicableCategory);
 
+  // Cập nhật mã voucher đã áp dụng hoặc bỏ áp dụng
   if (isApplicable) {
     appliedVoucherCode.value = foundVoucher.code;
   } else {
@@ -168,7 +156,43 @@ const handleApplyVoucher = (code) => {
   }
 };
 
-// --- TÍNH TOÁN (computed properties) ---
+
+// Xử lý sự kiện thay đổi trạng thái checked từ CartItem.vue
+const handleCheckedChange = (id, isChecked) => {
+  // Tìm sản phẩm trong giỏ hàng theo id
+  const item = cart.value.find(item => item.id === id);
+
+  // Cập nhật trạng thái checked nếu tìm thấy
+  if (item) {
+    item.isChecked = isChecked;
+  }
+};
+
+
+// Nếu như tất cả mặt hàng được check thì true
+const selectAll = computed(() => {
+    // Nếu giỏ hàng rỗng, trả về false
+    if (cart.value.length === 0) return false; 
+    
+    // Sử dụng .every() để kiểm tra xem TẤT CẢ các item đều có isChecked = true không
+    return cart.value.every(item => item.isChecked);
+});
+
+
+// Trong CartView.vue
+const handleSelectAllChange = (event) => {
+    // 1. Lấy trạng thái checked mới từ sự kiện (true nếu check, false nếu uncheck)
+    const newSelectAllState = event.target.checked; 
+
+    // 2. Duyệt qua toàn bộ mảng cart
+    cart.value.forEach(item => {
+        // 3. Cập nhật thuộc tính isChecked của TẤT CẢ sản phẩm
+        item.isChecked = newSelectAllState; 
+    });
+};
+
+
+//tính tổng số mặt hàng trong giỏ
 const totalItems = computed(() => {
     return cart.value.reduce((acc, item) => acc + item.quantity, 0);
 });

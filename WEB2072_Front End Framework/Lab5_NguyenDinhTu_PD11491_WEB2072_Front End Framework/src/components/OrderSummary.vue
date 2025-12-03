@@ -20,7 +20,7 @@
 
             <!-- Giảm giá  -->
             <div v-if="orderSummary.discount > 0" class="d-flex justify-content-between text-success mb-2">
-                <span>Giảm giá ({{ orderSummary.appliedVoucher?.code }})</span>
+                <span>Giảm giá({{ orderSummary.discountRate }}%)</span>
                 <span class="fw-semibold">-${{ orderSummary.discount.toFixed(2) }}</span>
             </div>
 
@@ -80,21 +80,31 @@ const props = defineProps({
   // Dữ liệu từ App.vue
     cart: { type: Array, required: true },
     vouchers: { type: Array, required: true },
-    appliedVoucherCode: { type: String, default: null },
     taxRate: { type: Number, default: 0.08 },
 });
 
-const emit = defineEmits(['apply-voucher']);
-
 const voucherInput = ref('');
 const message = ref(null);
+const appliedVoucher = ref(null);
+
+// Xử lý sự kiện khi người dùng nhấn nút Áp dụng voucher
+const handleVoucherSubmit = () => {
+    // Tìm voucher đã áp dụng dựa trên mã voucher
+    const appliedVoucherCheck = props.vouchers.find(v => v.code === voucherInput.value.trim()) || null;
+    
+    if (appliedVoucherCheck) {
+        appliedVoucher.value = appliedVoucherCheck;
+        message.value = { text: `Mã voucher đã áp dụng thành công cho mặt hàng ${appliedVoucherCheck.applicableCategory}.`, type: 'success' };
+    } else {
+        appliedVoucher.value = null;
+        message.value = { text: 'Mã voucher không hợp lệ hoặc không áp dụng được cho giỏ hàng này.', type: 'error' };
+    }
+};
+
 
 // --- LOGIC TÍNH TOÁN ĐƠN HÀNG ---
 const orderSummary = computed(() => {
-
-    //bản chất là so sánh mã voucher nhập vào với mã voucher đã áp dụng
-    const appliedVoucher = props.vouchers.find(v => v.code === props.appliedVoucherCode) || null;
-
+    
     // 1. Tính Subtotal 
     const subtotal = props.cart.reduce((acc, item) => {
         //các mặt hàng khác không được chọn sẽ không tính vào tổng subtotal
@@ -103,20 +113,20 @@ const orderSummary = computed(() => {
 
     // 2. Tính Discount
     let discount = 0;
-    if (appliedVoucher) {
+    if (appliedVoucher.value != null) {
         discount = props.cart.reduce((acc, item) => {
 
             // Chỉ áp dụng giảm giá cho các mặt hàng thuộc danh mục áp dụng của voucher
-            if (item.category === appliedVoucher.applicableCategory) {
+            if (item.category === appliedVoucher.value.applicableCategory) {
                 // Tính tổng giảm giá
-                return acc + item.price * item.quantity * appliedVoucher.discount;
+                return acc + item.price * item.quantity * appliedVoucher.value.discount;
             }
 
             return acc;
         }, 0);
     }
 
-    // 3. Tính thuế (Tax)
+    //tính số tiền sau khi giảm giá
     const amountAfterDiscount = subtotal - discount;
 
     //dòng này để tính thuế không âm
@@ -125,27 +135,14 @@ const orderSummary = computed(() => {
     // 4. Tính Order Total (Tổng đơn hàng)
     const orderTotal = amountAfterDiscount + tax;
 
+    // tìm % được giảm từ mã voucher đã áp dụng
+    const appliedVoucherCheck = props.vouchers.find(v => v.code === voucherInput.value.trim()) || null;
+    const discountRate = appliedVoucherCheck ? (appliedVoucherCheck.discount * 100).toFixed(0) : 0;
+
     // Trả về các giá trị đã tính toán
-    return { subtotal, discount, tax, orderTotal, appliedVoucher };
+    return { subtotal, discount, tax, orderTotal, discountRate };
 });
 
-// --- LOGIC VOUCHER (Phát sự kiện lên App.vue) ---
-const handleVoucherSubmit = () => {
-    // Phát sự kiện lên App.vue
-    emit('apply-voucher', voucherInput.value.trim().toUpperCase());
-};
-
-// Theo dõi props.appliedVoucherCode để hiển thị thông báo thành công/thất bại
-watch(() => props.appliedVoucherCode, (newCode) => {
-    // Chỉ cập nhật thông báo khi đã có input voucher
-    if (voucherInput.value.length > 0) {
-        if (newCode) {
-            message.value = { text: `Mã voucher đã áp dụng thành công.`, type: 'success' };
-        } else {
-            message.value = { text: 'Mã voucher không hợp lệ hoặc không áp dụng được cho giỏ hàng này.', type: 'error' };
-        }
-    }
-});
 
 // Hàm thông báo thanh toán
 const notifyPayment = () => {

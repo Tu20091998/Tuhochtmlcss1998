@@ -42,7 +42,7 @@
                     <div class="d-flex gap-2 align-items-center mb-3">
                         <!-- Giảm số lượng -->
                         <button
-                            @click="emit('update-quantity', item.id, Math.max(1, item.quantity - 1))"
+                            @click="emit('update-quantity', item.id, item.quantity - 1)"
                             :disabled="item.quantity <= 1"
                             class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
                             style="width: 32px; height: 32px; border-width: 1px;"

@@ -52,9 +52,7 @@
           <OrderSummary 
             :cart="cart"
             :vouchers="vouchers"
-            :applied-voucher-code="appliedVoucherCode"
             :tax-rate="TAX_RATE"
-            @apply-voucher="handleApplyVoucher"
           />
         </div>
       </div>
@@ -73,14 +71,13 @@ const BASE_API_URL = 'http://localhost:3003';
 // --- STATE QUẢN LÝ (ref) ---
 const cart = ref([]);
 const loading = ref(true);
-const appliedVoucherCode = ref(null);
 const vouchers = ref([]);
 
 const TAX_RATE = 0.08; // Thuế 8%
 
 ////json-server --watch db.json --port 3003
 
-// --- LOAD DỮ LIỆU THẬT TỪ API ---
+// --- LOAD DỮ LIỆU TỪ API ---
 onMounted(async () => {
   loading.value = true;
   
@@ -134,29 +131,6 @@ const handleQuantityChange = (id, newQuantity) => {
 };
 
 
-// Xử lý sự kiện áp dụng voucher từ OrderSummary.vue
-const handleApplyVoucher = (code) => {
-  // Tìm voucher theo mã code
-  const foundVoucher = vouchers.value.find(v => v.code === code);
-
-  // Nếu không tìm thấy voucher, bỏ áp dụng
-  if (!foundVoucher) {
-    appliedVoucherCode.value = null; 
-    return;
-  }
-
-  // Kiểm tra áp dụng voucher theo danh mục sản phẩm
-  const isApplicable = cart.value.some(item => item.category === foundVoucher.applicableCategory);
-
-  // Cập nhật mã voucher đã áp dụng hoặc bỏ áp dụng
-  if (isApplicable) {
-    appliedVoucherCode.value = foundVoucher.code;
-  } else {
-    appliedVoucherCode.value = null;
-  }
-};
-
-
 // Xử lý sự kiện thay đổi trạng thái checked từ CartItem.vue
 const handleCheckedChange = (id, isChecked) => {
   // Tìm sản phẩm trong giỏ hàng theo id
@@ -174,7 +148,7 @@ const selectAll = computed(() => {
     // Nếu giỏ hàng rỗng, trả về false
     if (cart.value.length === 0) return false; 
     
-    // Sử dụng .every() để kiểm tra xem TẤT CẢ các item đều có isChecked = true không
+    // Sử dụng .every() để kiểm tra xem tất cả các item đều có isChecked = true không
     return cart.value.every(item => item.isChecked);
 });
 

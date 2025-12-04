@@ -1,11 +1,15 @@
-<script setup lang="ts">
-// Định nghĩa props để nhận toàn bộ portfolioData
-const props = defineProps({
-    portfolioData: {
-        type: Object,
-        required: true
-    }
-});
+<script setup>
+    import { computed } from 'vue';
+    import { inject } from 'vue';
+
+    // ✅ Inject dữ liệu
+    const portfolioData = inject('portfolioData');
+
+    
+    // ✅ COMPUTED: Personal data được bảo vệ và sẵn sàng sử dụng
+    const personalData = computed(() => {
+        return portfolioData.value?.personal || { name: 'Portfolio', avatar: '', bio: '', title: '', hardSkills: [], softSkills: [] };
+    });
 </script>
 
 <template>
@@ -18,32 +22,32 @@ const props = defineProps({
                 
                 <!-- Cột Avatar -->
                 <div class="col-12 col-lg-4 d-flex justify-content-center">
-                    <img :src="portfolioData.personal.avatar" :alt="'Ảnh đại diện của ' + portfolioData.personal.name" class="profile-avatar rounded-circle border-4 border-primary shadow-lg">
+                    <img :src="personalData.avatar" :alt="'Ảnh đại diện của ' + personalData.name" class="profile-avatar rounded-circle border-4 border-primary shadow-lg">
                 </div>
                 
                 <!-- Cột Chi tiết -->
                 <div class="col-12 col-lg-8">
                     <!-- Tên và chức danh -->
-                    <h2 class="fs-1 fw-bold mb-2">{{ portfolioData.personal.name }}</h2>
-                    <p class="fs-5 text-secondary mb-4">{{ portfolioData.personal.title }}</p>
+                    <h2 class="fs-1 fw-bold mb-2">{{ personalData.name }}</h2>
+                    <p class="fs-5 text-secondary mb-4">{{ personalData.title }}</p>
                     
                     <!-- Thông tin liên hệ chi tiết -->
                     <div class="list-group list-group-flush small">
                         <div class="list-group-item d-flex border-0 px-0">
                             <span class="fw-semibold w-25">Email:</span> 
-                            <a :href="'mailto:' + portfolioData.personal.email" class="text-primary hover-text-dark">{{ portfolioData.personal.email }}</a>
+                            <a :href="'mailto:' + personalData.email" class="text-primary hover-text-dark">{{ portfolioData.personal.email }}</a>
                         </div>
                         <div class="list-group-item d-flex border-0 px-0">
                             <span class="fw-semibold w-25">Điện thoại:</span> 
-                            <span>{{ portfolioData.personal.phone }}</span>
+                            <span>{{ personalData.phone }}</span>
                         </div>
                         <div class="list-group-item d-flex border-0 px-0">
                             <span class="fw-semibold w-25">Địa chỉ:</span> 
-                            <span>{{ portfolioData.personal.address }}</span>
+                            <span>{{ personalData.address }}</span>
                         </div>
                         <div class="list-group-item d-flex border-0 px-0">
                             <span class="fw-semibold w-25">Giới thiệu:</span> 
-                            <span>{{ portfolioData.personal.bio }}</span>
+                            <span>{{ personalData.bio }}</span>
                         </div>
                     </div>
                 </div>
@@ -54,7 +58,7 @@ const props = defineProps({
         <div class="card bg-white p-4 p-md-5 rounded-3 shadow-lg">
             <h2 class="fs-3 fw-bold text-dark mb-4 border-bottom pb-2">Gallery Hình Ảnh Liên Quan</h2>
             <div class="row g-3">
-                <div v-for="n in portfolioData.personal.imageVarriant" :key="n" class="col-6 col-md-3" >
+                <div v-for="n in personalData.imageVarriant" :key="n" class="col-6 col-md-3" >
                     <img :src="'' + n" :alt="'Gallery Image ' + n" class="img-fluid rounded-3 shadow-sm transition transform-hover-scale" style="width: 20rem; height: 15rem;">
                 </div>
             </div>

@@ -108,7 +108,7 @@ const orderSummary = computed(() => {
     // 1. Tính Subtotal 
     const subtotal = props.cart.reduce((acc, item) => {
         //các mặt hàng khác không được chọn sẽ không tính vào tổng subtotal
-        return acc + (item.isChecked ? item.price * item.quantity : 0);
+        return acc + (item.isChecked ? (item.price * item.quantity) : 0);
     }, 0);
 
     // 2. Tính Discount

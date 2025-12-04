@@ -1,19 +1,15 @@
-<script setup lang="ts">
-    import { ref } from 'vue';
-    
-    // Định nghĩa props để nhận toàn bộ portfolioData
-    const props = defineProps({
-        portfolioData: {
-            type: Object,
-            required: true
-        }
-    });
+<script setup>
+    import { computed ,ref} from 'vue';
+    import { inject } from 'vue';
+
+    // ✅ Inject dữ liệu
+    const portfolioData = inject('portfolioData');
     
     // Sử dụng ref để lưu trữ bài viết đang được chọn
     const selectedArticle = ref(null);
     
     // Hàm mở Modal và lưu trữ bài viết được chọn
-    const showArticleDetail = (article: any) => {
+    const showArticleDetail = (article) => {
         selectedArticle.value = article;
     };
 </script>
@@ -26,7 +22,7 @@
         <div class="card p-4 p-md-5 rounded-3 shadow-lg mb-5">
             <h2 class="fs-3 fw-bold text-dark mb-4 border-bottom pb-2">Các Bài Viết</h2>
             <div class="list-group list-group-flush g-3">
-                <a v-for="article in (portfolioData as any).articles" 
+                <a v-for="article in portfolioData.articles" 
                     :key="article.id" 
                     href="#"
                     @click.prevent="showArticleDetail(article)"
@@ -51,20 +47,20 @@
                     
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h5 class="modal-title fs-5 fw-bold text-primary" id="articleDetailModalLabel">{{ (selectedArticle as any).title }}</h5>
+                        <h5 class="modal-title fs-5 fw-bold text-primary" id="articleDetailModalLabel">{{ selectedArticle.title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     
                     <!-- Modal Body -->
                     <div class="modal-body">
-                        <p class="small text-muted mb-3">Ngày đăng: {{ (selectedArticle as any).date }}</p>
-                        <p class="fs-6 fw-medium text-secondary mb-4">{{ (selectedArticle as any).summary }}</p>
-                        <img :src="(selectedArticle as any).image" :alt="'Ảnh minh họa bài viết'" class="img-fluid mb-4 rounded-2 shadow-sm" v-if="(selectedArticle as any).image" style="max-height: 200px; object-fit: cover;">
+                        <p class="small text-muted mb-3">Ngày đăng: {{ selectedArticle.date }}</p>
+                        <p class="fs-6 fw-medium text-secondary mb-4">{{ selectedArticle .summary }}</p>
+                        <img :src="selectedArticle.image" :alt="'Ảnh minh họa bài viết'" class="img-fluid mb-4 rounded-2 shadow-sm" v-if="selectedArticle.image" style="max-height: 200px; object-fit: cover;">
                         
                         <!-- Nội dung chi tiết -->
                         <div class="article-content text-dark">
-                            <p>Đây là phần nội dung chi tiết của bài viết <strong>"{{ (selectedArticle as any).title }}"</strong>.</p>
-                            <p>{{ (selectedArticle as any).content }}</p>
+                            <p>Đây là phần nội dung chi tiết của bài viết <strong>"{{ selectedArticle.title }}"</strong>.</p>
+                            <p>{{ selectedArticle.content }}</p>
                         </div>
                     </div>
                     

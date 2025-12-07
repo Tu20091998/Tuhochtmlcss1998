@@ -8,8 +8,8 @@ const app = express();
 const port = 3001; // Nodemailer Server
 
 // Cấu hình Middleware
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors()); // cho phép gửi từ ngoài vào
+app.use(bodyParser.json()); //dịch nội dung ra mã js
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // ===================================================================

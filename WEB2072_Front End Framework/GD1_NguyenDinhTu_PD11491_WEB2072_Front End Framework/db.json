@@ -30,10 +30,10 @@
       "Lên kế hoạch làm việc"
     ],
     "imageVarriant": [
-      "https://lh3.googleusercontent.com/pw/AP1GczPFkqxRpUgO7-iNmLHfsInPVGkKgcmVLtr6Zr9e3CnAots_lR02IsOPxMLdfEzsnzbjulr6FrW9S3KPO9aX8oOjPWL3AvKw806GT4gbVrqyR8ipxfLblJYnXT2gIdlgjN6r3eMAicgOLcZci3In3i2L=w855-h641-s-no-gm?authuser=0",
-      "https://lh3.googleusercontent.com/pw/AP1GczNNQrrKwhJhm-yAD22a_bPx8bUk0TqaMasBTUcOklBI0rsL3p5xZkxCakDocbiud1u85-YJ3y8UIBp7PteBXn3GWDCVPcxEXIZjed0g9Pm7xycSTOkWenvp5tU-UWQLwqD9075xPfwtGtZAZhNn_OQw=w876-h641-s-no-gm?authuser=0",
-      "https://lh3.googleusercontent.com/pw/AP1GczNhdSP-5WeXwlRCCEy9JB2y2Xqwr5jrQbUs50pXtEYktRnnYClVylictirrzi4ziUyYUnMDQI79Houc5by9AQMtzJ1L2aWD6G3bIyay3oH8K4ddvK-kN612JTEcEzyfUMUvV8VJ3EOESMizvpAxkawM=w855-h641-s-no-gm?authuser=0",
-      "https://lh3.googleusercontent.com/pw/AP1GczNpdg7ZQDhfyPwnKQEpqlq3JXyxOPcGu4t7_x07bzTPTRw4K-MTUIbUl9kudOEkhhC3vdLw6eytu6muaXSMqF-dWilH60RMecpfPimEfoAxD0wKqNcMkc8AhJby4daGpHhkNNdZ2oT5i8oyoCsbFyen=w961-h641-s-no-gm?authuser=0"
+      "https://s3-iconicjob-vn.imgix.net/prod/wp-content/uploads/2017/10/lap_trinh_vien_1.jpg",
+      "https://hinh365.com/wp-content/uploads/2020/06/43b11fe04a28b02b53a8941763562731.jpg",
+      "https://media.istockphoto.com/id/1295900106/vi/anh/c%C3%A1c-nh%C3%A0-khoa-h%E1%BB%8Dc-d%E1%BB%AF-li%E1%BB%87u-l%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-nam-s%E1%BB%AD-d%E1%BB%A5ng-m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay-ph%C3%A2n-t%C3%ADch-v%C3%A0-ph%C3%A1t-tri%E1%BB%83n.jpg?s=612x612&w=0&k=20&c=SWVSJ20V0nS0l1PqdX83aoj0EcJK_m-LXCzg9vQ9BBA=",
+      "https://tiasang.com.vn/wp-content/uploads/old/Portals/0/developer-dtt%201.jpg"
 
     ]
   },
@@ -135,7 +135,7 @@
     {
       "id": 1,
       "username": "admin_tu",
-      "passwordHash": "$2a$10$tJ9.v1Qv8XjE5oNf9tM.6.qBwT9g2J2H2G2F2E2D2C2B2A2",
+      "password": "123",
       "role": "admin"
     }
   ]

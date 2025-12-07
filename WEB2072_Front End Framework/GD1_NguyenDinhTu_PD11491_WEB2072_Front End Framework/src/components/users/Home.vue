@@ -19,7 +19,7 @@
 
 <template>
     <div v-if="isReady">
-        <section class="container-fluid max-width-center pt-3 g-5 mt-3">
+        <section class="container-fluid max-width-center g-5" style="margin-top: 8rem;">
             <div class="row g-4 align-items-center justify-content-between bg-white p-4 p-md-5 rounded-3 shadow mb-5">
                 <div class="col-md-7 order-2 mt-3">
                     <h1 class="fs-2 fs-md-1 fw-bolder text-dark">

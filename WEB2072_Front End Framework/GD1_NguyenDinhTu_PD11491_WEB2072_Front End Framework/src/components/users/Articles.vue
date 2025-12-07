@@ -21,7 +21,7 @@
         <!-- Danh sách bài viết -->
         <div class="card p-4 p-md-5 rounded-3 shadow-lg mb-5">
             <h2 class="fs-3 fw-bold text-dark mb-4 border-bottom pb-2">Các Bài Viết</h2>
-            <div class="list-group list-group-flush g-3">
+            <div class="list-group list-group-flush">
                 <a v-for="article in portfolioData.articles" 
                     :key="article.id" 
                     href="#"
@@ -30,7 +30,7 @@
                     data-bs-toggle="modal" 
                     data-bs-target="#articleDetailModal"
 
-                    class="list-group-item list-group-item-action p-4 border rounded-3 hover-shadow-md transition cursor-pointer">
+                    class="list-group-item list-group-item-action p-4 border rounded-3 hover-shadow-md transition cursor-pointer mb-2">
                     
                     <h3 class="fs-5 fw-bold text-primary mb-2 hover-text-dark">{{ article.title }}</h3>
                     <p class="text-secondary mt-1">{{ article.summary }}</p>

@@ -1,26 +1,25 @@
 <script setup>
-import { computed, inject, defineEmits } from 'vue'; // ✅ Thêm inject
+import { computed, inject } from 'vue'; // ✅ Thêm inject
 import { useRoute } from 'vue-router'; 
 
 
-const props = defineProps({ 
-    // Giữ lại props không phải dữ liệu chính
-    isLoggedIn: {
-        type: Boolean,
-        default: false
-    }
-});
-
-const emit = defineEmits(['logout']);
-
-// ✅ 1. INJECT DỮ LIỆU TỪ APP.VUE
+//1. INJECT DỮ LIỆU TỪ APP.VUE
 const portfolioData = inject('portfolioData');
+const securityState = inject('securityState');
+const isLoggedIn = securityState.isLoggedIn;
+const logout = securityState.logout;
 
-// ✅ 2. TẠO COMPUTED PROPERTY ĐỂ TRUY CẬP DỮ LIỆU CÁ NHÂN AN TOÀN
+//2. TẠO COMPUTED PROPERTY ĐỂ TRUY CẬP DỮ LIỆU CÁ NHÂN AN TOÀN
 const personalData = computed(() => {
-    // Luôn trả về object có cấu trúc cơ bản, ngay cả khi portfolioData là undefined
+    // Luôn trả về object có cấu trúc cơ bản
     return portfolioData.value?.personal || { name: 'Portfolio', avatar: '' };
 });
+
+// Hàm xử lý Đăng xuất
+const handleLogout = () => {
+    //Thực hiện logic thay đổi trạng thái đăng nhập
+    logout();
+};
 
 const route = useRoute();
 
@@ -33,9 +32,6 @@ const navItems = [
     { label: "Liên hệ", path: "/contact" },
 ];
 
-const handleLogout = () => {
-    emit('logout');
-};
 
 const isActive = (path) => {
     return route.path === path;
@@ -71,7 +67,7 @@ const navigateAndClose = (path) => {
             <div class="container-fluid container-md px-3 px-sm-3 px-lg-4 max-width-center"> 
                 <!-- Logo/Tên (Sử dụng computed personalData.name) -->
                 <router-link to="/" class="navbar-brand fs-4 fw-bold cursor-pointer py-3">
-                    <!-- ✅ Truy cập trực tiếp personalData.name (Vì nó là Computed Object) -->
+                    <!--  Truy cập trực tiếp personalData.name (Vì nó là Computed Object) -->
                     {{ personalData.name || 'Portfolio' }}
                 </router-link>
                 
@@ -100,7 +96,7 @@ const navigateAndClose = (path) => {
                         <!-- Admin Link -->
                         <li class="nav-item mx-2">
                             <router-link
-                                to="/admin"
+                                to="/admin/login"
                                 @click="collapseNavbar" 
                                 :class="{
                                     'border-bottom border-3 border-primary text-primary fw-semibold': isActive('/admin'),

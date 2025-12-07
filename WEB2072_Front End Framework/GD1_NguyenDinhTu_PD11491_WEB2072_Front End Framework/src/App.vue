@@ -71,19 +71,22 @@ const fetchData = async () => {
 const isLoggedIn = ref(false);
 const userRole = ref('guest'); 
 
+
+//xác định vai trò người dùng
 const loginAsAdmin = (role) => {
     isLoggedIn.value = true;
     userRole.value = role;
-    router.push({ name: 'Admin' }); 
+    router.push({ name: 'Dashboard' }); 
 };
 
+//hàm đăng xuất
 const logout = () => {
     isLoggedIn.value = false;
     userRole.value = 'guest';
     router.push({ name: 'Home' }); 
 };
 
-// **Cung cấp (Provide) dữ liệu và trạng thái cho toàn bộ ứng dụng**
+// Cung cấp (Provide) để inject dữ liệu đến trang con
 provide('portfolioData', portfolioData);
 provide('apiBaseUrl', apiBaseUrl);
 provide('fetchData', fetchData); 
@@ -94,23 +97,22 @@ onMounted(fetchData);
 </script>
 
 <template>
-    <div id="app-portfolio" class="d-flex flex-column min-vh-100"> 
-        <!-- Header: Cần dùng .value để truy cập personal data từ ref -->
+    <div id="app-portfolio" class="d-flex flex-column"> 
+        <!-- Header -->
         <HeaderComponent 
-            :personal-data="portfolioData.value?.personal || {}" 
-            :is-logged-in="isLoggedIn"   
-            @logout="logout" 
+            v-if="!isLoggedIn" :personal-data="portfolioData.value?.personal || {}" 
         />
         
-        <main class="flex-grow-1 page-content p-4 p-md-5"> 
-
+        <main class="flex-grow-1"> 
             <!-- Vùng hiển thị Component theo Route -->
             <router-view v-slot="{ Component }">
                 <component :is="Component" />
             </router-view>
         </main>
 
-        <!-- Footer: Cần dùng .value để truy cập personal data từ ref -->
-        <FooterComponent :personal-data="portfolioData.value?.personal || {}" />
+        <!-- Footer -->
+        <FooterComponent 
+            v-if="!isLoggedIn" :personal-data="portfolioData.value?.personal || {}" 
+        />
     </div>
 </template>

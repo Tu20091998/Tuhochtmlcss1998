@@ -33,10 +33,6 @@ const navItems = [
 ];
 
 
-const isActive = (path) => {
-    return route.path === path;
-};
-
 // Thêm hàm để đóng menu thủ công (Dựa trên ID 'navbarNav')
 const collapseNavbar = () => {
     // Chỉ đóng nếu menu đang mở (thường xảy ra trên mobile)
@@ -84,10 +80,6 @@ const navigateAndClose = (path) => {
                             <router-link
                                 :to="item.path"
                                 @click="collapseNavbar" 
-                                :class="{
-                                    'border-bottom border-3 border-primary text-primary fw-semibold': isActive(item.path),
-                                    'text-dark hover-text-secondary': !isActive(item.path)
-                                }"
                                 class="nav-link fs-6 cursor-pointer transition p-1 pt-3 pb-3">
                                 {{ item.label }}
                             </router-link>
@@ -98,20 +90,9 @@ const navigateAndClose = (path) => {
                             <router-link
                                 to="/admin/login"
                                 @click="collapseNavbar" 
-                                :class="{
-                                    'border-bottom border-3 border-primary text-primary fw-semibold': isActive('/admin'),
-                                    'text-dark hover-text-secondary': !isActive('/admin')
-                                }"
                                 class="nav-link fs-6 cursor-pointer transition p-1 pt-3 pb-3">
                                 Trang quản trị
                             </router-link>
-                        </li>
-
-                        <!-- Nút Đăng xuất (Chỉ hiện khi đăng nhập) -->
-                        <li v-if="isLoggedIn" class="nav-item ms-md-3 mt-2 mt-md-0">
-                            <button @click="handleLogout" class="btn btn-sm btn-outline-danger fw-medium rounded-pill">
-                                Đăng xuất
-                            </button>
                         </li>
                     </ul>
                 </div>

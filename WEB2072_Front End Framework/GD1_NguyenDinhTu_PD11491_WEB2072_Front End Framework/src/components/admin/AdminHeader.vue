@@ -35,7 +35,7 @@ const handleLogout = () => {
                 >
 
                 <!-- Nút Đăng xuất -->
-                <li class="nav-item ms-md-3 mt-2 mt-md-0">
+                <li v-if="isLoggedIn" class="nav-item ms-md-3 mt-2 mt-md-0">
                     <button @click="handleLogout" class="btn btn-sm btn-outline-danger fw-medium rounded-pill">
                         Đăng xuất
                     </button>

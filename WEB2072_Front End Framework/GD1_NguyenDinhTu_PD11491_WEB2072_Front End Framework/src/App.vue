@@ -1,19 +1,32 @@
 <script setup>
-import { ref, onMounted, provide} from 'vue';
+// =======================================================
+// 1. IMPORTS
+// =======================================================
+import { ref, onMounted, provide } from 'vue';
 import { useRouter } from 'vue-router'; 
 
-// Import Components chung
+// Components chung (User Layout)
 import HeaderComponent from './components/users/Header.vue';
 import FooterComponent from './components/users/Footer.vue';
 
-// Khởi tạo router hook
-const router = useRouter();
 
-// --- TRẠNG THÁI VÀ DỮ LIỆU ---
-const isLoading = ref(true);
+// =======================================================
+// 2. SETUP HOOKS & KHAI BÁO BIẾN CỐ ĐỊNH
+// =======================================================
+const router = useRouter();
 const apiBaseUrl = 'http://localhost:3002';
 
-// Dữ liệu dự phòng (Fallback data - dùng khi API lỗi hoặc chưa chạy)
+//json-server --watch db.json --port 3002
+
+// --- TRẠNG THÁI CHUNG ---
+const isLoading = ref(true);
+
+
+// =======================================================
+// 3. DỮ LIỆU & LOGIC LẤY API
+// =======================================================
+
+// Dữ liệu reactive (Chứa toàn bộ data từ API)
 const portfolioData = ref({
     personal: { 
         name: "Đang Tải...", 
@@ -27,7 +40,7 @@ const portfolioData = ref({
     articles: [],
 });
 
-// Gọi api từ db.json
+// Hàm Fetch API chung
 const apiFetch = async (url) => {
     try {
         const response = await fetch(url);
@@ -37,13 +50,11 @@ const apiFetch = async (url) => {
         return await response.json();
     } catch (error) {
         console.error(`Lỗi khi thực hiện fetch đến ${url}:`, error);
-        throw error; // Ném lỗi để bên ngoài có thể xử lý tiếp
+        throw error;
     }
 };
 
-//json-server --watch db.json --port 3002
-
-//lấy dữ liệu từng trang
+// Hàm tải dữ liệu chính
 const fetchData = async () => {
     isLoading.value = true;
     try {
@@ -55,7 +66,6 @@ const fetchData = async () => {
             apiFetch(`${apiBaseUrl}/articles`),
         ]);
 
-        // Cập nhật dữ liệu từ API
         portfolioData.value = { personal, education, experience, projects, articles };
         console.log("Dữ liệu đã được tải thành công từ API.");
 
@@ -66,53 +76,60 @@ const fetchData = async () => {
     }
 };
 
-
-// --- TRẠNG THÁI BẢO MẬT ---
+// =======================================================
+// 4. LOGIC BẢO MẬT (ADMIN)
+// =======================================================
 const isLoggedIn = ref(false);
 const userRole = ref('guest'); 
 
-
-//xác định vai trò người dùng
+// Hàm Đăng nhập Admin
 const loginAsAdmin = (role) => {
     isLoggedIn.value = true;
     userRole.value = role;
+    // Lưu ý: Đã có lỗi trong route name 'Dashboard'. 
+    // Nếu bạn đã sửa router thành 'AdminDashboard', hãy dùng nó.
     router.push({ name: 'Dashboard' }); 
 };
 
-//hàm đăng xuất
+// Hàm Đăng xuất
 const logout = () => {
     isLoggedIn.value = false;
     userRole.value = 'guest';
     router.push({ name: 'Home' }); 
 };
 
-// Cung cấp (Provide) để inject dữ liệu đến trang con
+
+// =======================================================
+// 5. PROVIDE & LIFECYCLE HOOKS
+// =======================================================
+
+// Cung cấp dữ liệu và hàm cho các component con
 provide('portfolioData', portfolioData);
 provide('apiBaseUrl', apiBaseUrl);
 provide('fetchData', fetchData); 
 provide('securityState', { isLoggedIn, userRole, loginAsAdmin, logout });
 
-// --- Đảm bảo khi trang được load hết mới gọi api lấy dữ liệu ---
+// Gọi API khi component được mount
 onMounted(fetchData);
 </script>
 
 <template>
-    <div id="app-portfolio" class="d-flex flex-column"> 
-        <!-- Header -->
+    <div id="app-portfolio" class="d-flex flex-column min-vh-100"> 
+        
         <HeaderComponent 
-            v-if="!isLoggedIn" :personal-data="portfolioData.value?.personal || {}" 
+            v-if="!isLoggedIn" 
+            :personal-data="portfolioData.value?.personal || {}" 
         />
         
         <main class="flex-grow-1"> 
-            <!-- Vùng hiển thị Component theo Route -->
             <router-view v-slot="{ Component }">
                 <component :is="Component" />
             </router-view>
         </main>
 
-        <!-- Footer -->
         <FooterComponent 
-            v-if="!isLoggedIn" :personal-data="portfolioData.value?.personal || {}" 
+            v-if="!isLoggedIn" 
+            :personal-data="portfolioData.value?.personal || {}" 
         />
     </div>
 </template>

@@ -8,6 +8,7 @@ import AdminFooter from './AdminFooter.vue'; // Thêm Footer
 
 const router = useRouter();
 
+
 // 1. INJECT DỮ LIỆU TỪ APP.VUE
 const portfolioData = inject('portfolioData'); 
 const apiBaseUrl = inject('apiBaseUrl');
@@ -15,7 +16,7 @@ const fetchData = inject('fetchData');
 const securityState = inject('securityState');
 
 // Lấy trạng thái đăng nhập
-const isLoggedIn = securityState.isLoggedIn;
+const isLoggedIn = securityState.isLoggedIn || null;
 
 // Guard: Kiểm tra và chuyển hướng nếu chưa đăng nhập
 watchEffect(() => {
@@ -25,7 +26,7 @@ watchEffect(() => {
     }
 });
 
-// Cung cấp lại dữ liệu/hàm xuống các trang con của Admin (Articles/Projects)
+// Cung cấp lại dữ liệu/hàm xuống các trang con của Admin
 provide('adminData', { 
     portfolioData, 
     apiBaseUrl, 
@@ -38,12 +39,18 @@ provide('adminData', {
 <template>
     <div class="admin-wrapper d-flex">
         <AdminSidebar />
-        <div class="admin-content flex-grow-1">
+        <div class="admin-content" style="width: 100%;">
             <AdminHeader/>
             <main class="admin-main p-4">
                 <router-view></router-view> 
             </main>
-
+            <AdminFooter/>
         </div>
     </div>
 </template>
+
+<style>
+    .admin-wrapper{
+        width: 100%;
+    }
+</style>

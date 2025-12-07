@@ -54,7 +54,7 @@
                     <!-- Modal Body -->
                     <div class="modal-body">
                         <p class="small text-muted mb-3">Ngày đăng: {{ selectedArticle.date }}</p>
-                        <p class="fs-6 fw-medium text-secondary mb-4">{{ selectedArticle .summary }}</p>
+                        <p class="fs-6 fw-medium text-secondary mb-4">{{ selectedArticle.summary }}</p>
                         <img :src="selectedArticle.image" :alt="'Ảnh minh họa bài viết'" class="img-fluid mb-4 rounded-2 shadow-sm" v-if="selectedArticle.image" style="max-height: 200px; object-fit: cover;">
                         
                         <!-- Nội dung chi tiết -->

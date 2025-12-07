@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue';
 
 const form = ref({
@@ -10,12 +10,15 @@ const form = ref({
 
 //node server.cjs
 
-const statusMessage = ref<string | null>(null);
+const statusMessage = ref();
 const isError = ref(false);
 const isSubmitting = ref(false); // Trạng thái gửi form
 
 //gọi cổng nodemailer
 const CONTACT_API_URL = 'http://localhost:3001/messages'; 
+
+// ➡️ Cổng Backend mới
+const CONTACT_API_DB = 'http://localhost:3002/messages';
 
 const submitForm = async () => {
     statusMessage.value = null;
@@ -39,7 +42,19 @@ const submitForm = async () => {
             // Dữ liệu form được gửi dưới dạng JSON
             body: JSON.stringify({
                 ...form.value,
-                timestamp: new Date().toISOString() // Thêm thời gian tạo
+                timestamp: new Date().toISOString()
+            }),
+        });
+
+         // 🚀 CHỈ MỘT LỜI GỌI API DUY NHẤT ĐẾN BACKEND (cổng 3002)
+        const response_db = await fetch(CONTACT_API_DB, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ...form.value,
+                timestamp: new Date().toISOString()
             }),
         });
 
@@ -55,7 +70,7 @@ const submitForm = async () => {
         // Reset form
         form.value = { name: '', email: '', subject: '', message: '' };
 
-    } catch (e: any) {
+    } catch (e) {
         isError.value = true;
         // Hiển thị lỗi từ server hoặc lỗi mạng
         statusMessage.value = `Gửi thất bại: ${e.message}. Vui lòng kiểm tra server Backend.`;

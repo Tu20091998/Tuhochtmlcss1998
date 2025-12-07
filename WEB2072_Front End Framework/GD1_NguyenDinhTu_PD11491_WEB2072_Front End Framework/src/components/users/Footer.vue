@@ -1,10 +1,10 @@
 <script setup>
-import { computed, inject, defineEmits } from 'vue'; // ✅ Thêm inject
-// Định nghĩa props để nhận dữ liệu cá nhân (personalData)
-// ✅ 1. INJECT DỮ LIỆU TỪ APP.VUE
+import { computed, inject, defineEmits } from 'vue'; 
+
+// INJECT DỮ LIỆU TỪ APP.VUE
 const portfolioData = inject('portfolioData');
 
-// ✅ 2. TẠO COMPUTED PROPERTY ĐỂ TRUY CẬP DỮ LIỆU CÁ NHÂN AN TOÀN
+// TẠO COMPUTED PROPERTY ĐỂ TRUY CẬP DỮ LIỆU CÁ NHÂN AN TOÀN
 const personalData = computed(() => {
     // Luôn trả về object có cấu trúc cơ bản, ngay cả khi portfolioData là undefined
     return portfolioData.value?.personal || { name: 'Portfolio', avatar: '' };

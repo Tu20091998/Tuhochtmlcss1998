@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <aside class="sidebar bg-dark text-white p-3 d-flex flex-column" style="width: 250px; height: auto;">
+    <aside class="sidebar bg-dark text-white p-3 d-flex flex-column" style="width: 25%; height: 100vh;">
         
         <h5 class="py-2 mb-4 border-bottom text-secondary">
             <i class="bi bi-stack me-2"></i> QUẢN LÝ DỮ LIỆU
@@ -15,29 +15,39 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-house-door-fill me-2"></i> Dashboard
+                <i class="bi bi-house-door-fill me-2"></i><span class="fs-6">Dashboard</span> 
             </RouterLink>
 
-            <div 
+            <RouterLink
+                :to="{name: 'PersonalEdit'}"
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-newspaper me-2"></i> Bài Viết (Articles)
+                <i class="bi bi-newspaper me-2"></i> <span class="fs-6">Thông tin cá nhân</span>
+            </RouterLink>
+
+            <div
+                
+                class="nav-link text-white mb-2" 
+                active-class="bg-primary"
+            >
+                <i class="bi bi-newspaper me-2"></i> <span class="fs-6">Bài Viết</span>
             </div>
 
             <div
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-briefcase-fill me-2"></i> Dự Án (Projects)
+                <i class="bi bi-briefcase-fill me-2"></i><span class="fs-6">Dự Án</span> 
             </div>
 
-            <div
+            <RouterLink
+                :to= "{name: 'StudyEdit'}"
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-person-lines-fill me-2"></i> Thông Tin Cá Nhân
-            </div>
+                <i class="bi bi-person-lines-fill me-2"></i><span class="fs-6">Học Vấn</span> 
+            </RouterLink>
         </nav>
 
         <div class="mt-auto pt-3 border-top">

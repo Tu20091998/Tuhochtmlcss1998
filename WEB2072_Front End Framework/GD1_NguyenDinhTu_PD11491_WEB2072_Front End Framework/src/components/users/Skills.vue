@@ -2,13 +2,10 @@
     import { computed } from 'vue';
     import { inject } from 'vue';
 
-    // ✅ Inject dữ liệu
+    // Inject dữ liệu
     const portfolioData = inject('portfolioData');
 
     const featuredArticles = computed(() => portfolioData.value?.articles || []);
-
-    // ✅ Thêm kiểm tra dữ liệu tối thiểu
-    const isReady = computed(() => !!portfolioData.value?.personal?.name);
 </script>
 
 <template>

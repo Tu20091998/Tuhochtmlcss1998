@@ -2,23 +2,20 @@
     import { computed } from 'vue';
     import { inject } from 'vue';
 
-    // ✅ Inject dữ liệu
+    // Inject dữ liệu
     const portfolioData = inject('portfolioData');
 
     
-    // ✅ COMPUTED: Personal data được bảo vệ và sẵn sàng sử dụng
+    // COMPUTED: Personal data được bảo vệ và sẵn sàng sử dụng
     const personalData = computed(() => {
         return portfolioData.value?.personal || { name: 'Portfolio', avatar: '', bio: '', title: '', hardSkills: [], softSkills: [] };
     });
 
     const featuredArticles = computed(() => portfolioData.value?.articles || []);
 
-    // ✅ Thêm kiểm tra dữ liệu tối thiểu
-    const isReady = computed(() => !!portfolioData.value?.personal?.name);
 </script>
 
 <template>
-    <div v-if="isReady">
         <section class="container-fluid max-width-center g-5" style="margin-top: 8rem;">
             <div class="row g-4 align-items-center justify-content-between bg-white p-4 p-md-5 rounded-3 shadow mb-5">
                 <div class="col-md-7 order-2 mt-3">
@@ -108,7 +105,6 @@
                 </div>
             </div>
         </section>
-    </div>
 </template>
 <style scoped>
 /* Định nghĩa các lớp CSS thuần (Nên chuyển sang file style.css để dùng chung) */

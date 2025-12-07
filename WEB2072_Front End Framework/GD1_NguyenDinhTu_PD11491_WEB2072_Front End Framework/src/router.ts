@@ -13,6 +13,8 @@ import Articles from './components/users/Articles.vue';
 import AdminLayout from './components/admin/AdminLayout.vue';
 import LoginAdmin from './components/admin/LoginAdmin.vue';
 import Dashboard from './components/admin/Dashboard.vue';
+import StudyEdit from './components/admin/StudyEdit.vue';
+import PersonalEdit from './components/admin/PersonalEdit.vue';
 
 
 //route quản lý chuyển hướng
@@ -34,18 +36,33 @@ const routes = [
         path: '/admin',
         component: AdminLayout,
         children: [
-            // 1. REDIRECT TỪ /admin SANG /admin/dashboard
+            //  REDIRECT TỪ /admin SANG /admin/dashboard
             {
                 path: '', 
                 redirect: { name: 'Dashboard' } // <--- ĐIỂM QUAN TRỌNG
             },
 
-            // 2. TRANG DASHBOARD (Trang chủ Admin)
+            //  TRANG DASHBOARD (Trang chủ Admin)
             {
                 path: 'dashboard', // URL: /admin/dashboard
                 name: 'Dashboard',
                 component: Dashboard,
-            }
+            },
+
+            // ROUTE QUẢN LÝ THÔNG TIN HỌC VẤN
+            {
+                path: 'study', // URL: /admin/study
+                name: 'StudyEdit',
+                component: StudyEdit,
+            },
+
+            // ROUTE QUẢN LÝ THÔNG TIN CÁ NHÂN
+            {
+                path: 'personal', // URL: /admin/personal
+                name: 'PersonalEdit',
+                component: PersonalEdit,
+            },
+
         ]
 
         

@@ -38,7 +38,7 @@
   },
   "education": [
     {
-      "id": 1,
+      "id": "1",
       "institution": "FPT Polytechnic Đà Nẵng",
       "address": "116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - Thành Phố Đà Nẵng",
       "degree": "Cao đẳng Ngành Công Nghệ Thông Tin",
@@ -46,7 +46,7 @@
       "details": "Chuyên ngành Công Nghệ Thông Tin, tập trung vào lập trình Web Full-stack (MERN/MEVN)."
     },
     {
-      "id": 2,
+      "id": "2",
       "institution": "Trường THPT Nguyễn Thái Học",
       "degree": "Tốt nghiệp THPT",
       "period": "2015 - 2017",
@@ -56,14 +56,14 @@
   ],
   "experience": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Thực tập sinh Front-end",
       "company": "Công ty Cổ phần Công nghệ FPT Complex",
       "period": "06/2027 - 12/2027",
       "description": "Tham gia phát triển giao diện người dùng cho dự án nội bộ sử dụng Vue 3, Pinia và Tailwind CSS, cải thiện hiệu suất tải trang lên đến 30%."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Phát triển dự án Freelance",
       "company": "Khách hàng cá nhân",
       "period": "01/2026 - Present",
@@ -72,9 +72,18 @@
   ],
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Trang web bán hàng Shopping Cart",
-      "tech": "Vue 3, Boostrap 5, Tailwind CSS, PHP, API Resful, PHP MyAdmin",
+      "tech": [
+        "Vue 3",
+        "Boostrap 5",
+        "Tailwind CSS",
+        "PHP",
+        "API Resful",
+        "PHP MyAdmin",
+        "Python",
+        "Ruby"
+      ],
       "members": 4,
       "duration": "4 tháng (03/2027 - 07/2027)",
       "image": "https://bizflyportal.mediacdn.vn/bizflyportal/kienthuccoban/the16018854165022.jpg",
@@ -83,9 +92,19 @@
       "endDate": "2027-07-01"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Trang web bán bánh Anh Hoà Bakery",
-      "tech": "Vue 3, Boostrap 5, Vue Router, Mock API, Tailwind CSS, PHP, API Resful, PHP MyAdmin",
+      "tech": [
+        "Vue 3",
+        "Boostrap 5",
+        "Vue Router",
+        "Mock API",
+        "Tailwind CSS",
+        "PHP",
+        "API Resful",
+        "PHP MyAdmin",
+        "Linux"
+      ],
       "members": 1,
       "duration": "1 tháng (11/2026 - 12/2026)",
       "image": "https://vietwebgroup.vn/admin/uploads/20170621084101an%20hoa.png",
@@ -96,7 +115,7 @@
   ],
   "articles": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Sức mạnh của Composition API trong Vue 3",
       "summary": "Phân tích cách Composition API giúp tổ chức code, tái sử dụng logic và làm việc với TypeScript hiệu quả hơn so với Options API.",
       "date": "15/11/2025",
@@ -107,7 +126,7 @@
       "updatedAt": "2025-11-15T15:30:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Tối ưu hóa hình ảnh cho hiệu suất Web",
       "summary": "Hướng dẫn các kỹ thuật Lazy Loading, nén ảnh WebP và sử dụng `<picture>` element để tăng tốc độ tải trang.",
       "date": "01/11/2025",
@@ -118,7 +137,7 @@
       "updatedAt": "2025-11-15T15:30:00Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "So sánh Tailwind CSS và Bootstrap trong dự án Vue",
       "summary": "Đánh giá ưu nhược điểm của hai framework CSS phổ biến khi áp dụng vào một dự án Front-end hiện đại.",
       "date": "20/10/2025",
@@ -131,7 +150,7 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin_tu",
       "password": "123",
       "role": "admin"

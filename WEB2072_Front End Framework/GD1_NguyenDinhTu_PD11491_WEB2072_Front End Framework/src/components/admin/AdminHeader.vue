@@ -5,12 +5,7 @@ import { inject } from 'vue';
 const adminData = inject('adminData');
 const personalData = adminData.portfolioData.value.personal;
 const logout = adminData.logout;
-
-// Hàm xử lý Đăng xuất
-const handleLogout = () => {
-    //Thực hiện logic thay đổi trạng thái đăng nhập
-    logout();
-};
+const isLoggedIn = adminData.isLoggedIn;
 
 </script>
 
@@ -36,7 +31,7 @@ const handleLogout = () => {
 
                 <!-- Nút Đăng xuất -->
                 <li v-if="isLoggedIn" class="nav-item ms-md-3 mt-2 mt-md-0">
-                    <button @click="handleLogout" class="btn btn-sm btn-outline-danger fw-medium rounded-pill">
+                    <button @click="logout()" class="btn btn-sm btn-outline-danger fw-medium rounded-pill">
                         Đăng xuất
                     </button>
                 </li>

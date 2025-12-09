@@ -46,7 +46,7 @@ const submitForm = async () => {
             }),
         });
 
-         // 🚀 CHỈ MỘT LỜI GỌI API DUY NHẤT ĐẾN BACKEND (cổng 3002)
+         // Gọi api để lưu thông tin người để lại lời nhắn vào database (cổng 3002)
         const response_db = await fetch(CONTACT_API_DB, {
             method: 'POST',
             headers: {

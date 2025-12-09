@@ -26,20 +26,21 @@ import { RouterLink } from 'vue-router';
                 <i class="bi bi-newspaper me-2"></i> <span class="fs-6">Thông tin cá nhân</span>
             </RouterLink>
 
-            <div
-                
+            <RouterLink
+                :to="{name: 'ArticlesManagement'}"
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
                 <i class="bi bi-newspaper me-2"></i> <span class="fs-6">Bài Viết</span>
-            </div>
+            </RouterLink>
 
-            <div
+            <RouterLink
+                :to="{name: 'ProjectsManagement'}"
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
                 <i class="bi bi-briefcase-fill me-2"></i><span class="fs-6">Dự Án</span> 
-            </div>
+            </RouterLink>
 
             <RouterLink
                 :to= "{name: 'StudyEdit'}"
@@ -47,6 +48,14 @@ import { RouterLink } from 'vue-router';
                 active-class="bg-primary"
             >
                 <i class="bi bi-person-lines-fill me-2"></i><span class="fs-6">Học Vấn</span> 
+            </RouterLink>
+
+            <RouterLink
+                :to= "{name: 'ExperienceManagement'}"
+                class="nav-link text-white mb-2" 
+                active-class="bg-primary"
+            >
+                <i class="bi bi-person-lines-fill me-2"></i><span class="fs-6">Kinh Nghiệm</span> 
             </RouterLink>
         </nav>
 

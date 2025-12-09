@@ -7,7 +7,7 @@ const router = useRouter();
 // Inject các hàm và API Base URL từ App.vue
 const apiBaseUrl = inject('apiBaseUrl');
 const securityState = inject('securityState');
-const { loginAsAdmin } = securityState; 
+const loginAsAdmin  = securityState.loginAsAdmin; 
 
 // Trạng thái Form
 const username = ref('');

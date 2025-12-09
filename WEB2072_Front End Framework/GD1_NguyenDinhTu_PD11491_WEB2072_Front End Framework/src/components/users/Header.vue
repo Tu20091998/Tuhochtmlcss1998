@@ -63,7 +63,7 @@ const navigateAndClose = (path) => {
             <div class="container-fluid container-md px-3 px-sm-3 px-lg-4 max-width-center"> 
                 <!-- Logo/Tên (Sử dụng computed personalData.name) -->
                 <router-link to="/" class="navbar-brand fs-4 fw-bold cursor-pointer py-3">
-                    <!--  Truy cập trực tiếp personalData.name (Vì nó là Computed Object) -->
+                    <!--  Truy cập trực tiếp personalData.name -->
                     {{ personalData.name || 'Portfolio' }}
                 </router-link>
                 

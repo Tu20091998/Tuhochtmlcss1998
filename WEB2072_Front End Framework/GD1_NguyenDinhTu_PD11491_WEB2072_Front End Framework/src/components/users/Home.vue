@@ -5,7 +5,6 @@
     // Inject dữ liệu
     const portfolioData = inject('portfolioData');
 
-    
     // COMPUTED: Personal data được bảo vệ và sẵn sàng sử dụng
     const personalData = computed(() => {
         return portfolioData.value?.personal || { name: 'Portfolio', avatar: '', bio: '', title: '', hardSkills: [], softSkills: [] };

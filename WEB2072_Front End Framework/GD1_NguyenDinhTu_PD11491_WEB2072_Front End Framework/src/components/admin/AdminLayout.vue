@@ -6,10 +6,10 @@ import AdminHeader from './AdminHeader.vue';
 import AdminSidebar from './AdminSidebar.vue';
 import AdminFooter from './AdminFooter.vue'; // Thêm Footer
 
+//chèn route
 const router = useRouter();
 
-
-// 1. INJECT DỮ LIỆU TỪ APP.VUE
+//  INJECT DỮ LIỆU TỪ APP.VUE
 const portfolioData = inject('portfolioData'); 
 const apiBaseUrl = inject('apiBaseUrl');
 const fetchData = inject('fetchData');
@@ -18,7 +18,7 @@ const securityState = inject('securityState');
 // Lấy trạng thái đăng nhập
 const isLoggedIn = securityState.isLoggedIn || null;
 
-// Guard: Kiểm tra và chuyển hướng nếu chưa đăng nhập
+// Kiểm tra và chuyển hướng nếu chưa đăng nhập
 watchEffect(() => {
     if (!isLoggedIn.value) {
         // Chuyển hướng về trang Đăng nhập Admin hoặc trang chủ nếu chưa đăng nhập
@@ -31,7 +31,8 @@ provide('adminData', {
     portfolioData, 
     apiBaseUrl, 
     fetchData,
-    logout: securityState.logout // Truyền hàm logout xuống header/sidebar
+    logout: securityState.logout, // Truyền hàm logout xuống header/sidebar
+    isLoggedIn: securityState.isLoggedIn, // Truyền hàm logout xuống header/sidebar
 });
 
 </script>

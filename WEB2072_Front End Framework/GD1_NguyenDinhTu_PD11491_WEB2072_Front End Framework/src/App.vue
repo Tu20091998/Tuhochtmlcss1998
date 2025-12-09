@@ -58,15 +58,17 @@ const apiFetch = async (url) => {
 const fetchData = async () => {
     isLoading.value = true;
     try {
-        const [personal, education, experience, projects, articles] = await Promise.all([
+        const [personal, education, experience, projects, articles, messages, users] = await Promise.all([
             apiFetch(`${apiBaseUrl}/personal`),
             apiFetch(`${apiBaseUrl}/education`),
             apiFetch(`${apiBaseUrl}/experience`),
             apiFetch(`${apiBaseUrl}/projects`),
             apiFetch(`${apiBaseUrl}/articles`),
+            apiFetch(`${apiBaseUrl}/messages`),
+            apiFetch(`${apiBaseUrl}/users`),
         ]);
 
-        portfolioData.value = { personal, education, experience, projects, articles };
+        portfolioData.value = { personal, education, experience, projects, articles, messages, users};
         console.log("Dữ liệu đã được tải thành công từ API.");
 
     } catch (error) {
@@ -86,8 +88,6 @@ const userRole = ref('guest');
 const loginAsAdmin = (role) => {
     isLoggedIn.value = true;
     userRole.value = role;
-    // Lưu ý: Đã có lỗi trong route name 'Dashboard'. 
-    // Nếu bạn đã sửa router thành 'AdminDashboard', hãy dùng nó.
     router.push({ name: 'Dashboard' }); 
 };
 
@@ -95,7 +95,7 @@ const loginAsAdmin = (role) => {
 const logout = () => {
     isLoggedIn.value = false;
     userRole.value = 'guest';
-    router.push({ name: 'Home' }); 
+    router.push({ name: 'LoginAdmin' }); 
 };
 
 

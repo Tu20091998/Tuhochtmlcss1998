@@ -1,38 +1,43 @@
-// LƯU Ý: Đuôi file là .cjs để sử dụng cú pháp require (CommonJS)
-const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer'); 
-const cors = require('cors');
+//Phần code backend của nodemailer
 
+const express = require('express'); //tạo server backend
+const bodyParser = require('body-parser');//đọc dữ liệu mà Vue gửi lên (POST body)
+const nodemailer = require('nodemailer'); //nhận nội dung từ backend → gửi đi
+const cors = require('cors');//Cho phép Vue gọi backend
+
+//tạo server và cổng
 const app = express();
 const port = 3001; // Nodemailer Server
 
-// Cấu hình Middleware
+// hiểu đúng dữ liệu gửi lên cho backend nodemailer
 app.use(cors()); // cho phép gửi từ ngoài vào
 app.use(bodyParser.json()); //dịch nội dung ra mã js
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));//Đọc body kiểu form-data (khi submit HTML form)
+
 
 // ===================================================================
-// 🛠️ PHẦN CẤU HÌNH EMAIL (Sử dụng SMTP Chi tiết và Tài khoản Mới) 🛠️
+//  PHẦN CẤU HÌNH EMAIL (Sử dụng SMTP Chi tiết và Tài khoản Mới)
 // ===================================================================
 
+//tạo 1 công cụ để backend gửi được email đi cho người dùng
 const transporter = nodemailer.createTransport({
     // Sử dụng cấu hình SMTP chi tiết của Gmail để tăng ổn định
     host: 'smtp.gmail.com',
     port: 465,
     secure: true, // true cho cổng 465
     auth: {
-        user: 'dinhtu20091998@gmail.com', // ⬅️ Tài khoản mới
-        pass: 'vcpoanqqtsesrgxg'          // ⬅️ Mật khẩu ứng dụng mới
+        user: 'dinhtu20091998@gmail.com', // Tài khoản mới
+        pass: 'vcpoanqqtsesrgxg'          //  Mật khẩu ứng dụng mới
     }
 });
+
 
 // Địa chỉ email cá nhân của bạn (người nhận thông báo)
 const MY_PERSONAL_EMAIL = 'dinhtu20091998@gmail.com'; 
 
 // ===================================================================
 
-// 📝 Route để xử lý Form Submission POST: /messages
+// Route để xử lý Form Submission POST: /messages
 app.post('/messages', async (req, res) => {
     // Trích xuất dữ liệu từ body của request
     const { name, email, subject, message, timestamp } = req.body;
@@ -81,7 +86,7 @@ app.post('/messages', async (req, res) => {
         `
     };
 
-    // ⬅️ ĐÃ KHÔI PHỤC: Khối try...catch để ngăn chặn server crash
+    // thực hiện gửi thông tin đi cho người dùng
     try {
         await transporter.sendMail(adminMailOptions);
         console.log(`[EMAIL] Thông báo gửi đến Admin (${MY_PERSONAL_EMAIL}) thành công.`);

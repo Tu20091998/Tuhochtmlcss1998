@@ -72,7 +72,7 @@
                         
                         <!-- Thông tin chi tiết dự án (Grid 2 cột) -->
                         <div class="row small g-2">
-                            <div class="col-6"><p class="fw-medium text-dark mb-0">Công nghệ:</p> <span class="text-info">{{ project.tech }}</span></div>
+                            <div class="col-6"><p class="fw-medium text-dark mb-0">Công nghệ:</p> <span class="text-info">{{ project.tech?.join(", ") }}</span></div>
                             <div class="col-6"><p class="fw-medium text-dark mb-0">Thành viên:</p> <span class="text-info">{{ project.members }} người</span></div>
                             <div class="col-6"><p class="fw-medium text-dark mb-0">Thời gian:</p> <span class="text-info">{{ project.duration }}</span></div>
                             <div class="col-6"><p class="fw-medium text-dark mb-0">Trạng thái:</p> <span class="badge bg-success text-success-emphasis">Đã hoàn thành</span></div>

@@ -29,7 +29,7 @@ const formData = ref({
     softSkillsText: '',
 });
 
-// Watch portfolioData để đồng bộ dữ liệu vào form khi component load hoặc data fetch lại
+// theo dõi dữ liệu data lấy từ admin
 watch(portfolioData, (newData) => {
     const personal = newData.personal;
     
@@ -44,11 +44,13 @@ watch(portfolioData, (newData) => {
         address: personal.address || '',
         bio: personal.bio || '',
         avatar: personal.avatar || '',
+        
         // Lấy Social Links
         github: social.github || '',
         facebook: social.facebook || '',
         youtube: social.youtube || '',
         gmail: social.gmail || '',
+
         // Xử lý chuyển đổi mảng Kỹ năng thành chuỗi
         hardSkillsText: personal.hardSkills?.join(', ') || '',
         softSkillsText: personal.softSkills?.join(', ') || '',

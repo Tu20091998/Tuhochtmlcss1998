@@ -50,7 +50,6 @@ const openEditModal = (education) => {
 };
 
 // --- XỬ LÝ CRUD ---
-
 // Xử lý Thêm mới và Cập nhật (POST / PUT)
 const handleSubmit = async () => {
     if (!educationForm.value.institution || !educationForm.value.degree) {
@@ -71,6 +70,7 @@ const handleSubmit = async () => {
         ? { id: currentEducationId.value, ...educationForm.value } 
         : educationForm.value;
 
+    //chạy api đưa dữ liệu vào để cập nhật hoặc thêm
     try {
         const response = await fetch(url, {
             method: method,

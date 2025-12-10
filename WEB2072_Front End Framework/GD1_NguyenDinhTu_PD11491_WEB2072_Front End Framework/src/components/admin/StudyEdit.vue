@@ -15,6 +15,10 @@ const isEditMode = ref(false); // true: Edit, false: Create
 const currentEducationId = ref(null);
 const isLoading = ref(false);
 const errorMessage = ref('');
+// const successMessage = ref(''); // <--- Không cần nếu dùng message
+
+// Object thông báo chung (type: danger/success, text: nội dung)
+const message = ref({ type: '', text: '' }); // <--- THÊM BIẾN NÀY
 
 const educationForm = ref({
     institution: '',
@@ -30,6 +34,7 @@ const resetForm = () => {
     isEditMode.value = false;
     currentEducationId.value = null;
     errorMessage.value = '';
+    message.value = { type: '', text: '' }; // <--- Reset thông báo khi mở form
 };
 
 // Mở Modal cho việc Thêm mới
@@ -59,6 +64,7 @@ const handleSubmit = async () => {
     
     isLoading.value = true;
     errorMessage.value = '';
+    message.value = { type: '', text: '' }; // <-- Xóa thông báo cũ
 
     const method = isEditMode.value ? 'PUT' : 'POST';
     const url = isEditMode.value 
@@ -79,16 +85,26 @@ const handleSubmit = async () => {
         });
 
         if (!response.ok) {
-            throw new Error('Lỗi khi lưu dữ liệu học vấn.');
+            // Lấy thông báo lỗi chi tiết từ backend nếu có (ví dụ lỗi 400)
+            const errorData = await response.json();
+            const detail = errorData.message || `Lỗi ${response.status}.`;
+            throw new Error(detail);
         }
 
         isModalOpen.value = false;
         await fetchData(); // Tải lại dữ liệu toàn cục
-        alert(`Đã ${isEditMode.value ? 'cập nhật' : 'thêm mới'} mục Học vấn thành công!`);
+        
+        // THAY THẾ alert() bằng thông báo UI
+        message.value = { 
+            type: 'success', 
+            text: `Đã ${isEditMode.value ? 'cập nhật' : 'thêm mới'} mục Học vấn thành công!` 
+        };
 
     } catch (error) {
         console.error('Lỗi khi lưu:', error);
         errorMessage.value = `Lỗi: ${error.message}`;
+        // THÔNG BÁO LỖI CHUNG TRÊN UI
+        message.value = { type: 'danger', text: `Lỗi: ${error.message}` }; 
     } finally {
         isLoading.value = false;
     }
@@ -98,29 +114,37 @@ const handleSubmit = async () => {
 const handleDelete = async (id) => {
     if (!confirm('Bạn có chắc chắn muốn xóa mục Học vấn này không?')) return;
     
+    message.value = { type: '', text: '' }; // <-- Xóa thông báo cũ
     try {
         const response = await fetch(`${apiBaseUrl}/education/${id}`, { method: 'DELETE' });
 
         if (!response.ok) {
-            throw new Error('Xóa thất bại.');
+            const errorData = await response.json();
+            const detail = errorData.message || `Xóa thất bại. Status: ${response.status}.`;
+            throw new Error(detail);
         }
         
         await fetchData(); // Tải lại dữ liệu toàn cục
-        alert('Đã xóa mục Học vấn thành công!');
+        // THAY THẾ alert() bằng thông báo UI
+        message.value = { type: 'success', text: 'Đã xóa mục Học vấn thành công!' };
 
     } catch (error) {
         console.error('Lỗi khi xóa:', error);
-        alert(`Lỗi khi xóa: ${error.message}`);
+        // THÔNG BÁO LỖI TRÊN UI
+        message.value = { type: 'danger', text: `Lỗi khi xóa: ${error.message}` }; 
     }
 };
 </script>
 
 <template>
     <div class="education-management">
-        <h2 class="mb-4 text-dark fw-bold">Quản Lý Học Vấn</h2>
+        <h2 class="mb-4 text-dark fw-bold">🎓 Quản Lý Học Vấn</h2>
         
-        <div class="d-flex justify-content-end mb-3">
-            <button @click="openCreateModal" class="btn btn-primary fw-bold">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div v-if="message.text" :class="`alert alert-${message.type} p-2 m-0`" style="flex-grow: 1; margin-right: 1rem;">
+                {{ message.text }}
+            </div>
+            <div v-else style="flex-grow: 1;"></div> <button @click="openCreateModal" class="btn btn-primary fw-bold">
                 <i class="bi bi-plus-lg me-2"></i> Thêm Học Vấn
             </button>
         </div>
@@ -133,7 +157,6 @@ const handleDelete = async (id) => {
                 <table v-else class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Cơ Sở</th>
                             <th>Bằng Cấp</th>
                             <th>Thời Gian</th>
@@ -143,7 +166,6 @@ const handleDelete = async (id) => {
                     </thead>
                     <tbody>
                         <tr v-for="edu in educationList" :key="edu.id">
-                            <td>{{ edu.id }}</td>
                             <td>{{ edu.institution }}</td>
                             <td>{{ edu.degree }}</td>
                             <td>{{ edu.period }}</td>

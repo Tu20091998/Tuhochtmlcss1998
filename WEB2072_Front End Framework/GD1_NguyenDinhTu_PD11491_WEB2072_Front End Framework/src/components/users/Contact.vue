@@ -17,8 +17,8 @@ const isSubmitting = ref(false); // Trạng thái gửi form
 //gọi cổng nodemailer
 const CONTACT_API_URL = 'http://localhost:3001/messages'; 
 
-// ➡️ Cổng Backend mới
-const CONTACT_API_DB = 'http://localhost:3002/messages';
+// Cổng Backend mới
+const CONTACT_API_DB = 'http://localhost:3005/messages';
 
 const submitForm = async () => {
     statusMessage.value = null;
@@ -63,6 +63,11 @@ const submitForm = async () => {
             throw new Error(`Gửi dữ liệu lỗi, Status: ${response.status}`);
         }
 
+        if (!response_db.ok) {
+            // Xử lý lỗi HTTP (4xx hoặc 5xx)
+            throw new Error(`Gửi dữ liệu lỗi, Status: ${response_db.status}`);
+        }
+
         // Backend thành công, có thể là đã lưu vào DB và gửi email
         statusMessage.value = `Thông tin của bạn đã được gửi thành công và đã được lưu vào database! Backend sẽ xử lý việc gửi email phản hồi.`;
         isError.value = false;
@@ -79,6 +84,8 @@ const submitForm = async () => {
         isSubmitting.value = false;
     }
 };
+
+console.log(form.value);
 </script>
 
 <template>

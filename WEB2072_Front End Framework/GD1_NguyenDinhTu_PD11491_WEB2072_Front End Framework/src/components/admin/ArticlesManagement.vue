@@ -11,10 +11,10 @@ const fetchData = adminData.fetchData;
 const isModalOpen = ref(false);
 const isEditMode = ref(false);
 const isLoading = ref(false);
-const currentArticleId = ref(null);
-const message = ref({ type: '', text: '' }); 
+const message = ref({ type: '', text: '' });
 
 const articleForm = ref({
+    _id: null,
     title: '',
     summary: '',
     content: '',
@@ -22,6 +22,7 @@ const articleForm = ref({
     image: '',
     status: 'Draft', // Mặc định là Bản nháp
 });
+
 
 // Reset Form và Mở Modal
 const openModal = (article = null) => {
@@ -71,7 +72,7 @@ const handleSubmit = async () => {
     const url = isEditMode.value 
         ? `${apiBaseUrl}/articles/${articleForm.value.id}`
         : `${apiBaseUrl}/articles`;
-        
+
     // Chuẩn bị Payload
     const payload = { ...articleForm.value };
     
@@ -80,7 +81,6 @@ const handleSubmit = async () => {
         const [year, month, day] = payload.date.split('-');
         payload.date = `${day}/${month}/${year}`;
     }
-
 
     try {
         const response = await fetch(url, {
@@ -109,6 +109,7 @@ const handleSubmit = async () => {
 const handleDelete = async (id) => {
     if (!confirm('Bạn có chắc chắn muốn xóa bài viết này không?')) return;
     
+    console.log(id);
     message.value = { type: '', text: '' };
     try {
         const response = await fetch(`${apiBaseUrl}/articles/${id}`, { method: 'DELETE' });
@@ -130,7 +131,7 @@ const handleDelete = async (id) => {
 
 <template>
     <div class="articles-management">
-        <h2 class="mb-4 text-primary fw-bold">📝 Quản Lý Bài Viết</h2>
+        <h2 class="mb-4 text-dark fw-bold">📝 Quản Lý Bài Viết</h2>
         
         <div class="d-flex justify-content-between align-items-center mb-3">
             <div v-if="message.text" :class="`alert alert-${message.type} p-2 m-0`">
@@ -151,7 +152,6 @@ const handleDelete = async (id) => {
                 <table v-else class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Tiêu đề</th>
                             <th>Trạng thái</th>
                             <th>Ngày đăng</th>
@@ -159,8 +159,7 @@ const handleDelete = async (id) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="article in articlesList" :key="article.id">
-                            <td>{{ article.id }}</td>
+                        <tr v-for="article in articlesList" :key="article._id">
                             <td>{{ article.title }}</td>
                             <td>
                                 <span :class="{'badge bg-success': article.status === 'Published', 'badge bg-secondary': article.status === 'Draft'}">

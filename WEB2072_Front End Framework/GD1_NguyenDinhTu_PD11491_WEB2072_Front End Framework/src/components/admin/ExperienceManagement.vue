@@ -24,7 +24,7 @@ const experienceForm = ref({
     id: null,
 });
 
-// Hàm chuyển đổi chuỗi ngày tháng (Chủ yếu để chuẩn hóa nếu dùng input type="date")
+// Hàm chuyển đổi chuỗi ngày tháng
 const convertDate = (dateString) => {
     if (!dateString) return '';
     return dateString.substring(0, 10);
@@ -39,10 +39,8 @@ const openModal = (experience = null) => {
         // Nếu chỉnh sửa, điền dữ liệu vào form
         experienceForm.value = { 
             ...experience,
-            // Đảm bảo các trường date (nếu có) được định dạng
             startDate: convertDate(experience.startDate), 
             endDate: convertDate(experience.endDate),
-            // Đảm bảo ID được truyền nếu là chế độ sửa
             id: experience.id,
         };
     } else {
@@ -104,6 +102,7 @@ const handleSubmit = async () => {
     }
 };
 
+//hàm xoá kinh nghiệm dựa vào id
 const handleDelete = async (id) => {
     if (!confirm('Bạn có chắc chắn muốn xóa kinh nghiệm này không?')) return;
     
@@ -136,7 +135,7 @@ const handleDelete = async (id) => {
             </div>
             <div v-else></div>
 
-            <button @click="openModal()" class="btn btn-dark fw-bold">
+            <button @click="openModal()" class="btn btn-primary fw-bold">
                 <i class="bi bi-plus-lg me-2"></i> Thêm Kinh Nghiệm
             </button>
         </div>

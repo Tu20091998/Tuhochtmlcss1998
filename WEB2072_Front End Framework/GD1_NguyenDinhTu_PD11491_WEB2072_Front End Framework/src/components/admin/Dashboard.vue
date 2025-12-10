@@ -68,7 +68,7 @@ const formatDate = (timestamp) => {
 
 <template>
     <div class="container-fluid">
-        <h2 class="mb-4 text-dark fw-bold">Dashboard Tổng Quan</h2>
+        <h2 class="mb-4 text-dark fw-bold">🏠 Dashboard Tổng Quan</h2>
         <p class="text-muted">Chào mừng trở lại, đây là cái nhìn tổng quan về nội dung của bạn.</p>
         
         <hr class="mb-5">

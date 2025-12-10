@@ -12,6 +12,7 @@ const isLoading = ref(false);
 const errorMessage = ref('');
 const successMessage = ref('');
 
+
 // Tạo bản sao dữ liệu (Form Model)
 const formData = ref({
     name: '',
@@ -66,10 +67,9 @@ const handleUpdatePersonal = async () => {
     // Hàm chuyển đổi chuỗi kỹ năng thành mảng, loại bỏ khoảng trắng và mục rỗng
     const parseSkills = (text) => text.split(',').map(s => s.trim()).filter(s => s.length > 0);
 
-    // 1. Chuẩn bị dữ liệu gửi đi (Sử dụng ID cố định là 1)
+    //  Chuẩn bị dữ liệu gửi đi
     const updatedPersonal = {
         ...portfolioData.value.personal,
-        id: 1, 
         name: formData.value.name,
         title: formData.value.title,
         email: formData.value.email,
@@ -88,6 +88,10 @@ const handleUpdatePersonal = async () => {
         hardSkills: parseSkills(formData.value.hardSkillsText),
         softSkills: parseSkills(formData.value.softSkillsText),
     };
+
+    //xoá id khi gửi dữ liệu đi
+    delete updatedPersonal._id; 
+    delete updatedPersonal.id;
 
     try {
         // 2. Gọi API PUT để cập nhật toàn bộ đối tượng personal
@@ -116,7 +120,7 @@ const handleUpdatePersonal = async () => {
 
 <template>
     <div class="personal-edit">
-        <h2 class="mb-4 text-dark fw-bold">Chỉnh Sửa Thông Tin Cá Nhân</h2>
+        <h2 class="mb-4 text-dark fw-bold">🛠️ Chỉnh Sửa Thông Tin Cá Nhân</h2>
         
         <form @submit.prevent="handleUpdatePersonal" class="p-4 bg-white shadow-sm rounded">
             

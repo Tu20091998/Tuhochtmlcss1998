@@ -14,6 +14,8 @@ const isEditMode = ref(false);
 const isLoading = ref(false);
 const message = ref({ type: '', text: '' }); 
 
+console.log(projectsList.value);
+
 const projectForm = ref({
     name: '',
     techText: '',
@@ -142,7 +144,7 @@ const handleDelete = async (id) => {
 
 <template>
     <div class="projects-management">
-        <h2 class="mb-4 text-primary fw-bold">🏗️ Quản Lý Dự Án</h2>
+        <h2 class="mb-4 text-dark fw-bold">🏗️ Quản Lý Dự Án</h2>
         
         <div class="d-flex justify-content-between align-items-center mb-3">
             <div style="min-height: 38px;">

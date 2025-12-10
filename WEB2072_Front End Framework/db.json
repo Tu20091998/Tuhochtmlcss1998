@@ -1,0 +1,169 @@
+{
+  "personal": {
+    "id": 1,
+    "name": "Nguyễn Đình Tú",
+    "title": "Lập trình viên Back-end",
+    "email": "dinhtu20091998@gmail.com",
+    "phone": "0336 620 188",
+    "address": "116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - Thành Phố Đà Nẵng",
+    "avatar": "https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/474443694_122215494704227192_8696271321617163636_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=fYC6wGRz4BUQ7kNvwFus04v&_nc_oc=AdlLETDzlZ-EbNu3kj2hyREMWatWR9mPxmBxyhJ7cN1U-Kd090aKCJVkNHcuCGHw-hw&_nc_zt=23&_nc_ht=scontent.fdad3-1.fna&_nc_gid=1mjPl6bBOgGu8UbJXUPD3A&oh=00_AfkZqR5rsZ_8pxmpHClk2GBHjuVODVoi09HCX_KVYxH6WA&oe=693614D4",
+    "bio": "Sinh viên năm cuối FPT Polytechnic, chuyên môn sâu về phát triển giao diện người dùng (UI) và trải nghiệm người dùng (UX) bằng Vue 3, Pinia và tích hợp API RESTful hiệu quả.",
+    "social": {
+      "github": "https://github.com/Tu20091998/Tuhochtmlcss1998/tree/main/WEB2072_Front%20End%20Framework",
+      "facebook": "https://www.facebook.com/nguyen.tu.910079/",
+      "youtube": "https://www.youtube.com/@T%C3%BANguy%E1%BB%85n-j6q1f",
+      "gmail": "dinhtu20091998@gmail.com"
+    },
+    "hardSkills": [
+      "Vue 3 / Composition API",
+      "TypeScript",
+      "HTML5/CSS3/JavaScript (ES6+)",
+      "Git & GitHub",
+      "PHP MyAdmin"
+    ],
+    "softSkills": [
+      "Giải quyết vấn đề",
+      "Làm việc nhóm (Scrum)",
+      "Quản lý thời gian",
+      "Khả năng thích nghi",
+      "Tiếng anh văn phòng",
+      "Lên kế hoạch làm việc"
+    ],
+    "imageVarriant": [
+      "https://s3-iconicjob-vn.imgix.net/prod/wp-content/uploads/2017/10/lap_trinh_vien_1.jpg",
+      "https://hinh365.com/wp-content/uploads/2020/06/43b11fe04a28b02b53a8941763562731.jpg",
+      "https://media.istockphoto.com/id/1295900106/vi/anh/c%C3%A1c-nh%C3%A0-khoa-h%E1%BB%8Dc-d%E1%BB%AF-li%E1%BB%87u-l%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-nam-s%E1%BB%AD-d%E1%BB%A5ng-m%C3%A1y-t%C3%ADnh-x%C3%A1ch-tay-ph%C3%A2n-t%C3%ADch-v%C3%A0-ph%C3%A1t-tri%E1%BB%83n.jpg?s=612x612&w=0&k=20&c=SWVSJ20V0nS0l1PqdX83aoj0EcJK_m-LXCzg9vQ9BBA=",
+      "https://tiasang.com.vn/wp-content/uploads/old/Portals/0/developer-dtt%201.jpg"
+    ]
+  },
+  "education": [
+    {
+      "id": "1",
+      "institution": "FPT Polytechnic Đà Nẵng",
+      "address": "116 Nguyễn Huy Tưởng - Phường Hoà Minh - Quận Liên Chiểu - Thành Phố Đà Nẵng",
+      "degree": "Cao đẳng Ngành Công Nghệ Thông Tin",
+      "period": "Fall 2025 - Present",
+      "details": "Chuyên ngành Công Nghệ Thông Tin, tập trung vào lập trình Web Full-stack (MERN/MEVN)."
+    },
+    {
+      "id": "2",
+      "institution": "Trường THPT Nguyễn Thái Học",
+      "degree": "Tốt nghiệp THPT",
+      "period": "2015 - 2017",
+      "details": "Đạt danh hiệu Học sinh Giỏi cấp tỉnh môn Toán năm học 2016-2017.",
+      "address": "Xã Chư Pưh - Tỉnh Gia Lai"
+    }
+  ],
+  "experience": [
+    {
+      "id": "1",
+      "title": "Thực tập sinh Front-end",
+      "company": "Công ty Cổ phần Công nghệ FPT Complex",
+      "period": "06/2027 - 12/2027",
+      "description": "Tham gia phát triển giao diện người dùng cho dự án nội bộ sử dụng Vue 3, Pinia và Tailwind CSS, cải thiện hiệu suất tải trang lên đến 30%."
+    },
+    {
+      "id": "2",
+      "title": "Phát triển dự án Freelance",
+      "company": "Khách hàng cá nhân",
+      "period": "01/2026 - Present",
+      "description": "Thiết kế và triển khai 5+ website Landing Page theo yêu cầu, đảm bảo tính responsive và chuẩn SEO cơ bản."
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Trang web bán hàng Shopping Cart",
+      "tech": [
+        "Vue 3",
+        "Boostrap 5",
+        "Tailwind CSS",
+        "PHP",
+        "API Resful",
+        "PHP MyAdmin",
+        "Python",
+        "Ruby"
+      ],
+      "members": 4,
+      "duration": "4 tháng (03/2027 - 07/2027)",
+      "image": "https://bizflyportal.mediacdn.vn/bizflyportal/kienthuccoban/the16018854165022.jpg",
+      "description": "Hệ thống bán hàng trực tuyến, đặt hàng từ xa, tích hợp AI phân tích hành vi của người dùng, hệ thống quản lý admin phân quyền, hiệu quả",
+      "startDate": "2027-03-01",
+      "endDate": "2027-07-01"
+    },
+    {
+      "id": "2",
+      "name": "Trang web bán bánh Anh Hoà Bakery",
+      "tech": [
+        "Vue 3",
+        "Boostrap 5",
+        "Vue Router",
+        "Mock API",
+        "Tailwind CSS",
+        "PHP",
+        "API Resful",
+        "PHP MyAdmin",
+        "Linux"
+      ],
+      "members": 1,
+      "duration": "1 tháng (11/2026 - 12/2026)",
+      "image": "https://vietwebgroup.vn/admin/uploads/20170621084101an%20hoa.png",
+      "description": "Xây dựng giao diện bán bánh trực tuyến, tích hợp AI phân tích và trả lời tin nhắn người dùng",
+      "startDate": "2026-11-15",
+      "endDate": "2026-12-15"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Sức mạnh của Composition API trong Vue 3",
+      "summary": "Phân tích cách Composition API giúp tổ chức code, tái sử dụng logic và làm việc với TypeScript hiệu quả hơn so với Options API.",
+      "date": "15/11/2025",
+      "content": "Nội dung chi tiết về các hàm `ref`, `reactive`, `computed` và `watch`...",
+      "image": "https://cafedev.vn/wp-content/uploads/2024/03/cafedev_13af5262-ba14-4e0e-9985-4fa1717414fc.png",
+      "status": "Published",
+      "createdAt": "2025-11-10T10:00:00Z",
+      "updatedAt": "2025-11-15T15:30:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Tối ưu hóa hình ảnh cho hiệu suất Web",
+      "summary": "Hướng dẫn các kỹ thuật Lazy Loading, nén ảnh WebP và sử dụng `<picture>` element để tăng tốc độ tải trang.",
+      "date": "01/11/2025",
+      "content": "Nội dung chi tiết về Web Performance và Core Web Vitals...",
+      "image": "https://bizflyportal.mediacdn.vn/bizflyportal/images/toi16244359751479.jpg",
+      "status": "Published",
+      "createdAt": "2025-11-10T10:00:00Z",
+      "updatedAt": "2025-11-15T15:30:00Z"
+    },
+    {
+      "id": "3",
+      "title": "So sánh Tailwind CSS và Bootstrap trong dự án Vue",
+      "summary": "Đánh giá ưu nhược điểm của hai framework CSS phổ biến khi áp dụng vào một dự án Front-end hiện đại.",
+      "date": "20/10/2025",
+      "content": "Nội dung chi tiết về kích thước bundle, tốc độ phát triển và khả năng tùy chỉnh...",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhITuVqbWIe3RRkdE2y1vksJAklLJCq2e9AkefcwOMhCmQzxLO1Js4dVISIG_D9_aQlIuWq75Bs1KSYZUEMO-lNw5ZQKpv4Mdhr5GG_kZvLJ3ETGudQ6c7w-XKI64_pHJq5gZ1b-aB_ZoK2XzhCWfBp2mpXaM_cXpYj8RchazwhOI4ggqPAnayPygS2/s1920/2cxdh1tt2g3n55p13615%5B1%5D.jpg",
+      "status": "Published",
+      "createdAt": "2025-11-10T10:00:00Z",
+      "updatedAt": "2025-11-15T15:30:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin_tu",
+      "password": "123",
+      "role": "admin"
+    }
+  ],
+  "messages": [
+    {
+      "id": "9ca3",
+      "name": "Tuấn Nguyễn",
+      "email": "tuanprosupe@gmail.com",
+      "subject": "Dự án Web làm bánh",
+      "message": "Tôi là tuấn ",
+      "timestamp": "2025-12-07T16:22:41.216Z"
+    }
+  ]
+}

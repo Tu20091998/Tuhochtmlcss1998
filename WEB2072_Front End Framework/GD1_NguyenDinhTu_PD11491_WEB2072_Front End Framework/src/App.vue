@@ -14,9 +14,9 @@ import FooterComponent from './components/users/Footer.vue';
 // 2. SETUP HOOKS & KHAI BÁO BIẾN CỐ ĐỊNH
 // =======================================================
 const router = useRouter();
-const apiBaseUrl = 'http://localhost:3002';
+const apiBaseUrl = 'http://localhost:3005';
 
-//json-server --watch db.json --port 3002
+//json-server --watch db.json --port 3005
 
 // --- TRẠNG THÁI CHUNG ---
 const isLoading = ref(true);

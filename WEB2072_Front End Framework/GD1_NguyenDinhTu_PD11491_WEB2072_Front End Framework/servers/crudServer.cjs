@@ -219,7 +219,9 @@ app.get("/experience", async (req, res) => {
     try {
         const data = await Experience.find();
         res.json(data);
-    } catch (error) { res.status(500).json({ message: "Lỗi Server", error }); }
+    } catch (error) 
+        { res.status(500).json({ message: "Lỗi Server", error }); 
+    }
 });
 
 // CREATE (POST) - Thêm mới Kinh nghiệm
@@ -304,9 +306,6 @@ app.get("/personal", async (req, res) => {
 app.put("/personal", async (req, res) => {
     // Lấy ID (nếu có) hoặc mặc định tìm document duy nhất
     const dataToUpdate = req.body;
-
-    // Loại bỏ _id khỏi body nếu nó tồn tại (Mongo không cho cập nhật _id)
-    delete dataToUpdate._id; 
     
     try {
         // FindOneAndUpdate với bộ lọc rỗng {} sẽ tìm thấy và cập nhật tài liệu đầu tiên (duy nhất)

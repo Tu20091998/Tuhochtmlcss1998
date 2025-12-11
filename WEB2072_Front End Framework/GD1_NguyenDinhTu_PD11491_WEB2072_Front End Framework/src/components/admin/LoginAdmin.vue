@@ -36,7 +36,7 @@ const handleLogin = async () => {
 
         const users = await response.json();
 
-        // BƯỚC 2: KIỂM TRA TỒN TẠI VÀ MẬT KHẨU
+        //  KIỂM TRA TỒN TẠI VÀ MẬT KHẨU
         if (users.length === 0) {
             errorMessage.value = 'Tên đăng nhập không tồn tại.';
             return;
@@ -49,7 +49,7 @@ const handleLogin = async () => {
             return;
         }
 
-        // BƯỚC 3: ĐĂNG NHẬP THÀNH CÔNG
+        // ĐĂNG NHẬP THÀNH CÔNG
         loginAsAdmin(user.role); 
 
         } catch (error) {
@@ -65,7 +65,7 @@ const handleLogin = async () => {
     <div class="login-container d-flex align-items-center justify-content-center min-vh-100 bg-light">
         <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px;">
             <div class="card-body">
-                <h3 class="card-title text-center mb-4 text-primary">Đăng Nhập Admin</h3>
+                <h3 class="card-title mb-4 text-primary"><i class="bi bi-box-arrow-in-right me-2"></i> Đăng Nhập Admin</h3>
                 
                 <form @submit.prevent="handleLogin">
                     
@@ -106,7 +106,7 @@ const handleLogin = async () => {
                 </form>
 
                 <p class="text-center mt-3 small text-muted">
-                    <router-link :to="{ name: 'Home' }" class="text-decoration-none">Quay lại Trang chủ</router-link>
+                    <router-link :to="{ name: 'Home' }" class="text-decoration-none"> Quay lại Trang chủ</router-link>
                 </p>
             </div>
         </div>
@@ -120,4 +120,5 @@ const handleLogin = async () => {
 .card {
     border-radius: 1rem;
 }
+
 </style>

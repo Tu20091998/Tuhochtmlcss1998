@@ -1,6 +1,6 @@
 <script setup>
 // =======================================================
-// 1. IMPORTS
+//  IMPORTS
 // =======================================================
 import { ref, onMounted, provide } from 'vue';
 import { useRouter } from 'vue-router'; 
@@ -11,12 +11,13 @@ import FooterComponent from './components/users/Footer.vue';
 
 
 // =======================================================
-// 2. SETUP HOOKS & KHAI BÁO BIẾN CỐ ĐỊNH
+//  SETUP HOOKS & KHAI BÁO BIẾN CỐ ĐỊNH
 // =======================================================
 const router = useRouter();
 const apiBaseUrl = 'http://localhost:3005';
 
-//json-server --watch db.json --port 3005
+//link để mở mongodb : mongodb://localhost:27017/
+
 
 // --- TRẠNG THÁI CHUNG ---
 const isLoading = ref(true);
@@ -133,3 +134,9 @@ onMounted(fetchData);
         />
     </div>
 </template>
+
+<style>
+    #app-portfolio{
+        background-color: #EEEEEE;
+    }
+</style>

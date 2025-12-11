@@ -95,8 +95,11 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(), // Sử dụng chế độ History mode (dùng URL đẹp)
+    history: createWebHistory(), // Sử dụng chế độ History mode
     routes,
+    scrollBehavior() {
+        return { top: 0 }; // ⭐ Tự scroll lên đầu mỗi khi đổi trang
+    }
 });
 
 

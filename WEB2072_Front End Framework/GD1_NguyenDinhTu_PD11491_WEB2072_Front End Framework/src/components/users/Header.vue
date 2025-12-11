@@ -3,33 +3,23 @@ import { computed, inject } from 'vue'; // ✅ Thêm inject
 import { useRoute } from 'vue-router'; 
 
 
-//1. INJECT DỮ LIỆU TỪ APP.VUE
+// INJECT DỮ LIỆU TỪ APP.VUE
 const portfolioData = inject('portfolioData');
-const securityState = inject('securityState');
-const isLoggedIn = securityState.isLoggedIn;
-const logout = securityState.logout;
 
-//2. TẠO COMPUTED PROPERTY ĐỂ TRUY CẬP DỮ LIỆU CÁ NHÂN AN TOÀN
+// TẠO COMPUTED PROPERTY ĐỂ TRUY CẬP DỮ LIỆU CÁ NHÂN AN TOÀN
 const personalData = computed(() => {
     // Luôn trả về object có cấu trúc cơ bản
     return portfolioData.value?.personal || { name: 'Portfolio', avatar: '' };
 });
 
-// Hàm xử lý Đăng xuất
-const handleLogout = () => {
-    //Thực hiện logic thay đổi trạng thái đăng nhập
-    logout();
-};
-
-const route = useRoute();
 
 // Định nghĩa navItems (Không đổi)
 const navItems = [
-    { label: "Trang chủ", path: "/" },
-    { label: "Thông tin", path: "/detail" },
-    { label: "Kĩ năng/Dự án", path: "/skills" },
-    { label: "Bài viết", path: "/articles" },
-    { label: "Liên hệ", path: "/contact" },
+    { label: "🏠 Trang chủ", path: "/" },
+    { label: "📄 Thông tin", path: "/detail" },
+    { label: "🛠️ Kĩ năng/Dự án", path: "/skills" },
+    { label: "✍️ Bài viết", path: "/articles" },
+    { label: "📧 Liên hệ", path: "/contact" },
 ];
 
 
@@ -43,28 +33,17 @@ const collapseNavbar = () => {
         collapseElement.hide();
     }
 };
-
-// Hàm điều hướng và đóng menu
-const navigateAndClose = (path) => {
-    // Điều hướng trước
-    route.push(path);
-    // Đợi Vue cập nhật DOM, sau đó đóng menu
-    nextTick(() => {
-        collapseNavbar();
-    });
-};
 </script>
 
 <template>
     <!-- Navbar Bootstrap-->
     <header class="fixed-top bg-white shadow-sm z-index-10">
-        <nav class="navbar navbar-expand-md navbar-light py-0">
+        <nav class="navbar navbar-expand-md navbar-light py-0 bg-dark">
             <!-- Container Responsive -->
             <div class="container-fluid container-md px-3 px-sm-3 px-lg-4 max-width-center"> 
                 <!-- Logo/Tên (Sử dụng computed personalData.name) -->
-                <router-link to="/" class="navbar-brand fs-4 fw-bold cursor-pointer py-3">
-                    <!--  Truy cập trực tiếp personalData.name -->
-                    {{ personalData.name || 'Portfolio' }}
+                <router-link to="/" class="navbar-brand fs-4 fw-bold cursor-pointer py-3 text-white">
+                    <i class="bi bi-briefcase fs-2"></i> PORTFOLIO
                 </router-link>
                 
                 <!-- Toggle Button cho Mobile -->
@@ -76,11 +55,11 @@ const navigateAndClose = (path) => {
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
                         <!-- Menu Items -->
-                        <li v-for="item in navItems" :key="item.path" class="nav-item mx-2">
+                        <li v-for="item in navItems" :key="item.path" class="nav-item mx-2 text-white">
                             <router-link
                                 :to="item.path"
                                 @click="collapseNavbar" 
-                                class="nav-link fs-6 cursor-pointer transition p-1 pt-3 pb-3">
+                                class="nav-link fs-6 cursor-pointer transition p-1 pt-3 pb-3 text-white">
                                 {{ item.label }}
                             </router-link>
                         </li>
@@ -90,8 +69,8 @@ const navigateAndClose = (path) => {
                             <router-link
                                 to="/admin/login"
                                 @click="collapseNavbar" 
-                                class="nav-link fs-6 cursor-pointer transition p-1 pt-3 pb-3">
-                                Trang quản trị
+                                class="nav-link fs-6 cursor-pointer transition p-1 pt-3 pb-3 text-white">
+                                ⚙️ Trang quản trị
                             </router-link>
                         </li>
                     </ul>
@@ -129,5 +108,36 @@ const navigateAndClose = (path) => {
 /* Hiệu ứng hover cho menu item */
 .hover-text-secondary:hover {
     color: var(--bs-secondary) !important;
+}
+
+/* === BỔ SUNG: STYLE CHO MENU ACTIVE === */
+.nav-link.router-link-active,
+.nav-link.router-link-exact-active {
+    /* Đặt màu sắc khi mục đang active (ví dụ: Màu Primary - Xanh dương) */
+    color: var(--bs-primary) !important;
+    
+    /* Tùy chọn: Thêm gạch chân để nổi bật hơn */
+    border-bottom: 2px solid var(--bs-primary); 
+}
+
+/* Đảm bảo hiệu ứng hover vẫn hoạt động khi không active */
+.nav-link:hover:not(.router-link-exact-active) {
+    color: var(--bs-secondary) !important; /* Màu hover thông thường (secondary) */
+}
+
+/* Đảm bảo link active vẫn giữ màu active khi hover */
+.nav-link.router-link-exact-active:hover {
+    color: var(--bs-primary) !important; 
+}
+
+/* Đảm bảo nút nổi bật trên mọi nền */
+.navbar-toggler-icon {
+    /* Thay đổi màu của icon (3 gạch) thành màu trắng */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Tùy chọn: Thay đổi màu viền của nút nếu cần */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* Viền màu trắng nhạt */
 }
 </style>

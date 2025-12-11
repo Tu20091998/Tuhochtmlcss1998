@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import MapLocation from './MapLocation.vue';
 
 const form = ref({
     name: '',
@@ -85,12 +86,11 @@ const submitForm = async () => {
     }
 };
 
-console.log(form.value);
 </script>
 
 <template>
     <section class="container-fluid max-width-center pt-3">
-        <h1 class="fs-2 fw-bold text-dark text-center mb-5">Liên Hệ & Hợp Tác</h1>
+        <h1 class="fs-2 fw-bold text-dark text-center mb-5" style="margin-top: 5rem;"><i class="bi bi-people"></i> Liên Hệ & Hợp Tác</h1>
 
         <div class="card bg-white p-4 p-md-5 rounded-3 shadow-lg">
             <p class="text-center text-secondary mb-4">Hãy để lại thông tin của bạn. Tôi sẽ phản hồi sớm nhất có thể để thảo luận về cơ hội hợp tác.</p>
@@ -126,10 +126,11 @@ console.log(form.value);
                     {{ isSubmitting ? 'Đang Gửi...' : 'Gửi Tin Nhắn & Hợp Tác' }}
                 </button>
             </form>
-            
-            <p class="mt-4 text-center small text-muted">
-                Lưu ý: Dữ liệu đã được cấu hình gửi dưới dạng JSON tới API Backend tại: {{ CONTACT_API_URL }}
-            </p>
+        </div>
+
+        <!--Hiển thị bản đồ-->
+        <div class="col-12 mt-2">
+            <MapLocation />
         </div>
     </section>
 </template>

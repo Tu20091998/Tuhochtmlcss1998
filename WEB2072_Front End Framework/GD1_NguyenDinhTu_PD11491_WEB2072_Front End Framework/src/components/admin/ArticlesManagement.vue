@@ -68,6 +68,7 @@ const handleSubmit = async () => {
     isLoading.value = true;
     message.value = { type: '', text: '' };
 
+    //xét editMode
     const method = isEditMode.value ? 'PUT' : 'POST';
     const url = isEditMode.value 
         ? `${apiBaseUrl}/articles/${articleForm.value.id}`
@@ -109,7 +110,6 @@ const handleSubmit = async () => {
 const handleDelete = async (id) => {
     if (!confirm('Bạn có chắc chắn muốn xóa bài viết này không?')) return;
     
-    console.log(id);
     message.value = { type: '', text: '' };
     try {
         const response = await fetch(`${apiBaseUrl}/articles/${id}`, { method: 'DELETE' });
@@ -168,8 +168,8 @@ const handleDelete = async (id) => {
                             </td>
                             <td>{{ article.date }}</td>
                             <td>
-                                <button @click="openModal(article)" class="btn btn-sm btn-warning me-2">Sửa</button>
-                                <button @click="handleDelete(article.id)" class="btn btn-sm btn-danger">Xóa</button>
+                                <button @click="openModal(article)" class="btn btn-sm btn-warning">Sửa</button>
+                                <button @click="handleDelete(article.id)" class="btn btn-sm btn-danger m-2">Xóa</button>
                             </td>
                         </tr>
                     </tbody>

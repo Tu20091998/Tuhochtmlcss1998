@@ -23,7 +23,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-newspaper me-2"></i> <span class="fs-6">Thông tin cá nhân</span>
+                <i class="bi bi-person me-2"></i> <span class="fs-6">Thông tin cá nhân</span>
             </RouterLink>
 
             <RouterLink
@@ -47,7 +47,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-person-lines-fill me-2"></i><span class="fs-6">Học Vấn</span> 
+                <i class="bi bi-mortarboard me-2"></i><span class="fs-6">Học Vấn</span> 
             </RouterLink>
 
             <RouterLink
@@ -55,7 +55,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-person-lines-fill me-2"></i><span class="fs-6">Kinh Nghiệm</span> 
+                <i class="bi bi-briefcase me-2"></i><span class="fs-6">Kinh Nghiệm</span> 
             </RouterLink>
         </nav>
 

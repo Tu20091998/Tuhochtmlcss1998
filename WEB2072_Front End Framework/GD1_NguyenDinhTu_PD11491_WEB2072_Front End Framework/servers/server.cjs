@@ -3,16 +3,16 @@
 const express = require('express'); //tạo server backend
 const bodyParser = require('body-parser');//đọc dữ liệu mà Vue gửi lên (POST body)
 const nodemailer = require('nodemailer'); //nhận nội dung từ backend → gửi đi
-const cors = require('cors');//Cho phép Vue gọi backend
+const cors = require('cors');//Cho phép Vue gọi api đến node.js
 
 //tạo server và cổng
 const app = express();
 const port = 3001; // Nodemailer Server
 
 // hiểu đúng dữ liệu gửi lên cho backend nodemailer
-app.use(cors()); // cho phép gửi từ ngoài vào
+app.use(cors()); //gọi để sử dụng
 app.use(bodyParser.json()); //dịch nội dung ra mã js
-app.use(bodyParser.urlencoded({ extended: true }));//Đọc body kiểu form-data (khi submit HTML form)
+app.use(bodyParser.urlencoded({ extended: true }));// chuyển dạng chuỗi trình duyệt thành object
 
 
 // ===================================================================

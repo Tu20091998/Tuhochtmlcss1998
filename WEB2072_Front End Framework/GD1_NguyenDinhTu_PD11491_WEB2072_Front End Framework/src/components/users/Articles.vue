@@ -1,26 +1,44 @@
 <script setup>
-import { ref } from 'vue';
-// Import các component con
-import ArticleList from './ArticlesComponent/ArticleList.vue'; 
-import ArticleDetailModal from './ArticlesComponent/ArticleDetailModal.vue';
+import { computed, inject } from 'vue';
 
-// Sử dụng ref để lưu trữ bài viết đang được chọn
-const selectedArticle = ref(null);
+// Inject dữ liệu
+const portfolioData = inject('portfolioData');
 
-// Hàm mở Modal và lưu trữ bài viết được chọn
-const handleArticleSelection = (article) => {
-    selectedArticle.value = article;
-};
+// Lấy danh sách bài viết từ dữ liệu đã inject
+const articles = computed(() => portfolioData.value?.articles || []);
+
 </script>
 
 <template>
-    <section class="container-fluid max-width-center pt-3">
+    <section class="container-fluid max-width-center pt-3 mt-3">
         <h1 class="fs-2 fw-bold text-dark text-center mb-5" style="margin-top: 5rem;"><i class="bi bi-newspaper me-2"></i> Danh Sách Bài Viết Công Nghệ</h1>
-        
-        <ArticleList @select-article="handleArticleSelection" />
-
-        <ArticleDetailModal :article="selectedArticle" />
-        
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" v-for="article in articles" :key="article.id">
+                <router-link
+                    :to="{ name: 'ArticleDetail', params: { article_id: article.id } }" 
+                    class="card h-100 shadow-sm text-decoration-none text-dark article-card"
+                >
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{ article.title }}</h5>
+                        <p class="card-text text-muted">{{ article.summary }}</p>
+                    </div>
+                    <div class="mb-5 article-image-container">
+                        <img 
+                            :src="article.image" 
+                            :alt="article.title" 
+                            class="img-fluid rounded shadow-sm"
+                        >
+                    </div>
+                    <div class="card-footer small text-end">
+                        <span class="text-primary fw-medium">Xem chi tiết <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </router-link>
+            </div>
+            <div v-if="articles.length === 0" class="col-12 text-center py-5">
+                <p class="text-muted">Không tìm thấy bài viết nào.</p>
+            </div>
+        </div>
         <div class="mt-5 text-center">
             <h2 class="fs-4 fw-bold text-dark mb-3">Tham Khảo Thêm Từ Các Nguồn Uy Tín</h2>
             <p class="text-muted">Đọc thêm tin tức và phân tích công nghệ chuyên sâu từ các trang báo hàng đầu.</p>
@@ -36,9 +54,22 @@ const handleArticleSelection = (article) => {
 </template>
 
 <style scoped>
-.max-width-center {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-}
+    .max-width-center {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .article-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: 1px solid #dee2e6;
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
 </style>

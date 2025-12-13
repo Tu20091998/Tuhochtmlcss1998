@@ -89,7 +89,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-    <section class="container-fluid max-width-center pt-3">
+    <section class="container-fluid max-width-center pt-3 mt-3">
         <h1 class="fs-2 fw-bold text-dark text-center mb-5" style="margin-top: 5rem;"><i class="bi bi-people"></i> Liên Hệ & Hợp Tác</h1>
 
         <div class="card bg-white p-4 p-md-5 rounded-3 shadow-lg">

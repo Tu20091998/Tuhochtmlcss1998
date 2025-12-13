@@ -196,4 +196,8 @@ const totalItems = computed(() => {
 .cart-checkbox {
     accent-color: #f97316;
 }
+
+
+
+
 </style>

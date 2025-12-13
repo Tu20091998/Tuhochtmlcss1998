@@ -23,7 +23,7 @@
 </script>
 
 <template>
-        <section class="container-fluid max-width-center g-5" style="margin-top: 8rem;">
+        <section class="container-fluid max-width-center g-5" style="margin-top: 10rem;">
             <PersonalSection />
             <EducationSection />
             <ExperienceSection />

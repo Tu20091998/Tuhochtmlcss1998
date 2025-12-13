@@ -6,19 +6,19 @@
     import SkillsDetails from './SkillsComponent/SkillsDetails.vue';
     import ProjectsList from './SkillsComponent/ProjectsList.vue';
 
-    // Inject dữ liệu (vẫn giữ ở đây nếu muốn)
+    // Inject dữ liệu
     const portfolioData = inject('portfolioData');
 
-    // Mặc dù không sử dụng trong template này, bạn có thể giữ nếu cần logic ở đây
+    // Mặc dù không sử dụng trong template này
     const featuredArticles = computed(() => portfolioData.value?.articles || []); 
 </script>
 
 <template>
-    <section class="container-fluid max-width-center pt-3 g-5">
+    <section class="container-fluid max-width-center pt-3 g-5 mt-3">
         <h1 class="fs-2 fw-bold text-dark text-center mb-5" style="margin-top: 5rem;"><i class="bi bi-tools"></i> Kĩ Năng & Kinh Nghiệm Phát Triển</h1>
-        <EducationDetails />
-        <SkillsDetails />
-        <ProjectsList />
+        <EducationDetails/>
+        <SkillsDetails/>
+        <ProjectsList/>
     </section>
 </template>
 

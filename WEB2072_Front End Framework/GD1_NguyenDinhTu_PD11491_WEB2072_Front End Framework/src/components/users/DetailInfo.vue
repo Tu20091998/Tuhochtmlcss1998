@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <section class="container-fluid max-width-center pt-3">
+    <section class="container-fluid max-width-center pt-3 mt-3">
         <h1 class="fs-2 fw-bold text-dark text-center mb-5" style="margin-top: 5rem;"><i class="bi bi-person-lines-fill me-2"></i> Thông Tin Cá Nhân Chi Tiết</h1>
         <PersonalDetailsCard />
         <GallerySection />

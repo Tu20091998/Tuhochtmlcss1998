@@ -31,8 +31,8 @@ provide('adminData', {
     portfolioData, 
     apiBaseUrl, 
     fetchData,
-    logout: securityState.logout, // Truyền hàm logout xuống header/sidebar
-    isLoggedIn: securityState.isLoggedIn, // Truyền hàm logout xuống header/sidebar
+    logout: securityState.logout,
+    isLoggedIn: securityState.isLoggedIn,
 });
 
 </script>
@@ -43,7 +43,9 @@ provide('adminData', {
         <div class="admin-content" style="width: 100%;">
             <AdminHeader/>
             <main class="admin-main p-4">
-                <router-view></router-view> 
+                <transition name="fade" mode="out-in">
+                    <router-view />
+                </transition>
             </main>
             <AdminFooter/>
         </div>
@@ -53,5 +55,14 @@ provide('adminData', {
 <style>
     .admin-wrapper{
         width: 100%;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 1s;
+    }
+
+    .fade-enter-from, .fade-leave-to {
+        opacity: 0;
+        transition: opacity 0.5s;
     }
 </style>

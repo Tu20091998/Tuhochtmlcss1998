@@ -1,16 +1,6 @@
 <script setup>
-import { computed, inject } from 'vue'; // ✅ Thêm inject
-import { useRoute } from 'vue-router'; 
+import { computed, inject } from 'vue'; 
 
-
-// INJECT DỮ LIỆU TỪ APP.VUE
-const portfolioData = inject('portfolioData');
-
-// TẠO COMPUTED PROPERTY ĐỂ TRUY CẬP DỮ LIỆU CÁ NHÂN AN TOÀN
-const personalData = computed(() => {
-    // Luôn trả về object có cấu trúc cơ bản
-    return portfolioData.value?.personal || { name: 'Portfolio', avatar: '' };
-});
 
 
 // Định nghĩa navItems (Không đổi)

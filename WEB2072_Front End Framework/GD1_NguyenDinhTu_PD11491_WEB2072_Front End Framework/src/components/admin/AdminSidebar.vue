@@ -15,7 +15,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-house-door-fill me-2"></i><span class="fs-6">Dashboard</span> 
+                🏠 <span class="fs-6">Dashboard</span> 
             </RouterLink>
 
             <RouterLink
@@ -23,7 +23,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-person me-2"></i> <span class="fs-6">Thông tin cá nhân</span>
+                🧑 <span class="fs-6">Thông tin cá nhân</span>
             </RouterLink>
 
             <RouterLink
@@ -31,7 +31,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-newspaper me-2"></i> <span class="fs-6">Bài Viết</span>
+                📝 <span class="fs-6">Bài Viết</span>
             </RouterLink>
 
             <RouterLink
@@ -39,7 +39,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-briefcase-fill me-2"></i><span class="fs-6">Dự Án</span> 
+                🏗️ <span class="fs-6">Dự Án</span> 
             </RouterLink>
 
             <RouterLink
@@ -47,7 +47,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-mortarboard me-2"></i><span class="fs-6">Học Vấn</span> 
+                🎓 <span class="fs-6">Học Vấn</span> 
             </RouterLink>
 
             <RouterLink
@@ -55,7 +55,7 @@ import { RouterLink } from 'vue-router';
                 class="nav-link text-white mb-2" 
                 active-class="bg-primary"
             >
-                <i class="bi bi-briefcase me-2"></i><span class="fs-6">Kinh Nghiệm</span> 
+                💼 <span class="fs-6">Kinh Nghiệm</span> 
             </RouterLink>
         </nav>
 

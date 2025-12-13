@@ -120,7 +120,7 @@ const handleUpdatePersonal = async () => {
 
 <template>
     <div class="personal-edit">
-        <h2 class="mb-4 text-dark fw-bold">🛠️ Chỉnh Sửa Thông Tin Cá Nhân</h2>
+        <h2 class="mb-4 text-dark fw-bold">🧑 Chỉnh Sửa Thông Tin Cá Nhân</h2>
         
         <form @submit.prevent="handleUpdatePersonal" class="p-4 bg-white shadow-sm rounded">
             

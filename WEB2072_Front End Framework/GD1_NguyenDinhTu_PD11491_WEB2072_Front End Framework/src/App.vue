@@ -18,13 +18,11 @@ const apiBaseUrl = 'http://localhost:3005';
 
 //link để mở mongodb : mongodb://localhost:27017/
 
-
 // --- TRẠNG THÁI CHUNG ---
 const isLoading = ref(true);
 
-
 // =======================================================
-// 3. DỮ LIỆU & LOGIC LẤY API
+//  DỮ LIỆU & LOGIC LẤY API
 // =======================================================
 
 // Dữ liệu reactive (Chứa toàn bộ data từ API)
@@ -48,7 +46,9 @@ const apiFetch = async (url) => {
         if (!response.ok) {
             throw new Error(`Lỗi HTTP! Status: ${response.status} cho URL: ${url}`);
         }
+
         return await response.json();
+        
     } catch (error) {
         console.error(`Lỗi khi thực hiện fetch đến ${url}:`, error);
         throw error;
@@ -70,8 +70,8 @@ const fetchData = async () => {
         ]);
 
         portfolioData.value = { personal, education, experience, projects, articles, messages, users};
-        console.log("Dữ liệu đã được tải thành công từ API.");
 
+        console.log("Dữ liệu đã được tải thành công từ API.");
     } catch (error) {
         console.error("Lỗi khi tải dữ liệu từ API. Sử dụng dữ liệu Mock Fallback.");
     } finally {
@@ -80,7 +80,7 @@ const fetchData = async () => {
 };
 
 // =======================================================
-// 4. LOGIC BẢO MẬT (ADMIN)
+// LOGIC BẢO MẬT (ADMIN)
 // =======================================================
 const isLoggedIn = ref(false);
 const userRole = ref('guest'); 
@@ -101,7 +101,7 @@ const logout = () => {
 
 
 // =======================================================
-// 5. PROVIDE & LIFECYCLE HOOKS
+//  PROVIDE & LIFECYCLE HOOKS
 // =======================================================
 
 // Cung cấp dữ liệu và hàm cho các component con
@@ -118,14 +118,13 @@ onMounted(fetchData);
     <div id="app-portfolio" class="d-flex flex-column min-vh-100"> 
         
         <HeaderComponent 
-            v-if="!isLoggedIn" 
-            :personal-data="portfolioData.value?.personal || {}" 
+            v-if="!isLoggedIn"
         />
         
         <main class="flex-grow-1"> 
-            <router-view v-slot="{ Component }">
-                <component :is="Component" />
-            </router-view>
+            <transition name="fade" mode="out-in">
+                <router-view />
+            </transition>
         </main>
 
         <FooterComponent 
@@ -138,5 +137,14 @@ onMounted(fetchData);
 <style>
     #app-portfolio{
         background-color: #EEEEEE;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 1s;
+    }
+
+    .fade-enter-from, .fade-leave-to {
+        opacity: 0;
+        transition: opacity 0.5s;
     }
 </style>

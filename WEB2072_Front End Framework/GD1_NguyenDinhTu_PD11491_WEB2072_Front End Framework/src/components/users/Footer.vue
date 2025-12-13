@@ -25,8 +25,8 @@ const personalData = computed(() => {
                 <p class="mb-2">
                     Email:
                     <a :href="'mailto:' + personalData.email"
-                       class="footer-link">
-                       {{ personalData.email }}
+                        class="footer-link">
+                        {{ personalData.email }}
                     </a>
                 </p>
 

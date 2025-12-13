@@ -1,13 +1,13 @@
 <script setup>
 import { computed, inject, ref } from 'vue';
 
-// 1. INJECT DỮ LIỆU CẦN THIẾT
+//  INJECT DỮ LIỆU CẦN THIẾT
 const adminData = inject('adminData');
 const experienceList = computed(() => adminData.portfolioData.value.experience || []);
 const apiBaseUrl = adminData.apiBaseUrl;
 const fetchData = adminData.fetchData;
 
-// 2. TRẠNG THÁI MODAL VÀ FORM
+//  TRẠNG THÁI MODAL VÀ FORM
 const isModalOpen = ref(false);
 const isEditMode = ref(false);
 const isLoading = ref(false);

@@ -45,7 +45,7 @@ const article = computed(() => {
         </button>
 
         <div v-if="article">
-            <h3 class="display-5 fw-bold text-dark mb-3">{{ article.title }}</h3>
+            <h3 class="display-6 fw-bold text-dark mb-3">{{ article.title }}</h3>
             <p class="text-muted small mb-5">
                 Ngày đăng: <strong>{{ article.date }}</strong> | Trạng thái: <strong>{{ article.status }}</strong>
             </p>

@@ -88,7 +88,6 @@ const handleSubmit = async () => {
         
     
     //Chuẩn bị Payload
-    // Tách form thành payload và loại bỏ techText
     const { techText, ...restOfForm } = projectForm.value;
     
     const payload = { 

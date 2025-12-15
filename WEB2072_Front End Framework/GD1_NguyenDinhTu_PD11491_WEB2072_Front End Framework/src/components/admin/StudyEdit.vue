@@ -144,7 +144,9 @@ const handleDelete = async (id) => {
             <div v-if="message.text" :class="`alert alert-${message.type} p-2 m-0`" style="flex-grow: 1; margin-right: 1rem;">
                 {{ message.text }}
             </div>
-            <div v-else style="flex-grow: 1;"></div> <button @click="openCreateModal" class="btn btn-primary fw-bold">
+            <div v-else style="flex-grow: 1;"></div> 
+            
+            <button @click="openCreateModal" class="btn btn-primary fw-bold">
                 <i class="bi bi-plus-lg me-2"></i> Thêm Học Vấn
             </button>
         </div>

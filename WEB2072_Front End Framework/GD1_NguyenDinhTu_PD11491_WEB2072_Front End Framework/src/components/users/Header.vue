@@ -12,13 +12,11 @@ const navItems = [
     { label: "📧 Liên hệ", path: "/contact" },
 ];
 
-
 // Thêm hàm để đóng menu thủ công (Dựa trên ID 'navbarNav')
 const collapseNavbar = () => {
     // Chỉ đóng nếu menu đang mở (thường xảy ra trên mobile)
     const navbar = document.getElementById('navbarNav');
     if (navbar && navbar.classList.contains('show')) {
-        // Đây là cách chuẩn để kích hoạt việc đóng collapse của Bootstrap bằng JS
         const collapseElement = new bootstrap.Collapse(navbar, { toggle: false });
         collapseElement.hide();
     }

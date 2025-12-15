@@ -58,7 +58,6 @@ const openModal = (experience = null) => {
 };
 
 // --- HÀM XỬ LÝ CRUD ĐƠN GIẢN ---
-
 const handleSubmit = async () => {
     if (!experienceForm.value.company || !experienceForm.value.title) {
         message.value = { type: 'danger', text: 'Vui lòng điền Tên Công ty và Tiêu đề.' };

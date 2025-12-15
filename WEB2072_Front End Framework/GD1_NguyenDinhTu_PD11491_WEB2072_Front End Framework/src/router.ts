@@ -95,15 +95,13 @@ const routes = [
                 component: ExperienceManagement,
             },
         ]
-
-        
     },
     // Route 404
     { path: '/:pathMatch(.*)*', name: 'NotFound', redirect: '/' }, // Chuyển hướng về trang chủ
 ];
 
 const router = createRouter({
-    history: createWebHistory(), // Sử dụng chế độ History mode
+    history: createWebHistory(),//hiển thị url đẹp(không có #)
     routes,
     scrollBehavior() {
         return { top: 0 }; // ⭐ Tự scroll lên đầu mỗi khi đổi trang
@@ -111,4 +109,4 @@ const router = createRouter({
 });
 
 
-export default router;
+export default router; // nhờ route spa mà không bị load trang khi tải component

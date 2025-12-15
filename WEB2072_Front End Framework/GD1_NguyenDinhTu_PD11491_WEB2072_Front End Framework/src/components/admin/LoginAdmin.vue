@@ -50,14 +50,14 @@ const handleLogin = async () => {
         }
 
         // ĐĂNG NHẬP THÀNH CÔNG
-        loginAsAdmin(user.role); 
+        loginAsAdmin(user.role);
 
-        } catch (error) {
-            console.error('Lỗi Đăng nhập:', error);
-            errorMessage.value = 'Đã xảy ra lỗi trong quá trình đăng nhập. Vui lòng thử lại.';
-        } finally {
-            isLoading.value = false;
-        }
+    } catch (error) {
+        console.error('Lỗi Đăng nhập:', error);
+        errorMessage.value = 'Đã xảy ra lỗi trong quá trình đăng nhập. Vui lòng thử lại.';
+    } finally {
+        isLoading.value = false;
+    }
 };
 </script>
 

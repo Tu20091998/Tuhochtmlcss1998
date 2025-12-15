@@ -89,50 +89,51 @@ const submitForm = async () => {
 </script>
 
 <template>
-    <section class="container-fluid max-width-center pt-3 mt-3">
-        <h1 class="fs-2 fw-bold text-dark text-center mb-5" style="margin-top: 5rem;"><i class="bi bi-people"></i> Liên Hệ & Hợp Tác</h1>
-
-        <div class="card bg-white p-4 p-md-5 rounded-3 shadow-lg">
-            <p class="text-center text-secondary mb-4">Hãy để lại thông tin của bạn. Tôi sẽ phản hồi sớm nhất có thể để thảo luận về cơ hội hợp tác.</p>
-            
-            <!-- Alert cho trạng thái form -->
-            <div v-if="statusMessage" :class="{'bg-success-subtle border-success-subtle text-success-emphasis': !isError, 'bg-danger-subtle border-danger-subtle text-danger-emphasis': isError}" class="alert border px-4 py-3 rounded mb-4" role="alert">
-                <p class="fw-bold mb-0">{{ isError ? 'Lỗi!' : 'Thành công!' }}</p>
-                <p class="small mb-0">{{ statusMessage }}</p>
-            </div>
-
-            <!-- Form: d-flex flex-column gap-3 -->
-            <form @submit.prevent="submitForm" class="d-flex flex-column gap-3">
-                <div class="mb-3">
-                    <label for="name" class="form-label d-block small fw-medium text-dark">Họ và Tên (*)</label>
-                    <input type="text" id="name" v-model="form.name" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label d-block small fw-medium text-dark">Email (*)</label>
-                    <input type="email" id="email" v-model="form.email" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting">
-                </div>
-                <div class="mb-3">
-                    <label for="subject" class="form-label d-block small fw-medium text-dark">Chủ đề (*)</label>
-                    <input type="text" id="subject" v-model="form.subject" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting">
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label d-block small fw-medium text-dark">Tin nhắn/Nội dung hợp tác (*)</label>
-                    <textarea id="message" rows="4" v-model="form.message" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting"></textarea>
-                </div>
-                
-                <!-- Button: Thêm Loading Spinner Bootstrap -->
-                <button type="submit" class="w-100 btn btn-primary py-3 px-4 shadow-sm fw-medium transition hover-scale-101" :disabled="isSubmitting">
-                    <span v-if="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                    {{ isSubmitting ? 'Đang Gửi...' : 'Gửi Tin Nhắn & Hợp Tác' }}
-                </button>
-            </form>
-        </div>
-
-        <!--Hiển thị bản đồ-->
-        <div class="col-12 mt-2">
+    <div style="margin-top: 8rem;">
+        <h1 class="fs-2 fw-bold text-dark text-center mb-4"><i class="bi bi-people"></i> Liên Hệ & Hợp Tác</h1>
+        <section class="container-fluid max-width-center pt-3 mt-3 gap-3 d-flex flex-column flex-lg-row">
+            <!--Hiển thị bản đồ-->
             <MapLocation />
-        </div>
-    </section>
+
+            <!--Form liên hệ-->
+            <div class="card bg-white p-4 p-md-5 rounded-3 shadow-lg form-contact">
+                <p class="text-center text-secondary mb-4">Hãy để lại thông tin của bạn. Tôi sẽ phản hồi sớm nhất có thể để thảo luận về cơ hội hợp tác.</p>
+
+                <!-- Alert cho trạng thái form -->
+                <div v-if="statusMessage" :class="{'bg-success-subtle border-success-subtle text-success-emphasis': !isError, 'bg-danger-subtle border-danger-subtle text-danger-emphasis': isError}" class="alert border px-4 py-3 rounded mb-4" role="alert">
+                    <p class="fw-bold mb-0">{{ isError ? 'Lỗi!' : 'Thành công!' }}</p>
+                    <p class="small mb-0">{{ statusMessage }}</p>
+                </div>
+
+                <!-- Form: d-flex flex-column gap-3 -->
+                <form @submit.prevent="submitForm" class="d-flex flex-column gap-3">
+                    <div class="mb-3">
+                        <label for="name" class="form-label d-block small fw-medium text-dark">Họ và Tên (*)</label>
+                        <input type="text" id="name" v-model="form.name" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label d-block small fw-medium text-dark">Email (*)</label>
+                        <input type="email" id="email" v-model="form.email" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label d-block small fw-medium text-dark">Chủ đề (*)</label>
+                        <input type="text" id="subject" v-model="form.subject" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label d-block small fw-medium text-dark">Tin nhắn/Nội dung hợp tác (*)</label>
+                        <textarea id="message" rows="4" v-model="form.message" required class="form-control rounded-2 shadow-sm transition" :disabled="isSubmitting"></textarea>
+                    </div>
+
+                    <!-- Button: Thêm Loading Spinner Bootstrap -->
+                    <button type="submit" class="w-100 btn btn-primary py-3 px-4 shadow-sm fw-medium transition hover-scale-101" :disabled="isSubmitting">
+                        <span v-if="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                        {{ isSubmitting ? 'Đang Gửi...' : 'Gửi Tin Nhắn & Hợp Tác' }}
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+    
 </template>
 
 <style scoped>
@@ -147,5 +148,9 @@ const submitForm = async () => {
 }
 .hover-scale-101:hover {
     transform: scale(1.01);
+}
+
+.form-contact{
+    width: 50%;
 }
 </style>

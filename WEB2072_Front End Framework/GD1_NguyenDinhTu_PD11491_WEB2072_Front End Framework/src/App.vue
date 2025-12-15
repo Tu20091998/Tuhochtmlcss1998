@@ -1,7 +1,6 @@
 <script setup>
-// =======================================================
+
 //  IMPORTS
-// =======================================================
 import { ref, onMounted, provide } from 'vue';
 import { useRouter } from 'vue-router'; 
 
@@ -10,9 +9,7 @@ import HeaderComponent from './components/users/Header.vue';
 import FooterComponent from './components/users/Footer.vue';
 
 
-// =======================================================
 //  SETUP HOOKS & KHAI BÁO BIẾN CỐ ĐỊNH
-// =======================================================
 const router = useRouter();
 const apiBaseUrl = 'http://localhost:3005';
 
@@ -21,10 +18,8 @@ const apiBaseUrl = 'http://localhost:3005';
 // --- TRẠNG THÁI CHUNG ---
 const isLoading = ref(true);
 
-// =======================================================
-//  DỮ LIỆU & LOGIC LẤY API
-// =======================================================
 
+//  DỮ LIỆU & LOGIC LẤY API
 // Dữ liệu reactive (Chứa toàn bộ data từ API)
 const portfolioData = ref({
     personal: { 
@@ -79,9 +74,8 @@ const fetchData = async () => {
     }
 };
 
-// =======================================================
+
 // LOGIC BẢO MẬT (ADMIN)
-// =======================================================
 const isLoggedIn = ref(false);
 const userRole = ref('guest'); 
 
@@ -99,10 +93,6 @@ const logout = () => {
     router.push({ name: 'LoginAdmin' }); 
 };
 
-
-// =======================================================
-//  PROVIDE & LIFECYCLE HOOKS
-// =======================================================
 
 // Cung cấp dữ liệu và hàm cho các component con
 provide('portfolioData', portfolioData);
@@ -122,9 +112,11 @@ onMounted(fetchData);
         />
         
         <main class="flex-grow-1"> 
-            <transition name="fade" mode="out-in">
-                <router-view />
-            </transition>
+            <router-view v-slot="{ Component }">
+                <transition name="fade" mode="out-in">
+                    <component :is="Component" />
+                </transition>
+            </router-view>
         </main>
 
         <FooterComponent 

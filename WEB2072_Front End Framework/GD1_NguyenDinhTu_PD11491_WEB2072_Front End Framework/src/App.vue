@@ -132,11 +132,11 @@ onMounted(fetchData);
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.6s;
+        transition: opacity 0.4s;
     }
 
     .fade-enter-from, .fade-leave-to {
         opacity: 0;
-        transition: opacity 0.5s;
+        transition: opacity 0.3s;
     }
 </style>

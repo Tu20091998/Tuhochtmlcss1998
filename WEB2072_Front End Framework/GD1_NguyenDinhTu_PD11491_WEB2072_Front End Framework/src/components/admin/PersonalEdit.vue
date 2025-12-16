@@ -89,12 +89,8 @@ const handleUpdatePersonal = async () => {
         softSkills: parseSkills(formData.value.softSkillsText),
     };
 
-    //xoá id khi gửi dữ liệu đi
-    delete updatedPersonal._id; 
-    delete updatedPersonal.id;
-
     try {
-        // 2. Gọi API PUT để cập nhật toàn bộ đối tượng personal
+        // Gọi API PUT để cập nhật toàn bộ đối tượng personal
         const response = await fetch(`${apiBaseUrl}/personal`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -105,7 +101,7 @@ const handleUpdatePersonal = async () => {
             throw new Error(`Cập nhật thất bại, Status: ${response.status}`);
         }
 
-        // 3. Cập nhật giao diện toàn cục
+        // Cập nhật giao diện
         await fetchData(); 
         successMessage.value = 'Thông tin cá nhân đã được cập nhật thành công!';
 

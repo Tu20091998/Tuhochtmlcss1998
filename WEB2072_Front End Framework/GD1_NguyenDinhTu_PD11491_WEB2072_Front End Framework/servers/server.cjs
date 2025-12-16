@@ -15,9 +15,7 @@ app.use(bodyParser.json()); //dịch nội dung ra mã js
 app.use(bodyParser.urlencoded({ extended: true }));//dịch nội dung nếu gửi theo form thành mã js
 
 
-// ===================================================================
 //  PHẦN CẤU HÌNH EMAIL (Sử dụng SMTP Chi tiết và Tài khoản Mới)
-// ===================================================================
 
 //tạo 1 công cụ để backend gửi được email đi cho người dùng
 const transporter = nodemailer.createTransport({
@@ -35,7 +33,6 @@ const transporter = nodemailer.createTransport({
 // Địa chỉ email cá nhân của bạn (người nhận thông báo)
 const MY_PERSONAL_EMAIL = 'dinhtu20091998@gmail.com'; 
 
-// ===================================================================
 
 // Route để xử lý Form Submission POST: /messages
 app.post('/messages', async (req, res) => {

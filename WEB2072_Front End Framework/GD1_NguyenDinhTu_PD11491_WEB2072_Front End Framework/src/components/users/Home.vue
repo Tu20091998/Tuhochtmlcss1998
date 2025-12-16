@@ -8,7 +8,10 @@
     import EducationSection from './HomeComponent/EducationSection.vue';
     import ExperienceSection from './HomeComponent/ExperienceSection.vue';
     import PersonalSection from './HomeComponent/PersonalSection.vue';
-    import SkillsSection from './HomeComponent/SkillsSection.vue';
+    import ProjectsList from './SkillsComponent/ProjectsList.vue';
+
+    //dùng lại component
+    import SkillsDetails from './SkillsComponent/SkillsDetails.vue';
 
     // Inject dữ liệu
     const portfolioData = inject('portfolioData');
@@ -27,8 +30,8 @@
             <PersonalSection />
             <EducationSection />
             <ExperienceSection />
-            <SkillsSection />
             <ArticlesSection />
+            <ProjectsList />
         </section>
 </template>
 <style scoped>

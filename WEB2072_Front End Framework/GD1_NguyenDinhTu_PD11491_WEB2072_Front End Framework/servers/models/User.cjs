@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
     // ĐỐI SỐ THỨ NHẤT: ĐỊNH NGHĨA CÁC TRƯỜNG (FIELDS)
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    role: { type: String, default: 'guest' } // <-- KHÔNG CÓ DẤU PHẨY CUỐI CÙNG Ở ĐÂY
+    role: { type: String, default: 'guest' }
 }, { 
     // ĐỐI SỐ THỨ HAI: TÙY CHỌN SCHEMA (OPTIONS)
     toJSON: {

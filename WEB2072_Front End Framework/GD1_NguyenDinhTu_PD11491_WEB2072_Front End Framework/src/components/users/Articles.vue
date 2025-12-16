@@ -13,8 +13,8 @@ const articles = computed(() => portfolioData.value?.articles || []);
     <section class="container-fluid max-width-center pt-3 mt-3">
         <h1 class="fs-2 fw-bold text-dark text-center mb-5" style="margin-top: 5rem;"><i class="bi bi-newspaper me-2"></i> Danh Sách Bài Viết Công Nghệ</h1>
     
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col" v-for="article in articles" :key="article.id">
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4" v-for="article in articles" :key="article.id">
                 <router-link
                     :to="{ name: 'ArticleDetail', params: { article_id: article.id } }" 
                     class="card h-100 shadow-sm text-decoration-none text-dark article-card"

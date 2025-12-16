@@ -26,7 +26,7 @@ const collapseNavbar = () => {
 <template>
     <!-- Navbar Bootstrap-->
     <header class="fixed-top bg-white shadow-sm z-index-10">
-        <nav class="navbar navbar-expand-md navbar-light py-0 bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-light py-0 bg-dark">
             <!-- Container Responsive -->
             <div class="container-fluid container-md px-3 px-sm-3 px-lg-4 max-width-center"> 
                 <!-- Logo/Tên (Sử dụng computed personalData.name) -->

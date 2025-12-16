@@ -151,6 +151,6 @@ const submitForm = async () => {
 }
 
 .form-contact{
-    width: 50%;
+    width: 100%;
 }
 </style>

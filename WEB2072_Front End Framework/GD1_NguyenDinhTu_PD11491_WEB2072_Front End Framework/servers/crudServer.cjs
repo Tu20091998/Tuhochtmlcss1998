@@ -1,8 +1,8 @@
 //----------------------------------------------------
 //Phần gọi db của mongoDB
-const express = require('express');
-const cors = require('cors'); 
-const connectDB = require("./mongo.cjs");
+const express = require('express');//Tạo server, Xử lý request / response
+const cors = require('cors'); //Cho phép frontend (Vue, React…) gọi API backend
+const connectDB = require("./mongo.cjs");// gọi model của hàm connect
 
 // Khai báo Express app
 const app = express(); 
@@ -16,8 +16,8 @@ const corsOptions = {
     optionsSuccessStatus: 204
 };
 
-app.use(cors(corsOptions)); //
-app.use(express.json());// dòng này để nhận body json bên các trang trả về backend
+app.use(cors(corsOptions)); //server sử dụng cấu hình
+app.use(express.json()); //Cho phép server Express đọc được dữ liệu JSON gửi từ client.
 
 // Gọi hàm kết nối database
 connectDB();

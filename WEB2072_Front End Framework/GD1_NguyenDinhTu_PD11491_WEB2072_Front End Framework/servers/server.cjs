@@ -12,7 +12,7 @@ const port = 3001; // Nodemailer Server
 // hiểu đúng dữ liệu gửi lên cho backend nodemailer
 app.use(cors()); //gọi để sử dụng
 app.use(bodyParser.json()); //dịch nội dung ra mã js
-app.use(bodyParser.urlencoded({ extended: true }));// chuyển dạng chuỗi trình duyệt thành object
+app.use(bodyParser.urlencoded({ extended: true }));//dịch nội dung nếu gửi theo form thành mã js
 
 
 // ===================================================================
@@ -46,11 +46,11 @@ app.post('/messages', async (req, res) => {
         return res.status(400).json({ error: 'Vui lòng điền đầy đủ tất cả các trường.' });
     }
 
-    // --- 1. Thực hiện Lưu vào Database (Giả định) ---
+    // ---  Thực hiện Lưu vào Database ---
     console.log(`[DB] Lưu thông tin từ ${name} (${email}) vào database.`);
 
 
-    // --- 2. Cấu hình Email gửi về email cá nhân của bạn (Admin Notification) ---
+    // --- Cấu hình Email gửi về email cá nhân  ---
     const adminMailOptions = {
         from: 'dinhtu20091998@gmail.com',
         to: MY_PERSONAL_EMAIL,
@@ -68,7 +68,7 @@ app.post('/messages', async (req, res) => {
         `
     };
 
-    // --- 3. Cấu hình Email xác nhận gửi cho Người dùng (Auto-Reply) ---
+    // --- Cấu hình Email xác nhận gửi cho Người dùng ---
     const userMailOptions = {
         from: 'dinhtu20091998@gmail.com',
         to: email,

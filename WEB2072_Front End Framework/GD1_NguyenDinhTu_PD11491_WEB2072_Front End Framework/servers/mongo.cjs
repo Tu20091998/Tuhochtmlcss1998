@@ -1,6 +1,6 @@
 // servers/mongo.js
 
-const mongoose = require("mongoose");
+const mongoose = require("mongoose");//gọi thư viện mongo odm
 
 // Chuỗi kết nối
 const MONGO_URI = "mongodb://127.0.0.1:27017/portfolio"; 

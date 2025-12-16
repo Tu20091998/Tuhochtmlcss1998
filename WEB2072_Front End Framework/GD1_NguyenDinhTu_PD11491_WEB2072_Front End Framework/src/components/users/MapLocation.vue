@@ -44,6 +44,6 @@ const personalData = computed(() => portfolioData.value?.personal || {});
 }
 
 .map-container{
-    width: 50%;
+    width: 100%;
 }
 </style>

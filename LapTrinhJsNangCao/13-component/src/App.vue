@@ -12,6 +12,7 @@ const increaseBy = (number1, number2) =>{
 }
 
 const email = ref("");
+const username = ref("");
 
 watchEffect(() =>{
   console.log(email.value);
@@ -28,7 +29,7 @@ const changeEmailFromParent = () =>{
 
     <div class="wrapper">
 
-      <ComponentVModal v-model="email"></ComponentVModal>
+      <ComponentVModal v-model:email="email" v-model:username="username"></ComponentVModal>
       <button @click="changeEmailFromParent">Thay đổi nội dung email</button>
 
       <HelloWorld :greeting-message="count" />
